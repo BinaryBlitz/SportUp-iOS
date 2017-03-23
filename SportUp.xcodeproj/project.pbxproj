@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CB3C514DDEA7EF3D68FBE33 /* Pods_SportUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E8B0240E1394FC209E929C /* Pods_SportUp.framework */; };
+		88DA46471E841F450061E816 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46461E841F450061E816 /* DataManager.swift */; };
+		88DA46491E841F510061E816 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46481E841F510061E816 /* APIPath.swift */; };
+		88DA464B1E84233E0061E816 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA464A1E84233E0061E816 /* City.swift */; };
+		88DA46521E8425960061E816 /* GoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46511E8425960061E816 /* GoButton.swift */; };
+		88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46531E8426230061E816 /* UIColor+SportUpColors.swift */; };
+		88DA46561E842B550061E816 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46551E842B550061E816 /* DataError.swift */; };
+		88DA46581E842F0E0061E816 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46571E842F0E0061E816 /* OnboardingViewController.swift */; };
+		88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DA46591E84326C0061E816 /* OnboardingViewController.storyboard */; };
+		88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */; };
 		88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE3EAD1E83FD58007FCD76 /* AppDelegate.swift */; };
 		88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DE3EB31E83FD58007FCD76 /* RootViewController.storyboard */; };
 		88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DE3EB61E83FD58007FCD76 /* Assets.xcassets */; };
@@ -18,6 +28,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BF8F60203E43D4234BFD890 /* Pods-SportUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportUp/Pods-SportUp.release.xcconfig"; sourceTree = "<group>"; };
+		71E8B0240E1394FC209E929C /* Pods_SportUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88DA46461E841F450061E816 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		88DA46481E841F510061E816 /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
+		88DA464A1E84233E0061E816 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		88DA46511E8425960061E816 /* GoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoButton.swift; sourceTree = "<group>"; };
+		88DA46531E8426230061E816 /* UIColor+SportUpColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+SportUpColors.swift"; sourceTree = "<group>"; };
+		88DA46551E842B550061E816 /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
+		88DA46571E842F0E0061E816 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		88DA46591E84326C0061E816 /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
+		88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+cornerRadius.swift"; sourceTree = "<group>"; };
 		88DE3EAA1E83FD57007FCD76 /* SportUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DE3EAD1E83FD58007FCD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DE3EB41E83FD58007FCD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RootViewController.storyboard; sourceTree = "<group>"; };
@@ -28,6 +49,7 @@
 		88DE3EC41E83FF65007FCD76 /* SportUpNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportUpNavigationController.swift; sourceTree = "<group>"; };
 		88DE3EC71E840D93007FCD76 /* UIViewController+storyboardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboardInstance.swift"; sourceTree = "<group>"; };
 		88DE3ECB1E841729007FCD76 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EE2CB25CCC34266F546FC7FE /* Pods-SportUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportUp/Pods-SportUp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +57,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB3C514DDEA7EF3D68FBE33 /* Pods_SportUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A5C4CB08F2D05EF0BB36726 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE2CB25CCC34266F546FC7FE /* Pods-SportUp.debug.xcconfig */,
+				1BF8F60203E43D4234BFD890 /* Pods-SportUp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		88DA46451E841D1F0061E816 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88DA464A1E84233E0061E816 /* City.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		88DA464C1E84236B0061E816 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				88DA46571E842F0E0061E816 /* OnboardingViewController.swift */,
+				88DA46591E84326C0061E816 /* OnboardingViewController.storyboard */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		88DA464F1E8425860061E816 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				88DA46501E84258B0061E816 /* Views */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		88DA46501E84258B0061E816 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88DA46511E8425960061E816 /* GoButton.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		88DE3EA11E83FD57007FCD76 = {
 			isa = PBXGroup;
 			children = (
 				88DE3EAC1E83FD58007FCD76 /* SportUp */,
 				88DE3EAB1E83FD57007FCD76 /* Products */,
+				5A5C4CB08F2D05EF0BB36726 /* Pods */,
+				E8957243B53FC4F88C2079D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,8 +131,8 @@
 				88DE3EC61E840CF1007FCD76 /* Extensions */,
 				88DE3EC11E83FDBB007FCD76 /* UI */,
 				88DE3EAD1E83FD58007FCD76 /* AppDelegate.swift */,
-				88DE3EB61E83FD58007FCD76 /* Assets.xcassets */,
 				88DE3EB81E83FD58007FCD76 /* LaunchScreen.storyboard */,
+				88DE3EB61E83FD58007FCD76 /* Assets.xcassets */,
 				88DE3EBB1E83FD58007FCD76 /* Info.plist */,
 			);
 			path = SportUp;
@@ -74,6 +141,8 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				88DA464F1E8425860061E816 /* Common */,
+				88DA464C1E84236B0061E816 /* Onboarding */,
 				88DE3EC91E840DAA007FCD76 /* Root */,
 				88DE3EC41E83FF65007FCD76 /* SportUpNavigationController.swift */,
 			);
@@ -83,7 +152,9 @@
 		88DE3EC61E840CF1007FCD76 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				88DA46531E8426230061E816 /* UIColor+SportUpColors.swift */,
 				88DE3EC71E840D93007FCD76 /* UIViewController+storyboardInstance.swift */,
+				88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -100,9 +171,21 @@
 		88DE3ECA1E841357007FCD76 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				88DA46551E842B550061E816 /* DataError.swift */,
+				88DA46481E841F510061E816 /* APIPath.swift */,
+				88DA46461E841F450061E816 /* DataManager.swift */,
 				88DE3ECB1E841729007FCD76 /* NetworkManager.swift */,
+				88DA46451E841D1F0061E816 /* Model */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		E8957243B53FC4F88C2079D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71E8B0240E1394FC209E929C /* Pods_SportUp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88DE3EBE1E83FD58007FCD76 /* Build configuration list for PBXNativeTarget "SportUp" */;
 			buildPhases = (
+				0797EC7CA2C57CCCCC62004D /* [CP] Check Pods Manifest.lock */,
 				88DE3EA61E83FD57007FCD76 /* Sources */,
 				88DE3EA71E83FD57007FCD76 /* Frameworks */,
 				88DE3EA81E83FD57007FCD76 /* Resources */,
+				3EB2049DE2C6D37BD2323ECA /* [CP] Embed Pods Frameworks */,
+				AB82A414AC0A236ACD25A7F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
@@ -173,15 +260,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0797EC7CA2C57CCCCC62004D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3EB2049DE2C6D37BD2323ECA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportUp/Pods-SportUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB82A414AC0A236ACD25A7F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportUp/Pods-SportUp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88DE3EA61E83FD57007FCD76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				88DE3EC51E83FF65007FCD76 /* SportUpNavigationController.swift in Sources */,
+				88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */,
+				88DA46471E841F450061E816 /* DataManager.swift in Sources */,
+				88DA46581E842F0E0061E816 /* OnboardingViewController.swift in Sources */,
 				88DE3EC31E83FE95007FCD76 /* RootViewController.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
+				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
+				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,
+				88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */,
+				88DA46561E842B550061E816 /* DataError.swift in Sources */,
+				88DA464B1E84233E0061E816 /* City.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +446,7 @@
 		};
 		88DE3EBF1E83FD58007FCD76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE2CB25CCC34266F546FC7FE /* Pods-SportUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4WGG8V34K4;
@@ -316,6 +460,7 @@
 		};
 		88DE3EC01E83FD58007FCD76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BF8F60203E43D4234BFD890 /* Pods-SportUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4WGG8V34K4;
@@ -346,6 +491,7 @@
 				88DE3EC01E83FD58007FCD76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

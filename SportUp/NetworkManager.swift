@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import PromiseKit
 
 class NetworkManager {
-  static let baseUrl = "http://dev.silver.travel:8080"
-  static let apiPrefix = "/api/v1/"
+  static let baseUrl = "sportup-staging.herokuapp.com"
+  static let apiPrefix = "/api/"
 
   static func doRequest(method: HTTPMethod, _ path: APIPath, _ params: Parameters = [:], _ headers: HTTPHeaders = [:]) -> Promise<Any> {
     return Promise() { fullfill, reject in
@@ -34,14 +35,24 @@ class NetworkManager {
               if let error = response.result.error {
                 reject(error)
               } else {
-                reject(DataError.responseConvertFailed)
+                reject(DataError.unexpectedResponseFormat)
               }
 
             }
           case .failure:
-            reject(getError(statusCode: response.response?.statusCode))
+            reject(getError(response.response?.statusCode))
           }
       }
+    }
+  }
+
+  static func getError(_ statusCode: Int?) -> DataError {
+    guard let statusCode = statusCode else { return .unknown }
+
+    switch statusCode {
+    case 422: return .unprocessableData
+    case 503, 500: return .serverUnavaliable
+    default: return .unknown
     }
   }
 }

@@ -20,6 +20,9 @@ class RootViewController: SportUpNavigationController {
 
   override func loadView() {
     RootViewController.instance = self
+    //setNavigationBarHidden(true, animated: false)
+    let viewController = OnboardingViewController.storyboardInstance()!
+    viewControllers = [viewController]
     super.loadView()
   }
     
