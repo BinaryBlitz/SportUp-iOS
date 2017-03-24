@@ -11,10 +11,10 @@ import Alamofire
 import PromiseKit
 
 class NetworkManager {
-  static let baseUrl = "sportup-staging.herokuapp.com"
+  static let baseUrl = "https://sportup-staging.herokuapp.com"
   static let apiPrefix = "/api/"
 
-  static func doRequest(method: HTTPMethod, _ path: APIPath, _ params: Parameters = [:], _ headers: HTTPHeaders = [:]) -> Promise<Any> {
+  static func doRequest(_ path: APIPath, _ params: Parameters = [:], _ headers: HTTPHeaders = [:]) -> Promise<Any> {
     return Promise() { fullfill, reject in
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
       let url = URL(string: self.baseUrl + self.apiPrefix + path.rawPath)!
@@ -22,7 +22,7 @@ class NetworkManager {
       var headers = headers
       headers["accept"] = "application/json"
 
-      Alamofire.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: headers)
+      Alamofire.request(url, method: path.method, parameters: params, encoding: URLEncoding.default, headers: headers)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
           UIApplication.shared.isNetworkActivityIndicatorVisible = false

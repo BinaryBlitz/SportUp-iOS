@@ -17,6 +17,9 @@
 		88DA46581E842F0E0061E816 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46571E842F0E0061E816 /* OnboardingViewController.swift */; };
 		88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DA46591E84326C0061E816 /* OnboardingViewController.storyboard */; };
 		88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */; };
+		88DA465F1E843F610061E816 /* CitySelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DA465E1E843F610061E816 /* CitySelectViewController.storyboard */; };
+		88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46631E8445550061E816 /* CitySelectViewController.swift */; };
+		88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46651E851D440061E816 /* UISearchBar+serTextColor.swift */; };
 		88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE3EAD1E83FD58007FCD76 /* AppDelegate.swift */; };
 		88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DE3EB31E83FD58007FCD76 /* RootViewController.storyboard */; };
 		88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DE3EB61E83FD58007FCD76 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		88DA46571E842F0E0061E816 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		88DA46591E84326C0061E816 /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
 		88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+cornerRadius.swift"; sourceTree = "<group>"; };
+		88DA465E1E843F610061E816 /* CitySelectViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CitySelectViewController.storyboard; sourceTree = "<group>"; };
+		88DA46631E8445550061E816 /* CitySelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySelectViewController.swift; sourceTree = "<group>"; };
+		88DA46651E851D440061E816 /* UISearchBar+serTextColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+serTextColor.swift"; sourceTree = "<group>"; };
 		88DE3EAA1E83FD57007FCD76 /* SportUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DE3EAD1E83FD58007FCD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DE3EB41E83FD58007FCD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RootViewController.storyboard; sourceTree = "<group>"; };
@@ -106,6 +112,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		88DA465D1E843F480061E816 /* CitySelect */ = {
+			isa = PBXGroup;
+			children = (
+				88DA465E1E843F610061E816 /* CitySelectViewController.storyboard */,
+				88DA46631E8445550061E816 /* CitySelectViewController.swift */,
+			);
+			name = CitySelect;
+			sourceTree = "<group>";
+		};
 		88DE3EA11E83FD57007FCD76 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +156,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				88DA465D1E843F480061E816 /* CitySelect */,
 				88DA464F1E8425860061E816 /* Common */,
 				88DA464C1E84236B0061E816 /* Onboarding */,
 				88DE3EC91E840DAA007FCD76 /* Root */,
@@ -155,6 +171,7 @@
 				88DA46531E8426230061E816 /* UIColor+SportUpColors.swift */,
 				88DE3EC71E840D93007FCD76 /* UIViewController+storyboardInstance.swift */,
 				88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */,
+				88DA46651E851D440061E816 /* UISearchBar+serTextColor.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +272,7 @@
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
+				88DA465F1E843F610061E816 /* CitySelectViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,12 +338,14 @@
 				88DE3EC31E83FE95007FCD76 /* RootViewController.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
+				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,
 				88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */,
 				88DA46561E842B550061E816 /* DataError.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
+				88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

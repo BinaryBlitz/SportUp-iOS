@@ -19,8 +19,8 @@ class SportUpNavigationController: UINavigationController, UINavigationControlle
     delegate = self
     navigationBar.isTranslucent = false
     view.backgroundColor = UIColor.white
-    navigationBar.barStyle = .black
-    navigationBar.tintColor = .white
+    navigationBar.barStyle = .default
+    navigationBar.tintColor = .black
     navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationBar.shadowImage = UIImage()
     navigationBar.backgroundColor = defaultBarTintColor

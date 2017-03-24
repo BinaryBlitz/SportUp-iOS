@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vui-63-uH3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Выбор города-->
+        <scene sceneID="ufx-wN-ANq">
+            <objects>
+                <viewController storyboardIdentifier="CitySelectViewController" title="Выбор города" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="Vui-63-uH3" customClass="CitySelectViewController" customModule="SportUp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c2J-yd-TyE"/>
+                        <viewControllerLayoutGuide type="bottom" id="gfC-Q5-oxt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9An-Tt-nrp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-sB-Hd4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CitySelectTableViewCell" textLabel="Flv-iZ-tTZ" style="IBUITableViewCellStyleDefault" id="Uy0-FK-uTb">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uy0-FK-uTb" id="RK9-u1-ph8">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Flv-iZ-tTZ">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.32156862745098036" green="0.38039215686274508" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyJ-N2-PDr" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mrW-Aw-bEb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="Нет вашего города?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
+                                        <color key="value" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didNotFindCityButtonDidTap:" destination="Vui-63-uH3" eventType="touchUpInside" id="LFy-X5-ahN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9F2-sB-Hd4" firstAttribute="leading" secondItem="9An-Tt-nrp" secondAttribute="leading" id="Bfo-c6-KrC"/>
+                            <constraint firstItem="UyJ-N2-PDr" firstAttribute="top" secondItem="9F2-sB-Hd4" secondAttribute="bottom" id="Hl6-6A-5r1"/>
+                            <constraint firstItem="9F2-sB-Hd4" firstAttribute="top" secondItem="c2J-yd-TyE" secondAttribute="bottom" id="O14-MO-JxE"/>
+                            <constraint firstItem="UyJ-N2-PDr" firstAttribute="leading" secondItem="9An-Tt-nrp" secondAttribute="leading" id="Pwn-FC-kVs"/>
+                            <constraint firstItem="gfC-Q5-oxt" firstAttribute="top" secondItem="UyJ-N2-PDr" secondAttribute="bottom" id="Sd0-J7-yAe"/>
+                            <constraint firstAttribute="trailing" secondItem="9F2-sB-Hd4" secondAttribute="trailing" id="Xly-MJ-0xO"/>
+                            <constraint firstAttribute="trailing" secondItem="UyJ-N2-PDr" secondAttribute="trailing" id="tqb-2c-ty7"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="didNotFindCityButton" destination="UyJ-N2-PDr" id="asq-Je-Tqn"/>
+                        <outlet property="tableView" destination="9F2-sB-Hd4" id="e91-UI-fKG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tg6-Ic-DhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-442.39999999999998" y="-162.3688155922039"/>
+        </scene>
+    </scenes>
+</document>

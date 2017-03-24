@@ -25,4 +25,13 @@ enum APIPath {
       return .get
     }
   }
+
+  var encoding: ParameterEncoding {
+    switch method {
+    case .get:
+      return URLEncoding.default
+    default:
+      return JSONEncoding.default
+    }
+  }
 }

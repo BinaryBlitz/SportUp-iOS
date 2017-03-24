@@ -36,4 +36,8 @@ extension UIColor {
 	class var sportUpPaleGrey: UIColor {
 		return UIColor(red: 247.0 / 255.0, green: 249.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
 	}
+
+  class var sportupBlueyGrey: UIColor {
+    return UIColor(red: 154.0 / 255.0, green: 172.0 / 255.0, blue: 183.0 / 255.0, alpha: 1.0)
+  }
 }
