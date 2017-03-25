@@ -19,6 +19,9 @@
 		889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CF1E86BAE20027D852 /* ProfileViewController.swift */; };
 		889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D11E86C04A0027D852 /* ProfileManager.swift */; };
 		889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89D31E86CB400027D852 /* MainTabBarController.storyboard */; };
+		889F89D71E86CFE30027D852 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D61E86CFE30027D852 /* CategoryTableViewCell.swift */; };
+		88D32FC41E86D228006EEE43 /* SportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FC31E86D228006EEE43 /* SportType.swift */; };
+		88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FC61E86D31E006EEE43 /* URLTransform.swift */; };
 		88DA46471E841F450061E816 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46461E841F450061E816 /* DataManager.swift */; };
 		88DA46491E841F510061E816 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46481E841F510061E816 /* APIPath.swift */; };
 		88DA464B1E84233E0061E816 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA464A1E84233E0061E816 /* City.swift */; };
@@ -55,6 +58,9 @@
 		889F89CF1E86BAE20027D852 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		889F89D11E86C04A0027D852 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		889F89D31E86CB400027D852 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
+		889F89D61E86CFE30027D852 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		88D32FC31E86D228006EEE43 /* SportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportType.swift; sourceTree = "<group>"; };
+		88D32FC61E86D31E006EEE43 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
 		88DA46461E841F450061E816 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		88DA46481E841F510061E816 /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		88DA464A1E84233E0061E816 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 		889F89B81E86ABB70027D852 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				889F89D51E86CFCC0027D852 /* Views */,
 				889F89BC1E86AC0A0027D852 /* CategoriesViewController.storyboard */,
 				889F89CD1E86BAD80027D852 /* CategoriesViewController.swift */,
 			);
@@ -155,11 +162,29 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		889F89D51E86CFCC0027D852 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				889F89D61E86CFE30027D852 /* CategoryTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		88D32FC51E86D311006EEE43 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				88D32FC61E86D31E006EEE43 /* URLTransform.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		88DA46451E841D1F0061E816 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				88D32FC51E86D311006EEE43 /* Common */,
 				88DA464A1E84233E0061E816 /* City.swift */,
 				889F89C01E86B1FE0027D852 /* Profile.swift */,
+				88D32FC31E86D228006EEE43 /* SportType.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -418,6 +443,7 @@
 			files = (
 				889F89C11E86B1FE0027D852 /* Profile.swift in Sources */,
 				88DE3EC51E83FF65007FCD76 /* SportUpNavigationController.swift in Sources */,
+				889F89D71E86CFE30027D852 /* CategoryTableViewCell.swift in Sources */,
 				88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */,
 				889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */,
 				88DA46471E841F450061E816 /* DataManager.swift in Sources */,
@@ -427,8 +453,10 @@
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
 				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
+				88D32FC41E86D228006EEE43 /* SportType.swift in Sources */,
 				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
+				88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,
 				88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */,
 				889F89CE1E86BAD80027D852 /* CategoriesViewController.swift in Sources */,
