@@ -22,6 +22,7 @@ class StorageHelper {
 
   enum StorageKey: String {
     case currentProfile
+    case sportTypes
     case currentCity
     case apiToken
 

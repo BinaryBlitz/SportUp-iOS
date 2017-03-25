@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="20" y="-514"/>
         </scene>
-        <!--CategoriesViewController-->
+        <!--SportTypesViewController-->
         <scene sceneID="Vxn-oF-ry5">
             <objects>
-                <viewControllerPlaceholder storyboardName="CategoriesViewController" id="XkQ-57-40Z" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SportTypesViewController" id="XkQ-57-40Z" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="f7g-FJ-MNU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIp-rX-73P" userLabel="First Responder" sceneMemberID="firstResponder"/>

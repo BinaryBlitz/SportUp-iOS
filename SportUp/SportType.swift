@@ -11,13 +11,13 @@ import ObjectMapper
 
 class SportType: Mappable {
   var id: Int = 0
-  var color: String = ""
+  var color: UIColor = UIColor.sportUpAquaMarine
   var name: String = ""
   var iconUrl: URL? = nil
 
   func mapping(map: Map) {
     id <- map["id"]
-    color <- map["color"]
+    color <- (map["color"], HexColorTransform())
     name <- map["name"]
     iconUrl <- (map["icon_url"], URLTransform())
   }

@@ -26,6 +26,8 @@ class SportUpNavigationController: UINavigationController, UINavigationControlle
     navigationBar.shadowImage = UIImage()
     navigationBar.backgroundColor = defaultBarTintColor
     navigationBar.barTintColor = defaultBarTintColor
+    navigationBar.titleTextAttributes =
+      [NSFontAttributeName: UIFont.systemFont(ofSize: 17)]
   }
 
   func navigationController(_ navigationController: UINavigationController,
