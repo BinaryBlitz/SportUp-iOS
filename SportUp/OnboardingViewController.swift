@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController, DefaultBarStyleViewController {
   @IBOutlet weak var beginButton: GoButton!
   let animationDuration = 0.3
 

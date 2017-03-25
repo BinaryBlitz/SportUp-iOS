@@ -12,7 +12,7 @@ import CoreLocation
 
 private let reuseIdentifier = "CitySelectTableViewCell"
 
-class CitySelectViewController: UIViewController {
+class CitySelectViewController: UIViewController, DefaultBarStyleViewController {
   // Search
   var searchController = UISearchController(searchResultsController: nil)
 
@@ -91,12 +91,17 @@ class CitySelectViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(false, animated: true)
+    guard let indexPath = tableView.indexPathForSelectedRow else { return }
+    tableView.deselectRow(at: indexPath, animated: true)
   }
 
 }
 
 extension CitySelectViewController: UITableViewDelegate {
-
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    ProfileManager.instance.currentCity = filteredCities[indexPath.row]
+    RootViewController.instance?.prepareTabBarController()
+  }
 }
 
 extension CitySelectViewController: UITableViewDataSource {

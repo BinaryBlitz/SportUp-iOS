@@ -17,6 +17,7 @@ class City: Mappable {
   var longitude: Double = 0.0
 
   func mapping(map: Map) {
+    id <- map["id"]
     name <- map["name"]
     latitude <- map["latitude"]
     longitude <- map["latitude"]

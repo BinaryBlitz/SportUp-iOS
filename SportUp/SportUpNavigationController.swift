@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+protocol DefaultBarStyleViewController { }
 
 class SportUpNavigationController: UINavigationController, UINavigationControllerDelegate {
 
@@ -25,6 +26,26 @@ class SportUpNavigationController: UINavigationController, UINavigationControlle
     navigationBar.shadowImage = UIImage()
     navigationBar.backgroundColor = defaultBarTintColor
     navigationBar.barTintColor = defaultBarTintColor
+  }
+
+  func navigationController(_ navigationController: UINavigationController,
+                            willShow viewController: UIViewController, animated: Bool) {
+    if viewController is DefaultBarStyleViewController {
+      navigationBar.barTintColor = defaultBarTintColor
+      navigationBar.tintColor = .black
+      navigationBar.isTranslucent = false
+    } else {
+      navigationBar.tintColor = defaultBarTintColor
+    }
+    setNeedsStatusBarAppearanceUpdate()
+  }
+
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    guard let visibleViewController = self.visibleViewController else { return .default }
+    if visibleViewController is DefaultBarStyleViewController {
+      return .default
+    }
+    return .lightContent
   }
   
 }

@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4CB3C514DDEA7EF3D68FBE33 /* Pods_SportUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E8B0240E1394FC209E929C /* Pods_SportUp.framework */; };
+		889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89B31E86AB060027D852 /* MainTabBarController.swift */; };
+		889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */; };
+		889F89BD1E86AC0A0027D852 /* CategoriesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BC1E86AC0A0027D852 /* CategoriesViewController.storyboard */; };
+		889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */; };
+		889F89C11E86B1FE0027D852 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89C01E86B1FE0027D852 /* Profile.swift */; };
+		889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89C91E86B5090027D852 /* StorageHelper.swift */; };
+		889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CB1E86BACD0027D852 /* MyGamesViewController.swift */; };
+		889F89CE1E86BAD80027D852 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CD1E86BAD80027D852 /* CategoriesViewController.swift */; };
+		889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CF1E86BAE20027D852 /* ProfileViewController.swift */; };
+		889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D11E86C04A0027D852 /* ProfileManager.swift */; };
+		889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89D31E86CB400027D852 /* MainTabBarController.storyboard */; };
 		88DA46471E841F450061E816 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46461E841F450061E816 /* DataManager.swift */; };
 		88DA46491E841F510061E816 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46481E841F510061E816 /* APIPath.swift */; };
 		88DA464B1E84233E0061E816 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA464A1E84233E0061E816 /* City.swift */; };
@@ -33,6 +44,17 @@
 /* Begin PBXFileReference section */
 		1BF8F60203E43D4234BFD890 /* Pods-SportUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportUp/Pods-SportUp.release.xcconfig"; sourceTree = "<group>"; };
 		71E8B0240E1394FC209E929C /* Pods_SportUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		889F89B31E86AB060027D852 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		889F89BC1E86AC0A0027D852 /* CategoriesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CategoriesViewController.storyboard; sourceTree = "<group>"; };
+		889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyGamesViewController.storyboard; sourceTree = "<group>"; };
+		889F89C01E86B1FE0027D852 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		889F89C91E86B5090027D852 /* StorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
+		889F89CB1E86BACD0027D852 /* MyGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGamesViewController.swift; sourceTree = "<group>"; };
+		889F89CD1E86BAD80027D852 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		889F89CF1E86BAE20027D852 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		889F89D11E86C04A0027D852 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		889F89D31E86CB400027D852 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		88DA46461E841F450061E816 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		88DA46481E841F510061E816 /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		88DA464A1E84233E0061E816 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -79,10 +101,65 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		889F89B21E86AAEE0027D852 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				889F89B31E86AB060027D852 /* MainTabBarController.swift */,
+				889F89D31E86CB400027D852 /* MainTabBarController.storyboard */,
+			);
+			name = MainTabBar;
+			sourceTree = "<group>";
+		};
+		889F89B71E86ABA40027D852 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */,
+				889F89CF1E86BAE20027D852 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		889F89B81E86ABB70027D852 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				889F89BC1E86AC0A0027D852 /* CategoriesViewController.storyboard */,
+				889F89CD1E86BAD80027D852 /* CategoriesViewController.swift */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		889F89B91E86ABE30027D852 /* MyGames */ = {
+			isa = PBXGroup;
+			children = (
+				889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */,
+				889F89CB1E86BACD0027D852 /* MyGamesViewController.swift */,
+			);
+			name = MyGames;
+			sourceTree = "<group>";
+		};
+		889F89C41E86B2EF0027D852 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				88DA46481E841F510061E816 /* APIPath.swift */,
+				88DA46551E842B550061E816 /* DataError.swift */,
+				88DE3ECB1E841729007FCD76 /* NetworkManager.swift */,
+			);
+			name = NetworkManager;
+			sourceTree = "<group>";
+		};
+		889F89C81E86B4F70027D852 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				889F89C91E86B5090027D852 /* StorageHelper.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		88DA46451E841D1F0061E816 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				88DA464A1E84233E0061E816 /* City.swift */,
+				889F89C01E86B1FE0027D852 /* Profile.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -142,6 +219,7 @@
 		88DE3EAC1E83FD58007FCD76 /* SportUp */ = {
 			isa = PBXGroup;
 			children = (
+				889F89C81E86B4F70027D852 /* Util */,
 				88DE3ECA1E841357007FCD76 /* Data */,
 				88DE3EC61E840CF1007FCD76 /* Extensions */,
 				88DE3EC11E83FDBB007FCD76 /* UI */,
@@ -156,6 +234,10 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				889F89B91E86ABE30027D852 /* MyGames */,
+				889F89B81E86ABB70027D852 /* Categories */,
+				889F89B71E86ABA40027D852 /* Profile */,
+				889F89B21E86AAEE0027D852 /* MainTabBar */,
 				88DA465D1E843F480061E816 /* CitySelect */,
 				88DA464F1E8425860061E816 /* Common */,
 				88DA464C1E84236B0061E816 /* Onboarding */,
@@ -188,11 +270,10 @@
 		88DE3ECA1E841357007FCD76 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				88DA46551E842B550061E816 /* DataError.swift */,
-				88DA46481E841F510061E816 /* APIPath.swift */,
-				88DA46461E841F450061E816 /* DataManager.swift */,
-				88DE3ECB1E841729007FCD76 /* NetworkManager.swift */,
+				889F89C41E86B2EF0027D852 /* NetworkManager */,
 				88DA46451E841D1F0061E816 /* Model */,
+				88DA46461E841F450061E816 /* DataManager.swift */,
+				889F89D11E86C04A0027D852 /* ProfileManager.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -268,11 +349,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */,
 				88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */,
+				889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
 				88DA465F1E843F610061E816 /* CitySelectViewController.storyboard in Resources */,
+				889F89BD1E86AC0A0027D852 /* CategoriesViewController.storyboard in Resources */,
+				889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +416,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889F89C11E86B1FE0027D852 /* Profile.swift in Sources */,
 				88DE3EC51E83FF65007FCD76 /* SportUpNavigationController.swift in Sources */,
 				88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */,
+				889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */,
 				88DA46471E841F450061E816 /* DataManager.swift in Sources */,
 				88DA46581E842F0E0061E816 /* OnboardingViewController.swift in Sources */,
 				88DE3EC31E83FE95007FCD76 /* RootViewController.swift in Sources */,
@@ -340,10 +427,15 @@
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
 				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
+				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
+				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,
 				88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */,
+				889F89CE1E86BAD80027D852 /* CategoriesViewController.swift in Sources */,
+				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
 				88DA46561E842B550061E816 /* DataError.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
+				889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
 				88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */,
 			);

@@ -13,6 +13,7 @@ import ObjectMapper
 
 class DataManager {
   static let instance = DataManager()
+
   private init() { }
 
   func fetchCities() -> Promise<[City]> {
