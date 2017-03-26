@@ -16,4 +16,8 @@ target 'SportUp' do
   pod 'GoogleMaps', '~> 2.2'
   pod 'KeychainAccess', '~> 3.0'
 
+  pod 'Fabric'
+  pod 'Crashlytics'
+
+
 end

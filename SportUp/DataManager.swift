@@ -36,7 +36,7 @@ class DataManager {
 
   func fetchEvents(sportType: SportType, date: Date) -> Promise<[Event]> {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "d-MM"
+    dateFormatter.dateFormat = "dd-MM-YYYY"
     return NetworkManager.doRequest(.getEvents(sportTypeId: sportType.id), ["date": dateFormatter.string(from: date)]).then { result in
       guard let events = Mapper<Event>().mapArray(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)

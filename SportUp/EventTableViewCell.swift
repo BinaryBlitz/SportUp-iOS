@@ -19,7 +19,6 @@ class EventTableViewCell: UITableViewCell {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var adressLabel: UILabel!
 
-
   override func awakeFromNib() {
     for view in stackView.arrangedSubviews {
       stackView.removeArrangedSubview(view)
@@ -29,7 +28,7 @@ class EventTableViewCell: UITableViewCell {
 
   func configure(event: Event) {
     nameLabel.text = event.name
-    playersCountLabel.text = "\(event.userLimit) / \(event.teamLimit)"
+    playersCountLabel.text = "\(event.userCount) / \(event.userLimit)"
     timeLabel.text = event.startsAt.time
     priceLabel.text = event.price == 0 ? event.price.currencyString : "Бесплатно"
     adressLabel.text = event.address

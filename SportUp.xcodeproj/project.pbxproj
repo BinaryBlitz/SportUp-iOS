@@ -16,6 +16,8 @@
 		8853D69B1E88119600C4759C /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69A1E88119600C4759C /* DateTransform.swift */; };
 		8853D69F1E881B5100C4759C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69E1E881B5100C4759C /* EventTableViewCell.swift */; };
 		8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D6A01E881EED00C4759C /* Double+currencyString.swift */; };
+		8853D6A41E88318F00C4759C /* GamesMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8853D6A31E88318F00C4759C /* GamesMapViewController.storyboard */; };
+		8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D6A51E88339500C4759C /* GamesMapViewController.swift */; };
 		889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89B31E86AB060027D852 /* MainTabBarController.swift */; };
 		889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */; };
 		889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */; };
@@ -41,7 +43,7 @@
 		88DA46561E842B550061E816 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46551E842B550061E816 /* DataError.swift */; };
 		88DA46581E842F0E0061E816 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46571E842F0E0061E816 /* OnboardingViewController.swift */; };
 		88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DA46591E84326C0061E816 /* OnboardingViewController.storyboard */; };
-		88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */; };
+		88DA465C1E84350B0061E816 /* UIView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA465B1E84350B0061E816 /* UIView+IBDesignable.swift */; };
 		88DA465F1E843F610061E816 /* CitySelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DA465E1E843F610061E816 /* CitySelectViewController.storyboard */; };
 		88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46631E8445550061E816 /* CitySelectViewController.swift */; };
 		88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46651E851D440061E816 /* UISearchBar+serTextColor.swift */; };
@@ -66,6 +68,8 @@
 		8853D69A1E88119600C4759C /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
 		8853D69E1E881B5100C4759C /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		8853D6A01E881EED00C4759C /* Double+currencyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+currencyString.swift"; sourceTree = "<group>"; };
+		8853D6A31E88318F00C4759C /* GamesMapViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamesMapViewController.storyboard; sourceTree = "<group>"; };
+		8853D6A51E88339500C4759C /* GamesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesMapViewController.swift; sourceTree = "<group>"; };
 		889F89B31E86AB060027D852 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportTypesViewController.storyboard; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 		88DA46551E842B550061E816 /* DataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		88DA46571E842F0E0061E816 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		88DA46591E84326C0061E816 /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
-		88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+cornerRadius.swift"; sourceTree = "<group>"; };
+		88DA465B1E84350B0061E816 /* UIView+IBDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBDesignable.swift"; sourceTree = "<group>"; };
 		88DA465E1E843F610061E816 /* CitySelectViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CitySelectViewController.storyboard; sourceTree = "<group>"; };
 		88DA46631E8445550061E816 /* CitySelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySelectViewController.swift; sourceTree = "<group>"; };
 		88DA46651E851D440061E816 /* UISearchBar+serTextColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+serTextColor.swift"; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 				8853D69E1E881B5100C4759C /* EventTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		8853D6A21E88317800C4759C /* GamesMap */ = {
+			isa = PBXGroup;
+			children = (
+				8853D6A31E88318F00C4759C /* GamesMapViewController.storyboard */,
+				8853D6A51E88339500C4759C /* GamesMapViewController.swift */,
+			);
+			name = GamesMap;
 			sourceTree = "<group>";
 		};
 		889F89B21E86AAEE0027D852 /* MainTabBar */ = {
@@ -319,6 +332,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8853D6A21E88317800C4759C /* GamesMap */,
 				8853D69C1E881B3600C4759C /* Common */,
 				88D32FC81E86DE0F006EEE43 /* GamesFeed */,
 				889F89B91E86ABE30027D852 /* MyGames */,
@@ -339,7 +353,7 @@
 			children = (
 				88DA46531E8426230061E816 /* UIColor+SportUpColors.swift */,
 				88DE3EC71E840D93007FCD76 /* UIViewController+storyboardInstance.swift */,
-				88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */,
+				88DA465B1E84350B0061E816 /* UIView+IBDesignable.swift */,
 				88DA46651E851D440061E816 /* UISearchBar+serTextColor.swift */,
 				880FFBC61E8917C400E3173E /* Date+WeekDates.swift */,
 				880FFBC81E8917C400E3173E /* Date+toString.swift */,
@@ -441,6 +455,7 @@
 			files = (
 				889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */,
 				88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */,
+				8853D6A41E88318F00C4759C /* GamesMapViewController.storyboard in Resources */,
 				889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
@@ -528,10 +543,11 @@
 				8853D69B1E88119600C4759C /* DateTransform.swift in Sources */,
 				88D32FC41E86D228006EEE43 /* SportType.swift in Sources */,
 				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
+				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,
-				88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */,
+				88DA465C1E84350B0061E816 /* UIView+IBDesignable.swift in Sources */,
 				889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */,
 				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
 				880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */,
@@ -668,7 +684,7 @@
 				DEVELOPMENT_TEAM = 4WGG8V34K4;
 				INFOPLIST_FILE = SportUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.binaryblitz.SportUp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.binaryblitz.sportup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -682,7 +698,7 @@
 				DEVELOPMENT_TEAM = 4WGG8V34K4;
 				INFOPLIST_FILE = SportUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.binaryblitz.SportUp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.binaryblitz.sportup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
