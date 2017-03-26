@@ -34,6 +34,7 @@ class GamesMapViewController: UIViewController {
     bottomCardConstraint.constant = -cardHeightConstraint.constant
     super.viewWillAppear(animated)
     navigationController?.navigationBar.barTintColor = sportType.color
+    self.tabBarController?.tabBar.isHidden = true
   }
 
   override func viewWillDisappear(_ animated: Bool) {
