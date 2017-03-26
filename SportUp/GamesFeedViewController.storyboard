@@ -20,12 +20,40 @@
                     <view key="view" contentMode="scaleToFill" id="bwt-zP-juF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGE-Nq-cNf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JK1-2p-32m" customClass="CalendarHeaderView" customModule="SportUp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="10"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41999819869999999" green="0.81105917689999996" blue="0.68038994070000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1oS-jW-0tF"/>
+                                    <constraint firstItem="JK1-2p-32m" firstAttribute="leading" secondItem="dGE-Nq-cNf" secondAttribute="leading" id="Ei5-J4-Kp5"/>
+                                    <constraint firstAttribute="trailing" secondItem="JK1-2p-32m" secondAttribute="trailing" id="Vcf-8J-RGm"/>
+                                    <constraint firstAttribute="bottom" secondItem="JK1-2p-32m" secondAttribute="bottom" id="aPw-nY-lFL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dGE-Nq-cNf" firstAttribute="top" secondItem="bwt-zP-juF" secondAttribute="top" id="8Sz-Kh-5Zr"/>
+                            <constraint firstItem="JK1-2p-32m" firstAttribute="top" secondItem="NKW-i1-e25" secondAttribute="bottom" constant="6" id="Nz4-i9-S5j"/>
+                            <constraint firstAttribute="trailing" secondItem="dGE-Nq-cNf" secondAttribute="trailing" id="XRU-th-Uc3"/>
+                            <constraint firstItem="dGE-Nq-cNf" firstAttribute="leading" secondItem="bwt-zP-juF" secondAttribute="leading" id="aWs-4v-39S"/>
+                        </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="calendarHeaderView" destination="JK1-2p-32m" id="akw-Vj-8xK"/>
+                        <outlet property="headerView" destination="dGE-Nq-cNf" id="Do6-4g-Nr9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lz-CM-oP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="267"/>
+            <point key="canvasLocation" x="173.59999999999999" y="266.71664167916043"/>
         </scene>
     </scenes>
 </document>

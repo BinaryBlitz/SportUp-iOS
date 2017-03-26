@@ -7,6 +7,10 @@ PODS:
     - GoogleMaps/Base
   - KeychainAccess (3.0.1)
   - Kingfisher (3.5.2)
+  - MJCalendar (0.4.0):
+    - NSDate-Escort (~> 1.5)
+    - UIView+JMFrame
+  - NSDate-Escort (1.7.0)
   - ObjectMapper (2.2.5)
   - PhoneNumberKit (1.2.2):
     - PhoneNumberKit/PhoneNumberKitCore (= 1.2.2)
@@ -26,12 +30,14 @@ PODS:
   - PromiseKit/UIKit (4.1.7):
     - PromiseKit/CorePromise
   - SwiftyJSON (3.1.4)
+  - UIView+JMFrame (0.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - GoogleMaps (~> 2.2)
   - KeychainAccess (~> 3.0)
   - Kingfisher (~> 3.0)
+  - MJCalendar
   - ObjectMapper (~> 2.2)
   - PhoneNumberKit (~> 1.2)
   - PromiseKit (~> 4.0)
@@ -42,11 +48,14 @@ SPEC CHECKSUMS:
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
+  MJCalendar: 3e131cebe205f5d3a8af251a8753a7f2070f4822
+  NSDate-Escort: 3469fefab423c094108c2e864416b61b6ac0edbc
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
   PhoneNumberKit: ffae8f18fb78c1425c7af973711b0b0fd4f4104f
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  UIView+JMFrame: a907974c9d34b1c300aef85ae2a1a5af746f2b8a
 
-PODFILE CHECKSUM: 508fde090563e7d7946b06a05aff9ae844654935
+PODFILE CHECKSUM: 4fa7769192002ae2a21538a0b108069187c88d09
 
 COCOAPODS: 1.2.0

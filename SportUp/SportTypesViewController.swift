@@ -49,7 +49,7 @@ class SportTypesViewController: UITableViewController, DefaultBarStyleViewContro
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let gamesFeedViewController = GamesFeedViewController()
+    let gamesFeedViewController = GamesFeedViewController.storyboardInstance()!
     gamesFeedViewController.sportType = sportTypes[indexPath.row]
     navigationController?.pushViewController(gamesFeedViewController, animated: true)
   }

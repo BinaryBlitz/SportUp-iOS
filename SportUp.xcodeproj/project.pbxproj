@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4CB3C514DDEA7EF3D68FBE33 /* Pods_SportUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E8B0240E1394FC209E929C /* Pods_SportUp.framework */; };
+		880FFBC31E890A4000E3173E /* CalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC21E890A4000E3173E /* CalendarWeekView.swift */; };
+		880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC41E890F3C00E3173E /* CalendarDayView.swift */; };
+		880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC61E8917C400E3173E /* Date+WeekDates.swift */; };
+		880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC81E8917C400E3173E /* Date+toString.swift */; };
 		889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89B31E86AB060027D852 /* MainTabBarController.swift */; };
 		889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */; };
 		889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */; };
@@ -24,6 +28,7 @@
 		88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FC61E86D31E006EEE43 /* URLTransform.swift */; };
 		88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */; };
 		88D32FCC1E86E6EB006EEE43 /* GamesFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FCB1E86E6EB006EEE43 /* GamesFeedViewController.swift */; };
+		88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FD01E86FF7F006EEE43 /* CalendarHeaderView.swift */; };
 		88DA46471E841F450061E816 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46461E841F450061E816 /* DataManager.swift */; };
 		88DA46491E841F510061E816 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46481E841F510061E816 /* APIPath.swift */; };
 		88DA464B1E84233E0061E816 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA464A1E84233E0061E816 /* City.swift */; };
@@ -49,6 +54,10 @@
 /* Begin PBXFileReference section */
 		1BF8F60203E43D4234BFD890 /* Pods-SportUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportUp/Pods-SportUp.release.xcconfig"; sourceTree = "<group>"; };
 		71E8B0240E1394FC209E929C /* Pods_SportUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		880FFBC21E890A4000E3173E /* CalendarWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarWeekView.swift; sourceTree = "<group>"; };
+		880FFBC41E890F3C00E3173E /* CalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
+		880FFBC61E8917C400E3173E /* Date+WeekDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+WeekDates.swift"; sourceTree = "<group>"; };
+		880FFBC81E8917C400E3173E /* Date+toString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		889F89B31E86AB060027D852 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportTypesViewController.storyboard; sourceTree = "<group>"; };
@@ -65,6 +74,7 @@
 		88D32FC61E86D31E006EEE43 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
 		88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamesFeedViewController.storyboard; sourceTree = "<group>"; };
 		88D32FCB1E86E6EB006EEE43 /* GamesFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesFeedViewController.swift; sourceTree = "<group>"; };
+		88D32FD01E86FF7F006EEE43 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		88DA46461E841F450061E816 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		88DA46481E841F510061E816 /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		88DA464A1E84233E0061E816 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -185,10 +195,21 @@
 		88D32FC81E86DE0F006EEE43 /* GamesFeed */ = {
 			isa = PBXGroup;
 			children = (
+				88D32FCD1E86FEB4006EEE43 /* Views */,
 				88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */,
 				88D32FCB1E86E6EB006EEE43 /* GamesFeedViewController.swift */,
 			);
 			name = GamesFeed;
+			sourceTree = "<group>";
+		};
+		88D32FCD1E86FEB4006EEE43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88D32FD01E86FF7F006EEE43 /* CalendarHeaderView.swift */,
+				880FFBC21E890A4000E3173E /* CalendarWeekView.swift */,
+				880FFBC41E890F3C00E3173E /* CalendarDayView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		88DA46451E841D1F0061E816 /* Model */ = {
@@ -293,6 +314,8 @@
 				88DE3EC71E840D93007FCD76 /* UIViewController+storyboardInstance.swift */,
 				88DA465B1E84350B0061E816 /* UIView+cornerRadius.swift */,
 				88DA46651E851D440061E816 /* UISearchBar+serTextColor.swift */,
+				880FFBC61E8917C400E3173E /* Date+WeekDates.swift */,
+				880FFBC81E8917C400E3173E /* Date+toString.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -457,7 +480,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				889F89C11E86B1FE0027D852 /* Profile.swift in Sources */,
+				880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */,
 				88DE3EC51E83FF65007FCD76 /* SportUpNavigationController.swift in Sources */,
+				880FFBC31E890A4000E3173E /* CalendarWeekView.swift in Sources */,
 				889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */,
 				88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */,
 				889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */,
@@ -467,6 +492,7 @@
 				88D32FCC1E86E6EB006EEE43 /* GamesFeedViewController.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
+				880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */,
 				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
 				88D32FC41E86D228006EEE43 /* SportType.swift in Sources */,
@@ -477,10 +503,12 @@
 				88DA465C1E84350B0061E816 /* UIView+cornerRadius.swift in Sources */,
 				889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */,
 				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
+				880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */,
 				88DA46561E842B550061E816 /* DataError.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
 				889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
+				88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */,
 				88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
