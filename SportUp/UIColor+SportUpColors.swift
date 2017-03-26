@@ -29,6 +29,11 @@ extension UIColor {
     }
   }
 
+  class var sportupLightWhite: UIColor {
+    return UIColor(white: 255.0 / 255.0, alpha: 0.8)
+  }
+
+
 	class var sportUpAquaMarine: UIColor {
 		return UIColor(red: 50.0 / 255.0, green: 204.0 / 255.0, blue: 223.0 / 255.0, alpha: 1.0)
 	}

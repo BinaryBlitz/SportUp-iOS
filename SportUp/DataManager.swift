@@ -34,6 +34,17 @@ class DataManager {
     }
   }
 
+  func fetchEvents(sportType: SportType, date: Date) -> Promise<[Event]> {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "d-MM"
+    return NetworkManager.doRequest(.getEvents(sportTypeId: sportType.id), ["date": dateFormatter.string(from: date)]).then { result in
+      guard let events = Mapper<Event>().mapArray(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      return Promise(value: events)
+    }
+  }
+
   func fetchSportTypes() -> Promise<[SportType]> {
     return NetworkManager.doRequest(.getSportTypes).then { result in
       guard let sportTypes = Mapper<SportType>().mapArray(JSONObject: result) else {

@@ -40,7 +40,8 @@ extension Date {
 
   var shortDateWithoutYear: String {
     let formatter = DateFormatter()
-    formatter.dateFormat = "dd MMMM"
+    formatter.dateFormat = "d MMMM"
+    return formatter.string(from: self)
   }
 
   var time: String {

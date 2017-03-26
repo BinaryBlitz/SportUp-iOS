@@ -117,9 +117,9 @@ extension CitySelectViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
     cell.textLabel?.text = filteredCities[indexPath.row].name
     if currentLocation != nil && indexPath.row == 0 {
-      cell.accessoryType = .checkmark
+      cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "iconLocationsmollGray"))
     } else {
-      cell.accessoryType = .none
+      cell.accessoryView = nil
     }
     return cell
   }

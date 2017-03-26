@@ -49,7 +49,12 @@ class CalendarDayView: UIView {
 
   var selectedBackgroundColor: UIColor? = UIColor.white
 
-  var date: Date? = nil
+  var date: Date? = nil {
+    didSet {
+      guard date != nil else { return }
+      formatButton()
+    }
+  }
 
   required init?(coder aDecoder: NSCoder) {
 
@@ -70,8 +75,8 @@ class CalendarDayView: UIView {
 extension CalendarDayView {
 
   func addTapGestureRecognizer() {
-    self.tapGestureRecognizer.addTarget(self, action: #selector(self.highlight))
-    self.addGestureRecognizer(self.tapGestureRecognizer)
+    tapGestureRecognizer.addTarget(self, action: #selector(self.highlight))
+    addGestureRecognizer(tapGestureRecognizer)
   }
 }
 
@@ -81,10 +86,10 @@ extension CalendarDayView {
 
   fileprivate func addButton() {
 
-    self.button.layer.cornerRadius = self.buttonDimension / 2
-    self.button.translatesAutoresizingMaskIntoConstraints = false
-    self.button.addTarget(self, action: #selector(self.highlight), for: .touchUpInside)
-    self.addSubview(self.button)
+    button.layer.cornerRadius = buttonDimension / 2
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.addTarget(self, action: #selector(highlight), for: .touchUpInside)
+    addSubview(self.button)
   }
 
   func formatButton() {
@@ -93,7 +98,9 @@ extension CalendarDayView {
     self.button.setTitleColor(UIColor.white, for: .normal)
     self.button.titleLabel!.font = self.font
 
-    if Calendar.current.isDate(self.date!, inSameDayAs: self.delegate!.selectedDate()) {
+    guard let delegate = delegate else { return }
+
+    if Calendar.current.isDate(self.date!, inSameDayAs: delegate.selectedDate()) {
       self.highlight()
     }
     else {

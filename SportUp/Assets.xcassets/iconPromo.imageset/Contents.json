@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "iconPromo.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "iconPromo@2x.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "iconPromo@3x.png"
+    }
+  ],
+  "info" : {
+    "author" : "zeplin",
+    "version" : "1"
+  }
+}

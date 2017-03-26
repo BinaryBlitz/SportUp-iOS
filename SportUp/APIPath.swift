@@ -12,6 +12,7 @@ import Alamofire
 enum APIPath {
   case getCities
   case getSportTypes
+  case getEvents(sportTypeId: Int)
 
   var rawPath: String {
     switch self {
@@ -19,14 +20,13 @@ enum APIPath {
       return "cities"
     case .getSportTypes:
       return "sport_types"
+    case .getEvents(let sportTypeId):
+      return "sport_types/\(sportTypeId)/events"
     }
   }
 
   var method: HTTPMethod {
-    switch self {
-    case .getCities, .getSportTypes:
-      return .get
-    }
+    return .get
   }
 
   var encoding: ParameterEncoding {
