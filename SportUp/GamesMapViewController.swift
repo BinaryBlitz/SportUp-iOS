@@ -30,15 +30,9 @@ class GamesMapViewController: UIViewController {
   @IBOutlet weak var bottomCardConstraint: NSLayoutConstraint!
   @IBOutlet weak var cardHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var eventCardView: UIView!
-  override func viewWillAppear(_ animated: Bool) {
-    bottomCardConstraint.constant = -cardHeightConstraint.constant
-    super.viewWillAppear(animated)
-    navigationController?.navigationBar.barTintColor = sportType.color
-    self.tabBarController?.tabBar.isHidden = true
-  }
 
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
+  override func viewDidLoad() {
+    configureMap()
   }
 
   func configureMap() {
@@ -68,6 +62,18 @@ class GamesMapViewController: UIViewController {
     if !event.isPublic {
       stackView.addArrangedSubview(lockIconView)
     }
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    bottomCardConstraint.constant = -cardHeightConstraint.constant
+    super.viewWillAppear(animated)
+    navigationController?.navigationBar.barTintColor = sportType.color
+    self.tabBarController?.tabBar.isHidden = true
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    self.tabBarController?.tabBar.isHidden = true
+    super.viewWillDisappear(animated)
   }
 
   @IBAction func hideCardButtonDidTap(_ sender: Any) {

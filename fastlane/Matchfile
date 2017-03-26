@@ -2,7 +2,7 @@ git_url 'https://github.com/BinaryBlitz/certificates'
 
 # type 'development' # The default type, can be: appstore, adhoc or development
 
-app_identifier ['ru.binaryblitz.GetFit']
+app_identifier ['ru.binaryblitz.SportUp']
 # Your Apple Developer Portal username
 username 'app@binaryblitz.ru'
 

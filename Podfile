@@ -10,7 +10,6 @@ target 'SportUp' do
   pod 'PromiseKit', '~> 4.0'
   pod 'ObjectMapper', '~> 2.2'
   pod 'SwiftyJSON', '~> 3.1'
-  pod 'MJCalendar'
   pod 'Kingfisher', '~> 3.0'
   pod 'PhoneNumberKit', '~> 1.2'
   pod 'GoogleMaps', '~> 2.2'

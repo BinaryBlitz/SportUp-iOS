@@ -11,7 +11,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version '2.14.2'
+fastlane_version '2.23.0'
 
 default_platform :ios
 
@@ -35,7 +35,7 @@ platform :ios do
     # Manage code signing
     match(type: 'development')
     # Build your app - more options available
-    gym(scheme: ‘SportUp’)
+    gym(scheme: 'SportUp')
     # Upload to Crashlytics
     crashlytics
   end
@@ -44,7 +44,7 @@ platform :ios do
   lane :release do
     # match(type: 'appstore')
     # snapshot
-    gym(scheme: ‘SportUp’) # Build your app - more options available
+    gym(scheme: 'SportUp') # Build your app - more options available
     deliver(force: true)
     # frameit
   end
