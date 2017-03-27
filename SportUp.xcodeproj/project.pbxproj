@@ -59,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		1BF8F60203E43D4234BFD890 /* Pods-SportUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportUp/Pods-SportUp.release.xcconfig"; sourceTree = "<group>"; };
+		375968041E89275300BA16DB /* SportUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SportUp.entitlements; sourceTree = "<group>"; };
 		71E8B0240E1394FC209E929C /* Pods_SportUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880FFBC21E890A4000E3173E /* CalendarWeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarWeekView.swift; sourceTree = "<group>"; };
 		880FFBC41E890F3C00E3173E /* CalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
@@ -317,6 +318,7 @@
 		88DE3EAC1E83FD58007FCD76 /* SportUp */ = {
 			isa = PBXGroup;
 			children = (
+				375968041E89275300BA16DB /* SportUp.entitlements */,
 				889F89C81E86B4F70027D852 /* Util */,
 				88DE3ECA1E841357007FCD76 /* Data */,
 				88DE3EC61E840CF1007FCD76 /* Extensions */,
@@ -421,12 +423,20 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = binaryblitz;
+				ORGANIZATIONNAME = BinaryBlitz;
 				TargetAttributes = {
 					88DE3EA91E83FD57007FCD76 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 4WGG8V34K4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -681,12 +691,16 @@
 			baseConfigurationReference = EE2CB25CCC34266F546FC7FE /* Pods-SportUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SportUp/SportUp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4WGG8V34K4;
 				INFOPLIST_FILE = SportUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.binaryblitz.SportUp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sportup.SportUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -697,11 +711,13 @@
 			baseConfigurationReference = 1BF8F60203E43D4234BFD890 /* Pods-SportUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SportUp/SportUp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4WGG8V34K4;
 				INFOPLIST_FILE = SportUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.binaryblitz.SportUp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sportup.SportUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
