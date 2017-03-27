@@ -40,11 +40,13 @@ class GamesMapViewController: UIViewController {
     let longitude = events.first?.longitude ?? ProfileManager.instance.currentCity?.longitude
     mapView.delegate = self
     mapView.camera = GMSCameraPosition.camera(withLatitude: latitude!, longitude: longitude!, zoom: markerZoom)
-    events.forEach { event in
+    events.enumerated().forEach { index, event in
       let marker = GMSMarker()
+      marker.position = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
       marker.icon = #imageLiteral(resourceName: "iconPinsFootballmid")
       marker.isDraggable = false
       marker.map = mapView
+      marker.userData = index
     }
     
   }
@@ -62,6 +64,12 @@ class GamesMapViewController: UIViewController {
     if !event.isPublic {
       stackView.addArrangedSubview(lockIconView)
     }
+    UIView.animate(withDuration: animationDuration) { [weak self] in
+      guard let `self` = self else { return }
+      self.bottomCardConstraint.constant = 0
+      self.view.setNeedsLayout()
+      self.view.layoutIfNeeded()
+    }
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -77,9 +85,12 @@ class GamesMapViewController: UIViewController {
   }
 
   @IBAction func hideCardButtonDidTap(_ sender: Any) {
+
     UIView.animate(withDuration: animationDuration) { [weak self] in
       guard let `self` = self else { return }
       self.bottomCardConstraint.constant = -self.cardHeightConstraint.constant
+      self.view.setNeedsLayout()
+      self.view.layoutIfNeeded()
     }
   }
 
@@ -90,6 +101,8 @@ class GamesMapViewController: UIViewController {
 
 extension GamesMapViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+    guard let index = marker.userData as? Int else { return false }
+    prepareCardView(event: events[index])
     return true
   }
 }

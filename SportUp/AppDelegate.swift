@@ -9,15 +9,19 @@
 import UIKit
 import GoogleMaps
 
+private let googleMapsAPIKey = "AIzaSyCGZvZbe-iVAz57b02asd55XeJ6sXMVas0"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Status bar style
     UIApplication.shared.statusBarStyle = .default
+
+    // Google maps
+    GMSServices.provideAPIKey(googleMapsAPIKey)
 
     return true
   }
