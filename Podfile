@@ -17,6 +17,4 @@ target 'SportUp' do
 
   pod 'Fabric'
   pod 'Crashlytics'
-
-
 end

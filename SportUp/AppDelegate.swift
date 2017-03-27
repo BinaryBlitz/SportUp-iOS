@@ -7,6 +7,10 @@
 //
 
 import UIKit
+
+import Fabric
+import Crashlytics
+
 import GoogleMaps
 
 private let googleMapsAPIKey = "AIzaSyCGZvZbe-iVAz57b02asd55XeJ6sXMVas0"
@@ -19,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Status bar style
     UIApplication.shared.statusBarStyle = .default
+
+    // Fabric
+    Fabric.with([Crashlytics.self])
 
     // Google maps
     GMSServices.provideAPIKey(googleMapsAPIKey)
