@@ -62,8 +62,8 @@ class CalendarHeaderView: UIView {
 
     let weekdaySymbols = Calendar.current.veryShortWeekdaySymbols.enumerated()
 
-    weekdaySymbols.filter { $0.offset >= firstWeekday }.forEach { self.addWeekdayLabel($0.element) }
-    weekdaySymbols.filter { $0.offset < firstWeekday }.forEach { self.addWeekdayLabel($0.element) }
+    weekdaySymbols.filter { $0.offset >= firstWeekday }.forEach { addWeekdayLabel($0.element) }
+    weekdaySymbols.filter { $0.offset < firstWeekday }.forEach { addWeekdayLabel($0.element) }
 
     headerView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -89,9 +89,9 @@ class CalendarHeaderView: UIView {
   }
 
   func addHeaderViewConstraints() {
-    headerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    headerView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-    headerView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+    headerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+    headerView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+    headerView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     headerView.heightAnchor.constraint(equalToConstant: 15).isActive = true
   }
 
@@ -109,15 +109,15 @@ class CalendarHeaderView: UIView {
 
       weekView.addPanGestureRecognizer(target: self, action: #selector(self.toggleCurrentView(_:)))
 
-      self.addSubview(weekView)
-      self.weekViews.append(weekView)
+      addSubview(weekView)
+      weekViews.append(weekView)
 
-      weekView.topAnchor.constraint(equalTo: self.headerView.bottomAnchor).isActive = true
-      weekView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+      weekView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+      weekView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
       weekView.heightAnchor.constraint(equalToConstant: 45).isActive = true
     }
 
-    self.resetLayout()
+    resetLayout()
   }
 
   func toggleCurrentView(_ pan: UIPanGestureRecognizer) {
@@ -125,20 +125,20 @@ class CalendarHeaderView: UIView {
     switch pan.state {
 
     case .began:
-      self.panGestureStartLocation = pan.location(in: self).x
+      panGestureStartLocation = pan.location(in: self).x
 
     case .changed:
-      let changeInX = pan.location(in: self).x - self.panGestureStartLocation
+      let changeInX = pan.location(in: self).x - panGestureStartLocation
 
-      self.previousView.center.x += changeInX
-      self.currentView.center.x += changeInX
-      self.nextView.center.x += changeInX
-      self.panGestureStartLocation = pan.location(in: self).x
+      previousView.center.x += changeInX
+      currentView.center.x += changeInX
+      nextView.center.x += changeInX
+      panGestureStartLocation = pan.location(in: self).x
     case .ended:
-      if self.currentView.center.x < (self.bounds.size.width * 0.5) - 25 {
+      if currentView.center.x < (bounds.size.width * 0.5) - 25 {
         UIView.animate(withDuration: 0.25, animations: showNextView, completion: nextViewDidShow)
       }
-      else if self.currentView.center.x > (self.bounds.size.width * 0.5) + 25 {
+      else if self.currentView.center.x > (bounds.size.width * 0.5) + 25 {
         UIView.animate(withDuration: 0.25, animations: showPreviousView, completion: previousViewDidShow)
       }
       else {
@@ -151,34 +151,34 @@ class CalendarHeaderView: UIView {
   }
 
   func showPreviousView() {
-    self.previousView.center.x = self.bounds.size.width * 0.5
-    self.currentView.center.x = self.bounds.size.width * 1.5
+    previousView.center.x = bounds.size.width * 0.5
+    currentView.center.x = bounds.size.width * 1.5
   }
 
   func previousViewDidShow(_ finished: Bool) {
     if finished {
       let newDates = Date.previousWeekDates(currentWeekDates: previousView.dates)
-      self.reuseNextWeekView(newDates: newDates)
-      self.weekViewDidShow()
+      reuseNextWeekView(newDates: newDates)
+      weekViewDidShow()
     }
   }
 
   func weekViewDidShow() {
-    self.resetLayout()
-    self.currentView.setSelectedDate(currentSelectedDate: currentSelectedDate)
+    resetLayout()
+    currentView.setSelectedDate(currentSelectedDate: currentSelectedDate)
   }
 
   func showNextView() {
-    self.currentView.center.x = -self.bounds.size.width * 0.5
-    self.nextView.center.x = self.bounds.size.width * 0.5
+    currentView.center.x = -bounds.size.width * 0.5
+    nextView.center.x = bounds.size.width * 0.5
   }
 
   func nextViewDidShow(_ finished: Bool) {
 
     if finished {
       let newDates = Date.nextWeekDates(currentWeekDates: nextView.dates)
-      self.reusePreviousWeekView(newDates: newDates)
-      self.weekViewDidShow()
+      reusePreviousWeekView(newDates: newDates)
+      weekViewDidShow()
     }
   }
 

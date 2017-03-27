@@ -19,7 +19,7 @@ class CalendarWeekView: UIStackView {
 
   internal var dates: [Date?] = [] {
     didSet {
-      self.dayViews.isEmpty ? self.addDayViews() : self.updateDayViews()
+      dayViews.isEmpty ? addDayViews() : updateDayViews()
     }
   }
 
@@ -57,13 +57,13 @@ extension CalendarWeekView {
       let dayView = CalendarDayView()
       dayView.date = date
       dayView.delegate = delegate
-      self.addArrangedSubview(dayView)
+      addArrangedSubview(dayView)
     }
   }
 
   fileprivate func updateDayViews() {
-    for (index, date) in self.dates.enumerated() {
-      self.dayViews[index].date = date
+    for (index, date) in dates.enumerated() {
+      dayViews[index].date = date
     }
   }
 }
@@ -73,8 +73,8 @@ extension CalendarWeekView {
 extension CalendarWeekView {
 
   internal func addPanGestureRecognizer(target: Any?, action: Selector?) {
-    self.panGestureRecognizer = UIPanGestureRecognizer(target: target, action: action)
-    self.addGestureRecognizer(self.panGestureRecognizer)
+    panGestureRecognizer = UIPanGestureRecognizer(target: target, action: action)
+    addGestureRecognizer(panGestureRecognizer)
   }
 }
 
@@ -85,14 +85,14 @@ extension CalendarWeekView {
   func setSelectedDate(currentSelectedDate: Date) {
     let calendar = Calendar.current
     let dateComponents: DateComponents
-    if self.containsToday {
+    if containsToday {
       dateComponents = calendar.dateComponents([.weekday], from: Date())
     }
     else {
       dateComponents = calendar.dateComponents([.weekday], from: currentSelectedDate)
     }
 
-    self.highlight(index: getDayIndex(dateComponents.weekday!))
+    highlight(index: getDayIndex(dateComponents.weekday!))
   }
 
   func getDayIndex(_ weekday: Int!) -> Int {

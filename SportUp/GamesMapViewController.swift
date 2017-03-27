@@ -40,10 +40,14 @@ class GamesMapViewController: UIViewController {
     let longitude = events.first?.longitude ?? ProfileManager.instance.currentCity?.longitude
     mapView.delegate = self
     mapView.camera = GMSCameraPosition.camera(withLatitude: latitude!, longitude: longitude!, zoom: markerZoom)
+
+    let markerView = EventMarkerView.nibInstance()
+    markerView?.configure(iconURL: sportType.iconUrl, backgroundColor: sportType.color)
     events.enumerated().forEach { index, event in
       let marker = GMSMarker()
       marker.position = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
-      marker.icon = #imageLiteral(resourceName: "iconPinsFootballmid")
+      marker.iconView = markerView
+
       marker.isDraggable = false
       marker.map = mapView
       marker.userData = index
@@ -94,9 +98,42 @@ class GamesMapViewController: UIViewController {
     }
   }
 
-  @IBAction func cardViewDidDrag(_ sender: UIPanGestureRecognizer) {
+  @IBAction func cardViewDidDrag(_ pan: UIPanGestureRecognizer) {
+    let panLocation = pan.translation(in: view).y
 
+    switch pan.state {
+    case .changed:
+      bottomCardConstraint.constant = min(-panLocation, 0)
+      view.setNeedsLayout()
+      view.layoutIfNeeded()
+    case .ended:
+      if panLocation > cardHeightConstraint.constant || pan.velocity(in: view).y > 200 {
+        UIView.animate(withDuration: 0.25) { [weak self] in
+          guard let `self` = self else { return }
+          self.bottomCardConstraint.constant = 0
+          self.view.setNeedsLayout()
+          self.view.layoutIfNeeded()
+        }
+      } else {
+        UIView.animate(withDuration: 0.25) {
+          UIView.animate(withDuration: 0.25) { [weak self] in
+            guard let `self` = self else { return }
+            self.bottomCardConstraint.constant = -self.cardHeightConstraint.constant
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+          }
+        }
+      }
+
+    default:
+      break
+    }
   }
+
+  @IBAction func navigationButtonDidTap(_ sender: Any) {
+    mapView.isMyLocationEnabled = true
+  }
+
 }
 
 extension GamesMapViewController: GMSMapViewDelegate {

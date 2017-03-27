@@ -12,6 +12,7 @@ import UIKit
 private let reuseIdentifier = "EventTableViewCell"
 
 class GamesFeedViewController: UIViewController {
+  var dateRequestNumber = 0
   var currentDate: Date = Date() {
     didSet {
       updateNavigationTitle()
@@ -35,9 +36,12 @@ class GamesFeedViewController: UIViewController {
   }
 
   func updateData() {
+    self.dateRequestNumber += 1
+    let dateRequestNumber = self.dateRequestNumber
     _ = DataManager.instance.fetchEvents(sportType: sportType, date: currentDate).then { [weak self] events -> Void in
-      self?.events = events
-      self?.tableView.reloadData()
+      guard let `self` = self, dateRequestNumber == self.dateRequestNumber else { return }
+      self.events = events
+      self.tableView.reloadData()
     }
   }
 

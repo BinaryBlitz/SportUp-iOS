@@ -36,7 +36,7 @@ class CalendarDayView: UIView {
     dateFormatter.calendar = calendar
     dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "d", options: 0, locale: calendar.locale)
 
-    return dateFormatter.string(from: self.date!)
+    return dateFormatter.string(from: date!)
   }
 
   var font = UIFont.systemFont(ofSize: 20)
@@ -64,9 +64,9 @@ class CalendarDayView: UIView {
   init() {
     super.init(frame: CGRect.zero)
 
-    self.addTapGestureRecognizer()
-    self.addButton()
-    self.addConstraints()
+    addTapGestureRecognizer()
+    addButton()
+    addConstraints()
   }
 }
 
@@ -89,22 +89,22 @@ extension CalendarDayView {
     button.layer.cornerRadius = buttonDimension / 2
     button.translatesAutoresizingMaskIntoConstraints = false
     button.addTarget(self, action: #selector(highlight), for: .touchUpInside)
-    addSubview(self.button)
+    addSubview(button)
   }
 
   func formatButton() {
 
-    self.button.setTitle(self.title, for: .normal)
-    self.button.setTitleColor(UIColor.white, for: .normal)
-    self.button.titleLabel!.font = self.font
+    button.setTitle(title, for: .normal)
+    button.setTitleColor(UIColor.white, for: .normal)
+    button.titleLabel!.font = font
 
     guard let delegate = delegate else { return }
 
-    if Calendar.current.isDate(self.date!, inSameDayAs: delegate.selectedDate()) {
-      self.highlight()
+    if Calendar.current.isDate(date!, inSameDayAs: delegate.selectedDate()) {
+      highlight()
     }
     else {
-      self.unhighlight()
+      unhighlight()
     }
   }
 }
@@ -115,10 +115,10 @@ fileprivate extension CalendarDayView {
 
   fileprivate func addConstraints() {
 
-    self.button.widthAnchor.constraint(equalToConstant: self.buttonDimension).isActive = true
-    self.button.heightAnchor.constraint(equalToConstant: self.buttonDimension).isActive = true
-    self.button.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-    self.button.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    button.widthAnchor.constraint(equalToConstant: buttonDimension).isActive = true
+    button.heightAnchor.constraint(equalToConstant: buttonDimension).isActive = true
+    button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    button.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
   }
 }
 
@@ -127,19 +127,19 @@ fileprivate extension CalendarDayView {
 extension CalendarDayView {
 
   func highlight() {
-    self.isUserInteractionEnabled = false
-    self.button.backgroundColor = self.selectedBackgroundColor
-    self.button.setTitleColor(self.selectedTextColor, for: .normal)
-    self.delegate?.dayViewSelected(self)
-    self.animateSelection()
+    isUserInteractionEnabled = false
+    button.backgroundColor = selectedBackgroundColor
+    button.setTitleColor(selectedTextColor, for: .normal)
+    delegate?.dayViewSelected(self)
+    animateSelection()
   }
 
   internal func unhighlight() {
-    self.button.backgroundColor = nil
-    self.button.titleLabel!.font = self.font
-    self.button.setTitleColor(self.textColor, for: .normal)
+    button.backgroundColor = nil
+    button.titleLabel!.font = font
+    button.setTitleColor(textColor, for: .normal)
 
-    self.isUserInteractionEnabled = true
+    isUserInteractionEnabled = true
   }
 }
 
@@ -147,11 +147,11 @@ extension CalendarDayView {
 
 fileprivate extension CalendarDayView {
   fileprivate func animateSelection() {
-    self.animate(toScale: 0.9) { finished in
+    self.animate(toScale: 0.9) { [weak self] finished in
       if finished {
-        self.animate(toScale: 1.1) { finished in
+        self?.animate(toScale: 1.1) { finished in
           if finished {
-            self.animate(toScale: 1.0)
+            self?.animate(toScale: 1.0)
           }
         }
       }
@@ -160,10 +160,8 @@ fileprivate extension CalendarDayView {
 
   fileprivate func animate(toScale scale: CGFloat, completion: ((Bool) -> Void)? = nil) {
 
-    UIView.animate(withDuration: 0.1, animations: {
-
-      self.button.transform = CGAffineTransform(scaleX: scale, y: scale)
-
+    UIView.animate(withDuration: 0.1, animations: { [weak self] in
+      self?.button.transform = CGAffineTransform(scaleX: scale, y: scale)
     }, completion: completion)
   }
 }

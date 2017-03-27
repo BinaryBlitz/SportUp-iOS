@@ -18,6 +18,9 @@
 		8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D6A01E881EED00C4759C /* Double+currencyString.swift */; };
 		8853D6A41E88318F00C4759C /* GamesMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8853D6A31E88318F00C4759C /* GamesMapViewController.storyboard */; };
 		8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D6A51E88339500C4759C /* GamesMapViewController.swift */; };
+		8859F1661E8992730009F85C /* EventMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8859F1651E8992730009F85C /* EventMarkerView.swift */; };
+		8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8859F1691E89AD120009F85C /* EventMarkerView.xib */; };
+		8859F16C1E89AEC60009F85C /* UIView+nibInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8859F16B1E89AEC60009F85C /* UIView+nibInstance.swift */; };
 		889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89B31E86AB060027D852 /* MainTabBarController.swift */; };
 		889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */; };
 		889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */; };
@@ -71,6 +74,9 @@
 		8853D6A01E881EED00C4759C /* Double+currencyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+currencyString.swift"; sourceTree = "<group>"; };
 		8853D6A31E88318F00C4759C /* GamesMapViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamesMapViewController.storyboard; sourceTree = "<group>"; };
 		8853D6A51E88339500C4759C /* GamesMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesMapViewController.swift; sourceTree = "<group>"; };
+		8859F1651E8992730009F85C /* EventMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMarkerView.swift; sourceTree = "<group>"; };
+		8859F1691E89AD120009F85C /* EventMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMarkerView.xib; sourceTree = "<group>"; };
+		8859F16B1E89AEC60009F85C /* UIView+nibInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+nibInstance.swift"; sourceTree = "<group>"; };
 		889F89B31E86AB060027D852 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		889F89BA1E86ABFA0027D852 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportTypesViewController.storyboard; sourceTree = "<group>"; };
@@ -153,10 +159,20 @@
 		8853D6A21E88317800C4759C /* GamesMap */ = {
 			isa = PBXGroup;
 			children = (
+				8859F1641E89924F0009F85C /* Views */,
 				8853D6A31E88318F00C4759C /* GamesMapViewController.storyboard */,
 				8853D6A51E88339500C4759C /* GamesMapViewController.swift */,
 			);
 			name = GamesMap;
+			sourceTree = "<group>";
+		};
+		8859F1641E89924F0009F85C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8859F1651E8992730009F85C /* EventMarkerView.swift */,
+				8859F1691E89AD120009F85C /* EventMarkerView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		889F89B21E86AAEE0027D852 /* MainTabBar */ = {
@@ -360,6 +376,7 @@
 				880FFBC61E8917C400E3173E /* Date+WeekDates.swift */,
 				880FFBC81E8917C400E3173E /* Date+toString.swift */,
 				8853D6A01E881EED00C4759C /* Double+currencyString.swift */,
+				8859F16B1E89AEC60009F85C /* UIView+nibInstance.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +484,7 @@
 				889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */,
 				88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */,
 				8853D6A41E88318F00C4759C /* GamesMapViewController.storyboard in Resources */,
+				8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */,
 				889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
@@ -546,6 +564,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8859F1661E8992730009F85C /* EventMarkerView.swift in Sources */,
+				8859F16C1E89AEC60009F85C /* UIView+nibInstance.swift in Sources */,
 				889F89C11E86B1FE0027D852 /* Profile.swift in Sources */,
 				8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */,
 				880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */,
