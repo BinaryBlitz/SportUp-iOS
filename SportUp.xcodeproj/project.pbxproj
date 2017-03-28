@@ -12,6 +12,13 @@
 		880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC41E890F3C00E3173E /* CalendarDayView.swift */; };
 		880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC61E8917C400E3173E /* Date+WeekDates.swift */; };
 		880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC81E8917C400E3173E /* Date+toString.swift */; };
+		88294EB51E89DE4100133A3E /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EB41E89DE4100133A3E /* EventInfoViewController.swift */; };
+		88294EB91E89DECA00133A3E /* EventInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88294EB81E89DECA00133A3E /* EventInfoViewController.storyboard */; };
+		88294EBB1E89DF5C00133A3E /* EventInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EBA1E89DF5C00133A3E /* EventInfoTableViewController.swift */; };
+		88294EBD1E8A7D8B00133A3E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EBC1E8A7D8B00133A3E /* GradientView.swift */; };
+		88294EBF1E8AAFCC00133A3E /* TimeInterval+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EBE1E8AAFCC00133A3E /* TimeInterval+toString.swift */; };
+		88294EC11E8AC8F800133A3E /* Int+russianEnumEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EC01E8AC8F800133A3E /* Int+russianEnumEnding.swift */; };
+		88294EC31E8ACCC500133A3E /* NavigationSubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EC21E8ACCC500133A3E /* NavigationSubtitleLabel.swift */; };
 		8853D6991E880D8E00C4759C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D6981E880D8E00C4759C /* Event.swift */; };
 		8853D69B1E88119600C4759C /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69A1E88119600C4759C /* DateTransform.swift */; };
 		8853D69F1E881B5100C4759C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69E1E881B5100C4759C /* EventTableViewCell.swift */; };
@@ -68,6 +75,13 @@
 		880FFBC41E890F3C00E3173E /* CalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
 		880FFBC61E8917C400E3173E /* Date+WeekDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+WeekDates.swift"; sourceTree = "<group>"; };
 		880FFBC81E8917C400E3173E /* Date+toString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
+		88294EB41E89DE4100133A3E /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
+		88294EB81E89DECA00133A3E /* EventInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventInfoViewController.storyboard; sourceTree = "<group>"; };
+		88294EBA1E89DF5C00133A3E /* EventInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoTableViewController.swift; sourceTree = "<group>"; };
+		88294EBC1E8A7D8B00133A3E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		88294EBE1E8AAFCC00133A3E /* TimeInterval+toString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+toString.swift"; sourceTree = "<group>"; };
+		88294EC01E8AC8F800133A3E /* Int+russianEnumEnding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+russianEnumEnding.swift"; sourceTree = "<group>"; };
+		88294EC21E8ACCC500133A3E /* NavigationSubtitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationSubtitleLabel.swift; sourceTree = "<group>"; };
 		8853D6981E880D8E00C4759C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8853D69A1E88119600C4759C /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
 		8853D69E1E881B5100C4759C /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,10 +154,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		88294EB31E89DE2900133A3E /* EventInfo */ = {
+			isa = PBXGroup;
+			children = (
+				88294EB41E89DE4100133A3E /* EventInfoViewController.swift */,
+				88294EB81E89DECA00133A3E /* EventInfoViewController.storyboard */,
+				88294EBA1E89DF5C00133A3E /* EventInfoTableViewController.swift */,
+			);
+			name = EventInfo;
+			sourceTree = "<group>";
+		};
 		8853D69C1E881B3600C4759C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				88DA46501E84258B0061E816 /* Views */,
 				88D32FCD1E86FEB4006EEE43 /* Calendar */,
+				88294EC21E8ACCC500133A3E /* NavigationSubtitleLabel.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -288,17 +314,10 @@
 			name = Onboarding;
 			sourceTree = "<group>";
 		};
-		88DA464F1E8425860061E816 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				88DA46501E84258B0061E816 /* Views */,
-			);
-			name = Common;
-			sourceTree = "<group>";
-		};
 		88DA46501E84258B0061E816 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88294EBC1E8A7D8B00133A3E /* GradientView.swift */,
 				88DA46511E8425960061E816 /* GoButton.swift */,
 			);
 			name = Views;
@@ -350,6 +369,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				88294EB31E89DE2900133A3E /* EventInfo */,
 				8853D6A21E88317800C4759C /* GamesMap */,
 				8853D69C1E881B3600C4759C /* Common */,
 				88D32FC81E86DE0F006EEE43 /* GamesFeed */,
@@ -358,7 +378,6 @@
 				889F89B71E86ABA40027D852 /* Profile */,
 				889F89B21E86AAEE0027D852 /* MainTabBar */,
 				88DA465D1E843F480061E816 /* CitySelect */,
-				88DA464F1E8425860061E816 /* Common */,
 				88DA464C1E84236B0061E816 /* Onboarding */,
 				88DE3EC91E840DAA007FCD76 /* Root */,
 				88DE3EC41E83FF65007FCD76 /* SportUpNavigationController.swift */,
@@ -377,6 +396,8 @@
 				880FFBC81E8917C400E3173E /* Date+toString.swift */,
 				8853D6A01E881EED00C4759C /* Double+currencyString.swift */,
 				8859F16B1E89AEC60009F85C /* UIView+nibInstance.swift */,
+				88294EBE1E8AAFCC00133A3E /* TimeInterval+toString.swift */,
+				88294EC01E8AC8F800133A3E /* Int+russianEnumEnding.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -485,6 +506,7 @@
 				88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */,
 				8853D6A41E88318F00C4759C /* GamesMapViewController.storyboard in Resources */,
 				8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */,
+				88294EB91E89DECA00133A3E /* EventInfoViewController.storyboard in Resources */,
 				889F89BB1E86ABFA0027D852 /* ProfileViewController.storyboard in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
@@ -565,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8859F1661E8992730009F85C /* EventMarkerView.swift in Sources */,
+				88294EBF1E8AAFCC00133A3E /* TimeInterval+toString.swift in Sources */,
 				8859F16C1E89AEC60009F85C /* UIView+nibInstance.swift in Sources */,
 				889F89C11E86B1FE0027D852 /* Profile.swift in Sources */,
 				8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */,
@@ -573,19 +596,24 @@
 				880FFBC31E890A4000E3173E /* CalendarWeekView.swift in Sources */,
 				889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */,
 				88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */,
+				88294EB51E89DE4100133A3E /* EventInfoViewController.swift in Sources */,
 				889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */,
 				88DA46471E841F450061E816 /* DataManager.swift in Sources */,
 				8853D6991E880D8E00C4759C /* Event.swift in Sources */,
 				88DA46581E842F0E0061E816 /* OnboardingViewController.swift in Sources */,
 				88DE3EC31E83FE95007FCD76 /* RootViewController.swift in Sources */,
 				88D32FCC1E86E6EB006EEE43 /* GamesFeedViewController.swift in Sources */,
+				88294EBD1E8A7D8B00133A3E /* GradientView.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
+				88294EBB1E89DF5C00133A3E /* EventInfoTableViewController.swift in Sources */,
 				880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */,
 				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
 				8853D69B1E88119600C4759C /* DateTransform.swift in Sources */,
 				88D32FC41E86D228006EEE43 /* SportType.swift in Sources */,
+				88294EC31E8ACCC500133A3E /* NavigationSubtitleLabel.swift in Sources */,
+				88294EC11E8AC8F800133A3E /* Int+russianEnumEnding.swift in Sources */,
 				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
 				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,

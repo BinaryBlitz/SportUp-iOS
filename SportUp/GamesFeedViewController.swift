@@ -30,6 +30,7 @@ class GamesFeedViewController: UIViewController {
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavMapWhite"), style: .plain, target: self, action: #selector(self.mapButtonDidTap))
     headerView.isHidden = true
     tableView.dataSource = self
+    tableView.delegate = self
     updateData()
     configureCalendar()
     updateNavigationTitle()
@@ -40,7 +41,7 @@ class GamesFeedViewController: UIViewController {
     let dateRequestNumber = self.dateRequestNumber
     _ = DataManager.instance.fetchEvents(sportType: sportType, date: currentDate).then { [weak self] events -> Void in
       guard let `self` = self, dateRequestNumber == self.dateRequestNumber else { return }
-      self.events = events
+      self.events = events.sorted { $0.startsAt < $1.startsAt }
       self.tableView.reloadData()
     }
   }
@@ -62,23 +63,13 @@ class GamesFeedViewController: UIViewController {
   }
 
   func updateNavigationTitle() {
-    let attributedString = NSMutableAttributedString()
-    attributedString.append(NSAttributedString(string: sportType.name + "\n", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15), NSForegroundColorAttributeName: UIColor.white]))
+    var subtitle = ""
     if Calendar.current.isDate(currentDate, equalTo: Date(), toGranularity: .day) {
-      attributedString.append(NSAttributedString(string: "Сегодня, ", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 11)]))
+      subtitle += "Сегодня, "
     }
-    attributedString.append(NSAttributedString(string: currentDate.shortDateWithoutYear, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 11)]))
-
-    let size = attributedString.size()
-
-    let width = size.width
-    guard let height = navigationController?.navigationBar.frame.size.height else { return }
-    let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: height))
-    titleLabel.numberOfLines = 0
-    titleLabel.textColor = UIColor.sportupLightWhite
-    titleLabel.textAlignment = .center
-    titleLabel.attributedText = attributedString
-    navigationItem.titleView = titleLabel
+    subtitle += currentDate.shortDateWithoutYear
+    let label = NavigationSubtitleLabel(height: navigationController?.navigationBar.frame.size.height, title: sportType.name, subtitle: subtitle)
+    navigationItem.titleView = label
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -109,5 +100,15 @@ extension GamesFeedViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return events.count
+  }
+}
+
+extension GamesFeedViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let event = events[indexPath.row]
+    let viewController = EventInfoViewController.storyboardInstance()!
+    viewController.event = event
+    viewController.sportType = sportType
+    navigationController?.pushViewController(viewController, animated: true)
   }
 }

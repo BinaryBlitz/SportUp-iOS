@@ -13,7 +13,8 @@ class Event: Mappable {
   var id: Int = 0
   var name: String = ""
   var startsAt: Date = Date()
-  var endsAt: String = ""
+  var description: String = ""
+  var endsAt: Date = Date()
   var address: String = ""
   var userLimit: Int = 0
   var teamLimit: Int = 0
@@ -27,7 +28,8 @@ class Event: Mappable {
   func mapping(map: Map) {
     id <- map["id"]
     startsAt <- (map["starts_at"], DateTransform())
-    endsAt <- map["ends_at"]
+    description <- map["description"]
+    endsAt <- (map["ends_at"], DateTransform())
     address <- map["adress"]
     userLimit <- map["user_limit"]
     teamLimit <- map["team_limit"]

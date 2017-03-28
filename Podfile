@@ -13,6 +13,7 @@ target 'SportUp' do
   pod 'Kingfisher', '~> 3.0'
   pod 'PhoneNumberKit', '~> 1.2'
   pod 'GoogleMaps', '~> 2.2'
+  pod 'SwiftDate', '~> 4.0'
   pod 'KeychainAccess', '~> 3.0'
 
   pod 'Fabric'
