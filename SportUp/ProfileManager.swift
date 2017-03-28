@@ -12,7 +12,7 @@ import ObjectMapper
 class ProfileManager {
   static let instance = ProfileManager()
 
-  var currentProfile: Profile? = nil
+  var currentProfile: User? = nil
   var currentCity: City? = nil {
     didSet {
       let cityJSON = currentCity?.toJSONString()
@@ -22,7 +22,7 @@ class ProfileManager {
 
   private init() {
     if let profileJSON: String = StorageHelper.loadObjectForKey(.currentProfile) {
-      currentProfile =  Mapper<Profile>().map(JSONString: profileJSON)
+      currentProfile =  Mapper<User>().map(JSONString: profileJSON)
     }
     if let cityJSON: String = StorageHelper.loadObjectForKey(.currentCity) {
       currentCity = Mapper<City>().map(JSONString: cityJSON)

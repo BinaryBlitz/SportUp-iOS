@@ -12,6 +12,11 @@ import GoogleMaps
 
 private let markerZoom: Float = 18
 
+protocol EventInfoViewControllerDelegate: class  {
+  func membershipButtonDidTap()
+  func pushPlayersListController()
+}
+
 class EventInfoTableViewController: UITableViewController {
   // MARK: - Data
   var event: Event!
@@ -29,24 +34,40 @@ class EventInfoTableViewController: UITableViewController {
     case playersCount
   }
 
+  var delegate: EventInfoViewControllerDelegate? = nil
+
   // MARK: - UI
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var adressLabel: UILabel!
   @IBOutlet weak var playersCountLabel: UILabel!
   @IBOutlet weak var teamsCountLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var membershipButton: GoButton!
 
   override func viewDidLoad() {
-    configureLabels()
+    refresh()
     configureMap()
   }
 
-  func configureLabels() {
+  func refresh(_ event: Event? = nil) {
+    let event = event ?? self.event!
+    self.event = event
     adressLabel.text = event.address
     playersCountLabel.text = "\(event.userCount) / \(event.teamLimit)"
     let teamLimitText = event.teamLimit.getRussianNumEnding(endings: ["команда", "команды", "команд"])
     teamsCountLabel.text = "(\(teamLimitText))"
     descriptionLabel.text = event.description
+    membershipButton.isEnabled = true
+    if event.membership == nil {
+      membershipButton.setTitle("Принять участие", for: .normal)
+      membershipButton.backgroundColor = sportType.color
+      membershipButton.defaultBackgroundColor = sportType.color
+    } else {
+      membershipButton.setTitle("Отказаться от участия", for: .normal)
+      membershipButton.backgroundColor = UIColor.sportupSalmon
+    }
+
+
   }
 
   func configureMap() {
@@ -90,7 +111,7 @@ class EventInfoTableViewController: UITableViewController {
     switch indexPath.section {
     case Sections.mainInfo.rawValue:
       guard indexPath.row == MainInfoRow.playersCount.rawValue else { return }
-      return
+      delegate?.pushPlayersListController()
     case Sections.share.rawValue:
       return
     default:
@@ -98,7 +119,9 @@ class EventInfoTableViewController: UITableViewController {
     }
   }
 
-  @IBAction func requestInviteButtonDidTap(_ sender: GoButton) {
+  @IBAction func membershipButtonDidTap(_ sender: GoButton) {
+    sender.isEnabled = false
+    delegate?.membershipButtonDidTap()
   }
 
 }

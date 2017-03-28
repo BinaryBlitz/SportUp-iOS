@@ -1,5 +1,5 @@
 //
-//  Profile.swift
+//  User.swift
 //  SportUp
 //
 //  Created by Алексей on 25.03.17.
@@ -10,11 +10,13 @@ import Foundation
 import ObjectMapper
 import CoreLocation
 
-class Profile: Mappable {
+class User: Mappable {
   var id: Int = 0
   var firstName: String = ""
   var lastName: String = ""
   var phoneNumber: String = ""
+
+  var eventMemberships: [Membership] = []
 
   func mapping(map: Map) {
     id <- map["id"]

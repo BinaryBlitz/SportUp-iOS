@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 import PromiseKit
 import ObjectMapper
 
@@ -45,6 +46,15 @@ class DataManager {
     }
   }
 
+  func fetchEvent(eventId: Int) -> Promise<Event> {
+    return NetworkManager.doRequest(.getEvent(eventId: eventId)).then { result in
+      guard let event = Mapper<Event>().map(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      return Promise(value: event)
+    }
+  }
+
   func fetchSportTypes() -> Promise<[SportType]> {
     return NetworkManager.doRequest(.getSportTypes).then { result in
       guard let sportTypes = Mapper<SportType>().mapArray(JSONObject: result) else {
@@ -52,6 +62,24 @@ class DataManager {
       }
       self.sportTypes = sportTypes
       return Promise(value: sportTypes)
+    }
+  }
+
+  func createMembership(eventId: Int) -> Promise<EventMember> {
+    return NetworkManager.doRequest(.getEventMemberships(eventId: eventId)).then { result in
+      guard let eventMember = Mapper<EventMember>().map(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      return Promise(value: eventMember)
+    }
+  }
+
+  func fetchMemberships(eventId: Int) -> Promise<[EventMember]> {
+    return NetworkManager.doRequest(.getEventMemberships(eventId: eventId)).then { result in
+      guard let invitedUsers = Mapper<EventMember>().mapArray(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      return Promise(value: invitedUsers)
     }
   }
 }

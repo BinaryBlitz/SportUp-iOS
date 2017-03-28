@@ -13,6 +13,12 @@ enum APIPath {
   case getCities
   case getSportTypes
   case getEvents(sportTypeId: Int)
+  case getEvent(eventId: Int)
+  case getEventMemberships(eventId: Int)
+  case sendMembership(eventId: Int)
+  case deleteMembership(membershipId: Int)
+  case joinTeam(eventId: Int)
+  case fetchTeams(eventId: Int)
 
   var rawPath: String {
     switch self {
@@ -22,11 +28,28 @@ enum APIPath {
       return "sport_types"
     case .getEvents(let sportTypeId):
       return "sport_types/\(sportTypeId)/events"
+    case .getEvent(let eventId):
+      return "events\(eventId)"
+    case .getEventMemberships(let eventId):
+      return "events/\(eventId)/memberships"
+    case .sendMembership(let eventId):
+      return "events/\(eventId)/membershibs"
+    case .deleteMembership(let membershipId):
+      return "memberships/\(membershipId)"
+    case .joinTeam(let eventId), .fetchTeams(let eventId):
+      return "events/\(eventId)/teams"
     }
   }
 
   var method: HTTPMethod {
-    return .get
+    switch self {
+    case .deleteMembership(_):
+      return .delete
+    case .sendMembership(_):
+      return .post
+    default:
+      return .get
+    }
   }
 
   var encoding: ParameterEncoding {

@@ -23,6 +23,7 @@ class Event: Mappable {
   var userCount: Int = 0
   var latitude: Double = 0
   var longitude: Double = 0
+  var membership: Membership? = nil
 
 
   func mapping(map: Map) {
@@ -39,6 +40,7 @@ class Event: Mappable {
     userCount <- map["user_count"]
     latitude <- map["latitude"]
     longitude <- map["longitude"]
+    membership <- map["membership"]
   }
 
   required init(map: Map) { }

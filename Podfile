@@ -15,6 +15,7 @@ target 'SportUp' do
   pod 'GoogleMaps', '~> 2.2'
   pod 'SwiftDate', '~> 4.0'
   pod 'KeychainAccess', '~> 3.0'
+  pod 'AvatarImageView', '~> 2.0'
 
   pod 'Fabric'
   pod 'Crashlytics'

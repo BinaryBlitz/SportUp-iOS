@@ -38,13 +38,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIQ-34-GiJ">
-                                                        <rect key="frame" x="34.5" y="0.0" width="82.5" height="24"/>
+                                                        <rect key="frame" x="34" y="0.0" width="83" height="24"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconTimeWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Ptt-33-038">
                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-Ss-m52">
-                                                                <rect key="frame" x="34" y="-0.5" width="48.5" height="26.5"/>
+                                                                <rect key="frame" x="34" y="-1" width="49" height="27"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="До начала 2 ч 48 мин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2E-7c-ad0">
-                                                        <rect key="frame" x="5" y="34" width="140" height="14.5"/>
+                                                        <rect key="frame" x="5" y="34" width="140" height="15"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -78,13 +78,13 @@
                                                 <rect key="frame" x="150" y="0.0" width="150" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-y9-Lx1">
-                                                        <rect key="frame" x="0.5" y="0.0" width="149.5" height="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="24"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPriceWhite" translatesAutoresizingMaskIntoConstraints="NO" id="B67-eH-98m">
                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бесплатно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3TG-34-23Q">
-                                                                <rect key="frame" x="34" y="-0.5" width="110.5" height="26.5"/>
+                                                                <rect key="frame" x="34" y="-1" width="111" height="27"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стоимость участия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rv-bO-kEN">
-                                                        <rect key="frame" x="5" y="34" width="140" height="14.5"/>
+                                                        <rect key="frame" x="5" y="34" width="140" height="15"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -153,7 +153,7 @@
         <scene sceneID="1q4-bB-U9S">
             <objects>
                 <tableViewController id="Tun-Lc-YWv" customClass="EventInfoTableViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8DD-1J-Pv1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8DD-1J-Pv1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96830016370000005" green="0.97648984189999999" blue="0.98052781820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -175,15 +175,12 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
-                                            <color key="value" red="0.41999819869999999" green="0.81105917689999996" blue="0.68038994070000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="24"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="requestInviteButtonDidTap:" destination="Tun-Lc-YWv" eventType="touchUpInside" id="RtC-07-MqK"/>
+                                        <action selector="membershipButtonDidTap:" destination="Tun-Lc-YWv" eventType="touchUpInside" id="YqX-SY-BGd"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -209,16 +206,16 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAP-c7-CfV" customClass="GradientView" customModule="SportUp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="142.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neD-0l-JsS">
-                                                    <rect key="frame" x="0.0" y="72.5" width="320" height="70"/>
+                                                    <rect key="frame" x="0.0" y="72" width="320" height="70"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconLocationGray" translatesAutoresizingMaskIntoConstraints="NO" id="aOE-hr-Nh8">
                                                             <rect key="frame" x="16" y="23" width="24" height="24"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqi-W9-sLC">
-                                                            <rect key="frame" x="56" y="26.5" width="42.5" height="17"/>
+                                                            <rect key="frame" x="56" y="26" width="43" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -396,6 +393,7 @@
                         <outlet property="adressLabel" destination="sqi-W9-sLC" id="2YN-V2-wIc"/>
                         <outlet property="descriptionLabel" destination="f4Q-RA-qzw" id="R8f-cv-Djy"/>
                         <outlet property="mapView" destination="2ae-xp-ogb" id="tCH-1q-lgh"/>
+                        <outlet property="membershipButton" destination="wOW-Za-fAh" id="E02-7z-Unx"/>
                         <outlet property="playersCountLabel" destination="edP-aA-1gm" id="QhQ-UB-t6D"/>
                         <outlet property="teamsCountLabel" destination="edP-aA-1gm" id="eHJ-Ha-fyP"/>
                     </connections>
