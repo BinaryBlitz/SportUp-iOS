@@ -37,6 +37,9 @@
 		889CFB2A1E8AF9BA0027CAAA /* TeamSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB291E8AF9BA0027CAAA /* TeamSectionHeaderView.swift */; };
 		889CFB2C1E8B06CF0027CAAA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB2B1E8B06CF0027CAAA /* Team.swift */; };
 		889CFB2F1E8BD35D0027CAAA /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB2E1E8BD35D0027CAAA /* ProfileViewController.storyboard */; };
+		889CFB321E8BEB800027CAAA /* BestPlayersPollViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB311E8BEB800027CAAA /* BestPlayersPollViewController.storyboard */; };
+		889CFB341E8C04730027CAAA /* BestPlayersPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB331E8C04730027CAAA /* BestPlayersPollViewController.swift */; };
+		889CFB371E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB361E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift */; };
 		889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89B31E86AB060027D852 /* MainTabBarController.swift */; };
 		889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */; };
 		889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */; };
@@ -108,6 +111,9 @@
 		889CFB291E8AF9BA0027CAAA /* TeamSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSectionHeaderView.swift; sourceTree = "<group>"; };
 		889CFB2B1E8B06CF0027CAAA /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		889CFB2E1E8BD35D0027CAAA /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		889CFB311E8BEB800027CAAA /* BestPlayersPollViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BestPlayersPollViewController.storyboard; sourceTree = "<group>"; };
+		889CFB331E8C04730027CAAA /* BestPlayersPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlayersPollViewController.swift; sourceTree = "<group>"; };
+		889CFB361E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlayersPollTableViewCell.swift; sourceTree = "<group>"; };
 		889F89B31E86AB060027D852 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportTypesViewController.storyboard; sourceTree = "<group>"; };
 		889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyGamesViewController.storyboard; sourceTree = "<group>"; };
@@ -234,6 +240,24 @@
 				889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */,
 				889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */,
 				889CFB291E8AF9BA0027CAAA /* TeamSectionHeaderView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		889CFB301E8BEB6D0027CAAA /* BestPlayersPoll */ = {
+			isa = PBXGroup;
+			children = (
+				889CFB351E8C2D860027CAAA /* Views */,
+				889CFB311E8BEB800027CAAA /* BestPlayersPollViewController.storyboard */,
+				889CFB331E8C04730027CAAA /* BestPlayersPollViewController.swift */,
+			);
+			name = BestPlayersPoll;
+			sourceTree = "<group>";
+		};
+		889CFB351E8C2D860027CAAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				889CFB361E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -408,6 +432,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				889CFB301E8BEB6D0027CAAA /* BestPlayersPoll */,
 				88294EC41E8AD2AA00133A3E /* PlayersList */,
 				88294EB31E89DE2900133A3E /* EventInfo */,
 				8853D6A21E88317800C4759C /* GamesMap */,
@@ -545,6 +570,7 @@
 				889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */,
 				88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */,
 				8853D6A41E88318F00C4759C /* GamesMapViewController.storyboard in Resources */,
+				889CFB321E8BEB800027CAAA /* BestPlayersPollViewController.storyboard in Resources */,
 				8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */,
 				88294EB91E89DECA00133A3E /* EventInfoViewController.storyboard in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
@@ -645,6 +671,7 @@
 				88DA46581E842F0E0061E816 /* OnboardingViewController.swift in Sources */,
 				88DE3EC31E83FE95007FCD76 /* RootViewController.swift in Sources */,
 				88D32FCC1E86E6EB006EEE43 /* GamesFeedViewController.swift in Sources */,
+				889CFB371E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift in Sources */,
 				88294EBD1E8A7D8B00133A3E /* GradientView.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
@@ -675,6 +702,7 @@
 				889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
 				889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */,
+				889CFB341E8C04730027CAAA /* BestPlayersPollViewController.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
 				88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */,
 				88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */,

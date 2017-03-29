@@ -103,4 +103,11 @@ class DataManager {
       return Promise(value: ())
     }
   }
+
+  func vote(eventId: Int, userId: Int) -> Promise<Void> {
+    let json: [String: Any] = ["voted_user_id": userId as Any]
+    return NetworkManager.doRequest(.vote(eventId: eventId), json).then { _ in
+      return Promise(value: ())
+    }
+  }
 }

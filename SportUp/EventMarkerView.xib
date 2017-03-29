@@ -18,11 +18,11 @@
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="markerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4OR-04-bca">
                     <rect key="frame" x="0.0" y="0.0" width="84" height="92"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconGameFootball" translatesAutoresizingMaskIntoConstraints="NO" id="ygj-I4-FqV">
-                    <rect key="frame" x="30" y="29" width="24" height="24"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconGameFootball" translatesAutoresizingMaskIntoConstraints="NO" id="ygj-I4-FqV">
+                    <rect key="frame" x="32" y="31" width="20" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="qbj-D9-QZR"/>
-                        <constraint firstAttribute="width" constant="24" id="twV-UF-Ypl"/>
+                        <constraint firstAttribute="height" constant="20" id="qbj-D9-QZR"/>
+                        <constraint firstAttribute="width" constant="20" id="twV-UF-Ypl"/>
                     </constraints>
                 </imageView>
             </subviews>

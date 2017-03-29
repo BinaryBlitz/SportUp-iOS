@@ -17,9 +17,15 @@ class EventInfoViewController: UIViewController {
   var tableViewController: EventInfoTableViewController!
 
   @IBOutlet weak var backgroundHeaderView: UIView!
-  @IBOutlet weak var timeLabel: UILabel!
+
+  @IBOutlet weak var timeStartHoursLabel: UILabel!
+
+  @IBOutlet weak var timeStartMinuteLabel: UILabel!
+  @IBOutlet weak var timeFinishesHoursLabel: UILabel!
+  @IBOutlet weak var timeFinishesMinutesLabel: UILabel!
   @IBOutlet weak var coutdownLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
+  
 
   override func viewDidLoad() {
     refresh()
@@ -37,9 +43,7 @@ class EventInfoViewController: UIViewController {
   }
 
   func refresh() {
-    timeLabel.text = "\(event.startsAt.time) - \(event.endsAt.time)"
-    let interval = event.startsAt.timeIntervalSinceNow.formattedInterval ?? ""
-    coutdownLabel.text = "До начала: " + interval
+    configureTimeLabels()
     priceLabel.text = event.price == 0 ? "Бесплатно" : event.price.currencyString
     backgroundHeaderView.backgroundColor = sportType.color
 
@@ -47,6 +51,19 @@ class EventInfoViewController: UIViewController {
     navigationItem.titleView = label
 
     tableViewController.refresh()
+  }
+
+  func configureTimeLabels() {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "H"
+    timeStartHoursLabel.text = dateFormatter.string(from: event.startsAt)
+    timeFinishesHoursLabel.text = dateFormatter.string(from: event.endsAt)
+    dateFormatter.dateFormat = "mm"
+    timeStartMinuteLabel.text = dateFormatter.string(from: event.startsAt)
+    timeFinishesMinutesLabel.text = dateFormatter.string(from: event.endsAt)
+    let interval = event.startsAt.timeIntervalSinceNow.formattedInterval ?? ""
+    coutdownLabel.text = "До начала: " + interval
+
   }
 
   override func viewWillAppear(_ animated: Bool) {

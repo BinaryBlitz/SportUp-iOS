@@ -20,6 +20,7 @@ enum APIPath {
   case joinTeam(teamId: Int)
   case getTeams(eventId: Int)
   case leaveTeam(teamId: Int)
+  case vote(eventId: Int)
 
   var rawPath: String {
     switch self {
@@ -43,6 +44,8 @@ enum APIPath {
       return "teams/\(teamId)/joins"
     case .leaveTeam(let teamId):
       return "teams/\(teamId)/joins"
+    case .vote(let eventId):
+      return "api/events/\(eventId)/votes"
     }
   }
 
@@ -50,7 +53,7 @@ enum APIPath {
     switch self {
     case .deleteMembership(_), .leaveTeam(_):
       return .delete
-    case .sendMembership(_), .joinTeam(_):
+    case .sendMembership(_), .joinTeam(_), .vote(_):
       return .post
     default:
       return .get

@@ -39,15 +39,21 @@ class SportUpNavigationController: UINavigationController, UINavigationControlle
     } else {
       navigationBar.tintColor = defaultBarTintColor
     }
-    setNeedsStatusBarAppearanceUpdate()
+    updateStatusbar()
   }
 
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    guard let visibleViewController = self.visibleViewController else { return .default }
-    if visibleViewController is DefaultBarStyleViewController {
-      return .default
+  func updateStatusbar() {
+    let statusbarStyle: UIStatusBarStyle
+    if let visibleViewController = self.visibleViewController {
+      if visibleViewController is DefaultBarStyleViewController {
+        statusbarStyle = .default
+      } else {
+        statusbarStyle = .lightContent
+      }
+    } else {
+      statusbarStyle = .default
     }
-    return .lightContent
+    UIApplication.shared.statusBarStyle = statusbarStyle
   }
   
 }

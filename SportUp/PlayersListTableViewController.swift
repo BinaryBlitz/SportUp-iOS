@@ -24,7 +24,16 @@ class PlayersListTableViewController: UITableViewController {
   var teams: [TeamResponse] = []
   var eventMembers: [EventMember] = []
 
-  var freeUsers: [User] = []
+  var teamUsers: [User] {
+    return teams.map { $0.users }.reduce([], +)
+  }
+
+  var freeMembers: [EventMember] {
+    let teamMembers = self.teamUsers
+    return eventMembers.filter { eventMember in
+      return teamMembers.first(where: { $0.id == eventMember.user.id} ) == nil
+    }
+  }
 
   var delegate: PlayersListTableViewControllerDelegate? = nil
 
@@ -33,19 +42,24 @@ class PlayersListTableViewController: UITableViewController {
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    let teamsCount = teams.count
-
+    var teamsCount = teams.count
+    if freeMembers.isEmpty { teamsCount += 1 }
     return teamsCount
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    switch section {
+    case teams.count where !freeMembers.isEmpty:
+      return freeMembers.count
+    default:
+      return teams[section].users.count
+    }
   }
 
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     guard let event = event else { return nil }
     let view = TeamSectionHeaderView.nibInstance()
-    if section > event.teamLimit {
+    if section == teamUsers.count {
       view?.configure(headerType: .otherPlayers)
     } else {
       view?.configure(headerType: .team(teamCount: section, teamPlayers: event.teamLimit, playersCount: event.userCount))
@@ -55,7 +69,16 @@ class PlayersListTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: playerCellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
-    cell.leaveButtonDidTapHandler = { _ in
+    switch indexPath.section {
+    case teams.count where !freeMembers.isEmpty:
+      cell.configure(player: freeMembers[indexPath.row].user)
+    default:
+      let teamResponse = teams[indexPath.section]
+      let player = teamResponse.users[indexPath.row]
+      cell.configure(player: player)
+      cell.leaveButtonDidTapHandler = { _ in
+        self.delegate?.didTapLeaveButton(team: teamResponse.team)
+      }
     }
     return cell
   }

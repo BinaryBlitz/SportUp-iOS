@@ -29,24 +29,47 @@ extension UIColor {
     }
   }
 
-  class var sportupLightWhite: UIColor {
-    return UIColor(white: 255.0 / 255.0, alpha: 0.8)
+  class var sportupAquaMarine: UIColor {
+    return UIColor(red: 50.0 / 255.0, green: 204.0 / 255.0, blue: 223.0 / 255.0, alpha: 1.0)
   }
 
+  class var sportupWhite: UIColor {
+    return UIColor(white: 255.0 / 255.0, alpha: 1.0)
+  }
 
-	class var sportUpAquaMarine: UIColor {
-		return UIColor(red: 50.0 / 255.0, green: 204.0 / 255.0, blue: 223.0 / 255.0, alpha: 1.0)
-	}
+  class var sportupPaleGrey: UIColor {
+    return UIColor(red: 247.0 / 255.0, green: 249.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
+  }
 
-	class var sportUpPaleGrey: UIColor {
-		return UIColor(red: 247.0 / 255.0, green: 249.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
-	}
+  class var sportupGunmetal: UIColor {
+    return UIColor(red: 82.0 / 255.0, green: 97.0 / 255.0, blue: 106.0 / 255.0, alpha: 1.0)
+  }
 
   class var sportupBlueyGrey: UIColor {
     return UIColor(red: 154.0 / 255.0, green: 172.0 / 255.0, blue: 183.0 / 255.0, alpha: 1.0)
   }
 
+  class var sportupBlueyGreyTwo: UIColor {
+    return UIColor(red: 143.0 / 255.0, green: 163.0 / 255.0, blue: 175.0 / 255.0, alpha: 1.0)
+  }
+
+  class var sportupSeafoamBlue: UIColor {
+    return UIColor(red: 107.0 / 255.0, green: 207.0 / 255.0, blue: 173.0 / 255.0, alpha: 1.0)
+  }
+
+  class var sportupCloudyBlue: UIColor {
+    return UIColor(red: 201.0 / 255.0, green: 214.0 / 255.0, blue: 222.0 / 255.0, alpha: 1.0)
+  }
+
   class var sportupSalmon: UIColor {
     return UIColor(red: 255.0 / 255.0, green: 117.0 / 255.0, blue: 105.0 / 255.0, alpha: 1.0)
+  }
+
+  class var sportupPaleGreyTwo: UIColor {
+    return UIColor(red: 244.0 / 255.0, green: 246.0 / 255.0, blue: 248.0 / 255.0, alpha: 1.0)
+  }
+
+  class var sportupDarkGrey: UIColor {
+    return UIColor(red: 30.0 / 255.0, green: 32.0 / 255.0, blue: 34.0 / 255.0, alpha: 1.0)
   }
 }
