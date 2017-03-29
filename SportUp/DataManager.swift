@@ -82,4 +82,25 @@ class DataManager {
       return Promise(value: invitedUsers)
     }
   }
+
+  func fetchTeams(eventId: Int) -> Promise<[TeamResponse]> {
+    return NetworkManager.doRequest(.getTeams(eventId: eventId)).then { result in
+      guard let teams = Mapper<TeamResponse>().mapArray(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      return Promise(value: teams)
+    }
+  }
+
+  func joinTeam(teamId: Int) -> Promise<Void> {
+    return NetworkManager.doRequest(.joinTeam(teamId: teamId)).then { _ in
+      return Promise(value: ())
+    }
+  }
+
+  func leaveTeam(teamId: Int) -> Promise<Void> {
+    return NetworkManager.doRequest(.leaveTeam(teamId: teamId)).then { _ in
+      return Promise(value: ())
+    }
+  }
 }

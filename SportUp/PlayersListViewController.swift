@@ -12,7 +12,17 @@ import UIKit
 class PlayersListViewController: UIViewController {
   var event: Event!
   var sportType: SportType!
+  var eventMembers: [EventMember] = [] {
+    didSet {
+      tableViewController.eventMembers = eventMembers
+    }
+  }
 
+  var teams: [TeamResponse] = [] {
+    didSet {
+      tableViewController.teams = teams
+    }
+  }
 
   var tableViewController: PlayersListTableViewController!
   
@@ -21,7 +31,25 @@ class PlayersListViewController: UIViewController {
   @IBOutlet weak var headerView: UIView!
 
   override func viewDidLoad() {
+    headerView.backgroundColor = sportType.color
     configureNavigationTitle()
+  }
+
+  func updateData() {
+    _ = DataManager.instance.fetchTeams(eventId: event.id).then { [weak self] teamResponse -> Void in
+      self?.teams = teamResponse
+    }
+
+    _ = DataManager.instance.fetchMemberships(eventId: event.id).then { [weak self] members in
+      self?.eventMembers = members
+
+    }
+
+    _ = DataManager.instance.fetchEvent(eventId: event.id).then { [weak self] event -> Void in
+      self?.event = event
+      self?.configureNavigationTitle()
+    }
+
 
   }
 
@@ -30,7 +58,6 @@ class PlayersListViewController: UIViewController {
     let subtitle = "\(event.userCount)/\(event.userLimit)"
     let label = NavigationSubtitleLabel(height: navigationController?.navigationBar.frame.size.height, title: title, subtitle: subtitle)
     navigationItem.titleView = label
-    headerView.backgroundColor = sportType.color
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,10 +78,15 @@ class PlayersListViewController: UIViewController {
 extension PlayersListViewController: PlayersListTableViewControllerDelegate {
   
   func didTapLeaveButton(team: Team) {
+    _ = DataManager.instance.leaveTeam(teamId: team.id).then { [weak self] in
+      self?.updateData()
+    }
 
   }
   
   func didJoin(team: Team) {
-    
+    _ = DataManager.instance.joinTeam(teamId: team.id).then { [weak self] in
+      self?.updateData()
+    }
   }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UITableViewController, DefaultBarStyleViewController {
+class ProfileViewController: UIViewController, DefaultBarStyleViewController {
   override func viewDidLoad() {
     tabBarItem.title = "Профиль"
     tabBarItem.image = #imageLiteral(resourceName: "iconTabProfile")

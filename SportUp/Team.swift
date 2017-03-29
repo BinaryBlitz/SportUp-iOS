@@ -9,6 +9,18 @@
 import Foundation
 import ObjectMapper
 
+class TeamResponse: Mappable {
+  var users: [User] = []
+  var team: Team!
+
+  required init(map: Map) { }
+
+  func mapping(map: Map) {
+    users <- map["users"]
+    team <- map["team"]
+  }
+}
+
 class Team: Mappable {
   var id: Int = 0
   var eventId: Int = 0

@@ -21,8 +21,10 @@ protocol PlayersListTableViewControllerDelegate: class {
 class PlayersListTableViewController: UITableViewController {
   var event: Event? = nil
   var sportType: SportType? = nil
-  var invitedUsers: [EventMember] = []
-  var teams: [Team] = []
+  var teams: [TeamResponse] = []
+  var eventMembers: [EventMember] = []
+
+  var freeUsers: [User] = []
 
   var delegate: PlayersListTableViewControllerDelegate? = nil
 
@@ -31,7 +33,8 @@ class PlayersListTableViewController: UITableViewController {
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    let teamsCount = event?.teamLimit ?? 0
+    let teamsCount = teams.count
+
     return teamsCount
   }
 
