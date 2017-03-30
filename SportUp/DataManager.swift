@@ -83,6 +83,10 @@ class DataManager {
     }
   }
 
+  func deleteMembership(membershipId: Int) -> Promise<Void> {
+    return NetworkManager.doRequest(.deleteMembership(membershipId: membershipId)).asVoid()
+  }
+
   func fetchTeams(eventId: Int) -> Promise<[TeamResponse]> {
     return NetworkManager.doRequest(.getTeams(eventId: eventId)).then { result in
       guard let teams = Mapper<TeamResponse>().mapArray(JSONObject: result) else {
@@ -93,28 +97,48 @@ class DataManager {
   }
 
   func joinTeam(teamId: Int) -> Promise<Void> {
-    return NetworkManager.doRequest(.joinTeam(teamId: teamId)).then { _ in
-      return Promise(value: ())
-    }
+    return NetworkManager.doRequest(.joinTeam(teamId: teamId)).asVoid()
   }
 
   func leaveTeam(teamId: Int) -> Promise<Void> {
-    return NetworkManager.doRequest(.leaveTeam(teamId: teamId)).then { _ in
-      return Promise(value: ())
-    }
+    return NetworkManager.doRequest(.leaveTeam(teamId: teamId)).asVoid()
   }
 
   func vote(eventId: Int, userId: Int) -> Promise<Void> {
     let json: [String: Any] = ["voted_user_id": userId as Any]
-    return NetworkManager.doRequest(.vote(eventId: eventId), json).then { _ in
-      return Promise(value: ())
-    }
+    return NetworkManager.doRequest(.vote(eventId: eventId), json).asVoid()
   }
 
   func createReport(eventId: Int, reports: [Report]) -> Promise<Void> {
     let json = Mapper<Report>().toJSONArray(reports)
-    return NetworkManager.doRequest(.vote(eventId: eventId), json.asParameters()).then { _ in
-      return Promise(value: ())
+    return NetworkManager.doRequest(.vote(eventId: eventId), json.asParameters()).asVoid()
+  }
+
+  func fetchInvites() -> Promise<[InviteResponse]> {
+    return NetworkManager.doRequest(.getInvites).then { result in
+      guard let invites = Mapper<InviteResponse>().mapArray(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      return Promise(value: invites)
     }
   }
+
+  func fetchMemberships() -> Promise<[EventMembership]> {
+    return NetworkManager.doRequest(.getMemberships).then { result in
+      guard let eventMemberships = Mapper<EventMembership>().mapArray(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      return Promise(value: eventMemberships)
+    }
+  }
+
+  func acceptInvite(inviteId: Int) -> Promise<Void> {
+    let json: [String: Any] = ["accepted": true as Any]
+    return NetworkManager.doRequest(.acceptInvite(inviteId: inviteId), json).asVoid()
+  }
+
+  func declineInvite(inviteId: Int) -> Promise<Void> {
+    return NetworkManager.doRequest(.deleteInvite(inviteId: inviteId)).asVoid()
+  }
 }
+

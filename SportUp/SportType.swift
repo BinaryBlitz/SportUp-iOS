@@ -13,12 +13,14 @@ class SportType: Mappable {
   var id: Int = 0
   var color: UIColor = UIColor.sportUpAquaMarine
   var name: String = ""
+  var eventsCount: Int = 0
   var iconUrl: URL? = nil
 
   func mapping(map: Map) {
     id <- map["id"]
     color <- (map["color"], HexColorTransform())
     name <- map["name"]
+    eventsCount <- map["events_count"]
     iconUrl <- (map["icon_url"], URLTransform())
   }
 

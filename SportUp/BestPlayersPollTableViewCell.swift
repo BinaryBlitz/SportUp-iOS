@@ -31,9 +31,6 @@ class BestPlayersPollTableViewCell: UITableViewCell {
 
     switch screenType {
     case .results:
-      checkmarkButton.removeFromSuperview()
-      stackView.removeArrangedSubview(checkmarkButton)
-
       let icon = UIImageView(image: #imageLiteral(resourceName: "iconBestplayer"))
       stackView.addArrangedSubview(icon)
 
@@ -43,10 +40,9 @@ class BestPlayersPollTableViewCell: UITableViewCell {
       label.textColor = UIColor.sportUpAquaMarine
       stackView.addArrangedSubview(label)
     case .reports:
-      checkmarkButton.removeFromSuperview()
-      stackView.removeArrangedSubview(checkmarkButton)
       configureReportsView(user: user, isReportedViolation: isReportedViolation)
-    default:
+    case .poll:
+      stackView.addArrangedSubview(checkmarkButton)
       break
     }
   }
@@ -82,6 +78,13 @@ class BestPlayersPollTableViewCell: UITableViewCell {
     super.setSelected(selected, animated: true)
     checkmarkButton.isSelected = selected
     nameLabel.textColor = selected ? UIColor.sportUpGunmetal : UIColor.sportUpBlueyGreyTwo
+  }
+
+  override func prepareForReuse() {
+    for view in stackView.arrangedSubviews {
+      view.removeFromSuperview()
+      stackView.removeArrangedSubview(view)
+    }
   }
 
 }

@@ -8,10 +8,13 @@
 
 import Foundation
 import ObjectMapper
+import SwiftDate
 
 class Event: Mappable {
   var id: Int = 0
   var name: String = ""
+  var creator: User? = nil
+  var sportType: SportType? = nil
   var startsAt: Date = Date()
   var description: String = ""
   var endsAt: Date = Date()
@@ -24,6 +27,18 @@ class Event: Mappable {
   var latitude: Double = 0
   var longitude: Double = 0
   var membership: Membership? = nil
+
+  var isMine: Bool {
+    return creator?.id == ProfileManager.instance.currentProfile?.id
+  }
+
+  var started: Bool {
+    return startsAt < Date()
+  }
+
+  var finished: Bool {
+    return startsAt < Date() && endsAt < Date()
+  }
 
 
   func mapping(map: Map) {
@@ -41,6 +56,9 @@ class Event: Mappable {
     latitude <- map["latitude"]
     longitude <- map["longitude"]
     membership <- map["membership"]
+    membership?.event = self
+    creator <- map["creator"]
+    sportType <- map["sport_type"]
   }
 
   required init(map: Map) { }

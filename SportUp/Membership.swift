@@ -22,10 +22,23 @@ struct EventMember: Mappable {
   }
 }
 
+struct EventMembership: Mappable {
+  var event: Event!
+  var membership: Membership!
+
+  init(map: Map) { }
+
+  mutating func mapping(map: Map) {
+    event <- map["event"]
+    membership <- map["membership"]
+  }
+}
+
 class Membership: Mappable {
   var id: Int = 0
   var eventId: Int = 0
   var createdAt: Date = Date()
+  var event: Event? = nil
 
   func mapping(map: Map) {
     id <- map["id"]

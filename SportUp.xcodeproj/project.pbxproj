@@ -51,6 +51,8 @@
 		889CFB561E8D08DC0027CAAA /* ReportAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB551E8D08DC0027CAAA /* ReportAlertViewController.swift */; };
 		889CFB581E8D0A520027CAAA /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB571E8D0A520027CAAA /* Report.swift */; };
 		889EA6171E8D1BEC00B3CEDE /* Alamofire+ArrayJSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EA6161E8D1BEC00B3CEDE /* Alamofire+ArrayJSONEncoding.swift */; };
+		889EA61B1E8D27A500B3CEDE /* MyGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EA61A1E8D27A500B3CEDE /* MyGamesTableViewCell.swift */; };
+		889EA61D1E8D301A00B3CEDE /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889EA61C1E8D301A00B3CEDE /* Invite.swift */; };
 		889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89B31E86AB060027D852 /* MainTabBarController.swift */; };
 		889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */; };
 		889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */; };
@@ -136,6 +138,8 @@
 		889CFB551E8D08DC0027CAAA /* ReportAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportAlertViewController.swift; sourceTree = "<group>"; };
 		889CFB571E8D0A520027CAAA /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		889EA6161E8D1BEC00B3CEDE /* Alamofire+ArrayJSONEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+ArrayJSONEncoding.swift"; sourceTree = "<group>"; };
+		889EA61A1E8D27A500B3CEDE /* MyGamesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGamesTableViewCell.swift; sourceTree = "<group>"; };
+		889EA61C1E8D301A00B3CEDE /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		889F89B31E86AB060027D852 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		889F89BC1E86AC0A0027D852 /* SportTypesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportTypesViewController.storyboard; sourceTree = "<group>"; };
 		889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyGamesViewController.storyboard; sourceTree = "<group>"; };
@@ -256,6 +260,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		887826791E8D56F700F9438F /* EventManage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EventManage;
+			sourceTree = "<group>";
+		};
 		889CFB221E8AF1520027CAAA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +310,14 @@
 			name = ReportAlert;
 			sourceTree = "<group>";
 		};
+		889EA6191E8D279600B3CEDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				889EA61A1E8D27A500B3CEDE /* MyGamesTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		889F89B21E86AAEE0027D852 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +349,7 @@
 		889F89B91E86ABE30027D852 /* MyGames */ = {
 			isa = PBXGroup;
 			children = (
+				889EA6191E8D279600B3CEDE /* Views */,
 				889F89BE1E86AC180027D852 /* MyGamesViewController.storyboard */,
 				889F89CB1E86BACD0027D852 /* MyGamesViewController.swift */,
 			);
@@ -403,6 +423,7 @@
 				889CFB231E8AF2A10027CAAA /* Membership.swift */,
 				889CFB2B1E8B06CF0027CAAA /* Team.swift */,
 				889CFB571E8D0A520027CAAA /* Report.swift */,
+				889EA61C1E8D301A00B3CEDE /* Invite.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -471,6 +492,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				887826791E8D56F700F9438F /* EventManage */,
 				889CFB4E1E8C837B0027CAAA /* ReportAlert */,
 				88294EC41E8AD2AA00133A3E /* PlayersList */,
 				889CFB301E8BEB6D0027CAAA /* BestPlayersPoll */,
@@ -721,6 +743,7 @@
 				889CFB461E8C69190027CAAA /* BestPlayersResultsHeaderView.swift in Sources */,
 				88294EBD1E8A7D8B00133A3E /* GradientView.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
+				889EA61D1E8D301A00B3CEDE /* Invite.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
 				88294EBB1E89DF5C00133A3E /* EventInfoTableViewController.swift in Sources */,
 				880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */,
@@ -742,6 +765,7 @@
 				88DA465C1E84350B0061E816 /* UIView+IBDesignable.swift in Sources */,
 				889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */,
 				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
+				889EA61B1E8D27A500B3CEDE /* MyGamesTableViewCell.swift in Sources */,
 				880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */,
 				88294ECA1E8AED2700133A3E /* PlayersListTableViewController.swift in Sources */,
 				889CFB3E1E8C42840027CAAA /* BestPlayersPollHeaderView.swift in Sources */,

@@ -22,6 +22,7 @@ class SportTypeTableViewCell: UITableViewCell {
       self?.categoryIconView.tintColor = sportType.color
     }
     titleLabel.text = sportType.name
+    descriptionLabel.text = sportType.eventsCount.getRussianNumEnding(endings: ["игра", "игры", "игр"])
   }
 
   override func prepareForReuse() {

@@ -22,6 +22,10 @@ enum APIPath {
   case leaveTeam(teamId: Int)
   case vote(eventId: Int)
   case createReport(eventId: Int)
+  case getMemberships
+  case getInvites
+  case acceptInvite(inviteId: Int)
+  case deleteInvite(inviteId: Int)
 
   var rawPath: String {
     switch self {
@@ -49,15 +53,25 @@ enum APIPath {
       return "api/events/\(eventId)/votes"
     case .createReport(let eventId):
       return "api/events/\(eventId)/reports"
+    case .getMemberships:
+      return "memberships"
+    case .getInvites:
+      return "invites"
+    case .acceptInvite(let inviteId):
+      return "invites/\(inviteId)"
+    case .deleteInvite(let inviteId):
+      return "invites/\(inviteId)"
     }
   }
 
   var method: HTTPMethod {
     switch self {
-    case .deleteMembership(_), .leaveTeam(_):
+    case .deleteMembership(_), .leaveTeam(_), .deleteInvite(_):
       return .delete
     case .sendMembership(_), .joinTeam(_), .vote(_), .createReport(_):
       return .post
+    case .acceptInvite(_):
+      return .put
     default:
       return .get
     }
