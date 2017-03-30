@@ -37,7 +37,9 @@ platform :ios do
     # Build your app - more options available
     gym(scheme: 'SportUp')
     # Upload to Crashlytics
-    crashlytics
+    crashlytics(
+     groups: "chisto-dev"
+    )
   end
 
   desc 'Deploy a new version to the App Store'
