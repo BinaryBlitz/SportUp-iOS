@@ -13,10 +13,10 @@ import SwiftDate
 class Event: Mappable {
   var id: Int = 0
   var name: String = ""
+  var description: String = ""
   var creator: User? = nil
   var sportType: SportType? = nil
   var startsAt: Date = Date()
-  var description: String = ""
   var endsAt: Date = Date()
   var address: String = ""
   var userLimit: Int = 0
@@ -26,6 +26,7 @@ class Event: Mappable {
   var userCount: Int = 0
   var latitude: Double = 0
   var longitude: Double = 0
+  var password: String = ""
   var membership: Membership? = nil
 
   var isMine: Bool {
@@ -59,6 +60,7 @@ class Event: Mappable {
     membership?.event = self
     creator <- map["creator"]
     sportType <- map["sport_type"]
+    password <- map["password"]
   }
 
   required init(map: Map) { }

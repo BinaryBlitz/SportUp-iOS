@@ -36,6 +36,11 @@
 		887826801E8D672C00F9438F /* GeocodingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878267F1E8D672C00F9438F /* GeocodingManager.swift */; };
 		887826821E8D704800F9438F /* EventManageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887826811E8D704800F9438F /* EventManageViewController.storyboard */; };
 		887826841E8D706800F9438F /* EventManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826831E8D706800F9438F /* EventManageViewController.swift */; };
+		887826871E8DA95800F9438F /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826861E8DA95800F9438F /* TextInputViewController.swift */; };
+		8878268A1E8DADEE00F9438F /* TextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826891E8DADEE00F9438F /* TextInputTableViewCell.swift */; };
+		8878268C1E8DAE9900F9438F /* TextInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8878268B1E8DAE9900F9438F /* TextInputTableViewCell.xib */; };
+		8878268E1E8DB0F200F9438F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878268D1E8DB0F200F9438F /* SelectViewController.swift */; };
+		887826941E8DCD3600F9438F /* UIViewController+addToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */; };
 		889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */; };
 		889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB231E8AF2A10027CAAA /* Membership.swift */; };
 		889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */; };
@@ -128,6 +133,11 @@
 		8878267F1E8D672C00F9438F /* GeocodingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingManager.swift; sourceTree = "<group>"; };
 		887826811E8D704800F9438F /* EventManageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventManageViewController.storyboard; sourceTree = "<group>"; };
 		887826831E8D706800F9438F /* EventManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManageViewController.swift; sourceTree = "<group>"; };
+		887826861E8DA95800F9438F /* TextInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
+		887826891E8DADEE00F9438F /* TextInputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputTableViewCell.swift; sourceTree = "<group>"; };
+		8878268B1E8DAE9900F9438F /* TextInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputTableViewCell.xib; sourceTree = "<group>"; };
+		8878268D1E8DB0F200F9438F /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+addToolbar.swift"; sourceTree = "<group>"; };
 		889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		889CFB231E8AF2A10027CAAA /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -273,6 +283,7 @@
 		887826791E8D56F700F9438F /* EventManage */ = {
 			isa = PBXGroup;
 			children = (
+				887826851E8DA93F00F9438F /* InputViewControllers */,
 				887826811E8D704800F9438F /* EventManageViewController.storyboard */,
 				887826831E8D706800F9438F /* EventManageViewController.swift */,
 			);
@@ -286,6 +297,25 @@
 				8878267D1E8D5DC300F9438F /* AddressSelectViewController.swift */,
 			);
 			name = AddressSelect;
+			sourceTree = "<group>";
+		};
+		887826851E8DA93F00F9438F /* InputViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				887826881E8DADDE00F9438F /* Views */,
+				887826861E8DA95800F9438F /* TextInputViewController.swift */,
+				8878268D1E8DB0F200F9438F /* SelectViewController.swift */,
+			);
+			name = InputViewControllers;
+			sourceTree = "<group>";
+		};
+		887826881E8DADDE00F9438F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				887826891E8DADEE00F9438F /* TextInputTableViewCell.swift */,
+				8878268B1E8DAE9900F9438F /* TextInputTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		889CFB221E8AF1520027CAAA /* Views */ = {
@@ -548,6 +578,7 @@
 				88294EBE1E8AAFCC00133A3E /* TimeInterval+toString.swift */,
 				88294EC01E8AC8F800133A3E /* Int+russianEnumEnding.swift */,
 				889CFB431E8C5D310027CAAA /* UIViewController+hideOnTapOutside.swift */,
+				887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -672,6 +703,7 @@
 				88DA465F1E843F610061E816 /* CitySelectViewController.storyboard in Resources */,
 				889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */,
 				889CFB481E8C6B220027CAAA /* BestPlayersResultsHeaderView.xib in Resources */,
+				8878268C1E8DAE9900F9438F /* TextInputTableViewCell.xib in Resources */,
 				889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */,
 				8878267C1E8D5D0A00F9438F /* AddressSelectViewController.storyboard in Resources */,
 				889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */,
@@ -778,6 +810,7 @@
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
 				8853D69B1E88119600C4759C /* DateTransform.swift in Sources */,
 				88D32FC41E86D228006EEE43 /* SportType.swift in Sources */,
+				8878268E1E8DB0F200F9438F /* SelectViewController.swift in Sources */,
 				889CFB561E8D08DC0027CAAA /* ReportAlertViewController.swift in Sources */,
 				88294EC31E8ACCC500133A3E /* NavigationSubtitleLabel.swift in Sources */,
 				88294EC11E8AC8F800133A3E /* Int+russianEnumEnding.swift in Sources */,
@@ -785,6 +818,7 @@
 				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */,
+				887826871E8DA95800F9438F /* TextInputViewController.swift in Sources */,
 				88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,
 				889CFB2A1E8AF9BA0027CAAA /* TeamSectionHeaderView.swift in Sources */,
@@ -792,8 +826,10 @@
 				889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */,
 				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
 				889EA61B1E8D27A500B3CEDE /* MyGamesTableViewCell.swift in Sources */,
+				887826941E8DCD3600F9438F /* UIViewController+addToolbar.swift in Sources */,
 				880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */,
 				88294ECA1E8AED2700133A3E /* PlayersListTableViewController.swift in Sources */,
+				8878268A1E8DADEE00F9438F /* TextInputTableViewCell.swift in Sources */,
 				889CFB3E1E8C42840027CAAA /* BestPlayersPollHeaderView.swift in Sources */,
 				889CFB2C1E8B06CF0027CAAA /* Team.swift in Sources */,
 				889CFB4D1E8C7F540027CAAA /* ReportsHeaderView.swift in Sources */,

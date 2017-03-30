@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextInputTableViewCell" rowHeight="64" id="QqQ-Wq-QaN" customClass="TextInputTableViewCell" customModule="SportUp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="QqQ-Wq-QaN" id="Amc-A6-fmp">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4xV-i1-ex1">
+                        <rect key="frame" x="16" y="0.0" width="343" height="63.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4xV-i1-ex1" firstAttribute="top" secondItem="Amc-A6-fmp" secondAttribute="top" id="1ib-AZ-Xmr"/>
+                    <constraint firstItem="4xV-i1-ex1" firstAttribute="leading" secondItem="Amc-A6-fmp" secondAttribute="leadingMargin" id="6lg-Er-e0e"/>
+                    <constraint firstAttribute="bottom" secondItem="4xV-i1-ex1" secondAttribute="bottom" id="9Ap-m6-gNM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4xV-i1-ex1" secondAttribute="trailing" id="tWu-Pq-m3l"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+            </tableViewCellContentView>
+            <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
+            <connections>
+                <outlet property="textField" destination="4xV-i1-ex1" id="e7b-V2-3yt"/>
+            </connections>
+            <point key="canvasLocation" x="237.5" y="304"/>
+        </tableViewCell>
+    </objects>
+</document>

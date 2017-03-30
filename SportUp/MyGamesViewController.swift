@@ -66,6 +66,14 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
     tabBarItem.title = "Мои игры"
     tabBarItem.image = #imageLiteral(resourceName: "iconTabMygames")
     reloadData()
+
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addButtonDidTap))
+  }
+
+  func addButtonDidTap() {
+    let viewControlelr = EventManageViewController.storyboardInstance()!
+    let navigationController = SportUpNavigationController(rootViewController: viewControlelr)
+    present(navigationController, animated: true, completion: nil)
   }
 
   func reloadData() {
