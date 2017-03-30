@@ -25,7 +25,7 @@ class NavigationSubtitleLabel: UILabel {
 
     super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
     numberOfLines = 0
-    textColor = UIColor.sportupLightWhite
+    textColor = UIColor.sportUpLightWhite
     textAlignment = .center
     attributedText = attributedString
 

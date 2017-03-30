@@ -15,6 +15,8 @@ class User: Mappable {
   var firstName: String = ""
   var lastName: String = ""
   var phoneNumber: String = ""
+  var votesCount: Int = 0
+  var violationsCount: Int = 0
 
   var eventMemberships: [Membership] = []
 
@@ -23,6 +25,8 @@ class User: Mappable {
     firstName <- map["first_name"]
     lastName <- map["last_name"]
     phoneNumber <- map["phone_number"]
+    votesCount <- map["votes_count"]
+    violationsCount <- map["violations_count"]
   }
 
   required init(map: Map) { }

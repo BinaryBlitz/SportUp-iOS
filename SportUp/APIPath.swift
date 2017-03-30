@@ -21,6 +21,7 @@ enum APIPath {
   case getTeams(eventId: Int)
   case leaveTeam(teamId: Int)
   case vote(eventId: Int)
+  case createReport(eventId: Int)
 
   var rawPath: String {
     switch self {
@@ -46,6 +47,8 @@ enum APIPath {
       return "teams/\(teamId)/joins"
     case .vote(let eventId):
       return "api/events/\(eventId)/votes"
+    case .createReport(let eventId):
+      return "api/events/\(eventId)/reports"
     }
   }
 
@@ -53,7 +56,7 @@ enum APIPath {
     switch self {
     case .deleteMembership(_), .leaveTeam(_):
       return .delete
-    case .sendMembership(_), .joinTeam(_), .vote(_):
+    case .sendMembership(_), .joinTeam(_), .vote(_), .createReport(_):
       return .post
     default:
       return .get
@@ -61,11 +64,16 @@ enum APIPath {
   }
 
   var encoding: ParameterEncoding {
-    switch method {
-    case .get, .delete:
-      return URLEncoding.default
+    switch self {
+    case .createReport(_):
+      return ArrayEncoding()
     default:
-      return JSONEncoding.default
+      switch method {
+      case .get, .delete:
+        return URLEncoding.default
+      default:
+        return JSONEncoding.default
+      }
     }
   }
 }

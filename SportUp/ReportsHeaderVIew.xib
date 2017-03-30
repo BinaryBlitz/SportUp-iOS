@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0il-bm-VhY" customClass="ReportsHeaderView" customModule="SportUp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrR-Xl-upp" customClass="Bes">
+                    <rect key="frame" x="91" y="23" width="217" height="48"/>
+                    <string key="text">Помогите нам
+улучшить сообщество!</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сообщите о некорректном поведении игроков или наоборот похвалите их." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jks-FA-9dl">
+                    <rect key="frame" x="16" y="91" width="366" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.60572481160000002" green="0.6740470529" blue="0.71587586400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jks-FA-9dl" firstAttribute="top" secondItem="UrR-Xl-upp" secondAttribute="bottom" constant="20" id="I6u-uN-tbl"/>
+                <constraint firstAttribute="trailing" secondItem="jks-FA-9dl" secondAttribute="trailing" constant="16" id="T0e-jm-gvC"/>
+                <constraint firstItem="UrR-Xl-upp" firstAttribute="centerX" secondItem="0il-bm-VhY" secondAttribute="centerX" id="ZdR-Go-ca7"/>
+                <constraint firstItem="UrR-Xl-upp" firstAttribute="top" secondItem="0il-bm-VhY" secondAttribute="top" constant="23" id="sgb-an-XFL"/>
+                <constraint firstItem="jks-FA-9dl" firstAttribute="leading" secondItem="0il-bm-VhY" secondAttribute="leading" constant="16" id="tib-kG-wvJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-34" y="390.5"/>
+        </view>
+    </objects>
+</document>

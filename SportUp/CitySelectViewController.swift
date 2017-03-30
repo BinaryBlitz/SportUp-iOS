@@ -66,7 +66,7 @@ class CitySelectViewController: UIViewController, DefaultBarStyleViewController 
     searchController.dimsBackgroundDuringPresentation = false
     let searchBar = searchController.searchBar
 
-    searchBar.barTintColor = UIColor.sportupBlueyGrey
+    searchBar.barTintColor = UIColor.sportUpBlueyGrey
     searchBar.layer.borderWidth = 1
     searchBar.layer.borderColor = UIColor.white.cgColor
     searchBar.tintColor = UIColor.black
@@ -74,7 +74,7 @@ class CitySelectViewController: UIViewController, DefaultBarStyleViewController 
     searchBar.backgroundImage = UIImage()
     searchBar.setSearchFieldBackgroundImage(#imageLiteral(resourceName: "searchBar"), for: .normal)
     searchBar.setImage(#imageLiteral(resourceName: "iconSearchsmollGray"), for: .search, state: .normal)
-    searchBar.setTextColor(color: UIColor.sportupBlueyGrey)
+    searchBar.setTextColor(color: UIColor.sportUpBlueyGrey)
     searchBar.searchTextPositionAdjustment = UIOffsetMake(5.0, 0.0)
   }
 

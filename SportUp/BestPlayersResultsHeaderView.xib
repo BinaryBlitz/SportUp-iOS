@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BestPlayersResultsHeaderView" customModule="SportUp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="473" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpm-I5-A0Y">
+                    <rect key="frame" x="121" y="18" width="231.5" height="48"/>
+                    <string key="text">Результаты голосования
+за лучшего игрока</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtY-Aj-iFu">
+                    <rect key="frame" x="123.5" y="90" width="226.5" height="16"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconGameFootballsmollWhite" translatesAutoresizingMaskIntoConstraints="NO" id="622-cq-NeR">
+                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мини - футбол" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-fs-GY7">
+                            <rect key="frame" x="24" y="-1.5" width="112" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconTimesmollWhite" translatesAutoresizingMaskIntoConstraints="NO" id="pmb-Zu-M8j">
+                            <rect key="frame" x="166" y="0.0" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2J-hj-XxR">
+                            <rect key="frame" x="190" y="-1.5" width="36.5" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="pmb-Zu-M8j" firstAttribute="leading" secondItem="UbW-fs-GY7" secondAttribute="trailing" constant="30" id="11j-JG-QND"/>
+                        <constraint firstItem="622-cq-NeR" firstAttribute="top" secondItem="GtY-Aj-iFu" secondAttribute="top" id="Aoo-Ht-MAr"/>
+                        <constraint firstItem="B2J-hj-XxR" firstAttribute="centerY" secondItem="pmb-Zu-M8j" secondAttribute="centerY" id="FDy-An-TC2"/>
+                        <constraint firstItem="B2J-hj-XxR" firstAttribute="leading" secondItem="pmb-Zu-M8j" secondAttribute="trailing" constant="8" id="Gcq-Cy-jlc"/>
+                        <constraint firstItem="UbW-fs-GY7" firstAttribute="leading" secondItem="622-cq-NeR" secondAttribute="trailing" constant="8" id="PXd-MK-ua4"/>
+                        <constraint firstItem="UbW-fs-GY7" firstAttribute="centerY" secondItem="622-cq-NeR" secondAttribute="centerY" id="WVJ-tf-aJJ"/>
+                        <constraint firstItem="pmb-Zu-M8j" firstAttribute="centerY" secondItem="UbW-fs-GY7" secondAttribute="centerY" id="k8n-FG-AFg"/>
+                        <constraint firstItem="622-cq-NeR" firstAttribute="leading" secondItem="GtY-Aj-iFu" secondAttribute="leading" id="sAP-rU-It0"/>
+                        <constraint firstAttribute="trailing" secondItem="B2J-hj-XxR" secondAttribute="trailing" id="ybE-fE-2ke"/>
+                        <constraint firstAttribute="bottom" secondItem="622-cq-NeR" secondAttribute="bottom" id="yof-nG-CSk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="GtY-Aj-iFu" firstAttribute="top" secondItem="Rpm-I5-A0Y" secondAttribute="bottom" constant="24" id="QDM-g7-zeP"/>
+                <constraint firstItem="GtY-Aj-iFu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VXs-sV-0Rh"/>
+                <constraint firstItem="Rpm-I5-A0Y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="18" id="q9d-ej-glh"/>
+                <constraint firstItem="Rpm-I5-A0Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="stI-3I-MMJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dateLabel" destination="B2J-hj-XxR" id="EYF-7G-VnH"/>
+                <outlet property="sportTypeLabel" destination="UbW-fs-GY7" id="tik-Zg-ln2"/>
+            </connections>
+            <point key="canvasLocation" x="163.5" y="64"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconGameFootballsmollWhite" width="16" height="16"/>
+        <image name="iconTimesmollWhite" width="16" height="16"/>
+    </resources>
+</document>

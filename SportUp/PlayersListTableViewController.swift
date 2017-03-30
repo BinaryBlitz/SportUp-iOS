@@ -52,6 +52,7 @@ class PlayersListTableViewController: UITableViewController {
     case teams.count where !freeMembers.isEmpty:
       return freeMembers.count
     default:
+      guard !teams.isEmpty else { return 0 }
       return teams[section].users.count
     }
   }

@@ -64,7 +64,7 @@ class EventInfoTableViewController: UITableViewController {
       membershipButton.defaultBackgroundColor = sportType.color
     } else {
       membershipButton.setTitle("Отказаться от участия", for: .normal)
-      membershipButton.backgroundColor = UIColor.sportupSalmon
+      membershipButton.backgroundColor = UIColor.sportUpSalmon
     }
 
 

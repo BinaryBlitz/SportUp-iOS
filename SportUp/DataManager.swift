@@ -110,4 +110,11 @@ class DataManager {
       return Promise(value: ())
     }
   }
+
+  func createReport(eventId: Int, reports: [Report]) -> Promise<Void> {
+    let json = Mapper<Report>().toJSONArray(reports)
+    return NetworkManager.doRequest(.vote(eventId: eventId), json.asParameters()).then { _ in
+      return Promise(value: ())
+    }
+  }
 }
