@@ -9,6 +9,8 @@ PODS:
   - GoogleMaps/Base (2.2.0)
   - GoogleMaps/Maps (2.2.0):
     - GoogleMaps/Base
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - KeychainAccess (3.0.1)
   - Kingfisher (3.6.0)
   - ObjectMapper (2.2.5)
@@ -38,6 +40,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - GoogleMaps (~> 2.2)
+  - GooglePlaces
   - KeychainAccess (~> 3.0)
   - Kingfisher (~> 3.0)
   - ObjectMapper (~> 2.2)
@@ -52,6 +55,7 @@ SPEC CHECKSUMS:
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   Kingfisher: 300035f9a40634dc9b452d946c9f22250688fecd
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
@@ -60,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 17cc2940d64285694dbc08f4b00c237f8dc19283
+PODFILE CHECKSUM: efcbff823555f388da13c9d5e0c677407b3fead8
 
 COCOAPODS: 1.2.0

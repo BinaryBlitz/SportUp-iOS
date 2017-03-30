@@ -53,7 +53,7 @@ class PlayersListTableViewController: UITableViewController {
       return freeMembers.count
     default:
       guard !teams.isEmpty else { return 0 }
-      return teams[section].users.count
+      return teams[section].users.count + 1
     }
   }
 
@@ -63,22 +63,33 @@ class PlayersListTableViewController: UITableViewController {
     if section == teamUsers.count {
       view?.configure(headerType: .otherPlayers)
     } else {
-      view?.configure(headerType: .team(teamCount: section, teamPlayers: event.teamLimit, playersCount: event.userCount))
+      view?.configure(headerType: .team(teamCount: section + 1, teamPlayers: event.teamLimit, playersCount: event.userCount))
     }
     return view
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: playerCellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
+    let cell: UITableViewCell
     switch indexPath.section {
     case teams.count where !freeMembers.isEmpty:
-      cell.configure(player: freeMembers[indexPath.row].user)
+      let playerCell = tableView.dequeueReusableCell(withIdentifier: playerCellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
+      playerCell.configure(player: freeMembers[indexPath.row].user)
+      cell = playerCell
     default:
       let teamResponse = teams[indexPath.section]
-      let player = teamResponse.users[indexPath.row]
-      cell.configure(player: player)
-      cell.leaveButtonDidTapHandler = { _ in
-        self.delegate?.didTapLeaveButton(team: teamResponse.team)
+      let users = teamResponse.users
+      if indexPath.row == users.count {
+        let joinTeamCell = tableView.dequeueReusableCell(withIdentifier: joinTeamCellReuseIdentifier, for: indexPath)
+        joinTeamCell.textLabel?.text = "Занять место в команде \(indexPath.section + 1)"
+        cell = joinTeamCell
+      } else {
+        let player = users[indexPath.row]
+        let playerCell = tableView.dequeueReusableCell(withIdentifier: playerCellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
+        playerCell.configure(player: player)
+        playerCell.leaveButtonDidTapHandler = { _ in
+          self.delegate?.didTapLeaveButton(team: teamResponse.team)
+        }
+        cell = playerCell
       }
     }
     return cell

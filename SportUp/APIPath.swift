@@ -36,7 +36,7 @@ enum APIPath {
     case .getEvents(let sportTypeId):
       return "sport_types/\(sportTypeId)/events"
     case .getEvent(let eventId):
-      return "events\(eventId)"
+      return "events/\(eventId)"
     case .getEventMemberships(let eventId):
       return "events/\(eventId)/memberships"
     case .sendMembership(let eventId):

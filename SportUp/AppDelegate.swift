@@ -12,8 +12,10 @@ import Fabric
 import Crashlytics
 
 import GoogleMaps
+import GooglePlaces
 
 private let googleMapsAPIKey = "AIzaSyCGZvZbe-iVAz57b02asd55XeJ6sXMVas0"
+private let googlePlacesAPIKey = "AIzaSyD48PvTskL1ULQpau9Ef9Wd1eKRNdWz3hs"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

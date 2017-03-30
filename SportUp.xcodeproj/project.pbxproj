@@ -31,6 +31,11 @@
 		8859F1661E8992730009F85C /* EventMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8859F1651E8992730009F85C /* EventMarkerView.swift */; };
 		8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8859F1691E89AD120009F85C /* EventMarkerView.xib */; };
 		8859F16C1E89AEC60009F85C /* UIView+nibInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8859F16B1E89AEC60009F85C /* UIView+nibInstance.swift */; };
+		8878267C1E8D5D0A00F9438F /* AddressSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8878267B1E8D5D0A00F9438F /* AddressSelectViewController.storyboard */; };
+		8878267E1E8D5DC300F9438F /* AddressSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878267D1E8D5DC300F9438F /* AddressSelectViewController.swift */; };
+		887826801E8D672C00F9438F /* GeocodingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878267F1E8D672C00F9438F /* GeocodingManager.swift */; };
+		887826821E8D704800F9438F /* EventManageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887826811E8D704800F9438F /* EventManageViewController.storyboard */; };
+		887826841E8D706800F9438F /* EventManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826831E8D706800F9438F /* EventManageViewController.swift */; };
 		889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */; };
 		889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB231E8AF2A10027CAAA /* Membership.swift */; };
 		889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */; };
@@ -118,6 +123,11 @@
 		8859F1651E8992730009F85C /* EventMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMarkerView.swift; sourceTree = "<group>"; };
 		8859F1691E89AD120009F85C /* EventMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMarkerView.xib; sourceTree = "<group>"; };
 		8859F16B1E89AEC60009F85C /* UIView+nibInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+nibInstance.swift"; sourceTree = "<group>"; };
+		8878267B1E8D5D0A00F9438F /* AddressSelectViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddressSelectViewController.storyboard; sourceTree = "<group>"; };
+		8878267D1E8D5DC300F9438F /* AddressSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressSelectViewController.swift; sourceTree = "<group>"; };
+		8878267F1E8D672C00F9438F /* GeocodingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingManager.swift; sourceTree = "<group>"; };
+		887826811E8D704800F9438F /* EventManageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventManageViewController.storyboard; sourceTree = "<group>"; };
+		887826831E8D706800F9438F /* EventManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManageViewController.swift; sourceTree = "<group>"; };
 		889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		889CFB231E8AF2A10027CAAA /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -263,8 +273,19 @@
 		887826791E8D56F700F9438F /* EventManage */ = {
 			isa = PBXGroup;
 			children = (
+				887826811E8D704800F9438F /* EventManageViewController.storyboard */,
+				887826831E8D706800F9438F /* EventManageViewController.swift */,
 			);
 			name = EventManage;
+			sourceTree = "<group>";
+		};
+		8878267A1E8D5CCF00F9438F /* AddressSelect */ = {
+			isa = PBXGroup;
+			children = (
+				8878267B1E8D5D0A00F9438F /* AddressSelectViewController.storyboard */,
+				8878267D1E8D5DC300F9438F /* AddressSelectViewController.swift */,
+			);
+			name = AddressSelect;
 			sourceTree = "<group>";
 		};
 		889CFB221E8AF1520027CAAA /* Views */ = {
@@ -492,6 +513,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8878267A1E8D5CCF00F9438F /* AddressSelect */,
 				887826791E8D56F700F9438F /* EventManage */,
 				889CFB4E1E8C837B0027CAAA /* ReportAlert */,
 				88294EC41E8AD2AA00133A3E /* PlayersList */,
@@ -546,6 +568,7 @@
 				88DA46451E841D1F0061E816 /* Model */,
 				88DA46461E841F450061E816 /* DataManager.swift */,
 				889F89D11E86C04A0027D852 /* ProfileManager.swift */,
+				8878267F1E8D672C00F9438F /* GeocodingManager.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -643,12 +666,14 @@
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
 				88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */,
 				889CFB2F1E8BD35D0027CAAA /* ProfileViewController.storyboard in Resources */,
+				887826821E8D704800F9438F /* EventManageViewController.storyboard in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
 				88294EC81E8AD38300133A3E /* PlayersListViewController.storyboard in Resources */,
 				88DA465F1E843F610061E816 /* CitySelectViewController.storyboard in Resources */,
 				889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */,
 				889CFB481E8C6B220027CAAA /* BestPlayersResultsHeaderView.xib in Resources */,
 				889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */,
+				8878267C1E8D5D0A00F9438F /* AddressSelectViewController.storyboard in Resources */,
 				889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,6 +750,7 @@
 				88294EBF1E8AAFCC00133A3E /* TimeInterval+toString.swift in Sources */,
 				8859F16C1E89AEC60009F85C /* UIView+nibInstance.swift in Sources */,
 				889EA6171E8D1BEC00B3CEDE /* Alamofire+ArrayJSONEncoding.swift in Sources */,
+				887826841E8D706800F9438F /* EventManageViewController.swift in Sources */,
 				889F89C11E86B1FE0027D852 /* User.swift in Sources */,
 				8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */,
 				880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */,
@@ -774,6 +800,7 @@
 				88DA46561E842B550061E816 /* DataError.swift in Sources */,
 				8853D69F1E881B5100C4759C /* EventTableViewCell.swift in Sources */,
 				889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */,
+				887826801E8D672C00F9438F /* GeocodingManager.swift in Sources */,
 				889CFB441E8C5D310027CAAA /* UIViewController+hideOnTapOutside.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
 				889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */,
@@ -782,6 +809,7 @@
 				88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */,
 				88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */,
 				889CFB581E8D0A520027CAAA /* Report.swift in Sources */,
+				8878267E1E8D5DC300F9438F /* AddressSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
