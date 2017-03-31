@@ -200,7 +200,7 @@
                             <rect key="frame" x="0.0" y="554" width="320" height="92"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-Za-fAh" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-Za-fAh">
                                     <rect key="frame" x="58" y="22" width="204" height="48"/>
                                     <color key="backgroundColor" red="0.41999819869999999" green="0.81105917689999996" blue="0.68038994070000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>

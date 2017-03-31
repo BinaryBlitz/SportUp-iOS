@@ -46,7 +46,7 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
 
   var createdGames: [EventMembership] {
     return memberships.filter { eventMembership in
-      return eventMembership.event.isMine && eventMembership.event.finished
+      return eventMembership.event.isMine && !eventMembership.event.finished
     }
   }
 
@@ -66,6 +66,8 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
     tabBarItem.title = "Мои игры"
     tabBarItem.image = #imageLiteral(resourceName: "iconTabMygames")
     reloadData()
+
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addButtonDidTap))
   }
@@ -88,8 +90,28 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
     }
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    reloadData()
+  }
+
   override func numberOfSections(in tableView: UITableView) -> Int {
     return Sections.count
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    switch section {
+    case Sections.invites.rawValue:
+      return currentInvites.count
+    case Sections.createdGames.rawValue:
+      return createdGames.count
+    case Sections.currentGames.rawValue:
+      return currentMemberships.count
+    case Sections.finishedGames.rawValue:
+      return finishedMemberships.count
+    default:
+      return 0
+    }
   }
 
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -143,6 +165,10 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
       event = currentEvent
     case Sections.createdGames.rawValue:
       event = createdGames[indexPath.row].event
+      let viewController = EventManageViewController.storyboardInstance()!
+      viewController.screenType = .edit(event: event)
+      navigationController?.pushViewController(viewController, animated: true)
+      return
     case Sections.currentGames.rawValue:
       event = currentMemberships[indexPath.row].event
     case Sections.finishedGames.rawValue:

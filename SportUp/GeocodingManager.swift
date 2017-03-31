@@ -45,7 +45,7 @@ class Address {
 
   init(json: JSON) {
     self.json = json
-    self.adressComponents = json["results"].array?[0]["address_components"].array
+    self.adressComponents = json["results"].array?.first?["address_components"].array
   }
 }
 

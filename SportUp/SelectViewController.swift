@@ -15,6 +15,8 @@ class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewC
   var sportTypes: [SportType] = []
   var value: SportType? = nil
 
+  var titleText: String
+
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let tableViewCell = UITableViewCell()
     let sportType = sportTypes[indexPath.row]
@@ -29,6 +31,19 @@ class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewC
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return sportTypes.count
+  }
+
+  override func viewDidLoad() {
+    navigationItem.title = titleText
+  }
+
+  init(title: String) {
+    self.titleText = title
+    super.init(style: .grouped)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

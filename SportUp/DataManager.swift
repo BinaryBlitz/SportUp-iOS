@@ -14,6 +14,8 @@ import ObjectMapper
 
 class DataManager {
   static let instance = DataManager()
+  var verificationToken: String? = nil
+
   var sportTypes: [SportType] = [] {
     didSet {
       try? StorageHelper.save(sportTypes.toJSONString(), forKey: .sportTypes)
@@ -144,11 +146,48 @@ class DataManager {
   }
 
   func createEvent(event: Event) -> Promise<Void> {
-    return NetworkManager.doRequest(.createEvent, event.toJSON()).asVoid()
+    return NetworkManager.doRequest(.createEvent, ["event": event.toJSON()]).asVoid()
   }
 
   func editEvent(event: Event) -> Promise<Void> {
-    return NetworkManager.doRequest(.editEvent(eventId: event.id), event.toJSON()).asVoid()
+    return NetworkManager.doRequest(.editEvent(eventId: event.id), ["event": event.toJSON()]).asVoid()
+  }
+
+  func createVerificationToken(phoneNumber: String) -> Promise<Void> {
+    return NetworkManager.doRequest(.createVerificationToken, ["phone_number": phoneNumber]).then { result in
+      let json = JSON(result)
+      self.verificationToken = json["token"].string
+      return Promise(value: ())
+    }
+  }
+
+  func verifyToken(code: String) -> Promise<Void> {
+    guard let verificationToken = self.verificationToken else { return Promise(error: DataError.unknown) }
+    return NetworkManager.doRequest(.verifyToken(verificationToken: verificationToken), ["code": code as Any, "token": verificationToken as Any]).then { result in
+      let json = JSON(result)
+      let token = "foobar" //json["api_token"].string ?? 
+
+      try? StorageHelper.save(token, forKey: .apiToken)
+      return Promise(value: ())
+    }
+  }
+
+  func updateUser(profile: User) -> Promise<Void> {
+    return NetworkManager.doRequest(.updateUser, ["user": profile.toJSON()]).asVoid()
+  }
+
+  func createUser(profile: User) -> Promise<Void> {
+    return NetworkManager.doRequest(.createUser, ["user": profile.toJSON()]).asVoid()
+  }
+
+  func fetchUser() -> Promise<User> {
+    return NetworkManager.doRequest(.getUser).then { result in
+      guard let user = Mapper<User>().map(JSONObject: result) else {
+        return Promise(error: DataError.unprocessableData)
+      }
+      ProfileManager.instance.currentProfile = user
+      return Promise(value: user)
+    }
   }
 }
 

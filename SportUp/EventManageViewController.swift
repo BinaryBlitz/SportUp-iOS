@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import CoreLocation
 
+private let datePickerCellHeight: CGFloat = 220
+private let passwordPickerCellHeight: CGFloat = 81
+
 class EventManageViewController: UITableViewController, SelfControlledBarStyleViewController {
   // MARK: - Outlets
   @IBOutlet weak var nameField: UITextField!
@@ -39,15 +42,21 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       addressField.text = address
     }
   }
-  var name: String? = nil {
-    didSet {
-      nameField.text = name
+  var name: String? {
+    set {
+      nameField.text = newValue
+    }
+    get {
+      return nameField.text
     }
   }
   var coordinate: CLLocationCoordinate2D?
-  var descriptionText: String? = nil {
-    didSet {
-      descriptionTextView.text = description
+  var descriptionText: String? {
+    set {
+      descriptionTextView.text = descriptionText
+    }
+    get {
+      return descriptionTextView.text
     }
   }
   var sportType: SportType? = nil {
@@ -64,7 +73,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   }
   var teamsCount: Int = 0 {
     didSet {
-      teamsCountField.text = "\(playersCount)"
+      teamsCountField.text = "\(teamsCount)"
     }
   }
   var price: Int = 0 {
@@ -166,6 +175,14 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     switch screenType {
     case .create:
       let event = Event()
+      do {
+        try updateEvent(event: event)
+      } catch {
+        navigationItem.rightBarButtonItem?.isEnabled = true
+        guard let error = error as? DataError else { return }
+        presentAlertWithMessage(error.description)
+      }
+
       DataManager.instance.createEvent(event: event).then { [weak self] in
         self?.dismiss(animated: true, completion: nil)
       }.catch { [weak self] error in
@@ -173,27 +190,65 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
         self?.presentAlertWithMessage("Ошибка")
       }
     case .edit(let event):
+      do {
+        try updateEvent(event: event)
+      } catch {
+        navigationItem.rightBarButtonItem?.isEnabled = true
+        guard let error = error as? DataError else { return }
+        presentAlertWithMessage(error.description)
+        return
+      }
       DataManager.instance.editEvent(event: event).then { [weak self] in
         self?.dismiss(animated: true, completion: nil)
-        }.catch { [weak self] error in
-          self?.navigationItem.rightBarButtonItem?.isEnabled = true
-          self?.presentAlertWithMessage("Ошибка")
+      }.catch { [weak self] error in
+        self?.navigationItem.rightBarButtonItem?.isEnabled = true
+        self?.presentAlertWithMessage("Ошибка")
       }
     }
   }
 
-  func updateEvent(event: Event) {
-    event.name = name ?? ""
-    event.address = address ?? ""
-    event.description = description
+  func updateEvent(event: Event) throws {
+    var alertMessage = ""
+    guard let name = name, !name.trimmingCharacters(in: .whitespaces).isEmpty else {
+      alertMessage += "Имя не может быть пустым"
+      throw DataError.validationFailed(message: alertMessage)
+    }
+    event.name = name
+    guard let address = address, !address.trimmingCharacters(in: .whitespaces).isEmpty else {
+      alertMessage += "\nАдрес не выбран"
+      throw DataError.validationFailed(message: alertMessage)
+    }
+    event.address = address
+    guard let descriptionText = descriptionText, !descriptionText.trimmingCharacters(in: .whitespaces).isEmpty else {
+      alertMessage += "\nОписание не может быть пустым"
+      throw DataError.validationFailed(message: alertMessage)
+    }
+    event.description = descriptionText
     event.endsAt = endsAt
     event.startsAt = startsAt
     event.isPublic = isPublic
-    event.sportType = sportType
-    if let latitude = coordinate?.latitude, let longitude = coordinate?.longitude {
-      event.latitude = latitude
-      event.longitude = longitude
+    guard let sportType = sportType else {
+      alertMessage += "\nНе выбран тип спорта"
+      throw DataError.validationFailed(message: alertMessage)
     }
+    event.sportType = sportType
+    event.price = Double(price)
+    guard playersCount != 0 else {
+      alertMessage += "\nКоличество игроков не может быть равно нулю"
+      throw DataError.validationFailed(message: alertMessage)
+    }
+    event.userLimit = playersCount
+    guard teamsCount != 0 else {
+      alertMessage += "\nКоличество команд не может быть равно нулю"
+      throw DataError.validationFailed(message: alertMessage)
+    }
+    event.teamLimit = teamsCount
+    guard let latitude = coordinate?.latitude, let longitude = coordinate?.longitude else {
+      alertMessage += "\nНе выбран адрес по координатам"
+      throw DataError.validationFailed(message: alertMessage)
+    }
+    event.latitude = latitude
+    event.longitude = longitude
   }
 
   func configureView() {
@@ -285,9 +340,9 @@ extension EventManageViewController {
       default:
         return super.tableView(tableView, heightForRowAt: indexPath)
       }
-      return datePicker.isHidden ? 0 : 220
+      return datePicker.isHidden ? 0 : datePickerCellHeight
     case Sections.privacy.rawValue where indexPath.row == PrivacyRows.password.rawValue:
-      return isPublic ? 0 : 71
+      return isPublic ? 0 : passwordPickerCellHeight
     default:
       return super.tableView(tableView, heightForRowAt: indexPath)
     }
@@ -308,7 +363,7 @@ extension EventManageViewController {
       }
       navigationController?.pushViewController(viewController, animated: true)
     case Sections.price.rawValue:
-      let viewController = TextInputViewController()
+      let viewController = TextInputViewController(title: "Цена")
       viewController.value = "\(price)"
       viewController.keyboardType = .numberPad
       viewController.didFinishEditingHandler =  { [weak self] in
@@ -316,7 +371,7 @@ extension EventManageViewController {
       }
       navigationController?.pushViewController(viewController, animated: true)
     case Sections.sportType.rawValue:
-      let viewController = SelectSportTypeViewController()
+      let viewController = SelectSportTypeViewController(title: "Вид спорта")
       viewController.sportTypes = sportTypes
       viewController.didFinishEditingHandler = { [weak self] in
         self?.sportType = $0
@@ -330,7 +385,7 @@ extension EventManageViewController {
   func didSelectGameLimitsCell(indexPath: IndexPath) {
     switch indexPath.row {
     case GameLimitsSectionRows.playersCount.rawValue:
-      let viewController = TextInputViewController()
+      let viewController = TextInputViewController(title: "Количество участников")
       viewController.value = "\(playersCount)"
       viewController.keyboardType = .numberPad
       viewController.didFinishEditingHandler =  { [weak self] in
@@ -338,7 +393,7 @@ extension EventManageViewController {
       }
       navigationController?.pushViewController(viewController, animated: true)
     case GameLimitsSectionRows.teamsCount.rawValue:
-      let viewController = TextInputViewController()
+      let viewController = TextInputViewController(title: "Количество команд")
       viewController.value = "\(teamsCount)"
       viewController.keyboardType = .numberPad
       viewController.didFinishEditingHandler =  { [weak self] in

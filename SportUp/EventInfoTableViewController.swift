@@ -42,7 +42,7 @@ class EventInfoTableViewController: UITableViewController {
   @IBOutlet weak var playersCountLabel: UILabel!
   @IBOutlet weak var teamsCountLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
-  @IBOutlet weak var membershipButton: GoButton!
+  @IBOutlet weak var membershipButton: UIButton!
 
   override func viewDidLoad() {
     refresh()
@@ -61,7 +61,7 @@ class EventInfoTableViewController: UITableViewController {
     if event.membership == nil {
       membershipButton.setTitle("Принять участие", for: .normal)
       membershipButton.backgroundColor = sportType.color
-      membershipButton.defaultBackgroundColor = sportType.color
+      //membershipButton.defaultBackgroundColor = sportType.color
     } else {
       membershipButton.setTitle("Отказаться от участия", for: .normal)
       membershipButton.backgroundColor = UIColor.sportUpSalmon

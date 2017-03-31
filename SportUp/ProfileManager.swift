@@ -7,16 +7,31 @@
 //
 
 import Foundation
+import PromiseKit
 import ObjectMapper
 
 class ProfileManager {
   static let instance = ProfileManager()
 
-  var currentProfile: User? = nil
+  var currentProfile: User? = nil {
+    didSet {
+      let currentProfileJSON = currentProfile?.toJSONString()
+      try? StorageHelper.save(currentProfileJSON, forKey: .currentProfile)
+    }
+  }
+  
   var currentCity: City? = nil {
     didSet {
       let cityJSON = currentCity?.toJSONString()
       try? StorageHelper.save(cityJSON, forKey: .currentCity)
+    }
+  }
+
+  func updateProfile(_ closure: (User) -> Void) -> Promise<Void> {
+    let profile = currentProfile ?? User()
+    closure(profile)
+    return DataManager.instance.updateUser(profile: profile).then {
+      try? StorageHelper.save(profile.toJSONString(), forKey: .currentProfile)
     }
   }
 

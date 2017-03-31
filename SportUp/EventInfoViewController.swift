@@ -88,9 +88,17 @@ class EventInfoViewController: UIViewController {
 
 extension EventInfoViewController: EventInfoViewControllerDelegate {
   func membershipButtonDidTap() {
-    _ = DataManager.instance.createMembership(eventId: event.id).then { [weak self] eventMember -> Void in
-      self?.updateData()
+    if let membership = event.membership {
+      _ = DataManager.instance.deleteMembership(membershipId: membership.id).then { [weak self] _ in
+        self?.updateData()
+      }
+
+    } else {
+      _ = DataManager.instance.createMembership(eventId: event.id).then { [weak self] eventMember -> Void in
+        self?.updateData()
+      }
     }
+
   }
 
   func pushPlayersListController() {

@@ -42,22 +42,23 @@ class Event: Mappable {
   }
 
   func mapping(map: Map) {
-    id <- map["id"]
     startsAt <- (map["starts_at"], DateTransform())
     description <- map["description"]
     endsAt <- (map["ends_at"], DateTransform())
-    address <- map["adress"]
+    address <- map["address"]
     userLimit <- map["user_limit"]
     teamLimit <- map["team_limit"]
     name <- map["name"]
     price <- map["price"]
     isPublic <- map["public"]
-    userCount <- map["user_count"]
     latitude <- map["latitude"]
     longitude <- map["longitude"]
     password <- map["password"]
     sportType?.id >>> map["sport_type_id"]
+    ProfileManager.instance.currentCity?.id >>> map["city_id"]
     guard map.mappingType == .fromJSON else { return }
+    id <- map["id"]
+    userCount <- map["user_count"]
     membership <- map["membership"]
     membership?.event = self
     creator <- map["creator"]

@@ -28,6 +28,11 @@ enum APIPath {
   case deleteInvite(inviteId: Int)
   case createEvent
   case editEvent(eventId: Int)
+  case createVerificationToken
+  case verifyToken(verificationToken: String)
+  case createUser
+  case updateUser
+  case getUser
 
   var rawPath: String {
     switch self {
@@ -67,6 +72,12 @@ enum APIPath {
       return "events"
     case .editEvent(let eventId):
       return "events/\(eventId)"
+    case .createVerificationToken:
+      return "verification_tokens"
+    case .verifyToken(let verificationToken):
+      return "verification_tokens/\(verificationToken)"
+    case .updateUser, .createUser, .getUser:
+      return "user"
     }
   }
 
@@ -74,9 +85,9 @@ enum APIPath {
     switch self {
     case .deleteMembership(_), .leaveTeam(_), .deleteInvite(_):
       return .delete
-    case .sendMembership(_), .joinTeam(_), .vote(_), .createReport(_), .createEvent:
+    case .sendMembership(_), .joinTeam(_), .vote(_), .createReport(_), .createEvent, .createVerificationToken, .createUser:
       return .post
-    case .acceptInvite(_), .editEvent(_):
+    case .acceptInvite(_), .editEvent(_), .verifyToken(_), .updateUser:
       return .put
     default:
       return .get

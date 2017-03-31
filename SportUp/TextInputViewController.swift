@@ -15,6 +15,8 @@ class TextInputViewController: UITableViewController, DefaultBarStyleViewControl
 
   var textInputTableViewCell = TextInputTableViewCell.nibInstance()!
 
+  var titleText: String
+
   var keyboardType: UIKeyboardType {
     get {
       return textInputTableViewCell.textField.keyboardType
@@ -35,7 +37,8 @@ class TextInputViewController: UITableViewController, DefaultBarStyleViewControl
     }
   }
 
-  init() {
+  init(title: String) {
+    self.titleText = title
     super.init(style: .grouped)
   }
   
@@ -45,6 +48,7 @@ class TextInputViewController: UITableViewController, DefaultBarStyleViewControl
 
   override func viewDidLoad() {
     tableView.register(TextInputTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+    navigationItem.title = titleText
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

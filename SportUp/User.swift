@@ -14,17 +14,21 @@ class User: Mappable {
   var id: Int = 0
   var firstName: String = ""
   var lastName: String = ""
+  var avatar: String = ""
   var phoneNumber: String = ""
   var votesCount: Int = 0
   var violationsCount: Int = 0
-
   var eventMemberships: [Membership] = []
+
+  init() { }
 
   func mapping(map: Map) {
     id <- map["id"]
     firstName <- map["first_name"]
     lastName <- map["last_name"]
+    avatar <- map["avatar"]
     phoneNumber <- map["phone_number"]
+    guard map.mappingType == .fromJSON else { return }
     votesCount <- map["votes_count"]
     violationsCount <- map["violations_count"]
   }

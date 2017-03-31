@@ -12,6 +12,7 @@
 		880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC41E890F3C00E3173E /* CalendarDayView.swift */; };
 		880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC61E8917C400E3173E /* Date+WeekDates.swift */; };
 		880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FFBC81E8917C400E3173E /* Date+toString.swift */; };
+		8812B9611E8ECA140069F62B /* MaskedInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812B9601E8ECA140069F62B /* MaskedInput.swift */; };
 		88294EB51E89DE4100133A3E /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EB41E89DE4100133A3E /* EventInfoViewController.swift */; };
 		88294EB91E89DECA00133A3E /* EventInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88294EB81E89DECA00133A3E /* EventInfoViewController.storyboard */; };
 		88294EBB1E89DF5C00133A3E /* EventInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EBA1E89DF5C00133A3E /* EventInfoTableViewController.swift */; };
@@ -42,6 +43,10 @@
 		8878268E1E8DB0F200F9438F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878268D1E8DB0F200F9438F /* SelectViewController.swift */; };
 		887826941E8DCD3600F9438F /* UIViewController+addToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */; };
 		887826961E8DD93C00F9438F /* UIViewController+presentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826951E8DD93C00F9438F /* UIViewController+presentAlert.swift */; };
+		887AC7FE1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887AC7FD1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift */; };
+		887AC8001E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887AC7FF1E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard */; };
+		887AC8021E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887AC8011E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard */; };
+		887AC8041E8EC733003C79D6 /* RegistrationCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887AC8031E8EC733003C79D6 /* RegistrationCodeInputViewController.swift */; };
 		889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */; };
 		889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB231E8AF2A10027CAAA /* Membership.swift */; };
 		889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */; };
@@ -110,6 +115,7 @@
 		880FFBC41E890F3C00E3173E /* CalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayView.swift; sourceTree = "<group>"; };
 		880FFBC61E8917C400E3173E /* Date+WeekDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+WeekDates.swift"; sourceTree = "<group>"; };
 		880FFBC81E8917C400E3173E /* Date+toString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
+		8812B9601E8ECA140069F62B /* MaskedInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskedInput.swift; sourceTree = "<group>"; };
 		88294EB41E89DE4100133A3E /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
 		88294EB81E89DECA00133A3E /* EventInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventInfoViewController.storyboard; sourceTree = "<group>"; };
 		88294EBA1E89DF5C00133A3E /* EventInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,10 @@
 		8878268D1E8DB0F200F9438F /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+addToolbar.swift"; sourceTree = "<group>"; };
 		887826951E8DD93C00F9438F /* UIViewController+presentAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+presentAlert.swift"; sourceTree = "<group>"; };
+		887AC7FD1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPhoneInputViewController.swift; sourceTree = "<group>"; };
+		887AC7FF1E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationPhoneInputViewController.storyboard; sourceTree = "<group>"; };
+		887AC8011E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationCodeInputViewController.storyboard; sourceTree = "<group>"; };
+		887AC8031E8EC733003C79D6 /* RegistrationCodeInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCodeInputViewController.swift; sourceTree = "<group>"; };
 		889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		889CFB231E8AF2A10027CAAA /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -320,6 +330,33 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		887AC7FA1E8E9727003C79D6 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				887AC7FC1E8E9866003C79D6 /* CodeInput */,
+				887AC7FB1E8E985E003C79D6 /* PhoneInput */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
+		887AC7FB1E8E985E003C79D6 /* PhoneInput */ = {
+			isa = PBXGroup;
+			children = (
+				887AC7FD1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift */,
+				887AC7FF1E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard */,
+			);
+			name = PhoneInput;
+			sourceTree = "<group>";
+		};
+		887AC7FC1E8E9866003C79D6 /* CodeInput */ = {
+			isa = PBXGroup;
+			children = (
+				887AC8011E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard */,
+				887AC8031E8EC733003C79D6 /* RegistrationCodeInputViewController.swift */,
+			);
+			name = CodeInput;
+			sourceTree = "<group>";
+		};
 		889CFB221E8AF1520027CAAA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				889F89C91E86B5090027D852 /* StorageHelper.swift */,
+				8812B9601E8ECA140069F62B /* MaskedInput.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -545,6 +583,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				887AC7FA1E8E9727003C79D6 /* Registration */,
 				8878267A1E8D5CCF00F9438F /* AddressSelect */,
 				887826791E8D56F700F9438F /* EventManage */,
 				889CFB4E1E8C837B0027CAAA /* ReportAlert */,
@@ -697,6 +736,7 @@
 				8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */,
 				88294EB91E89DECA00133A3E /* EventInfoViewController.storyboard in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
+				887AC8001E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
 				88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */,
 				889CFB2F1E8BD35D0027CAAA /* ProfileViewController.storyboard in Resources */,
@@ -709,6 +749,7 @@
 				8878268C1E8DAE9900F9438F /* TextInputTableViewCell.xib in Resources */,
 				889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */,
 				8878267C1E8D5D0A00F9438F /* AddressSelectViewController.storyboard in Resources */,
+				887AC8021E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard in Resources */,
 				889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +847,7 @@
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				889EA61D1E8D301A00B3CEDE /* Invite.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
+				887AC8041E8EC733003C79D6 /* RegistrationCodeInputViewController.swift in Sources */,
 				88294EBB1E89DF5C00133A3E /* EventInfoTableViewController.swift in Sources */,
 				880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */,
 				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
@@ -818,6 +860,7 @@
 				88294EC31E8ACCC500133A3E /* NavigationSubtitleLabel.swift in Sources */,
 				88294EC11E8AC8F800133A3E /* Int+russianEnumEnding.swift in Sources */,
 				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
+				887AC7FE1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift in Sources */,
 				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */,
@@ -844,6 +887,7 @@
 				889CFB441E8C5D310027CAAA /* UIViewController+hideOnTapOutside.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
 				889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */,
+				8812B9611E8ECA140069F62B /* MaskedInput.swift in Sources */,
 				889CFB341E8C04730027CAAA /* BestPlayersPollViewController.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
 				88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */,

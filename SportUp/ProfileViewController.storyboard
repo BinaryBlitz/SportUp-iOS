@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-Iy-hpx">
-                                <rect key="frame" x="157.5" y="80" width="60" height="60"/>
+                                <rect key="frame" x="158" y="80" width="60" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconUserWhite" translatesAutoresizingMaskIntoConstraints="NO" id="kba-Qn-bDZ">
                                         <rect key="frame" x="18" y="18" width="24" height="24"/>
@@ -33,6 +33,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.78662341830000004" green="0.81176470588235294" blue="0.87229257819999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="F0D-Od-sdg"/>
                                     <constraint firstItem="kba-Qn-bDZ" firstAttribute="centerY" secondItem="Xhz-Iy-hpx" secondAttribute="centerY" id="Lsj-JK-gpS"/>
@@ -44,12 +45,18 @@
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Iza-fk-lIs" appends="YES" id="LVY-Ez-zL8"/>
+                                </connections>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1rB-9Y-ols">
                                 <rect key="frame" x="16" y="200" width="343" height="18"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="firstNameEditingDidChange:" destination="klI-Sy-9sq" eventType="editingChanged" id="m5W-jS-BmU"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmJ-gC-IwD">
                                 <rect key="frame" x="16" y="233" width="343" height="1"/>
@@ -70,6 +77,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="lastNameEditingDidChange:" destination="klI-Sy-9sq" eventType="editingDidEnd" id="qeI-AV-Pdd"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,13 +100,22 @@
                             <constraint firstAttribute="trailing" secondItem="1rB-9Y-ols" secondAttribute="trailing" constant="16" id="tO7-lp-SsE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameField" destination="1rB-9Y-ols" id="Qjw-ds-lTa"/>
+                        <outlet property="lastNameField" destination="1PO-dk-xL6" id="cXI-aL-IyO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uR-lj-8Pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Iza-fk-lIs">
+                    <connections>
+                        <action selector="avatarViewDidTap:" destination="klI-Sy-9sq" id="w0F-0f-TOL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="268" y="507.79610194902551"/>
         </scene>
     </scenes>
     <resources>
-        <image name="iconUserWhite" width="16" height="16"/>
+        <image name="iconUserWhite" width="24" height="24"/>
     </resources>
 </document>

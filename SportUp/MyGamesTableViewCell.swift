@@ -16,14 +16,15 @@ protocol MyGamesTableViewCellDelegate: class {
 }
 
 class MyGamesTableViewCell: UITableViewCell {
-  @IBOutlet weak var sportTypeIconView: UIImageView!
-  @IBOutlet weak var eventNameLabel: UILabel!
-  @IBOutlet weak var stackView: UIStackView!
-  @IBOutlet weak var dateLabel: UILabel!
-  @IBOutlet weak var timeLabel: UILabel!
-  @IBOutlet weak var acceptButton: UIButton!
-  @IBOutlet weak var declineButton: UIButton!
-  @IBOutlet weak var nextIconView: UIImageView!
+  @IBOutlet var sportTypeIconView: UIImageView!
+  @IBOutlet var eventNameLabel: UILabel!
+  @IBOutlet var stackView: UIStackView!
+  @IBOutlet var dateLabel: UILabel!
+  @IBOutlet var timeLabel: UILabel!
+
+  @IBOutlet var acceptButton: UIButton!
+  @IBOutlet var declineButton: UIButton!
+  @IBOutlet var nextIconView: UIImageView!
 
   var delegate: MyGamesTableViewCellDelegate? = nil
 
@@ -48,7 +49,7 @@ class MyGamesTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(nextIconView)
       case .currentGame(let eventMembership):
         configure(event: eventMembership.event)
-        stackView.addArrangedSubview(acceptButton)
+        stackView.addArrangedSubview(declineButton)
       case .finishedGame(let eventMembership):
         configure(event: eventMembership.event)
       }

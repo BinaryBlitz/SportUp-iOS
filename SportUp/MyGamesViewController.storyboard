@@ -34,15 +34,15 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" horizontalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="Mny-T8-DBi">
-                                            <rect key="frame" x="64" y="17.5" width="109.5" height="38.5"/>
+                                            <rect key="frame" x="64" y="17" width="109.5" height="38.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0Q-jo-KEF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0Q-jo-KEF">
                                                     <rect key="frame" x="0.0" y="0.0" width="109.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cZ4-BL-Nta">
+                                                <stackView opaque="NO" contentMode="left" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cZ4-BL-Nta">
                                                     <rect key="frame" x="0.0" y="25" width="109.5" height="13.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCalendarsmollGray" translatesAutoresizingMaskIntoConstraints="NO" id="Iip-Yg-kAb">
@@ -148,13 +148,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="acceptButton" destination="WkA-la-1yK" id="8UZ-Ab-ICB"/>
+                                    <outlet property="acceptButton" destination="WkA-la-1yK" id="Tep-X8-Ref"/>
                                     <outlet property="dateLabel" destination="Rsg-C0-l5a" id="Ech-JB-kXy"/>
                                     <outlet property="declineButton" destination="4oM-NL-j4O" id="aWZ-ij-1BY"/>
                                     <outlet property="eventNameLabel" destination="z0Q-jo-KEF" id="uOE-H6-2zb"/>
                                     <outlet property="nextIconView" destination="cKv-2m-HV2" id="wLo-yL-fch"/>
                                     <outlet property="sportTypeIconView" destination="GT2-w6-Vgo" id="6Y5-rq-STf"/>
-                                    <outlet property="stackView" destination="cZ4-BL-Nta" id="f59-Vt-aEo"/>
+                                    <outlet property="stackView" destination="Z3S-pd-CJ7" id="nEP-bO-vWM"/>
                                     <outlet property="timeLabel" destination="gD4-lW-hog" id="dbH-rs-wXt"/>
                                 </connections>
                             </tableViewCell>
