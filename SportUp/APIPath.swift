@@ -11,8 +11,8 @@ import Alamofire
 
 enum APIPath {
   case getCities
-  case getSportTypes
-  case getEvents(sportTypeId: Int)
+  case getSportTypes(cityId: Int)
+  case getEvents(cityId: Int, sportTypeId: Int)
   case getEvent(eventId: Int)
   case getEventMemberships(eventId: Int)
   case sendMembership(eventId: Int)
@@ -26,15 +26,17 @@ enum APIPath {
   case getInvites
   case acceptInvite(inviteId: Int)
   case deleteInvite(inviteId: Int)
+  case createEvent
+  case editEvent(eventId: Int)
 
   var rawPath: String {
     switch self {
     case .getCities:
       return "cities"
-    case .getSportTypes:
-      return "sport_types"
-    case .getEvents(let sportTypeId):
-      return "sport_types/\(sportTypeId)/events"
+    case .getSportTypes(let cityId):
+      return "cities/\(cityId)/sport_types"
+    case .getEvents(let cityId, let sportTypeId):
+      return "cities/\(cityId)/sport_types/\(sportTypeId)/events"
     case .getEvent(let eventId):
       return "events/\(eventId)"
     case .getEventMemberships(let eventId):
@@ -61,6 +63,10 @@ enum APIPath {
       return "invites/\(inviteId)"
     case .deleteInvite(let inviteId):
       return "invites/\(inviteId)"
+    case .createEvent:
+      return "events"
+    case .editEvent(let eventId):
+      return "events/\(eventId)"
     }
   }
 
@@ -68,9 +74,9 @@ enum APIPath {
     switch self {
     case .deleteMembership(_), .leaveTeam(_), .deleteInvite(_):
       return .delete
-    case .sendMembership(_), .joinTeam(_), .vote(_), .createReport(_):
+    case .sendMembership(_), .joinTeam(_), .vote(_), .createReport(_), .createEvent:
       return .post
-    case .acceptInvite(_):
+    case .acceptInvite(_), .editEvent(_):
       return .put
     default:
       return .get

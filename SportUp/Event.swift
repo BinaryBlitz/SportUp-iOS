@@ -41,7 +41,6 @@ class Event: Mappable {
     return startsAt < Date() && endsAt < Date()
   }
 
-
   func mapping(map: Map) {
     id <- map["id"]
     startsAt <- (map["starts_at"], DateTransform())
@@ -56,12 +55,16 @@ class Event: Mappable {
     userCount <- map["user_count"]
     latitude <- map["latitude"]
     longitude <- map["longitude"]
+    password <- map["password"]
+    sportType?.id >>> map["sport_type_id"]
+    guard map.mappingType == .fromJSON else { return }
     membership <- map["membership"]
     membership?.event = self
     creator <- map["creator"]
     sportType <- map["sport_type"]
-    password <- map["password"]
   }
+
+  init() { }
 
   required init(map: Map) { }
 

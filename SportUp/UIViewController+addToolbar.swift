@@ -14,7 +14,7 @@ extension UIViewController: UITextFieldDelegate, UITextViewDelegate {
     let toolBar = UIToolbar()
     toolBar.barStyle = .default
     toolBar.isTranslucent = true
-    toolBar.tintColor = UIColor.white
+    toolBar.tintColor = UIColor.sportUpGunmetal
     let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(self.donePressed))
     toolBar.setItems([doneButton], animated: false)
     toolBar.isUserInteractionEnabled = true

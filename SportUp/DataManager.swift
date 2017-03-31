@@ -36,9 +36,10 @@ class DataManager {
   }
 
   func fetchEvents(sportType: SportType, date: Date) -> Promise<[Event]> {
+    guard let city = ProfileManager.instance.currentCity else { return Promise(error: DataError.unknown) }
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "dd-MM-YYYY"
-    return NetworkManager.doRequest(.getEvents(sportTypeId: sportType.id), ["date": dateFormatter.string(from: date)]).then { result in
+    return NetworkManager.doRequest(.getEvents(cityId: city.id, sportTypeId: sportType.id), ["date": dateFormatter.string(from: date)]).then { result in
       guard let events = Mapper<Event>().mapArray(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }
@@ -56,7 +57,8 @@ class DataManager {
   }
 
   func fetchSportTypes() -> Promise<[SportType]> {
-    return NetworkManager.doRequest(.getSportTypes).then { result in
+    guard let city = ProfileManager.instance.currentCity else { return Promise(error: DataError.unknown) }
+    return NetworkManager.doRequest(.getSportTypes(cityId: city.id)).then { result in
       guard let sportTypes = Mapper<SportType>().mapArray(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }
@@ -139,6 +141,14 @@ class DataManager {
 
   func declineInvite(inviteId: Int) -> Promise<Void> {
     return NetworkManager.doRequest(.deleteInvite(inviteId: inviteId)).asVoid()
+  }
+
+  func createEvent(event: Event) -> Promise<Void> {
+    return NetworkManager.doRequest(.createEvent, event.toJSON()).asVoid()
+  }
+
+  func editEvent(event: Event) -> Promise<Void> {
+    return NetworkManager.doRequest(.editEvent(eventId: event.id), event.toJSON()).asVoid()
   }
 }
 

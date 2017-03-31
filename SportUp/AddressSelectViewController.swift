@@ -17,14 +17,32 @@ private let cityZoom: Float = 10
 class AddressSelectViewController: UIViewController {
   let resultsViewController = GMSAutocompleteResultsViewController()
   let marker = GMSMarker()
+  var coordinate: CLLocationCoordinate2D? = nil {
+    didSet {
+      guard let coordinate = coordinate else { return }
+      searchController?.isActive = false
+      marker.position = coordinate
+      let cameraUpdate = GMSCameraUpdate.setTarget(coordinate, zoom: markerZoom)
+      mapView.animate(with: cameraUpdate)
+
+      _ = ReverseGeocoder.getAdress(coordinate: coordinate).then { [weak self] address -> Void in
+        guard let number = address?.streetNumber else { return }
+        guard let streetName = address?.streetName else { return }
+
+        self?.addressString = "\(streetName), \(number)"
+      }
+    }
+  }
   var addressString: String = "" {
     didSet {
-      navigationItem.title = addressString
+      searchController?.searchBar.text = addressString
     }
   }
   let sportType: SportType? = nil
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var searchView: UIView!
+
+  var selectAddressHandler: ((String) -> ())? = nil
 
   let defaultColor = UIColor.sportUpAquaMarine
 
@@ -46,8 +64,9 @@ class AddressSelectViewController: UIViewController {
     guard let city = ProfileManager.instance.currentCity else { return }
     mapView.camera = GMSCameraPosition.camera(withLatitude: city.latitude, longitude: city.longitude, zoom: cityZoom)
 
-    let markerView = EventMarkerView()
+    let markerView = EventMarkerView.nibInstance()!
     markerView.configure(iconURL: sportType?.iconUrl, backgroundColor: sportType?.color ?? defaultColor)
+    marker.iconView = markerView
     marker.isDraggable = true
     marker.map = mapView
 
@@ -71,8 +90,8 @@ class AddressSelectViewController: UIViewController {
     searchBar.tintColor = UIColor.white
     searchBar.backgroundColor = sportType?.color ?? UIColor.sportUpAquaMarine
     searchBar.backgroundImage = UIImage()
-    searchBar.setSearchFieldBackgroundImage(#imageLiteral(resourceName: "searchBar"), for: .normal)
-    searchBar.setImage(#imageLiteral(resourceName: "iconSearchsmollGray"), for: .search, state: .normal)
+    searchBar.setSearchFieldBackgroundImage(#imageLiteral(resourceName: "whiteSearchBarBackground"), for: .normal)
+    searchBar.setImage(#imageLiteral(resourceName: "iconSearchsmollWhite"), for: .search, state: .normal)
     searchBar.setTextColor(color: UIColor.white)
     searchBar.searchTextPositionAdjustment = UIOffsetMake(5.0, 0.0)
 
@@ -80,25 +99,16 @@ class AddressSelectViewController: UIViewController {
     searchView.addSubview(searchBar)
   }
 
-  func updateMarker(coordinate: CLLocationCoordinate2D) {
-    searchController?.isActive = false
-    marker.position = coordinate
-    let cameraUpdate = GMSCameraUpdate.setTarget(coordinate, zoom: markerZoom)
-    mapView.animate(with: cameraUpdate)
-
-    ReverseGeocoder.getAdress(coordinate: coordinate).then { [weak self] address -> Void in
-      guard let number = address?.streetNumber else { return }
-      guard let streetName = address?.streetName else { return }
-
-      self?.addressString = "\(streetName), \(number)"
-    }
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    selectAddressHandler?(addressString)
   }
 }
 
 extension AddressSelectViewController: GMSAutocompleteResultsViewControllerDelegate {
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                          didAutocompleteWith place: GMSPlace) {
-    updateMarker(coordinate: place.coordinate)
+    self.coordinate = place.coordinate
   }
 
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
@@ -113,7 +123,7 @@ extension AddressSelectViewController: GMSAutocompleteResultsViewControllerDeleg
 
 extension AddressSelectViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-    updateMarker(coordinate: coordinate)
+    self.coordinate = coordinate
 
   }
 }

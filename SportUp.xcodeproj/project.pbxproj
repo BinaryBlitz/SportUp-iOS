@@ -41,6 +41,7 @@
 		8878268C1E8DAE9900F9438F /* TextInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8878268B1E8DAE9900F9438F /* TextInputTableViewCell.xib */; };
 		8878268E1E8DB0F200F9438F /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878268D1E8DB0F200F9438F /* SelectViewController.swift */; };
 		887826941E8DCD3600F9438F /* UIViewController+addToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */; };
+		887826961E8DD93C00F9438F /* UIViewController+presentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887826951E8DD93C00F9438F /* UIViewController+presentAlert.swift */; };
 		889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */; };
 		889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB231E8AF2A10027CAAA /* Membership.swift */; };
 		889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */; };
@@ -138,6 +139,7 @@
 		8878268B1E8DAE9900F9438F /* TextInputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputTableViewCell.xib; sourceTree = "<group>"; };
 		8878268D1E8DB0F200F9438F /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+addToolbar.swift"; sourceTree = "<group>"; };
+		887826951E8DD93C00F9438F /* UIViewController+presentAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+presentAlert.swift"; sourceTree = "<group>"; };
 		889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		889CFB231E8AF2A10027CAAA /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -579,6 +581,7 @@
 				88294EC01E8AC8F800133A3E /* Int+russianEnumEnding.swift */,
 				889CFB431E8C5D310027CAAA /* UIViewController+hideOnTapOutside.swift */,
 				887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */,
+				887826951E8DD93C00F9438F /* UIViewController+presentAlert.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */,
+				887826961E8DD93C00F9438F /* UIViewController+presentAlert.swift in Sources */,
 				887826871E8DA95800F9438F /* TextInputViewController.swift in Sources */,
 				88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,

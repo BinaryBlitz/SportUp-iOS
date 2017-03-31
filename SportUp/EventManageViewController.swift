@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
-class EventManageViewController: UITableViewController, DefaultBarStyleViewController {
+class EventManageViewController: UITableViewController, SelfControlledBarStyleViewController {
+  // MARK: - Outlets
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var addressField: UITextField!
   @IBOutlet weak var startDateTimeLabel: UILabel!
@@ -30,6 +32,8 @@ class EventManageViewController: UITableViewController, DefaultBarStyleViewContr
 
   var sportTypes: [SportType] = DataManager.instance.sportTypes
 
+  // MARK: - Properties
+
   var address: String? = nil {
     didSet {
       addressField.text = address
@@ -40,6 +44,7 @@ class EventManageViewController: UITableViewController, DefaultBarStyleViewContr
       nameField.text = name
     }
   }
+  var coordinate: CLLocationCoordinate2D?
   var descriptionText: String? = nil {
     didSet {
       descriptionTextView.text = description
@@ -48,6 +53,8 @@ class EventManageViewController: UITableViewController, DefaultBarStyleViewContr
   var sportType: SportType? = nil {
     didSet {
       sportTypeLabel.text = sportType?.name
+      configureNavigationBar()
+      tableView.reloadData()
     }
   }
   var playersCount: Int = 0 {
@@ -97,6 +104,8 @@ class EventManageViewController: UITableViewController, DefaultBarStyleViewContr
 
   var screenType: ScreenType = .create
 
+  // MARK: - Sections and rows
+
   enum Sections: Int {
     case mainInfo = 0
     case dateTime
@@ -133,8 +142,58 @@ class EventManageViewController: UITableViewController, DefaultBarStyleViewContr
 
   override func viewDidLoad() {
     configureView()
-    navigationController?.navigationBar.tintColor = UIColor.black
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCanselWhite"), style: .plain, target: self, action: #selector(self.navCancelButtonDidTap))
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCheckedWhite"), style: .plain, target: self, action: #selector(self.navSaveButtonDidTap))
+  }
+
+  func navCancelButtonDidTap() {
+    dismiss(animated: true, completion: nil)
+  }
+
+  func configureNavigationBar() {
+    navigationController?.navigationBar.tintColor = sportType == nil ? UIColor.black : UIColor.white
+    navigationController?.navigationBar.barTintColor = sportType?.color ?? UIColor.white
+    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: sportType == nil ? UIColor.black : UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 17)]
+
+    UIApplication.shared.statusBarStyle = sportType == nil ? .default : .lightContent
+
+  }
+
+  func navSaveButtonDidTap() {
+    view.endEditing(true)
+    navigationItem.rightBarButtonItem?.isEnabled = false
+    switch screenType {
+    case .create:
+      let event = Event()
+      DataManager.instance.createEvent(event: event).then { [weak self] in
+        self?.dismiss(animated: true, completion: nil)
+      }.catch { [weak self] error in
+        self?.navigationItem.rightBarButtonItem?.isEnabled = true
+        self?.presentAlertWithMessage("Ошибка")
+      }
+    case .edit(let event):
+      DataManager.instance.editEvent(event: event).then { [weak self] in
+        self?.dismiss(animated: true, completion: nil)
+        }.catch { [weak self] error in
+          self?.navigationItem.rightBarButtonItem?.isEnabled = true
+          self?.presentAlertWithMessage("Ошибка")
+      }
+    }
+  }
+
+  func updateEvent(event: Event) {
+    event.name = name ?? ""
+    event.address = address ?? ""
+    event.description = description
+    event.endsAt = endsAt
+    event.startsAt = startsAt
+    event.isPublic = isPublic
+    event.sportType = sportType
+    if let latitude = coordinate?.latitude, let longitude = coordinate?.longitude {
+      event.latitude = latitude
+      event.longitude = longitude
+    }
   }
 
   func configureView() {
@@ -182,10 +241,38 @@ class EventManageViewController: UITableViewController, DefaultBarStyleViewContr
   @IBAction func cancelButtonDidTap(_ sender: GoButton) {
     
   }
+
+  override func viewWillAppear(_ animated: Bool) {
+    configureNavigationBar()
+    if let indexPath = tableView.indexPathForSelectedRow {
+      tableView.deselectRow(at: indexPath, animated: true)
+    }
+  }
   
 }
 
+// MARK: - Table view
 extension EventManageViewController {
+
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    guard section != Sections.mainInfo.rawValue else { return 0 }
+    return 16
+  }
+
+  override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return 0
+  }
+
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let view = UIView()
+    if section == Sections.mainInfo.rawValue {
+      view.backgroundColor = sportType?.color ?? UIColor.sportUpAquaMarine
+    } else {
+      view.backgroundColor = UIColor.sportUpPaleGrey
+    }
+    return view
+  }
+
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     switch indexPath.section {
     case Sections.dateTime.rawValue:
@@ -215,6 +302,10 @@ extension EventManageViewController {
     case Sections.mainInfo.rawValue:
       guard indexPath.row == MainInfoRows.locationRow.rawValue else { return }
       let viewController = AddressSelectViewController.storyboardInstance()!
+      viewController.selectAddressHandler = { [weak self] in
+        self?.address = $0
+        self?.coordinate = viewController.coordinate
+      }
       navigationController?.pushViewController(viewController, animated: true)
     case Sections.price.rawValue:
       let viewController = TextInputViewController()

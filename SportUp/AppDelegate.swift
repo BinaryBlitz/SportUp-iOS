@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // Google maps
     GMSServices.provideAPIKey(googleMapsAPIKey)
+    GMSPlacesClient.provideAPIKey(googlePlacesAPIKey)
 
     return true
   }
