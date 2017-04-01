@@ -432,7 +432,7 @@
                         <outlet property="descriptionLabel" destination="f4Q-RA-qzw" id="R8f-cv-Djy"/>
                         <outlet property="mapView" destination="2ae-xp-ogb" id="tCH-1q-lgh"/>
                         <outlet property="membershipButton" destination="wOW-Za-fAh" id="E02-7z-Unx"/>
-                        <outlet property="playersCountLabel" destination="edP-aA-1gm" id="QhQ-UB-t6D"/>
+                        <outlet property="playersCountLabel" destination="z6C-lm-42A" id="mvz-kR-k0Z"/>
                         <outlet property="teamsCountLabel" destination="edP-aA-1gm" id="eHJ-Ha-fyP"/>
                     </connections>
                 </tableViewController>

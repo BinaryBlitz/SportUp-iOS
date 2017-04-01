@@ -105,10 +105,22 @@ extension GamesFeedViewController: UITableViewDataSource {
 
 extension GamesFeedViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard ProfileManager.instance.isAuthorized else {
+      let viewController = UINavigationController(rootViewController: RegistrationPhoneInputViewController.storyboardInstance()!)
+      return present(viewController, animated: true, completion: nil)
+    }
     let event = events[indexPath.row]
     let viewController = EventInfoViewController.storyboardInstance()!
     viewController.event = event
     viewController.sportType = sportType
-    navigationController?.pushViewController(viewController, animated: true)
+    if event.isPublic && event.creator?.id != ProfileManager.instance.currentProfile?.id {
+      navigationController?.pushViewController(viewController, animated: true)
+    } else {
+      let passwordAlertController = PasswordAlertViewController.storyboardInstance()!
+      passwordAlertController.event = event
+      passwordAlertController.didEnterPasswordHandler = { [weak self] in
+        self?.navigationController?.pushViewController(viewController, animated: true)
+      }
+    }
   }
 }

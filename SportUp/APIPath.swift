@@ -15,7 +15,7 @@ enum APIPath {
   case getEvents(cityId: Int, sportTypeId: Int)
   case getEvent(eventId: Int)
   case getEventMemberships(eventId: Int)
-  case sendMembership(eventId: Int)
+  case createMembership(eventId: Int)
   case deleteMembership(membershipId: Int)
   case joinTeam(teamId: Int)
   case getTeams(eventId: Int)
@@ -46,8 +46,8 @@ enum APIPath {
       return "events/\(eventId)"
     case .getEventMemberships(let eventId):
       return "events/\(eventId)/memberships"
-    case .sendMembership(let eventId):
-      return "events/\(eventId)/membershibs"
+    case .createMembership(let eventId):
+      return "events/\(eventId)/memberships"
     case .deleteMembership(let membershipId):
       return "memberships/\(membershipId)"
     case .getTeams(let eventId):
@@ -85,7 +85,8 @@ enum APIPath {
     switch self {
     case .deleteMembership(_), .leaveTeam(_), .deleteInvite(_):
       return .delete
-    case .sendMembership(_), .joinTeam(_), .vote(_), .createReport(_), .createEvent, .createVerificationToken, .createUser:
+    case .createMembership(_),.joinTeam(_), .vote(_), .createReport(_),
+         .createEvent, .createVerificationToken, .createUser:
       return .post
     case .acceptInvite(_), .editEvent(_), .verifyToken(_), .updateUser:
       return .put

@@ -69,8 +69,12 @@ class DataManager {
     }
   }
 
-  func createMembership(eventId: Int) -> Promise<EventMember> {
-    return NetworkManager.doRequest(.getEventMemberships(eventId: eventId)).then { result in
+  func createMembership(eventId: Int, password: String? = nil) -> Promise<EventMember> {
+    var params: [String: Any] = [:]
+    if let password = password {
+      params["password"] = password
+    }
+    return NetworkManager.doRequest(.createMembership(eventId: eventId), params).then { result in
       guard let eventMember = Mapper<EventMember>().map(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }

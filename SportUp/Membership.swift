@@ -37,13 +37,13 @@ struct EventMembership: Mappable {
 class Membership: Mappable {
   var id: Int = 0
   var eventId: Int = 0
-  var createdAt: Date = Date()
+  var userId: Int = 0
   var event: Event? = nil
 
   func mapping(map: Map) {
     id <- map["id"]
     eventId <- map["event_id"]
-    createdAt <- (map["name"], DateTransform())
+    userId <- map["user_id"]
   }
 
   required init(map: Map) { }

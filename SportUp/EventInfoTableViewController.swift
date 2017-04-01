@@ -53,7 +53,7 @@ class EventInfoTableViewController: UITableViewController {
     let event = event ?? self.event!
     self.event = event
     adressLabel.text = event.address
-    playersCountLabel.text = "\(event.userCount) / \(event.teamLimit)"
+    playersCountLabel.text = "\(event.userCount) / \(event.userLimit)"
     let teamLimitText = event.teamLimit.getRussianNumEnding(endings: ["команда", "команды", "команд"])
     teamsCountLabel.text = "(\(teamLimitText))"
     descriptionLabel.text = event.description
@@ -61,13 +61,10 @@ class EventInfoTableViewController: UITableViewController {
     if event.membership == nil {
       membershipButton.setTitle("Принять участие", for: .normal)
       membershipButton.backgroundColor = sportType.color
-      //membershipButton.defaultBackgroundColor = sportType.color
     } else {
       membershipButton.setTitle("Отказаться от участия", for: .normal)
       membershipButton.backgroundColor = UIColor.sportUpSalmon
     }
-
-
   }
 
   func configureMap() {
@@ -119,7 +116,7 @@ class EventInfoTableViewController: UITableViewController {
     }
   }
 
-  @IBAction func membershipButtonDidTap(_ sender: GoButton) {
+  @IBAction func membershipButtonDidTap(_ sender: UIButton) {
     sender.isEnabled = false
     delegate?.membershipButtonDidTap()
   }

@@ -47,6 +47,10 @@
 		887AC8001E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887AC7FF1E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard */; };
 		887AC8021E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887AC8011E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard */; };
 		887AC8041E8EC733003C79D6 /* RegistrationCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887AC8031E8EC733003C79D6 /* RegistrationCodeInputViewController.swift */; };
+		888128841E8F1618008A402F /* BestPlayerAlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888128831E8F1618008A402F /* BestPlayerAlertViewController.storyboard */; };
+		888128861E8F1B0B008A402F /* BestPlayerAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888128851E8F1B0B008A402F /* BestPlayerAlertViewController.swift */; };
+		888128891E8F1BB2008A402F /* PasswordAlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888128881E8F1BB2008A402F /* PasswordAlertViewController.storyboard */; };
+		8881288B1E8F1EB3008A402F /* PasswordAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8881288A1E8F1EB3008A402F /* PasswordAlertViewController.swift */; };
 		889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */; };
 		889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB231E8AF2A10027CAAA /* Membership.swift */; };
 		889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */; };
@@ -150,6 +154,10 @@
 		887AC7FF1E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationPhoneInputViewController.storyboard; sourceTree = "<group>"; };
 		887AC8011E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationCodeInputViewController.storyboard; sourceTree = "<group>"; };
 		887AC8031E8EC733003C79D6 /* RegistrationCodeInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationCodeInputViewController.swift; sourceTree = "<group>"; };
+		888128831E8F1618008A402F /* BestPlayerAlertViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BestPlayerAlertViewController.storyboard; sourceTree = "<group>"; };
+		888128851E8F1B0B008A402F /* BestPlayerAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlayerAlertViewController.swift; sourceTree = "<group>"; };
+		888128881E8F1BB2008A402F /* PasswordAlertViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PasswordAlertViewController.storyboard; sourceTree = "<group>"; };
+		8881288A1E8F1EB3008A402F /* PasswordAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordAlertViewController.swift; sourceTree = "<group>"; };
 		889CFB201E8AF14F0027CAAA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		889CFB231E8AF2A10027CAAA /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSectionHeaderView.xib; sourceTree = "<group>"; };
@@ -355,6 +363,24 @@
 				887AC8031E8EC733003C79D6 /* RegistrationCodeInputViewController.swift */,
 			);
 			name = CodeInput;
+			sourceTree = "<group>";
+		};
+		888128821E8F1603008A402F /* BestPlayerAlert */ = {
+			isa = PBXGroup;
+			children = (
+				888128831E8F1618008A402F /* BestPlayerAlertViewController.storyboard */,
+				888128851E8F1B0B008A402F /* BestPlayerAlertViewController.swift */,
+			);
+			name = BestPlayerAlert;
+			sourceTree = "<group>";
+		};
+		888128871E8F1B9E008A402F /* PasswordAlert */ = {
+			isa = PBXGroup;
+			children = (
+				888128881E8F1BB2008A402F /* PasswordAlertViewController.storyboard */,
+				8881288A1E8F1EB3008A402F /* PasswordAlertViewController.swift */,
+			);
+			name = PasswordAlert;
 			sourceTree = "<group>";
 		};
 		889CFB221E8AF1520027CAAA /* Views */ = {
@@ -583,6 +609,8 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				888128871E8F1B9E008A402F /* PasswordAlert */,
+				888128821E8F1603008A402F /* BestPlayerAlert */,
 				887AC7FA1E8E9727003C79D6 /* Registration */,
 				8878267A1E8D5CCF00F9438F /* AddressSelect */,
 				887826791E8D56F700F9438F /* EventManage */,
@@ -747,8 +775,10 @@
 				889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */,
 				889CFB481E8C6B220027CAAA /* BestPlayersResultsHeaderView.xib in Resources */,
 				8878268C1E8DAE9900F9438F /* TextInputTableViewCell.xib in Resources */,
+				888128841E8F1618008A402F /* BestPlayerAlertViewController.storyboard in Resources */,
 				889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */,
 				8878267C1E8D5D0A00F9438F /* AddressSelectViewController.storyboard in Resources */,
+				888128891E8F1BB2008A402F /* PasswordAlertViewController.storyboard in Resources */,
 				887AC8021E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard in Resources */,
 				889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */,
 			);
@@ -864,6 +894,7 @@
 				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */,
+				8881288B1E8F1EB3008A402F /* PasswordAlertViewController.swift in Sources */,
 				887826961E8DD93C00F9438F /* UIViewController+presentAlert.swift in Sources */,
 				887826871E8DA95800F9438F /* TextInputViewController.swift in Sources */,
 				88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */,
@@ -872,6 +903,7 @@
 				88DA465C1E84350B0061E816 /* UIView+IBDesignable.swift in Sources */,
 				889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */,
 				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
+				888128861E8F1B0B008A402F /* BestPlayerAlertViewController.swift in Sources */,
 				889EA61B1E8D27A500B3CEDE /* MyGamesTableViewCell.swift in Sources */,
 				887826941E8DCD3600F9438F /* UIViewController+addToolbar.swift in Sources */,
 				880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */,

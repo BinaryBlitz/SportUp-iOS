@@ -50,6 +50,8 @@ class EventInfoViewController: UIViewController {
     let label = NavigationSubtitleLabel(height: navigationController?.navigationBar.frame.size.height, title: sportType.name, subtitle: "# \(event.id)")
     navigationItem.titleView = label
 
+    tableViewController.event = event
+    tableViewController.sportType = sportType
     tableViewController.refresh()
   }
 

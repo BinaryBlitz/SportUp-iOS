@@ -19,6 +19,11 @@ class ProfileManager {
       try? StorageHelper.save(currentProfileJSON, forKey: .currentProfile)
     }
   }
+
+  var isAuthorized: Bool {
+    let apiToken: String? = StorageHelper.loadObjectForKey(.apiToken)
+    return apiToken != nil
+  }
   
   var currentCity: City? = nil {
     didSet {

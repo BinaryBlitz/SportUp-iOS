@@ -94,7 +94,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   var isPublic: Bool = true {
     didSet {
       privacyLabel.text = isPublic ? "Публичное" : "Приватное"
-      privacyIconView.isHighlighted = isPublic
+      privacyIconView.isHighlighted = !isPublic
       privacySwitch.isOn = !isPublic
       tableView.reloadData()
       if isPublic { password = "" }
@@ -152,7 +152,12 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   override func viewDidLoad() {
     configureView()
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCanselWhite"), style: .plain, target: self, action: #selector(self.navCancelButtonDidTap))
+    switch screenType {
+    case .create:
+      navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCanselWhite"), style: .plain, target: self, action: #selector(self.navCancelButtonDidTap))
+    default:
+      break
+    }
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCheckedWhite"), style: .plain, target: self, action: #selector(self.navSaveButtonDidTap))
   }
 
@@ -199,7 +204,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
         return
       }
       DataManager.instance.editEvent(event: event).then { [weak self] in
-        self?.dismiss(animated: true, completion: nil)
+        self?.navigationController?.popViewController(animated: true)
       }.catch { [weak self] error in
         self?.navigationItem.rightBarButtonItem?.isEnabled = true
         self?.presentAlertWithMessage("Ошибка")
@@ -275,8 +280,11 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       isPublic = event.isPublic
       password = event.password
       playersCount = event.userLimit
+      price = Int(event.price)
       teamsCount = event.teamLimit
       descriptionText = event.description
+      coordinate = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
+
       navigationItem.title = "Редактирование события"
     }
   }
@@ -298,10 +306,15 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   }
 
   override func viewWillAppear(_ animated: Bool) {
+    tabBarController?.tabBar.isHidden = true
     configureNavigationBar()
     if let indexPath = tableView.indexPathForSelectedRow {
       tableView.deselectRow(at: indexPath, animated: true)
     }
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
   }
   
 }
