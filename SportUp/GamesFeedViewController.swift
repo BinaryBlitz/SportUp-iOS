@@ -116,13 +116,18 @@ extension GamesFeedViewController: UITableViewDelegate {
     if event.isPublic && event.creator?.id != ProfileManager.instance.currentProfile?.id {
       navigationController?.pushViewController(viewController, animated: true)
     } else {
+      tableView.deselectRow(at: indexPath, animated: true)
       let passwordAlertController = PasswordAlertViewController.storyboardInstance()!
       passwordAlertController.event = event
       passwordAlertController.modalPresentationStyle = .overCurrentContext
+      tabBarController?.tabBar.isHidden = true
+      passwordAlertController.willDismissHandler = { [weak self] in
+        self?.tabBarController?.tabBar.isHidden = false
+      }
       passwordAlertController.didEnterPasswordHandler = { [weak self] in
         self?.navigationController?.pushViewController(viewController, animated: true)
       }
-      present(passwordAlertController, animated: true, completion: nil)
+      present(passwordAlertController, animated: false, completion: nil)
     }
   }
 }

@@ -15,9 +15,11 @@ class PasswordAlertViewController: UIViewController {
   @IBOutlet weak var joinButton: GoButton!
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+  @IBOutlet weak var contentView: UIView!
 
   var event: Event!
 
+  var willDismissHandler: (() -> Void)? = nil
   var didEnterPasswordHandler: (() -> Void)? = nil
 
   override func viewDidLoad() {
@@ -31,6 +33,7 @@ class PasswordAlertViewController: UIViewController {
     joinButton.isEnabled = false
     _ = DataManager.instance.createMembership(eventId: event.id, password: passwordField.text).then { [weak self] _ -> Void in
       guard let `self` = self else { return }
+      self.willDismissHandler?()
       UIView.animate(withDuration: animationDuration, animations: {
         self.view.alpha = 0
       }, completion: { _ in
@@ -43,6 +46,11 @@ class PasswordAlertViewController: UIViewController {
     }
   }
 
+  override func dismissKeyboard() {
+    view.endEditing(true)
+    dismiss(animated: true, completion: nil)
+  }
+
   override func viewWillAppear(_ animated: Bool) {
     UIView.animate(withDuration: animationDuration) { [weak self] in
       self?.view.alpha = 0
@@ -50,6 +58,21 @@ class PasswordAlertViewController: UIViewController {
     }
   }
 
+  @IBAction func backgroundViewDidTap(_ sender: UITapGestureRecognizer) {
+    willDismissHandler?()
+    UIView.animate(withDuration: animationDuration, animations: {
+      self.view.alpha = 0
+    }, completion: { [weak self] _ in
+      self?.dismiss(animated: false, completion: nil)
+    })
+  }
+
+}
+
+extension PasswordAlertViewController: UIGestureRecognizerDelegate {
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    return touch.view == gestureRecognizer.view && touch.view != contentView
+  }
 }
 
 extension PasswordAlertViewController {

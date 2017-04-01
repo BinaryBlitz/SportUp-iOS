@@ -282,6 +282,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       playersCount = event.userLimit
       price = Int(event.price)
       teamsCount = event.teamLimit
+      sportType = event.sportType
       descriptionText = event.description
       coordinate = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
 
