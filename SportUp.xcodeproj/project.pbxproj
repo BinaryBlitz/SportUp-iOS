@@ -56,7 +56,7 @@
 		889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */; };
 		889CFB2A1E8AF9BA0027CAAA /* TeamSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB291E8AF9BA0027CAAA /* TeamSectionHeaderView.swift */; };
 		889CFB2C1E8B06CF0027CAAA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB2B1E8B06CF0027CAAA /* Team.swift */; };
-		889CFB2F1E8BD35D0027CAAA /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB2E1E8BD35D0027CAAA /* ProfileViewController.storyboard */; };
+		889CFB2F1E8BD35D0027CAAA /* ProfileEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB2E1E8BD35D0027CAAA /* ProfileEditViewController.storyboard */; };
 		889CFB321E8BEB800027CAAA /* BestPlayersPollViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB311E8BEB800027CAAA /* BestPlayersPollViewController.storyboard */; };
 		889CFB341E8C04730027CAAA /* BestPlayersPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB331E8C04730027CAAA /* BestPlayersPollViewController.swift */; };
 		889CFB371E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB361E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift */; };
@@ -80,7 +80,7 @@
 		889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89C91E86B5090027D852 /* StorageHelper.swift */; };
 		889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CB1E86BACD0027D852 /* MyGamesViewController.swift */; };
 		889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CD1E86BAD80027D852 /* SportTypesViewController.swift */; };
-		889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CF1E86BAE20027D852 /* ProfileViewController.swift */; };
+		889F89D01E86BAE20027D852 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89CF1E86BAE20027D852 /* ProfileEditViewController.swift */; };
 		889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D11E86C04A0027D852 /* ProfileManager.swift */; };
 		889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89D31E86CB400027D852 /* MainTabBarController.storyboard */; };
 		889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */; };
@@ -109,6 +109,13 @@
 		88DE3EC51E83FF65007FCD76 /* SportUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE3EC41E83FF65007FCD76 /* SportUpNavigationController.swift */; };
 		88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE3EC71E840D93007FCD76 /* UIViewController+storyboardInstance.swift */; };
 		88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DE3ECB1E841729007FCD76 /* NetworkManager.swift */; };
+		88FACE931E8FC0B500F540B7 /* UserProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88FACE921E8FC0B500F540B7 /* UserProfileViewController.storyboard */; };
+		88FACE961E8FC9B600F540B7 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FACE951E8FC9B600F540B7 /* UserProfileViewController.swift */; };
+		88FACE981E8FC9D700F540B7 /* ProfileBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FACE971E8FC9D700F540B7 /* ProfileBalanceTableViewCell.swift */; };
+		88FACE9A1E8FC9EB00F540B7 /* ProfileBuyTicketsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FACE991E8FC9EB00F540B7 /* ProfileBuyTicketsTableViewCell.swift */; };
+		88FACE9C1E8FC9FD00F540B7 /* ProfileEarnTicketsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FACE9B1E8FC9FD00F540B7 /* ProfileEarnTicketsTableViewCell.swift */; };
+		88FACE9E1E8FD80F00F540B7 /* UserProfileTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FACE9D1E8FD80F00F540B7 /* UserProfileTableHeaderView.xib */; };
+		88FACEA01E8FDBC200F540B7 /* UserProfileTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FACE9F1E8FDBC200F540B7 /* UserProfileTableHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,7 +170,7 @@
 		889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSectionHeaderView.xib; sourceTree = "<group>"; };
 		889CFB291E8AF9BA0027CAAA /* TeamSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSectionHeaderView.swift; sourceTree = "<group>"; };
 		889CFB2B1E8B06CF0027CAAA /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		889CFB2E1E8BD35D0027CAAA /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		889CFB2E1E8BD35D0027CAAA /* ProfileEditViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileEditViewController.storyboard; sourceTree = "<group>"; };
 		889CFB311E8BEB800027CAAA /* BestPlayersPollViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BestPlayersPollViewController.storyboard; sourceTree = "<group>"; };
 		889CFB331E8C04730027CAAA /* BestPlayersPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlayersPollViewController.swift; sourceTree = "<group>"; };
 		889CFB361E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlayersPollTableViewCell.swift; sourceTree = "<group>"; };
@@ -187,7 +194,7 @@
 		889F89C91E86B5090027D852 /* StorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		889F89CB1E86BACD0027D852 /* MyGamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGamesViewController.swift; sourceTree = "<group>"; };
 		889F89CD1E86BAD80027D852 /* SportTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportTypesViewController.swift; sourceTree = "<group>"; };
-		889F89CF1E86BAE20027D852 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		889F89CF1E86BAE20027D852 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		889F89D11E86C04A0027D852 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		889F89D31E86CB400027D852 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportTypeTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +225,13 @@
 		88DE3EC41E83FF65007FCD76 /* SportUpNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportUpNavigationController.swift; sourceTree = "<group>"; };
 		88DE3EC71E840D93007FCD76 /* UIViewController+storyboardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboardInstance.swift"; sourceTree = "<group>"; };
 		88DE3ECB1E841729007FCD76 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		88FACE921E8FC0B500F540B7 /* UserProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfileViewController.storyboard; sourceTree = "<group>"; };
+		88FACE951E8FC9B600F540B7 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		88FACE971E8FC9D700F540B7 /* ProfileBalanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileBalanceTableViewCell.swift; sourceTree = "<group>"; };
+		88FACE991E8FC9EB00F540B7 /* ProfileBuyTicketsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileBuyTicketsTableViewCell.swift; sourceTree = "<group>"; };
+		88FACE9B1E8FC9FD00F540B7 /* ProfileEarnTicketsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEarnTicketsTableViewCell.swift; sourceTree = "<group>"; };
+		88FACE9D1E8FD80F00F540B7 /* UserProfileTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileTableHeaderView.xib; sourceTree = "<group>"; };
+		88FACE9F1E8FDBC200F540B7 /* UserProfileTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableHeaderView.swift; sourceTree = "<group>"; };
 		EE2CB25CCC34266F546FC7FE /* Pods-SportUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportUp/Pods-SportUp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -443,13 +457,13 @@
 			name = MainTabBar;
 			sourceTree = "<group>";
 		};
-		889F89B71E86ABA40027D852 /* Profile */ = {
+		889F89B71E86ABA40027D852 /* ProfileEdit */ = {
 			isa = PBXGroup;
 			children = (
-				889F89CF1E86BAE20027D852 /* ProfileViewController.swift */,
-				889CFB2E1E8BD35D0027CAAA /* ProfileViewController.storyboard */,
+				889F89CF1E86BAE20027D852 /* ProfileEditViewController.swift */,
+				889CFB2E1E8BD35D0027CAAA /* ProfileEditViewController.storyboard */,
 			);
-			name = Profile;
+			name = ProfileEdit;
 			sourceTree = "<group>";
 		};
 		889F89B81E86ABB70027D852 /* SportTypes */ = {
@@ -609,6 +623,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				88FACE911E8FC0A100F540B7 /* UserProfile */,
 				888128871E8F1B9E008A402F /* PasswordAlert */,
 				888128821E8F1603008A402F /* BestPlayerAlert */,
 				887AC7FA1E8E9727003C79D6 /* Registration */,
@@ -623,7 +638,7 @@
 				88D32FC81E86DE0F006EEE43 /* GamesFeed */,
 				889F89B91E86ABE30027D852 /* MyGames */,
 				889F89B81E86ABB70027D852 /* SportTypes */,
-				889F89B71E86ABA40027D852 /* Profile */,
+				889F89B71E86ABA40027D852 /* ProfileEdit */,
 				889F89B21E86AAEE0027D852 /* MainTabBar */,
 				88DA465D1E843F480061E816 /* CitySelect */,
 				88DA464C1E84236B0061E816 /* Onboarding */,
@@ -672,6 +687,28 @@
 				8878267F1E8D672C00F9438F /* GeocodingManager.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		88FACE911E8FC0A100F540B7 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				88FACE941E8FC0B800F540B7 /* Views */,
+				88FACE921E8FC0B500F540B7 /* UserProfileViewController.storyboard */,
+				88FACE951E8FC9B600F540B7 /* UserProfileViewController.swift */,
+			);
+			name = UserProfile;
+			sourceTree = "<group>";
+		};
+		88FACE941E8FC0B800F540B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88FACE971E8FC9D700F540B7 /* ProfileBalanceTableViewCell.swift */,
+				88FACE991E8FC9EB00F540B7 /* ProfileBuyTicketsTableViewCell.swift */,
+				88FACE9B1E8FC9FD00F540B7 /* ProfileEarnTicketsTableViewCell.swift */,
+				88FACE9D1E8FD80F00F540B7 /* UserProfileTableHeaderView.xib */,
+				88FACE9F1E8FDBC200F540B7 /* UserProfileTableHeaderView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E8957243B53FC4F88C2079D7 /* Frameworks */ = {
@@ -754,6 +791,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FACE9E1E8FD80F00F540B7 /* UserProfileTableHeaderView.xib in Resources */,
 				889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */,
 				88DA465A1E84326C0061E816 /* OnboardingViewController.storyboard in Resources */,
 				889CFB401E8C42A10027CAAA /* BestPlayersPollHeaderView.xib in Resources */,
@@ -767,11 +805,12 @@
 				887AC8001E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
 				88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */,
-				889CFB2F1E8BD35D0027CAAA /* ProfileViewController.storyboard in Resources */,
+				889CFB2F1E8BD35D0027CAAA /* ProfileEditViewController.storyboard in Resources */,
 				887826821E8D704800F9438F /* EventManageViewController.storyboard in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
 				88294EC81E8AD38300133A3E /* PlayersListViewController.storyboard in Resources */,
 				88DA465F1E843F610061E816 /* CitySelectViewController.storyboard in Resources */,
+				88FACE931E8FC0B500F540B7 /* UserProfileViewController.storyboard in Resources */,
 				889F89BD1E86AC0A0027D852 /* SportTypesViewController.storyboard in Resources */,
 				889CFB481E8C6B220027CAAA /* BestPlayersResultsHeaderView.xib in Resources */,
 				8878268C1E8DAE9900F9438F /* TextInputTableViewCell.xib in Resources */,
@@ -853,9 +892,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8859F1661E8992730009F85C /* EventMarkerView.swift in Sources */,
+				88FACE961E8FC9B600F540B7 /* UserProfileViewController.swift in Sources */,
 				88294EBF1E8AAFCC00133A3E /* TimeInterval+toString.swift in Sources */,
 				8859F16C1E89AEC60009F85C /* UIView+nibInstance.swift in Sources */,
 				889EA6171E8D1BEC00B3CEDE /* Alamofire+ArrayJSONEncoding.swift in Sources */,
+				88FACE9A1E8FC9EB00F540B7 /* ProfileBuyTicketsTableViewCell.swift in Sources */,
 				887826841E8D706800F9438F /* EventManageViewController.swift in Sources */,
 				889F89C11E86B1FE0027D852 /* User.swift in Sources */,
 				8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */,
@@ -873,6 +914,7 @@
 				88D32FCC1E86E6EB006EEE43 /* GamesFeedViewController.swift in Sources */,
 				889CFB371E8C2D970027CAAA /* BestPlayersPollTableViewCell.swift in Sources */,
 				889CFB461E8C69190027CAAA /* BestPlayersResultsHeaderView.swift in Sources */,
+				88FACE9C1E8FC9FD00F540B7 /* ProfileEarnTicketsTableViewCell.swift in Sources */,
 				88294EBD1E8A7D8B00133A3E /* GradientView.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				889EA61D1E8D301A00B3CEDE /* Invite.swift in Sources */,
@@ -885,9 +927,11 @@
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
 				8853D69B1E88119600C4759C /* DateTransform.swift in Sources */,
 				88D32FC41E86D228006EEE43 /* SportType.swift in Sources */,
+				88FACE981E8FC9D700F540B7 /* ProfileBalanceTableViewCell.swift in Sources */,
 				8878268E1E8DB0F200F9438F /* SelectViewController.swift in Sources */,
 				889CFB561E8D08DC0027CAAA /* ReportAlertViewController.swift in Sources */,
 				88294EC31E8ACCC500133A3E /* NavigationSubtitleLabel.swift in Sources */,
+				88FACEA01E8FDBC200F540B7 /* UserProfileTableHeaderView.swift in Sources */,
 				88294EC11E8AC8F800133A3E /* Int+russianEnumEnding.swift in Sources */,
 				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
 				887AC7FE1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift in Sources */,
@@ -918,7 +962,7 @@
 				887826801E8D672C00F9438F /* GeocodingManager.swift in Sources */,
 				889CFB441E8C5D310027CAAA /* UIViewController+hideOnTapOutside.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
-				889F89D01E86BAE20027D852 /* ProfileViewController.swift in Sources */,
+				889F89D01E86BAE20027D852 /* ProfileEditViewController.swift in Sources */,
 				8812B9611E8ECA140069F62B /* MaskedInput.swift in Sources */,
 				889CFB341E8C04730027CAAA /* BestPlayersPollViewController.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,

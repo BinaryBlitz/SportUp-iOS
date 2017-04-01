@@ -12,7 +12,7 @@
         <!--Редактировать профиль-->
         <scene sceneID="ddU-7v-Fbf">
             <objects>
-                <viewController title="Редактировать профиль" id="klI-Sy-9sq" customClass="ProfileViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Редактировать профиль" id="klI-Sy-9sq" customClass="ProfileEditViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lOo-lC-LLz"/>
                         <viewControllerLayoutGuide type="bottom" id="Fgd-3p-sdQ"/>

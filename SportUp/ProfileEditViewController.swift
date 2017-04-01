@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  ProfileEditViewController.swift
 //  SportUp
 //
 //  Created by Алексей on 25.03.17.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UIViewController, DefaultBarStyleViewController {
+class ProfileEditViewController: UIViewController, DefaultBarStyleViewController {
   @IBOutlet weak var firstNameField: UITextField!
   @IBOutlet weak var lastNameField: UITextField!
 
@@ -38,6 +38,7 @@ class ProfileViewController: UIViewController, DefaultBarStyleViewController {
     updateData()
     navigationItem.title = screenType.navigationTitle
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCheckedBlack"), style: .plain, target: self, action: #selector(self.rightBarButtonDidTap))
+    guard screenType == .registration else { return }
     firstNameField.isEnabled = false
     lastNameField.isEnabled = false
     _ = DataManager.instance.fetchUser().then { [weak self] user -> Void in
@@ -47,7 +48,6 @@ class ProfileViewController: UIViewController, DefaultBarStyleViewController {
         self?.firstNameField.isEnabled = true
         self?.lastNameField.isEnabled = true
     }
-    guard screenType == .registration else { return }
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCanselBlack"), style: .plain, target: self, action: #selector(self.cancelButtonDidTap))
   }
 

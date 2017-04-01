@@ -37,7 +37,7 @@ class RegistrationCodeInputViewController: UIViewController, DefaultBarStyleView
       guard isValid else { return }
       self?.codeField.isEnabled = false
       _ = DataManager.instance.verifyToken(code: self?.codeField.text?.onlyDigits ?? "").then { [weak self] _ -> Void in
-        let viewController = ProfileViewController.storyboardInstance()!
+        let viewController = ProfileEditViewController.storyboardInstance()!
         viewController.screenType = .registration
         self?.navigationController?.setViewControllers([viewController], animated: true)
       }.catch { _ in

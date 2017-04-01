@@ -34,7 +34,7 @@
             <objects>
                 <navigationController id="lv1-aG-Lvx" customClass="SportUpNavigationController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="Профиль" image="iconTabProfile" id="fw7-Lx-cXB"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GkQ-tt-eFF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GkQ-tt-eFF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="20" y="833"/>
         </scene>
-        <!--ProfileViewController-->
+        <!--UserProfileViewController-->
         <scene sceneID="z4Q-VU-FDy">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProfileViewController" id="kt6-Zn-gMu" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="UserProfileViewController" id="kt6-Zn-gMu" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZCj-QC-Md7"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deS-BF-LEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,7 +61,7 @@
             <objects>
                 <navigationController id="UZc-jg-alx" customClass="SportUpNavigationController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Мои игры" image="iconTabMygames" id="GrS-CU-7Xk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zbl-uC-PbN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zbl-uC-PbN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -88,7 +88,7 @@
             <objects>
                 <navigationController id="ciL-e5-1gG" customClass="SportUpNavigationController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Поиск игр" image="iconTabSearchgames" id="wlo-48-Hui"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YTm-iC-71I">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YTm-iC-71I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
