@@ -68,6 +68,9 @@
                                                             <rect key="frame" x="23" y="0.0" width="26" height="26"/>
                                                         </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="owI-hb-d0k"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P38-0R-RKv">
                                                     <rect key="frame" x="20" y="63.5" width="345" height="16"/>

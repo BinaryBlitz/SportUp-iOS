@@ -118,9 +118,11 @@ extension GamesFeedViewController: UITableViewDelegate {
     } else {
       let passwordAlertController = PasswordAlertViewController.storyboardInstance()!
       passwordAlertController.event = event
+      passwordAlertController.modalPresentationStyle = .overCurrentContext
       passwordAlertController.didEnterPasswordHandler = { [weak self] in
         self?.navigationController?.pushViewController(viewController, animated: true)
       }
+      present(passwordAlertController, animated: true, completion: nil)
     }
   }
 }

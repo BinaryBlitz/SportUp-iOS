@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-  @IBOutlet weak var stackView: UIStackView!
-  @IBOutlet weak var nameLabel: UILabel!
-  @IBOutlet weak var lockIconView: UIImageView!
-  @IBOutlet weak var promoIconView: UIImageView!
-  @IBOutlet weak var playersCountLabel: UILabel!
-  @IBOutlet weak var timeLabel: UILabel!
-  @IBOutlet weak var priceLabel: UILabel!
-  @IBOutlet weak var adressLabel: UILabel!
+  @IBOutlet var stackView: UIStackView!
+  @IBOutlet var nameLabel: UILabel!
+  @IBOutlet var lockIconView: UIImageView!
+  @IBOutlet var promoIconView: UIImageView!
+  @IBOutlet var playersCountLabel: UILabel!
+  @IBOutlet var timeLabel: UILabel!
+  @IBOutlet var priceLabel: UILabel!
+  @IBOutlet var adressLabel: UILabel!
 
   override func awakeFromNib() {
     for view in stackView.arrangedSubviews {
