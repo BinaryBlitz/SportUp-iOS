@@ -37,11 +37,15 @@ class BestPlayersPollViewController: UIViewController {
   var currentBestPlayer: User? = nil
   var event: Event!
   var sportType: SportType!
-  var teams: [TeamResponse] = []
+  var eventMembers: [Membership] = []
   var reports: [Int: Report] = [:]
 
   var users: [User] {
-    let users = teams.map { $0.users }.reduce([], +)
+    var users: [User] = []
+    eventMembers.forEach { member in
+      guard let user = member.user else { return }
+      users.append(user)
+    }
     return users.sorted { $0.votesCount > $1.votesCount }
   }
 
@@ -50,8 +54,8 @@ class BestPlayersPollViewController: UIViewController {
     configureHeaderView()
     configureFooterView()
 
-    _ = DataManager.instance.fetchTeams(eventId: event.id).then { [weak self] response -> Void in
-      self?.teams = response
+    _ = DataManager.instance.fetchMemberships(eventId: event.id).then { [weak self] response -> Void in
+      self?.eventMembers = response
       self?.tableView.reloadData()
     }
   }

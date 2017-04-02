@@ -105,6 +105,16 @@ class UserProfileViewController: UIViewController, DefaultBarStyleViewController
     }
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    guard !ProfileManager.instance.isAuthorized else { return }
+    let registrationNavigationViewController = SportUpNavigationController(rootViewController: RegistrationPhoneInputViewController.storyboardInstance()!)
+    present(registrationNavigationViewController, animated: true, completion: { [weak self] _ in
+      self?.tabBarController?.selectedIndex = 0
+    })
+
+  }
+
   func rightBarButtonDidTap() {
     navigationController?.pushViewController(ProfileEditViewController.storyboardInstance()!, animated: true)
   }

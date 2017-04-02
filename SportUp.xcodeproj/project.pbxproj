@@ -55,7 +55,6 @@
 		889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB231E8AF2A10027CAAA /* Membership.swift */; };
 		889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */; };
 		889CFB2A1E8AF9BA0027CAAA /* TeamSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB291E8AF9BA0027CAAA /* TeamSectionHeaderView.swift */; };
-		889CFB2C1E8B06CF0027CAAA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB2B1E8B06CF0027CAAA /* Team.swift */; };
 		889CFB2F1E8BD35D0027CAAA /* ProfileEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB2E1E8BD35D0027CAAA /* ProfileEditViewController.storyboard */; };
 		889CFB321E8BEB800027CAAA /* BestPlayersPollViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889CFB311E8BEB800027CAAA /* BestPlayersPollViewController.storyboard */; };
 		889CFB341E8C04730027CAAA /* BestPlayersPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889CFB331E8C04730027CAAA /* BestPlayersPollViewController.swift */; };
@@ -84,6 +83,16 @@
 		889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D11E86C04A0027D852 /* ProfileManager.swift */; };
 		889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89D31E86CB400027D852 /* MainTabBarController.storyboard */; };
 		889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */; };
+		88D3109E1E8FE47500046BA4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3109D1E8FE47500046BA4 /* MessagesViewController.swift */; };
+		88D310A11E8FEE1E00046BA4 /* SportUpChatInputBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D310A01E8FEE1E00046BA4 /* SportUpChatInputBar.xib */; };
+		88D310A31E8FEE6300046BA4 /* SportUpChatInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310A21E8FEE6300046BA4 /* SportUpChatInputBar.swift */; };
+		88D310A51E8FF55F00046BA4 /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310A41E8FF55F00046BA4 /* MessagesDataSource.swift */; };
+		88D310AA1E8FF87700046BA4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310A91E8FF87700046BA4 /* Message.swift */; };
+		88D310AC1E8FFF1200046BA4 /* TextMessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310AB1E8FFF1200046BA4 /* TextMessagesPresenter.swift */; };
+		88D310AE1E9024C800046BA4 /* MessagesDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310AD1E9024C800046BA4 /* MessagesDecorator.swift */; };
+		88D310B11E90442200046BA4 /* TextMessagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310B01E90442200046BA4 /* TextMessagesHandler.swift */; };
+		88D310B31E90486C00046BA4 /* TextMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310B21E90486C00046BA4 /* TextMessageModel.swift */; };
+		88D310B51E90497200046BA4 /* TextMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310B41E90497200046BA4 /* TextMessageViewModel.swift */; };
 		88D32FC41E86D228006EEE43 /* SportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FC31E86D228006EEE43 /* SportType.swift */; };
 		88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FC61E86D31E006EEE43 /* URLTransform.swift */; };
 		88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */; };
@@ -169,7 +178,6 @@
 		889CFB231E8AF2A10027CAAA /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Membership.swift; sourceTree = "<group>"; };
 		889CFB271E8AF9920027CAAA /* TeamSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamSectionHeaderView.xib; sourceTree = "<group>"; };
 		889CFB291E8AF9BA0027CAAA /* TeamSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSectionHeaderView.swift; sourceTree = "<group>"; };
-		889CFB2B1E8B06CF0027CAAA /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		889CFB2E1E8BD35D0027CAAA /* ProfileEditViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileEditViewController.storyboard; sourceTree = "<group>"; };
 		889CFB311E8BEB800027CAAA /* BestPlayersPollViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BestPlayersPollViewController.storyboard; sourceTree = "<group>"; };
 		889CFB331E8C04730027CAAA /* BestPlayersPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlayersPollViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +206,16 @@
 		889F89D11E86C04A0027D852 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		889F89D31E86CB400027D852 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportTypeTableViewCell.swift; sourceTree = "<group>"; };
+		88D3109D1E8FE47500046BA4 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		88D310A01E8FEE1E00046BA4 /* SportUpChatInputBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportUpChatInputBar.xib; sourceTree = "<group>"; };
+		88D310A21E8FEE6300046BA4 /* SportUpChatInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportUpChatInputBar.swift; sourceTree = "<group>"; };
+		88D310A41E8FF55F00046BA4 /* MessagesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
+		88D310A91E8FF87700046BA4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		88D310AB1E8FFF1200046BA4 /* TextMessagesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessagesPresenter.swift; sourceTree = "<group>"; };
+		88D310AD1E9024C800046BA4 /* MessagesDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesDecorator.swift; sourceTree = "<group>"; };
+		88D310B01E90442200046BA4 /* TextMessagesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessagesHandler.swift; sourceTree = "<group>"; };
+		88D310B21E90486C00046BA4 /* TextMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessageModel.swift; sourceTree = "<group>"; };
+		88D310B41E90497200046BA4 /* TextMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessageViewModel.swift; sourceTree = "<group>"; };
 		88D32FC31E86D228006EEE43 /* SportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportType.swift; sourceTree = "<group>"; };
 		88D32FC61E86D31E006EEE43 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
 		88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamesFeedViewController.storyboard; sourceTree = "<group>"; };
@@ -514,6 +532,38 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		88D3109C1E8FE46300046BA4 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				88D310AF1E9043FC00046BA4 /* Text */,
+				88D3109F1E8FEDFB00046BA4 /* Views */,
+				88D3109D1E8FE47500046BA4 /* MessagesViewController.swift */,
+				88D310A41E8FF55F00046BA4 /* MessagesDataSource.swift */,
+				88D310AD1E9024C800046BA4 /* MessagesDecorator.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		88D3109F1E8FEDFB00046BA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88D310A01E8FEE1E00046BA4 /* SportUpChatInputBar.xib */,
+				88D310A21E8FEE6300046BA4 /* SportUpChatInputBar.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		88D310AF1E9043FC00046BA4 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				88D310AB1E8FFF1200046BA4 /* TextMessagesPresenter.swift */,
+				88D310B01E90442200046BA4 /* TextMessagesHandler.swift */,
+				88D310B21E90486C00046BA4 /* TextMessageModel.swift */,
+				88D310B41E90497200046BA4 /* TextMessageViewModel.swift */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
 		88D32FC51E86D311006EEE43 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,9 +602,9 @@
 				88D32FC31E86D228006EEE43 /* SportType.swift */,
 				8853D6981E880D8E00C4759C /* Event.swift */,
 				889CFB231E8AF2A10027CAAA /* Membership.swift */,
-				889CFB2B1E8B06CF0027CAAA /* Team.swift */,
 				889CFB571E8D0A520027CAAA /* Report.swift */,
 				889EA61C1E8D301A00B3CEDE /* Invite.swift */,
+				88D310A91E8FF87700046BA4 /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -623,6 +673,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				88D3109C1E8FE46300046BA4 /* Messages */,
 				88FACE911E8FC0A100F540B7 /* UserProfile */,
 				888128871E8F1B9E008A402F /* PasswordAlert */,
 				888128821E8F1603008A402F /* BestPlayerAlert */,
@@ -817,6 +868,7 @@
 				888128841E8F1618008A402F /* BestPlayerAlertViewController.storyboard in Resources */,
 				889F89BF1E86AC180027D852 /* MyGamesViewController.storyboard in Resources */,
 				8878267C1E8D5D0A00F9438F /* AddressSelectViewController.storyboard in Resources */,
+				88D310A11E8FEE1E00046BA4 /* SportUpChatInputBar.xib in Resources */,
 				888128891E8F1BB2008A402F /* PasswordAlertViewController.storyboard in Resources */,
 				887AC8021E8EC71E003C79D6 /* RegistrationCodeInputViewController.storyboard in Resources */,
 				889CFB281E8AF9920027CAAA /* TeamSectionHeaderView.xib in Resources */,
@@ -901,9 +953,11 @@
 				889F89C11E86B1FE0027D852 /* User.swift in Sources */,
 				8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */,
 				880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */,
+				88D310A31E8FEE6300046BA4 /* SportUpChatInputBar.swift in Sources */,
 				88DE3EC51E83FF65007FCD76 /* SportUpNavigationController.swift in Sources */,
 				880FFBC31E890A4000E3173E /* CalendarWeekView.swift in Sources */,
 				889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */,
+				88D310AC1E8FFF1200046BA4 /* TextMessagesPresenter.swift in Sources */,
 				88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */,
 				88294EB51E89DE4100133A3E /* EventInfoViewController.swift in Sources */,
 				889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */,
@@ -916,11 +970,13 @@
 				889CFB461E8C69190027CAAA /* BestPlayersResultsHeaderView.swift in Sources */,
 				88FACE9C1E8FC9FD00F540B7 /* ProfileEarnTicketsTableViewCell.swift in Sources */,
 				88294EBD1E8A7D8B00133A3E /* GradientView.swift in Sources */,
+				88D310B51E90497200046BA4 /* TextMessageViewModel.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				889EA61D1E8D301A00B3CEDE /* Invite.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
 				887AC8041E8EC733003C79D6 /* RegistrationCodeInputViewController.swift in Sources */,
 				88294EBB1E89DF5C00133A3E /* EventInfoTableViewController.swift in Sources */,
+				88D3109E1E8FE47500046BA4 /* MessagesViewController.swift in Sources */,
 				880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */,
 				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
 				889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */,
@@ -934,17 +990,21 @@
 				88FACEA01E8FDBC200F540B7 /* UserProfileTableHeaderView.swift in Sources */,
 				88294EC11E8AC8F800133A3E /* Int+russianEnumEnding.swift in Sources */,
 				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
+				88D310B11E90442200046BA4 /* TextMessagesHandler.swift in Sources */,
 				887AC7FE1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift in Sources */,
 				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */,
 				8881288B1E8F1EB3008A402F /* PasswordAlertViewController.swift in Sources */,
+				88D310AE1E9024C800046BA4 /* MessagesDecorator.swift in Sources */,
 				887826961E8DD93C00F9438F /* UIViewController+presentAlert.swift in Sources */,
 				887826871E8DA95800F9438F /* TextInputViewController.swift in Sources */,
 				88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */,
 				88DE3EC81E840D93007FCD76 /* UIViewController+storyboardInstance.swift in Sources */,
+				88D310AA1E8FF87700046BA4 /* Message.swift in Sources */,
 				889CFB2A1E8AF9BA0027CAAA /* TeamSectionHeaderView.swift in Sources */,
 				88DA465C1E84350B0061E816 /* UIView+IBDesignable.swift in Sources */,
+				88D310A51E8FF55F00046BA4 /* MessagesDataSource.swift in Sources */,
 				889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */,
 				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
 				888128861E8F1B0B008A402F /* BestPlayerAlertViewController.swift in Sources */,
@@ -954,7 +1014,6 @@
 				88294ECA1E8AED2700133A3E /* PlayersListTableViewController.swift in Sources */,
 				8878268A1E8DADEE00F9438F /* TextInputTableViewCell.swift in Sources */,
 				889CFB3E1E8C42840027CAAA /* BestPlayersPollHeaderView.swift in Sources */,
-				889CFB2C1E8B06CF0027CAAA /* Team.swift in Sources */,
 				889CFB4D1E8C7F540027CAAA /* ReportsHeaderView.swift in Sources */,
 				88DA46561E842B550061E816 /* DataError.swift in Sources */,
 				8853D69F1E881B5100C4759C /* EventTableViewCell.swift in Sources */,
@@ -968,6 +1027,7 @@
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
 				88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */,
 				88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */,
+				88D310B31E90486C00046BA4 /* TextMessageModel.swift in Sources */,
 				889CFB581E8D0A520027CAAA /* Report.swift in Sources */,
 				8878267E1E8D5DC300F9438F /* AddressSelectViewController.swift in Sources */,
 			);

@@ -17,9 +17,8 @@ enum APIPath {
   case getEventMemberships(eventId: Int)
   case createMembership(eventId: Int)
   case deleteMembership(membershipId: Int)
-  case joinTeam(teamId: Int)
-  case getTeams(eventId: Int)
-  case leaveTeam(teamId: Int)
+  case joinTeam(eventId: Int)
+  case leaveTeam(eventId: Int)
   case vote(eventId: Int)
   case createReport(eventId: Int)
   case getMemberships
@@ -50,12 +49,10 @@ enum APIPath {
       return "events/\(eventId)/memberships"
     case .deleteMembership(let membershipId):
       return "memberships/\(membershipId)"
-    case .getTeams(let eventId):
-      return "events/\(eventId)/teams"
-    case .joinTeam(let teamId):
-      return "teams/\(teamId)/joins"
-    case .leaveTeam(let teamId):
-      return "teams/\(teamId)/joins"
+    case .joinTeam(let eventId):
+      return "events/\(eventId)/join_team"
+    case .leaveTeam(let eventId):
+      return "events/\(eventId)/leave_team"
     case .vote(let eventId):
       return "api/events/\(eventId)/votes"
     case .createReport(let eventId):
@@ -83,12 +80,12 @@ enum APIPath {
 
   var method: HTTPMethod {
     switch self {
-    case .deleteMembership(_), .leaveTeam(_), .deleteInvite(_):
+    case .deleteMembership(_), .deleteInvite(_):
       return .delete
-    case .createMembership(_),.joinTeam(_), .vote(_), .createReport(_),
+    case .createMembership(_), .vote(_), .createReport(_),
          .createEvent, .createVerificationToken, .createUser:
       return .post
-    case .acceptInvite(_), .editEvent(_), .verifyToken(_), .updateUser:
+    case .acceptInvite(_), .editEvent(_), .verifyToken(_), .updateUser, .joinTeam(_), .leaveTeam(_):
       return .put
     default:
       return .get

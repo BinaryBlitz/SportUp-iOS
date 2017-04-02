@@ -82,7 +82,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-Yo-dHL">
                                 <rect key="frame" x="0.0" y="180" width="375" height="487"/>
                                 <connections>
-                                    <segue destination="zLu-YL-hS0" kind="embed" identifier="containerView" id="l2h-YC-gIV"/>
+                                    <segue destination="zLu-YL-hS0" kind="embed" identifier="containerViewSegue" id="l2h-YC-gIV"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -121,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="las-b0-67F" id="jEv-pO-4c3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-24-vIH" customClass="AvatarImageView">
@@ -213,6 +213,7 @@
                                     <outlet property="leaveButton" destination="Kmv-LN-ajt" id="ERB-Sc-edc"/>
                                     <outlet property="nameLabel" destination="tti-Ln-wMv" id="eqe-XM-qpt"/>
                                     <outlet property="playerTypeLabel" destination="LsW-TV-ouI" id="FP4-yL-LJ2"/>
+                                    <outlet property="stackView" destination="pq7-XT-uqa" id="YgH-JE-kz7"/>
                                     <outlet property="yellowCardCountLabel" destination="U5x-Z4-7At" id="9dZ-iT-7n3"/>
                                     <outlet property="yellowCardIconView" destination="gxN-4p-cag" id="Vm6-o6-MgQ"/>
                                 </connections>
@@ -221,7 +222,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="egn-DY-qbi" id="4oQ-f4-SEA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 </tableViewCellContentView>

@@ -18,7 +18,8 @@ class PlayerTableViewCell: UITableViewCell {
   @IBOutlet weak var avatarView: AvatarImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var playerTypeLabel: UILabel!
-
+  @IBOutlet weak var stackView: UIStackView!
+  
   var leaveButtonDidTapHandler: (() -> Void)? = nil
 
   func configure(player: User) {

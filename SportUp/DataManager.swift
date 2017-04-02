@@ -69,22 +69,22 @@ class DataManager {
     }
   }
 
-  func createMembership(eventId: Int, password: String? = nil) -> Promise<EventMember> {
+  func createMembership(eventId: Int, password: String? = nil) -> Promise<Membership> {
     var params: [String: Any] = [:]
     if let password = password {
       params["password"] = password
     }
     return NetworkManager.doRequest(.createMembership(eventId: eventId), params).then { result in
-      guard let eventMember = Mapper<EventMember>().map(JSONObject: result) else {
+      guard let eventMember = Mapper<Membership>().map(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }
       return Promise(value: eventMember)
     }
   }
 
-  func fetchMemberships(eventId: Int) -> Promise<[EventMember]> {
+  func fetchMemberships(eventId: Int) -> Promise<[Membership]> {
     return NetworkManager.doRequest(.getEventMemberships(eventId: eventId)).then { result in
-      guard let invitedUsers = Mapper<EventMember>().mapArray(JSONObject: result) else {
+      guard let invitedUsers = Mapper<Membership>().mapArray(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }
       return Promise(value: invitedUsers)
@@ -95,21 +95,12 @@ class DataManager {
     return NetworkManager.doRequest(.deleteMembership(membershipId: membershipId)).asVoid()
   }
 
-  func fetchTeams(eventId: Int) -> Promise<[TeamResponse]> {
-    return NetworkManager.doRequest(.getTeams(eventId: eventId)).then { result in
-      guard let teams = Mapper<TeamResponse>().mapArray(JSONObject: result) else {
-        return Promise(error: DataError.unprocessableData)
-      }
-      return Promise(value: teams)
-    }
+  func joinTeam(eventId: Int, teamIndex: Int) -> Promise<Void> {
+    return NetworkManager.doRequest(.joinTeam(eventId: eventId), ["team_number": teamIndex]).asVoid()
   }
 
-  func joinTeam(teamId: Int) -> Promise<Void> {
-    return NetworkManager.doRequest(.joinTeam(teamId: teamId)).asVoid()
-  }
-
-  func leaveTeam(teamId: Int) -> Promise<Void> {
-    return NetworkManager.doRequest(.leaveTeam(teamId: teamId)).asVoid()
+  func leaveTeam(eventId: Int) -> Promise<Void> {
+    return NetworkManager.doRequest(.leaveTeam(eventId: eventId)).asVoid()
   }
 
   func vote(eventId: Int, userId: Int) -> Promise<Void> {

@@ -9,19 +9,6 @@
 import Foundation
 import ObjectMapper
 
-struct EventMember: Mappable {
-  var user: User!
-  var membership: Membership!
-
-  init(map: Map) {
-  }
-
-  mutating func mapping(map: Map) {
-    user <- map["user"]
-    membership <- map["membership"]
-  }
-}
-
 struct EventMembership: Mappable {
   var event: Event!
   var membership: Membership!
@@ -36,14 +23,18 @@ struct EventMembership: Mappable {
 
 class Membership: Mappable {
   var id: Int = 0
+  var user: User? = nil
   var eventId: Int = 0
   var userId: Int = 0
+  var teamNumber: Int? = nil
   var event: Event? = nil
 
   func mapping(map: Map) {
     id <- map["id"]
+    user <- map["user"]
     eventId <- map["event_id"]
     userId <- map["user_id"]
+    teamNumber <- map["team_number"]
   }
 
   required init(map: Map) { }

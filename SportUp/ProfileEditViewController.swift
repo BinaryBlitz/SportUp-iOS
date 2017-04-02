@@ -57,16 +57,6 @@ class ProfileEditViewController: UIViewController, DefaultBarStyleViewController
     lastNameField.text = user?.lastName
   }
 
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    let apiToken: String? = StorageHelper.loadObjectForKey(.apiToken)
-    guard screenType != .registration && apiToken == nil else { return }
-    let registrationNavigationViewController = SportUpNavigationController(rootViewController: RegistrationPhoneInputViewController.storyboardInstance()!)
-    present(registrationNavigationViewController, animated: true, completion: { [weak self] _ in
-      self?.tabBarController?.selectedIndex = 0
-    })
-  }
-
   @IBAction func avatarViewDidTap(_ sender: UITapGestureRecognizer) {
   }
 

@@ -14,25 +14,36 @@ private let joinTeamCellReuseIdentifier = "JoinTeamTableViewCell"
 private let headerReuseIdentifier = "TeamSectionHeaderView"
 
 protocol PlayersListTableViewControllerDelegate: class {
-  func didTapLeaveButton(team: Team)
-  func didJoin(team: Team)
+  func didTapLeaveButton(teamIndex: Int)
+  func didJoin(teamIndex: Int)
 }
 
 class PlayersListTableViewController: UITableViewController {
-  var event: Event? = nil
   var sportType: SportType? = nil
-  var teams: [TeamResponse] = []
-  var eventMembers: [EventMember] = []
-
-  var teamUsers: [User] {
-    return teams.map { $0.users }.reduce([], +)
+  var event: Event? = nil {
+    didSet {
+      guard let event = event else { return }
+      _ = DataManager.instance.fetchMemberships(eventId: event.id).then { [weak self] members in
+        self?.eventMembers = members
+      }
+    }
+  }
+  var eventMembers: [Membership] = [] {
+    didSet {
+      tableView.reloadData()
+    }
   }
 
-  var freeMembers: [EventMember] {
-    let teamMembers = self.teamUsers
-    return eventMembers.filter { eventMember in
-      return teamMembers.first(where: { $0.id == eventMember.user.id} ) == nil
-    }
+  var freeMembers: [Membership] {
+    return eventMembers.filter { $0.teamNumber == nil }
+  }
+
+  func membersOfTeam(_ teamNumber: Int) -> [Membership] {
+    return eventMembers.filter { $0.teamNumber == teamNumber }
+  }
+
+  var teamsCount: Int {
+    return event?.teamLimit ?? 0
   }
 
   var delegate: PlayersListTableViewControllerDelegate? = nil
@@ -42,25 +53,24 @@ class PlayersListTableViewController: UITableViewController {
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    var teamsCount = teams.count
-    if freeMembers.isEmpty { teamsCount += 1 }
-    return teamsCount
+    var sectionsCount = teamsCount
+    if !freeMembers.isEmpty { sectionsCount += 1 }
+    return sectionsCount
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
-    case teams.count where !freeMembers.isEmpty:
+    case teamsCount where !freeMembers.isEmpty:
       return freeMembers.count
     default:
-      guard !teams.isEmpty else { return 0 }
-      return teams[section].users.count + 1
+      return membersOfTeam(section).count + 1
     }
   }
 
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     guard let event = event else { return nil }
     let view = TeamSectionHeaderView.nibInstance()
-    if section == teamUsers.count {
+    if section == teamsCount {
       view?.configure(headerType: .otherPlayers)
     } else {
       view?.configure(headerType: .team(teamCount: section + 1, teamPlayers: event.teamLimit, playersCount: event.userCount))
@@ -71,28 +81,36 @@ class PlayersListTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: UITableViewCell
     switch indexPath.section {
-    case teams.count where !freeMembers.isEmpty:
+    case teamsCount where !freeMembers.isEmpty:
+      guard let user = freeMembers[indexPath.row].user else { return UITableViewCell() }
       let playerCell = tableView.dequeueReusableCell(withIdentifier: playerCellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
-      playerCell.configure(player: freeMembers[indexPath.row].user)
+      playerCell.configure(player: user)
       cell = playerCell
     default:
-      let teamResponse = teams[indexPath.section]
-      let users = teamResponse.users
+      let users = membersOfTeam(indexPath.section)
       if indexPath.row == users.count {
         let joinTeamCell = tableView.dequeueReusableCell(withIdentifier: joinTeamCellReuseIdentifier, for: indexPath)
         joinTeamCell.textLabel?.text = "Занять место в команде \(indexPath.section + 1)"
         cell = joinTeamCell
       } else {
-        let player = users[indexPath.row]
+        guard let player = users[indexPath.row].user else { return UITableViewCell() }
         let playerCell = tableView.dequeueReusableCell(withIdentifier: playerCellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
         playerCell.configure(player: player)
         playerCell.leaveButtonDidTapHandler = { _ in
-          self.delegate?.didTapLeaveButton(team: teamResponse.team)
+          self.delegate?.didTapLeaveButton(teamIndex: indexPath.section)
         }
         cell = playerCell
       }
     }
     return cell
+  }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    guard indexPath.section < teamsCount else { return }
+    let players = membersOfTeam(indexPath.section)
+    guard indexPath.row == players.count else { return }
+    delegate?.didJoin(teamIndex: indexPath.section)
   }
 
 }

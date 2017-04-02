@@ -12,18 +12,6 @@ import UIKit
 class PlayersListViewController: UIViewController {
   var event: Event!
   var sportType: SportType!
-  var eventMembers: [EventMember] = [] {
-    didSet {
-      tableViewController.eventMembers = eventMembers
-    }
-  }
-
-  var teams: [TeamResponse] = [] {
-    didSet {
-      tableViewController.teams = teams
-    }
-  }
-
   var tableViewController: PlayersListTableViewController!
   
   @IBOutlet weak var gameStatusLabel: UILabel!
@@ -33,24 +21,15 @@ class PlayersListViewController: UIViewController {
   override func viewDidLoad() {
     headerView.backgroundColor = sportType.color
     configureNavigationTitle()
+    updateData()
   }
 
   func updateData() {
-    _ = DataManager.instance.fetchTeams(eventId: event.id).then { [weak self] teamResponse -> Void in
-      self?.teams = teamResponse
-    }
-
-    _ = DataManager.instance.fetchMemberships(eventId: event.id).then { [weak self] members in
-      self?.eventMembers = members
-
-    }
-
     _ = DataManager.instance.fetchEvent(eventId: event.id).then { [weak self] event -> Void in
       self?.event = event
+      self?.tableViewController.event = event
       self?.configureNavigationTitle()
     }
-
-
   }
 
   func configureNavigationTitle() {
@@ -77,15 +56,15 @@ class PlayersListViewController: UIViewController {
 
 extension PlayersListViewController: PlayersListTableViewControllerDelegate {
   
-  func didTapLeaveButton(team: Team) {
-    _ = DataManager.instance.leaveTeam(teamId: team.id).then { [weak self] in
+  func didTapLeaveButton(teamIndex: Int) {
+    _ = DataManager.instance.leaveTeam(eventId: event.id).then { [weak self] in
       self?.updateData()
     }
 
   }
   
-  func didJoin(team: Team) {
-    _ = DataManager.instance.joinTeam(teamId: team.id).then { [weak self] in
+  func didJoin(teamIndex: Int) {
+    _ = DataManager.instance.joinTeam(eventId: event.id, teamIndex: teamIndex).then { [weak self] in
       self?.updateData()
     }
   }
