@@ -82,8 +82,8 @@ class BestPlayersPollTableViewCell: UITableViewCell {
 
   override func prepareForReuse() {
     for view in stackView.arrangedSubviews {
-      view.removeFromSuperview()
       stackView.removeArrangedSubview(view)
+      view.removeFromSuperview()
     }
   }
 

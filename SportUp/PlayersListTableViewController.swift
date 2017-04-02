@@ -34,6 +34,11 @@ class PlayersListTableViewController: UITableViewController {
     }
   }
 
+  var canJoinTeam: Bool {
+    let myMembership = eventMembers.first(where: { $0.user?.id == ProfileManager.instance.currentProfile?.id})
+    return myMembership?.teamNumber != nil
+  }
+
   var freeMembers: [Membership] {
     return eventMembers.filter { $0.teamNumber == nil }
   }
@@ -73,9 +78,29 @@ class PlayersListTableViewController: UITableViewController {
     if section == teamsCount {
       view?.configure(headerType: .otherPlayers)
     } else {
-      view?.configure(headerType: .team(teamCount: section + 1, teamPlayers: event.teamLimit, playersCount: event.userCount))
+      let members = membersOfTeam(section)
+      view?.configure(headerType: .team(teamNumber: section + 1, teamLimit: event.teamLimit, userCount: members.count))
     }
     return view
+  }
+
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    switch indexPath.section {
+    case teamsCount where !freeMembers.isEmpty:
+      return 72
+    default:
+      let users = membersOfTeam(indexPath.section)
+      guard indexPath.row == users.count else { return 72 }
+      return canJoinTeam ? 60 : 0
+    }
+  }
+
+  override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return 0
+  }
+
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 46
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,12 +109,13 @@ class PlayersListTableViewController: UITableViewController {
     case teamsCount where !freeMembers.isEmpty:
       guard let user = freeMembers[indexPath.row].user else { return UITableViewCell() }
       let playerCell = tableView.dequeueReusableCell(withIdentifier: playerCellReuseIdentifier, for: indexPath) as! PlayerTableViewCell
-      playerCell.configure(player: user)
+      playerCell.configure(player: user, isFreePlayersSection: true)
       cell = playerCell
     default:
       let users = membersOfTeam(indexPath.section)
       if indexPath.row == users.count {
         let joinTeamCell = tableView.dequeueReusableCell(withIdentifier: joinTeamCellReuseIdentifier, for: indexPath)
+        joinTeamCell.textLabel?.textColor = UIColor.sportUpBlueyGrey
         joinTeamCell.textLabel?.text = "Занять место в команде \(indexPath.section + 1)"
         cell = joinTeamCell
       } else {

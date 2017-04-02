@@ -11,7 +11,7 @@ import UIKit
 
 class TeamSectionHeaderView: UITableViewHeaderFooterView {
   enum HeaderType {
-    case team(teamCount: Int, teamPlayers: Int, playersCount: Int)
+    case team(teamNumber: Int, teamLimit: Int, userCount: Int)
     case otherPlayers
   }
 
@@ -22,7 +22,7 @@ class TeamSectionHeaderView: UITableViewHeaderFooterView {
     switch headerType {
     case .team(let teamCount, let teamPlayers, let playersCount):
       teamCountLabel.text = "Команда \(teamCount)"
-      teamPlayersLabel.text = "\(playersCount)/\(teamPlayers) (\(teamPlayers - playersCount) из \(teamCount)"
+      teamPlayersLabel.text = "\(playersCount)/\(teamPlayers) (\(teamPlayers - playersCount) из \(teamPlayers))"
     case .otherPlayers:
       teamCountLabel.text = "Неопределившиеся игроки"
       teamPlayersLabel.text = nil

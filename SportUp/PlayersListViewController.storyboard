@@ -111,25 +111,30 @@
         <scene sceneID="dys-fE-zkJ">
             <objects>
                 <tableViewController id="zLu-YL-hS0" customClass="PlayersListTableViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="pWb-jn-wEb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="72" sectionHeaderHeight="18" sectionFooterHeight="18" id="pWb-jn-wEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerTableViewCell" id="las-b0-67F" customClass="PlayerTableViewCell" customModule="SportUp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PlayerTableViewCell" id="las-b0-67F" customClass="PlayerTableViewCell" customModule="SportUp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="las-b0-67F" id="jEv-pO-4c3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-24-vIH" customClass="AvatarImageView">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-24-vIH" customClass="AvatarImageView" customModule="AvatarImageView">
                                             <rect key="frame" x="16" y="16" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="gIS-8y-DEv"/>
                                                 <constraint firstAttribute="width" constant="40" id="xWv-AN-vAb"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <view contentMode="scaleToFill" horizontalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="swr-S1-Dhs">
                                             <rect key="frame" x="72" y="19" width="35.5" height="33"/>
@@ -210,19 +215,19 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="avatarView" destination="FOr-24-vIH" id="ZpJ-mB-upp"/>
+                                    <outlet property="labelsStackView" destination="pq7-XT-uqa" id="cqE-Vu-uVK"/>
                                     <outlet property="leaveButton" destination="Kmv-LN-ajt" id="ERB-Sc-edc"/>
                                     <outlet property="nameLabel" destination="tti-Ln-wMv" id="eqe-XM-qpt"/>
                                     <outlet property="playerTypeLabel" destination="LsW-TV-ouI" id="FP4-yL-LJ2"/>
-                                    <outlet property="stackView" destination="pq7-XT-uqa" id="YgH-JE-kz7"/>
                                     <outlet property="yellowCardCountLabel" destination="U5x-Z4-7At" id="9dZ-iT-7n3"/>
                                     <outlet property="yellowCardIconView" destination="gxN-4p-cag" id="Vm6-o6-MgQ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="JoinTeamTableViewCell" rowHeight="60" id="egn-DY-qbi" customClass="PlayerTableViewCell" customModule="SportUp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="375" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JoinTeamTableViewCell" rowHeight="60" id="egn-DY-qbi" customClass="PlayerTableViewCell" customModule="SportUp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="egn-DY-qbi" id="4oQ-f4-SEA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 </tableViewCellContentView>

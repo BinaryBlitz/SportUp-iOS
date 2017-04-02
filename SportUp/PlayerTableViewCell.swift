@@ -12,26 +12,41 @@ import AvatarImageView
 
 class PlayerTableViewCell: UITableViewCell {
   var player: User!
-  @IBOutlet weak var yellowCardIconView: UIImageView!
-  @IBOutlet weak var yellowCardCountLabel: UILabel!
-  @IBOutlet weak var leaveButton: UIButton!
-  @IBOutlet weak var avatarView: AvatarImageView!
-  @IBOutlet weak var nameLabel: UILabel!
-  @IBOutlet weak var playerTypeLabel: UILabel!
-  @IBOutlet weak var stackView: UIStackView!
+  @IBOutlet var yellowCardIconView: UIImageView!
+  @IBOutlet var yellowCardCountLabel: UILabel!
+  @IBOutlet var leaveButton: UIButton!
+  @IBOutlet var avatarView: AvatarImageView!
+  @IBOutlet var nameLabel: UILabel!
+  @IBOutlet var playerTypeLabel: UILabel!
+  @IBOutlet var labelsStackView: UIStackView!
   
   var leaveButtonDidTapHandler: (() -> Void)? = nil
 
-  func configure(player: User) {
+  func configure(player: User, isFreePlayersSection: Bool = false) {
+    for view in labelsStackView.arrangedSubviews {
+      labelsStackView.removeArrangedSubview(view)
+      view.removeFromSuperview()
+    }
     leaveButton.isEnabled = true
     self.player = player
     nameLabel.text = "\(player.firstName) \(player.lastName)"
     avatarView.dataSource = self
+    if player.violationsCount > 0 {
+      labelsStackView.addArrangedSubview(yellowCardIconView)
+      yellowCardCountLabel.text = "\(player.violationsCount)"
+      labelsStackView.addArrangedSubview(yellowCardCountLabel)
+    }
+    if ProfileManager.instance.currentProfile?.id == player.id && !isFreePlayersSection {
+      labelsStackView.addArrangedSubview(leaveButton)
+    }
   }
 
-  
   @IBAction func leaveButtonDidTap(_ sender: Any) {
     leaveButton.isEnabled = false
+  }
+
+  override func prepareForReuse() {
+
   }
 
 }
