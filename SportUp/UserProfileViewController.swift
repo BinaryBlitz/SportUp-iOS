@@ -118,7 +118,11 @@ class UserProfileViewController: UIViewController, DefaultBarStyleViewController
   func rightBarButtonDidTap() {
     navigationController?.pushViewController(ProfileEditViewController.storyboardInstance()!, animated: true)
   }
-  
+
+  @IBAction func signOutButtonDidTap(_ sender: Any) {
+    ProfileManager.instance.signOut()
+  }
+
 }
 
 extension UserProfileViewController: UITableViewDataSource {

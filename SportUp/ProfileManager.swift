@@ -40,6 +40,12 @@ class ProfileManager {
     }
   }
 
+  func signOut() {
+    try? StorageHelper.save(nil, forKey: .apiToken)
+    currentProfile = nil
+    RootViewController.instance?.prepareOnboarding()
+  }
+
   private init() {
     if let profileJSON: String = StorageHelper.loadObjectForKey(.currentProfile) {
       currentProfile =  Mapper<User>().map(JSONString: profileJSON)

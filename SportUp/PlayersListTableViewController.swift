@@ -92,6 +92,7 @@ class PlayersListTableViewController: UITableViewController {
       let users = membersOfTeam(indexPath.section)
       guard indexPath.row == users.count else { return 72 }
       return canJoinTeam ? 60 : 0
+      let a: Int? = nil
     }
   }
 

@@ -190,7 +190,7 @@
                                 <color key="backgroundColor" red="0.96830016370000005" green="0.97648984189999999" blue="0.98052781820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="dba-8q-OHg">
-                                    <rect key="frame" x="0.0" y="265" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="265" width="375" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rr8-En-a8f">
@@ -214,13 +214,35 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxe-iT-ZG0">
+                                            <rect key="frame" x="72" y="80" width="230" height="48"/>
+                                            <color key="backgroundColor" red="1" green="0.45955187079999998" blue="0.4131643176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="ESf-Iw-Eaq"/>
+                                                <constraint firstAttribute="width" constant="230" id="H1j-qg-G0O"/>
+                                            </constraints>
+                                            <state key="normal" title="Выйти из аккаунта">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="24"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="signOutButtonDidTap:" destination="1Qe-B8-2jt" eventType="touchUpInside" id="Tv9-ax-DUi"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.96830016370000005" green="0.97648984189999999" blue="0.98052781820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="Rr8-En-a8f" firstAttribute="centerX" secondItem="dba-8q-OHg" secondAttribute="centerX" id="Dg9-52-q9T"/>
-                                        <constraint firstAttribute="bottom" secondItem="Rr8-En-a8f" secondAttribute="bottom" constant="16" id="Gml-cA-dz8"/>
+                                        <constraint firstItem="Sxe-iT-ZG0" firstAttribute="top" secondItem="Rr8-En-a8f" secondAttribute="bottom" constant="16" id="97L-Uh-Mxb"/>
+                                        <constraint firstItem="Rr8-En-a8f" firstAttribute="centerX" secondItem="dba-8q-OHg" secondAttribute="centerX" id="CAj-wM-CKB"/>
+                                        <constraint firstItem="Sxe-iT-ZG0" firstAttribute="centerX" secondItem="dba-8q-OHg" secondAttribute="centerX" id="Ea1-YT-JCN"/>
                                         <constraint firstItem="Rr8-En-a8f" firstAttribute="top" secondItem="dba-8q-OHg" secondAttribute="top" constant="16" id="L1w-ms-ukH"/>
-                                        <constraint firstItem="Rr8-En-a8f" firstAttribute="centerY" secondItem="dba-8q-OHg" secondAttribute="centerY" id="yGj-UA-IQV"/>
                                     </constraints>
                                 </view>
                                 <prototypes>

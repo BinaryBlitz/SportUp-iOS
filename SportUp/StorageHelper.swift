@@ -39,9 +39,13 @@ class StorageHelper {
   static func save(_ object: Any?, forKey key: StorageKey) throws {
     switch key.storageType {
     case .keychain:
-      guard let objectString = object as? String else { throw StorageError.keychainOnlyStringSupported }
       let keychain = Keychain()
-      keychain[key.rawValue] = objectString
+      if object == nil {
+        try? keychain.remove(key.rawValue)
+      } else {
+        guard let objectString = object as? String else { throw StorageError.keychainOnlyStringSupported }
+        keychain[key.rawValue] = objectString
+      }
     case .userDefaults:
       let userDefaults = UserDefaults.standard
       userDefaults.set(object, forKey: key.rawValue)
