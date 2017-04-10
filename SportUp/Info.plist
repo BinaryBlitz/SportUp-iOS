@@ -35,9 +35,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationUsageDescription</key>
-	<string>Location is used to find the nearest city</string>
+	<string>Геопозиция используется для определения вашего города и поиска ближайших игр на карте</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location is used to find the nearest city</string>
+	<string>Геопозиция используется для определения вашего города и поиска ближайших игр на карте</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

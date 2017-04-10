@@ -6,9 +6,45 @@
 //  Copyright © 2017 BinaryBlitz. All rights reserved.
 //
 
+// MARK:- TODO: refactor
 import Foundation
 import UIKit
 import CoreLocation
+
+private enum Sections: Int {
+  case mainInfo = 0
+  case dateTime
+  case sportType
+  case playersCount
+  case price
+  case privacy
+  case description
+
+  static let count = 7
+}
+
+private enum MainInfoRows: Int {
+  case nameRow
+  case locationRow
+}
+
+private enum DateTimeSectionRows: Int {
+  case startsAtLabels = 0
+  case startAtDatePicker
+  case endsAtLabels
+  case endsAtDatePicker
+}
+
+private enum GameLimitsSectionRows: Int {
+  case playersCount = 0
+  case teamsCount
+}
+
+private enum PrivacyRows: Int {
+  case privacySwitch = 0
+  case password
+}
+
 
 private let datePickerCellHeight: CGFloat = 220
 private let passwordPickerCellHeight: CGFloat = 81
@@ -113,42 +149,6 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
 
   var screenType: ScreenType = .create
 
-  // MARK: - Sections and rows
-
-  enum Sections: Int {
-    case mainInfo = 0
-    case dateTime
-    case sportType
-    case playersCount
-    case price
-    case privacy
-    case description
-
-    static let count = 7
-  }
-
-  enum MainInfoRows: Int {
-    case nameRow
-    case locationRow
-  }
-
-  enum DateTimeSectionRows: Int {
-    case startsAtLabels = 0
-    case startAtDatePicker
-    case endsAtLabels
-    case endsAtDatePicker
-  }
-
-  enum GameLimitsSectionRows: Int {
-    case playersCount = 0
-    case teamsCount
-  }
-
-  enum PrivacyRows: Int {
-    case privacySwitch = 0
-    case password
-  }
-
   override func viewDidLoad() {
     configureView()
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -173,7 +173,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     UIApplication.shared.statusBarStyle = sportType == nil ? .default : .lightContent
 
   }
-
+  
   func navSaveButtonDidTap() {
     view.endEditing(true)
     navigationItem.rightBarButtonItem?.isEnabled = false
@@ -185,9 +185,9 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       } catch {
         navigationItem.rightBarButtonItem?.isEnabled = true
         guard let error = error as? DataError else { return }
-        presentAlertWithMessage(error.description)
+        presentAlertWithTitle("Ошибка", andMessage: error.description)
+        return
       }
-
       DataManager.instance.createEvent(event: event).then { [weak self] in
         self?.dismiss(animated: true, completion: nil)
       }.catch { [weak self] error in
@@ -200,7 +200,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       } catch {
         navigationItem.rightBarButtonItem?.isEnabled = true
         guard let error = error as? DataError else { return }
-        presentAlertWithMessage(error.description)
+        presentAlertWithTitle("Ошибка", andMessage: error.description)
         return
       }
       DataManager.instance.editEvent(event: event).then { [weak self] in
@@ -214,53 +214,53 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
 
   func updateEvent(event: Event) throws {
     var alertMessage = ""
-    guard let name = name, !name.trimmingCharacters(in: .whitespaces).isEmpty else {
-      alertMessage += "Имя не может быть пустым"
-      throw DataError.validationFailed(message: alertMessage)
+    let name = self.name ?? ""
+    if name.trimmingCharacters(in: .whitespaces).isEmpty {
+      alertMessage += "Укажите название игры"
     }
     event.name = name
-    guard let address = address, !address.trimmingCharacters(in: .whitespaces).isEmpty else {
-      alertMessage += "\nАдрес не выбран"
-      throw DataError.validationFailed(message: alertMessage)
-    }
+    let address = self.address ?? ""
     event.address = address
-    guard let descriptionText = descriptionText, !descriptionText.trimmingCharacters(in: .whitespaces).isEmpty else {
-      alertMessage += "\nОписание не может быть пустым"
-      throw DataError.validationFailed(message: alertMessage)
+    let descriptionText = self.descriptionText ?? ""
+    if descriptionText.trimmingCharacters(in: .whitespaces).isEmpty {
+      alertMessage += "\nДобавьте описание игры"
     }
     event.description = descriptionText
     event.endsAt = endsAt
     event.startsAt = startsAt
-    event.isPublic = isPublic
-    guard let sportType = sportType else {
-      alertMessage += "\nНе выбран тип спорта"
-      throw DataError.validationFailed(message: alertMessage)
+    if startsAt.time > endsAt.time {
+      alertMessage += "\nВермя начала игры не может быть позже времени окончания"
     }
-    event.sportType = sportType
+    event.isPublic = isPublic
+    if let sportType = sportType {
+      event.sportType = sportType
+    } else {
+      alertMessage += "\nВыберите вид спорта"
+    }
     event.price = Double(price)
-    guard playersCount != 0 else {
-      alertMessage += "\nКоличество игроков не может быть равно нулю"
-      throw DataError.validationFailed(message: alertMessage)
+    if playersCount == 0 {
+      alertMessage += "\nВыберите количество участников"
     }
     event.userLimit = playersCount
-    guard teamsCount != 0 else {
-      alertMessage += "\nКоличество команд не может быть равно нулю"
-      throw DataError.validationFailed(message: alertMessage)
+    if teamsCount == 0 {
+      alertMessage += "\nУкажите количество команд"
     }
     event.teamLimit = teamsCount
-    guard let latitude = coordinate?.latitude, let longitude = coordinate?.longitude else {
-      alertMessage += "\nНе выбран адрес по координатам"
+    if let latitude = coordinate?.latitude, let longitude = coordinate?.longitude, !address.trimmingCharacters(in: .whitespaces).isEmpty {
+      event.latitude = latitude
+      event.longitude = longitude
+    } else {
+      alertMessage += "\nВыберите адрес"
+    }
+    if alertMessage.characters.count > 0 {
       throw DataError.validationFailed(message: alertMessage)
     }
-    event.latitude = latitude
-    event.longitude = longitude
   }
 
   func configureView() {
     nameField.delegate = self
     addToolbar(textField: nameField)
     passwordField.delegate = self
-    addToolbar(textField: passwordField)
     addToolbar(textView: descriptionTextView)
     addressField.isEnabled = false
     playersCountField.isEnabled = false
@@ -272,6 +272,8 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     case .create:
       tableView.tableFooterView = nil
       navigationItem.title = "Создание события"
+      startsAt = Date()
+      endsAt = Date()
     case .edit(let event):
       address = event.address
       name = event.name
@@ -307,6 +309,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   }
 
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     tabBarController?.tabBar.isHidden = true
     configureNavigationBar()
     if let indexPath = tableView.indexPathForSelectedRow {
@@ -425,7 +428,9 @@ extension EventManageViewController {
     switch indexPath.row {
     case DateTimeSectionRows.startsAtLabels.rawValue:
       datePicker = startDatePicker
+      endDatePicker.isHidden = true
     case DateTimeSectionRows.endsAtLabels.rawValue:
+      startDatePicker.isHidden = true
       datePicker = endDatePicker
     default:
       return tableView.deselectRow(at: indexPath, animated: true)

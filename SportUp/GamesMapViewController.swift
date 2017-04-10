@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import GoogleMaps
+import CoreLocation
 
 class GamesMapViewController: UIViewController {
   let animationDuration = 0.3
@@ -18,7 +19,9 @@ class GamesMapViewController: UIViewController {
   var date: Date = Date()
   var sportType: SportType!
 
-  @IBOutlet weak var lockIconView: UIImageView!
+  let locationManager = CLLocationManager()
+
+  @IBOutlet var lockIconView: UIImageView!
   @IBOutlet weak var promoIconView: UIImageView!
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var eventNameLabel: UILabel!
@@ -88,16 +91,6 @@ class GamesMapViewController: UIViewController {
     super.viewWillDisappear(animated)
   }
 
-  @IBAction func hideCardButtonDidTap(_ sender: Any) {
-
-    UIView.animate(withDuration: animationDuration) { [weak self] in
-      guard let `self` = self else { return }
-      self.bottomCardConstraint.constant = -self.cardHeightConstraint.constant
-      self.view.setNeedsLayout()
-      self.view.layoutIfNeeded()
-    }
-  }
-
   @IBAction func cardViewDidDrag(_ pan: UIPanGestureRecognizer) {
     let panLocation = pan.translation(in: view).y
 
@@ -132,14 +125,40 @@ class GamesMapViewController: UIViewController {
 
   @IBAction func navigationButtonDidTap(_ sender: Any) {
     mapView.isMyLocationEnabled = true
+    locationManager.startUpdatingLocation()
+    locationManager.delegate = self
   }
 
 }
+
+extension GamesMapViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    guard let coordinate = locations.first?.coordinate else { return }
+    mapView.camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: markerZoom)
+    locationManager.stopUpdatingLocation()
+  }
+
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    if status == .authorizedWhenInUse || status == .authorizedAlways {
+      locationManager.startUpdatingLocation()
+    }
+  }
+}
+
 
 extension GamesMapViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     guard let index = marker.userData as? Int else { return false }
     prepareCardView(event: events[index])
     return true
+  }
+
+  func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+    UIView.animate(withDuration: animationDuration) { [weak self] in
+      guard let `self` = self else { return }
+      self.bottomCardConstraint.constant = -self.cardHeightConstraint.constant
+      self.view.setNeedsLayout()
+      self.view.layoutIfNeeded()
+    }
   }
 }

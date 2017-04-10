@@ -80,7 +80,7 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
 
   func reloadData() {
     _ = DataManager.instance.fetchMemberships().then { [weak self] memberships -> Void in
-      self?.memberships = memberships
+      self?.memberships = memberships.sorted { $0.event.startsAt > $1.event.startsAt }
       self?.tableView.reloadData()
     }
 
@@ -93,6 +93,11 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     tabBarController?.tabBar.isHidden = false
+    guard !ProfileManager.instance.isAuthorized else { return }
+    let registrationNavigationViewController = SportUpNavigationController(rootViewController: RegistrationPhoneInputViewController.storyboardInstance()!)
+    present(registrationNavigationViewController, animated: true, completion: { [weak self] _ in
+      self?.tabBarController?.selectedIndex = 0
+    })
     reloadData()
   }
 

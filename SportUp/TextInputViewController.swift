@@ -49,6 +49,14 @@ class TextInputViewController: UITableViewController, DefaultBarStyleViewControl
   override func viewDidLoad() {
     tableView.register(TextInputTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     navigationItem.title = titleText
+
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(TextInputViewController.saveButtonDidTap))
+  }
+
+  func saveButtonDidTap() {
+    view.endEditing(true)
+    didFinishEditingHandler?(value)
+    navigationController?.popViewController(animated: true)
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,7 +71,4 @@ class TextInputViewController: UITableViewController, DefaultBarStyleViewControl
     return 1
   }
 
-  override func viewWillDisappear(_ animated: Bool) {
-    didFinishEditingHandler?(value)
-  }
 }

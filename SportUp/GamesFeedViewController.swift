@@ -54,7 +54,6 @@ class GamesFeedViewController: UIViewController {
 
   func configureCalendar() {
     headerView.backgroundColor = sportType.color
-    calendarHeaderView.selectedDayTextColor = sportType.color
     calendarHeaderView.selectDateHandler = { [weak self] date in
       self?.currentDate = date
     }
@@ -73,6 +72,7 @@ class GamesFeedViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     headerView.isHidden = false
     super.viewWillAppear(animated)
+    updateData()
     navigationController?.navigationBar.barTintColor = sportType.color
     if let indexPath = tableView.indexPathForSelectedRow {
       tableView.deselectRow(at: indexPath, animated: true)
@@ -88,7 +88,7 @@ class GamesFeedViewController: UIViewController {
 extension GamesFeedViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! EventTableViewCell
-    cell.configure(event: events[indexPath.row])
+    cell.configure(event: events[indexPath.row], sportType: sportType)
     return cell
   }
 
@@ -118,14 +118,10 @@ extension GamesFeedViewController: UITableViewDelegate {
       let passwordAlertController = PasswordAlertViewController.storyboardInstance()!
       passwordAlertController.event = event
       passwordAlertController.modalPresentationStyle = .overCurrentContext
-      tabBarController?.tabBar.isHidden = true
-      passwordAlertController.willDismissHandler = { [weak self] in
-        self?.tabBarController?.tabBar.isHidden = false
-      }
       passwordAlertController.didEnterPasswordHandler = { [weak self] in
         self?.navigationController?.pushViewController(viewController, animated: true)
       }
-      present(passwordAlertController, animated: false, completion: nil)
+      tabBarController?.present(passwordAlertController, animated: false, completion: nil)
     }
   }
 }

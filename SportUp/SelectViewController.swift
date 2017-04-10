@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+private let reuseIdentifier = "SelectTableViewCell"
+
 class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewController {
   var didFinishEditingHandler: ((SportType) -> ())? = nil
 
@@ -17,10 +19,29 @@ class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewC
 
   var titleText: String
 
+  override func viewDidLoad() {
+    navigationItem.title = titleText
+    tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+
+    navigationItem.rightBarButtonItem?.isEnabled = false
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(SelectSportTypeViewController.saveButtonDidTap))
+  }
+
+  func saveButtonDidTap() {
+    guard let value = value else { return }
+    didFinishEditingHandler?(value)
+    _ = navigationController?.popViewController(animated: true)
+  }
+
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let tableViewCell = UITableViewCell()
     let sportType = sportTypes[indexPath.row]
-    tableViewCell.textLabel?.text = sportType.name
+    let tableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SelectTableViewCell
+    tableViewCell.iconView.kf.setImage(with: sportType.iconUrl) { image, _, _, _ in
+      guard let image = image?.withRenderingMode(.alwaysTemplate) else { return }
+      tableViewCell.iconView?.image = image
+      tableViewCell.iconView?.tintColor = sportType.color
+    }
+    tableViewCell.nameLabel.text = sportType.name
     tableViewCell.accessoryType = value?.id == sportType.id ? .checkmark : .none
     return tableViewCell
   }
@@ -31,10 +52,6 @@ class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewC
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return sportTypes.count
-  }
-
-  override func viewDidLoad() {
-    navigationItem.title = titleText
   }
 
   init(title: String) {
@@ -48,12 +65,8 @@ class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewC
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     value = sportTypes[indexPath.row]
+    navigationItem.rightBarButtonItem?.isEnabled = true
     tableView.deselectRow(at: indexPath, animated: true)
     tableView.reloadData()
-  }
-
-  override func viewWillDisappear(_ animated: Bool) {
-    guard let value = value else { return }
-    didFinishEditingHandler?(value)
   }
 }

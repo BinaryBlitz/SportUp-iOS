@@ -21,10 +21,16 @@ class SportTypesViewController: UITableViewController, DefaultBarStyleViewContro
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
     tableView.tableFooterView = UIView()
+    self.refreshControl = UIRefreshControl()
+    refreshControl?.addTarget(self, action: #selector(SportTypesViewController.refresh), for: .valueChanged)
+    refresh()
+  }
 
+  func refresh() {
     _ = DataManager.instance.fetchSportTypes().then { [weak self] sportTypes -> Void in
       self?.sportTypes = sportTypes
       self?.tableView.reloadData()
+      self?.refreshControl?.endRefreshing()
     }
   }
 

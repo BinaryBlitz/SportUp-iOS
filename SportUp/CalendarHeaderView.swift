@@ -10,11 +10,6 @@ import UIKit
 
 class CalendarHeaderView: UIView {
   var selectDateHandler: ((Date) -> Void)? = nil
-  var selectedDayTextColor: UIColor? = nil {
-    didSet {
-      selectedDayView?.button.setTitleColor(selectedDayTextColor, for: .normal)
-    }
-  }
 
   var currentSelectedDate = Date()
   var panGestureStartLocation: CGFloat!
@@ -174,7 +169,6 @@ class CalendarHeaderView: UIView {
   }
 
   func nextViewDidShow(_ finished: Bool) {
-
     if finished {
       let newDates = Date.nextWeekDates(currentWeekDates: nextView.dates)
       reusePreviousWeekView(newDates: newDates)
@@ -212,9 +206,5 @@ extension CalendarHeaderView: CalendarDayDelegate {
 
   func selectedDate() -> Date {
     return currentSelectedDate
-  }
-
-  func selectedTextColor() -> UIColor? {
-    return selectedDayTextColor
   }
 }

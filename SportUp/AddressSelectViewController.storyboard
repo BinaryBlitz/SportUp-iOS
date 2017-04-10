@@ -31,6 +31,25 @@
                                     <constraint firstAttribute="height" constant="44" id="YX2-cE-Oln"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKC-o0-0mV" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
+                                <rect key="frame" x="117" y="587" width="140" height="50"/>
+                                <color key="backgroundColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="3fb-NR-pLo"/>
+                                    <constraint firstAttribute="height" constant="50" id="n9k-t2-Vgq"/>
+                                </constraints>
+                                <state key="normal" title="Сохранить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonDidTap:" destination="JxU-6I-AMn" eventType="touchUpInside" id="Bhf-vd-uAX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2392156869" green="0.70588237050000002" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -41,6 +60,8 @@
                             <constraint firstAttribute="trailing" secondItem="3W8-78-dnF" secondAttribute="trailing" id="fYi-Td-Ose"/>
                             <constraint firstAttribute="trailing" secondItem="bRu-mF-uVn" secondAttribute="trailing" id="feo-1S-VA5"/>
                             <constraint firstItem="3W8-78-dnF" firstAttribute="leading" secondItem="AIR-dv-rcT" secondAttribute="leading" id="o8A-1Z-8Cs"/>
+                            <constraint firstItem="WNm-hu-BJU" firstAttribute="top" secondItem="PKC-o0-0mV" secondAttribute="bottom" constant="30" id="oY2-gu-8oB"/>
+                            <constraint firstItem="PKC-o0-0mV" firstAttribute="centerX" secondItem="AIR-dv-rcT" secondAttribute="centerX" id="x9x-vJ-ccI"/>
                         </constraints>
                     </view>
                     <connections>

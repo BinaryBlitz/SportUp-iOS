@@ -15,7 +15,12 @@ private let markerZoom: Float = 17
 private let cityZoom: Float = 10
 
 class AddressSelectViewController: UIViewController {
+  @IBOutlet weak var mapView: GMSMapView!
+  @IBOutlet weak var searchView: UIView!
+
   let resultsViewController = GMSAutocompleteResultsViewController()
+  let locationManager = CLLocationManager()
+
   let marker = GMSMarker()
   var coordinate: CLLocationCoordinate2D? = nil {
     didSet {
@@ -39,9 +44,6 @@ class AddressSelectViewController: UIViewController {
     }
   }
   let sportType: SportType? = nil
-  @IBOutlet weak var mapView: GMSMapView!
-  @IBOutlet weak var searchView: UIView!
-
   var selectAddressHandler: ((String) -> ())? = nil
 
   let defaultColor = UIColor.sportUpAquaMarine
@@ -61,6 +63,10 @@ class AddressSelectViewController: UIViewController {
 
   func configureMap() {
     mapView.delegate = self
+    locationManager.delegate = self
+    locationManager.startUpdatingLocation()
+    mapView.isMyLocationEnabled = true
+
     guard let city = ProfileManager.instance.currentCity else { return }
     mapView.camera = GMSCameraPosition.camera(withLatitude: city.latitude, longitude: city.longitude, zoom: cityZoom)
 
@@ -99,10 +105,11 @@ class AddressSelectViewController: UIViewController {
     searchView.addSubview(searchBar)
   }
 
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
+  @IBAction func saveButtonDidTap(_ sender: Any) {
     selectAddressHandler?(addressString)
+    _ = navigationController?.popViewController(animated: true)
   }
+
 }
 
 extension AddressSelectViewController: GMSAutocompleteResultsViewControllerDelegate {
@@ -125,5 +132,19 @@ extension AddressSelectViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
     self.coordinate = coordinate
 
+  }
+}
+
+extension AddressSelectViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    guard let coordinate = locations.first?.coordinate else { return }
+    mapView.camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: markerZoom)
+    locationManager.stopUpdatingLocation()
+  }
+
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    if status == .authorizedWhenInUse || status == .authorizedAlways {
+      locationManager.startUpdatingLocation()
+    }
   }
 }

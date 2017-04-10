@@ -36,7 +36,7 @@ class PlayersListTableViewController: UITableViewController {
 
   var canJoinTeam: Bool {
     let myMembership = eventMembers.first(where: { $0.user?.id == ProfileManager.instance.currentProfile?.id})
-    return myMembership?.teamNumber != nil
+    return myMembership?.teamNumber == nil
   }
 
   var freeMembers: [Membership] {
@@ -92,7 +92,6 @@ class PlayersListTableViewController: UITableViewController {
       let users = membersOfTeam(indexPath.section)
       guard indexPath.row == users.count else { return 72 }
       return canJoinTeam ? 60 : 0
-      let a: Int? = nil
     }
   }
 

@@ -26,11 +26,14 @@ class EventTableViewCell: UITableViewCell {
     }
   }
 
-  func configure(event: Event) {
+  func configure(event: Event, sportType: SportType) {
     nameLabel.text = event.name
     playersCountLabel.text = "\(event.userCount) / \(event.userLimit)"
     timeLabel.text = event.startsAt.time
-    priceLabel.text = event.price == 0 ? event.price.currencyString : "Бесплатно"
+    priceLabel.text = event.price != 0 ? event.price.currencyString : "Бесплатно"
+    if event.price == 0 {
+      priceLabel.textColor = sportType.color
+    }
     adressLabel.text = event.address
     if !event.isPublic {
       stackView.addArrangedSubview(lockIconView)

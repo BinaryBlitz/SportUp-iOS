@@ -53,7 +53,7 @@
                                 <rect key="frame" x="16" y="200" width="343" height="18"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <action selector="firstNameEditingDidChange:" destination="klI-Sy-9sq" eventType="editingChanged" id="m5W-jS-BmU"/>
                                 </connections>
@@ -76,7 +76,7 @@
                                 <rect key="frame" x="16" y="264" width="343" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <action selector="lastNameEditingDidChange:" destination="klI-Sy-9sq" eventType="editingDidEnd" id="qeI-AV-Pdd"/>
                                 </connections>

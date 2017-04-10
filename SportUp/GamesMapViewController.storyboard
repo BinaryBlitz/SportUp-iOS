@@ -125,22 +125,10 @@
                                         <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFY-xb-PVv">
-                                        <rect key="frame" x="168" y="0.0" width="40" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="kDa-KR-EUf"/>
-                                            <constraint firstAttribute="height" constant="20" id="pI8-jp-wwO"/>
-                                        </constraints>
-                                        <state key="normal" image="iconArrdownGray"/>
-                                        <connections>
-                                            <action selector="hideCardButtonDidTap:" destination="5wm-tc-hla" eventType="touchUpInside" id="3b1-xW-aAr"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="eFY-xb-PVv" firstAttribute="top" secondItem="73v-w9-LC1" secondAttribute="top" id="8UH-UM-cG9"/>
                                     <constraint firstAttribute="trailing" secondItem="GSP-mw-vlA" secondAttribute="trailing" id="99o-qu-mdJ"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="w3r-vv-zFy" secondAttribute="bottom" id="AXH-fP-FZI"/>
                                     <constraint firstItem="GSP-mw-vlA" firstAttribute="top" secondItem="bGH-CI-0h8" secondAttribute="bottom" constant="22.5" id="Kzw-Dk-CAH"/>
@@ -152,7 +140,6 @@
                                     <constraint firstItem="GSP-mw-vlA" firstAttribute="leading" secondItem="73v-w9-LC1" secondAttribute="leadingMargin" id="hWI-y2-eXp"/>
                                     <constraint firstAttribute="height" constant="140" id="kFh-6W-HiM"/>
                                     <constraint firstAttribute="trailing" secondItem="zKk-Lf-EHE" secondAttribute="trailing" constant="20" id="kS9-mK-rA2"/>
-                                    <constraint firstItem="eFY-xb-PVv" firstAttribute="centerX" secondItem="73v-w9-LC1" secondAttribute="centerX" id="lZA-vI-boL"/>
                                     <constraint firstItem="Skg-4u-3NT" firstAttribute="centerY" secondItem="w3r-vv-zFy" secondAttribute="centerY" id="sBB-9T-fmq"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="10"/>
@@ -203,7 +190,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iconArrdownGray" width="12" height="12"/>
         <image name="iconLocationpointBlack" width="24" height="24"/>
         <image name="iconLocationsmollGray" width="16" height="16"/>
         <image name="iconLock" width="24" height="24"/>

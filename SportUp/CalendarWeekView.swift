@@ -24,11 +24,8 @@ class CalendarWeekView: UIStackView {
   }
 
   internal var containsToday: Bool {
-
-    return self.dates.contains(where: { possibleDate in
-
+    return dates.contains(where: { possibleDate in
       guard let date = possibleDate else { return false }
-
       return Calendar.current.isDate(date, equalTo: Date(), toGranularity: .weekOfYear)
     })
   }
@@ -82,20 +79,20 @@ extension CalendarWeekView {
 
 extension CalendarWeekView {
 
-  func setSelectedDate(currentSelectedDate: Date) {
+  func setSelectedDate(currentSelectedDate: Date  ) {
     let calendar = Calendar.current
     let dateComponents: DateComponents
     if containsToday {
       dateComponents = calendar.dateComponents([.weekday], from: Date())
+      highlight(index: getDayIndex(dateComponents.weekday!))
     }
     else {
-      dateComponents = calendar.dateComponents([.weekday], from: currentSelectedDate)
+      highlight(index: getDayIndex())
     }
 
-    highlight(index: getDayIndex(dateComponents.weekday!))
   }
 
-  func getDayIndex(_ weekday: Int!) -> Int {
+  func getDayIndex(_ weekday: Int! = Calendar.current.firstWeekday) -> Int {
     let calendar = Calendar.current
     let numberOfWeekdays = calendar.maximumRange(of: .weekday)!.count
     let firstWeekday = calendar.firstWeekday

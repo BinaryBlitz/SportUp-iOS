@@ -19,7 +19,13 @@ class CitySelectViewController: UIViewController, DefaultBarStyleViewController 
   // Data
   var cities: [City] = []
   var filteredCities: [City] = []
-  var currentLocation: CLLocationCoordinate2D? = nil
+  var nearestCity: City? = nil
+  var currentLocation: CLLocationCoordinate2D? = nil {
+    didSet {
+      nearestCity = cities.sorted { $0.distanceTo(currentLocation) < $1.distanceTo(currentLocation) }.first
+      refresh()
+    }
+  }
 
   // UI
   @IBOutlet weak var tableView: UITableView!
@@ -84,7 +90,8 @@ class CitySelectViewController: UIViewController, DefaultBarStyleViewController 
       filteredCities = filteredCities
         .filter { $0.name.lowercased().range(of: searchString.lowercased()) != nil }
     }
-    filteredCities.sort { $0.distanceTo(currentLocation) < $1.distanceTo(currentLocation) }
+    filteredCities.sort { $0.name < $1.name }
+    filteredCities.sort { (city, _ ) in city.id == nearestCity?.id }
     self.filteredCities = filteredCities
     tableView.reloadData()
   }
@@ -115,9 +122,12 @@ extension CitySelectViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-    cell.textLabel?.text = filteredCities[indexPath.row].name
-    if currentLocation != nil && indexPath.row == 0 {
-      cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "iconLocationsmollGray"))
+    let city = filteredCities[indexPath.row]
+    cell.textLabel?.text = city.name
+    if city.id == nearestCity?.id {
+      let accessoryView = UIImageView(image: #imageLiteral(resourceName: "iconLocationsmollGray").withRenderingMode(.alwaysTemplate))
+      accessoryView.tintColor = UIColor.sportUpAquaMarine
+      cell.accessoryView = accessoryView
     } else {
       cell.accessoryView = nil
     }
@@ -129,7 +139,6 @@ extension CitySelectViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     currentLocation = locations.first?.coordinate
     locationManager.stopUpdatingLocation()
-    refresh()
   }
 
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

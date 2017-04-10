@@ -83,6 +83,9 @@
 		889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D11E86C04A0027D852 /* ProfileManager.swift */; };
 		889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89D31E86CB400027D852 /* MainTabBarController.storyboard */; };
 		889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */; };
+		88CB68451E99404600DE758C /* SelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88CB68441E99404600DE758C /* SelectTableViewCell.xib */; };
+		88CB68471E9940BB00DE758C /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB68461E9940BB00DE758C /* SelectTableViewCell.swift */; };
+		88CB68491E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB68481E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift */; };
 		88D3109E1E8FE47500046BA4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3109D1E8FE47500046BA4 /* MessagesViewController.swift */; };
 		88D310A11E8FEE1E00046BA4 /* SportUpChatInputBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D310A01E8FEE1E00046BA4 /* SportUpChatInputBar.xib */; };
 		88D310A31E8FEE6300046BA4 /* SportUpChatInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D310A21E8FEE6300046BA4 /* SportUpChatInputBar.swift */; };
@@ -206,6 +209,9 @@
 		889F89D11E86C04A0027D852 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		889F89D31E86CB400027D852 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportTypeTableViewCell.swift; sourceTree = "<group>"; };
+		88CB68441E99404600DE758C /* SelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewCell.xib; sourceTree = "<group>"; };
+		88CB68461E9940BB00DE758C /* SelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
+		88CB68481E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+autoKeyboardContentInsets.swift"; sourceTree = "<group>"; };
 		88D3109D1E8FE47500046BA4 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		88D310A01E8FEE1E00046BA4 /* SportUpChatInputBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportUpChatInputBar.xib; sourceTree = "<group>"; };
 		88D310A21E8FEE6300046BA4 /* SportUpChatInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportUpChatInputBar.swift; sourceTree = "<group>"; };
@@ -366,6 +372,8 @@
 			children = (
 				887826891E8DADEE00F9438F /* TextInputTableViewCell.swift */,
 				8878268B1E8DAE9900F9438F /* TextInputTableViewCell.xib */,
+				88CB68441E99404600DE758C /* SelectTableViewCell.xib */,
+				88CB68461E9940BB00DE758C /* SelectTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -715,6 +723,7 @@
 				889CFB431E8C5D310027CAAA /* UIViewController+hideOnTapOutside.swift */,
 				887826931E8DCD3600F9438F /* UIViewController+addToolbar.swift */,
 				887826951E8DD93C00F9438F /* UIViewController+presentAlert.swift */,
+				88CB68481E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -856,6 +865,7 @@
 				887AC8001E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
 				88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */,
+				88CB68451E99404600DE758C /* SelectTableViewCell.xib in Resources */,
 				889CFB2F1E8BD35D0027CAAA /* ProfileEditViewController.storyboard in Resources */,
 				887826821E8D704800F9438F /* EventManageViewController.storyboard in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
@@ -950,6 +960,7 @@
 				889EA6171E8D1BEC00B3CEDE /* Alamofire+ArrayJSONEncoding.swift in Sources */,
 				88FACE9A1E8FC9EB00F540B7 /* ProfileBuyTicketsTableViewCell.swift in Sources */,
 				887826841E8D706800F9438F /* EventManageViewController.swift in Sources */,
+				88CB68471E9940BB00DE758C /* SelectTableViewCell.swift in Sources */,
 				889F89C11E86B1FE0027D852 /* User.swift in Sources */,
 				8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */,
 				880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */,
@@ -1010,6 +1021,7 @@
 				888128861E8F1B0B008A402F /* BestPlayerAlertViewController.swift in Sources */,
 				889EA61B1E8D27A500B3CEDE /* MyGamesTableViewCell.swift in Sources */,
 				887826941E8DCD3600F9438F /* UIViewController+addToolbar.swift in Sources */,
+				88CB68491E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift in Sources */,
 				880FFBC71E8917C400E3173E /* Date+WeekDates.swift in Sources */,
 				88294ECA1E8AED2700133A3E /* PlayersListTableViewController.swift in Sources */,
 				8878268A1E8DADEE00F9438F /* TextInputTableViewCell.swift in Sources */,

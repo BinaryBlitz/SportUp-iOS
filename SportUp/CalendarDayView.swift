@@ -12,7 +12,6 @@ import UIKit
 protocol CalendarDayDelegate: class {
   func dayViewSelected(_ dayView: CalendarDayView)
   func selectedDate() -> Date
-  func selectedTextColor() -> UIColor?
 }
 
 class CalendarDayView: UIView {
@@ -42,10 +41,6 @@ class CalendarDayView: UIView {
   var font = UIFont.systemFont(ofSize: 20)
 
   var textColor: UIColor = .white
-
-  var selectedTextColor: UIColor? {
-    return delegate?.selectedTextColor() ?? UIColor.sportUpAquaMarine
-  }
 
   var selectedBackgroundColor: UIColor? = UIColor.white
 
@@ -89,13 +84,13 @@ extension CalendarDayView {
     button.layer.cornerRadius = buttonDimension / 2
     button.translatesAutoresizingMaskIntoConstraints = false
     button.addTarget(self, action: #selector(highlight), for: .touchUpInside)
+    button.setTitleColor(textColor, for: .normal)
     addSubview(button)
   }
 
   func formatButton() {
 
     button.setTitle(title, for: .normal)
-    button.setTitleColor(UIColor.white, for: .normal)
     button.titleLabel!.font = font
 
     guard let delegate = delegate else { return }
@@ -128,17 +123,16 @@ extension CalendarDayView {
 
   func highlight() {
     isUserInteractionEnabled = false
-    button.backgroundColor = selectedBackgroundColor
-    button.setTitleColor(selectedTextColor, for: .normal)
+    button.borderWidth = 1
+    button.borderColor = UIColor.white
     delegate?.dayViewSelected(self)
     animateSelection()
   }
 
   internal func unhighlight() {
-    button.backgroundColor = nil
     button.titleLabel!.font = font
-    button.setTitleColor(textColor, for: .normal)
-
+    button.borderColor = UIColor.clear
+    button.borderWidth = 0
     isUserInteractionEnabled = true
   }
 }
