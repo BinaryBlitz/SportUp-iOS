@@ -99,8 +99,8 @@ class DataManager {
     return NetworkManager.doRequest(.joinTeam(eventId: eventId), ["team_number": teamIndex]).asVoid()
   }
 
-  func leaveTeam(eventId: Int) -> Promise<Void> {
-    return NetworkManager.doRequest(.leaveTeam(eventId: eventId)).asVoid()
+  func leaveTeam(eventId: Int, membershipId: Int) -> Promise<Void> {
+    return NetworkManager.doRequest(.leaveTeam(eventId: eventId, membershipId: membershipId)).asVoid()
   }
 
   func vote(eventId: Int, userId: Int) -> Promise<Void> {

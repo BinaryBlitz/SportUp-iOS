@@ -43,6 +43,7 @@ class PlayerTableViewCell: UITableViewCell {
 
   @IBAction func leaveButtonDidTap(_ sender: Any) {
     leaveButton.isEnabled = false
+    leaveButtonDidTapHandler?()
   }
 
   override func prepareForReuse() {

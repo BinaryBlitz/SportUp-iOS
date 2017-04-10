@@ -57,7 +57,7 @@ class PlayersListViewController: UIViewController {
 extension PlayersListViewController: PlayersListTableViewControllerDelegate {
   
   func didTapLeaveButton(teamIndex: Int) {
-    _ = DataManager.instance.leaveTeam(eventId: event.id).then { [weak self] in
+    _ = DataManager.instance.leaveTeam(eventId: event.id, membershipId: event.membership?.id ?? 0).then { [weak self] in
       self?.updateData()
     }
 

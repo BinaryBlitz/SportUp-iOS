@@ -23,6 +23,7 @@
 		88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EC51E8AD2BA00133A3E /* PlayersListViewController.swift */; };
 		88294EC81E8AD38300133A3E /* PlayersListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88294EC71E8AD38300133A3E /* PlayersListViewController.storyboard */; };
 		88294ECA1E8AED2700133A3E /* PlayersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EC91E8AED2700133A3E /* PlayersListTableViewController.swift */; };
+		8830B53A1E9BAD50009B63D2 /* PromoCodeAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8830B5391E9BAD50009B63D2 /* PromoCodeAlert.storyboard */; };
 		8853D6991E880D8E00C4759C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D6981E880D8E00C4759C /* Event.swift */; };
 		8853D69B1E88119600C4759C /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69A1E88119600C4759C /* DateTransform.swift */; };
 		8853D69F1E881B5100C4759C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69E1E881B5100C4759C /* EventTableViewCell.swift */; };
@@ -149,6 +150,7 @@
 		88294EC51E8AD2BA00133A3E /* PlayersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
 		88294EC71E8AD38300133A3E /* PlayersListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayersListViewController.storyboard; sourceTree = "<group>"; };
 		88294EC91E8AED2700133A3E /* PlayersListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersListTableViewController.swift; sourceTree = "<group>"; };
+		8830B5391E9BAD50009B63D2 /* PromoCodeAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PromoCodeAlert.storyboard; sourceTree = "<group>"; };
 		8853D6981E880D8E00C4759C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8853D69A1E88119600C4759C /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
 		8853D69E1E881B5100C4759C /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 				88294EC91E8AED2700133A3E /* PlayersListTableViewController.swift */,
 			);
 			name = PlayersList;
+			sourceTree = "<group>";
+		};
+		8830B5381E9BAD3E009B63D2 /* PromoCode */ = {
+			isa = PBXGroup;
+			children = (
+				8830B5391E9BAD50009B63D2 /* PromoCodeAlert.storyboard */,
+			);
+			name = PromoCode;
 			sourceTree = "<group>";
 		};
 		8853D69C1E881B3600C4759C /* Common */ = {
@@ -681,6 +691,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8830B5381E9BAD3E009B63D2 /* PromoCode */,
 				88D3109C1E8FE46300046BA4 /* Messages */,
 				88FACE911E8FC0A100F540B7 /* UserProfile */,
 				888128871E8F1B9E008A402F /* PasswordAlert */,
@@ -867,6 +878,7 @@
 				88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */,
 				88CB68451E99404600DE758C /* SelectTableViewCell.xib in Resources */,
 				889CFB2F1E8BD35D0027CAAA /* ProfileEditViewController.storyboard in Resources */,
+				8830B53A1E9BAD50009B63D2 /* PromoCodeAlert.storyboard in Resources */,
 				887826821E8D704800F9438F /* EventManageViewController.storyboard in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
 				88294EC81E8AD38300133A3E /* PlayersListViewController.storyboard in Resources */,
