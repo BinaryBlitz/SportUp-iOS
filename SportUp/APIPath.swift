@@ -52,11 +52,11 @@ enum APIPath {
     case .joinTeam(let eventId):
       return "events/\(eventId)/teams"
     case .leaveTeam(let eventId, let membershipId):
-      return "/api/events/\(eventId)/teams/\(membershipId)"
+      return "events/\(eventId)/teams/\(membershipId)"
     case .vote(let eventId):
-      return "api/events/\(eventId)/votes"
+      return "events/\(eventId)/votes"
     case .createReport(let eventId):
-      return "api/events/\(eventId)/reports"
+      return "events/\(eventId)/reports"
     case .getMemberships:
       return "memberships"
     case .getInvites:
