@@ -107,8 +107,8 @@ class UserProfileViewController: UIViewController, DefaultBarStyleViewController
   }
 
   func reloadData() {
-    guard let profile = ProfileManager.instance.currentProfile else { return }
-    navigationItem.title = profile.fullName
+    let profile = ProfileManager.instance.currentProfile
+    navigationItem.title = profile?.fullName
     avatarView.configure(user: profile)
   }
 

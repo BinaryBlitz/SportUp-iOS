@@ -36,7 +36,7 @@ class AvatarView: UIView {
 
   func setDefaultAvatar() {
     nameLabel.isHidden = true
-    userIconView.isHidden = true
+    userIconView.isHidden = false
     userIconView.contentMode = .center
     userIconView.image = #imageLiteral(resourceName: "iconUserWhite")
   }

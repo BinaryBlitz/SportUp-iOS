@@ -107,8 +107,17 @@ class EventInfoTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch indexPath.section {
     case Sections.mainInfo.rawValue:
-      guard indexPath.row == MainInfoRow.playersCount.rawValue else { return }
-      delegate?.pushPlayersListController()
+      switch indexPath.row {
+      case MainInfoRow.map.rawValue:
+        let viewController = GamesMapViewController.storyboardInstance()!
+        viewController.events = [event]
+        viewController.sportType = sportType
+        navigationController?.pushViewController(viewController, animated: true)
+      case MainInfoRow.playersCount.rawValue:
+        delegate?.pushPlayersListController()
+      default:
+        break
+      }
     case Sections.share.rawValue:
       return
     default:

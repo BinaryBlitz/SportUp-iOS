@@ -17,8 +17,6 @@ target 'SportUp' do
   pod 'SwiftDate', '~> 4.0'
   pod 'KeychainAccess', '~> 3.0'
   pod 'AvatarImageView', '~> 2.0'
-  pod 'Chatto', '~> 3.0'
-  pod 'ChattoAdditions', '~> 3.0'
   pod 'RSKImageCropper'
 
   pod 'Fabric'

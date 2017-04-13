@@ -8,8 +8,6 @@
 
 import Foundation
 import ObjectMapper
-import Chatto
-import ChattoAdditions
 
 enum MessageItemType: String {
   case text = "text"
@@ -20,28 +18,5 @@ public class MessageItem {
   var id: Int = UUID().hashValue
   var sender: User? = nil
   public var date: Date = Date()
-
-}
-
-extension MessageItem: MessageModelProtocol {
-  public var uid: String {
-    return "\(id)"
-  }
-
-  public var senderId: String {
-    return "\(sender?.id)"
-  }
-
-  public var type: ChatItemType {
-    return MessageItemType.text.rawValue
-  }
-
-  public var isIncoming: Bool {
-    return sender?.id == ProfileManager.instance.currentProfile?.id
-  }
-
-  public var status: MessageStatus {
-    return .success
-  }
 
 }

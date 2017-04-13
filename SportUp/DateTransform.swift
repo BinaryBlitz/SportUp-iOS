@@ -17,7 +17,8 @@ struct DateTransform: TransformType {
 
   public func transformFromJSON(_ value: Any?) -> Object? {
     guard let value = value as? String else { return nil }
-    return try? value.date(format: .iso8601(options: .withInternetDateTimeExtended)).absoluteDate
+    let date = value.date(format: .iso8601(options: .withInternetDateTimeExtended))?.absoluteDate
+    return date
   }
 
   init() { }
