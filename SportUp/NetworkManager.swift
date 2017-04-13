@@ -21,8 +21,6 @@ class NetworkManager {
         params["api_token"] = apiToken
       }
 
-      debugPrint(params)
-
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
       let url = URL(string: self.baseUrl + self.apiPrefix + path.rawPath)!
 

@@ -26,7 +26,7 @@ class ReportAlertViewController: UIViewController {
   override func viewDidLoad() {
     nameLabel.text = player.firstName + player.lastName
     ratingField.inputAccessoryView = UIView()
-    hideOnTapOutside()
+    hideKeyboardOnTapOutside()
     view.backgroundColor = UIColor(white: 0, alpha: 0.5)
   }
 

@@ -14,11 +14,15 @@ class User: Mappable {
   var id: Int = 0
   var firstName: String = ""
   var lastName: String = ""
-  var avatar: String = ""
+  var avatarUrl: URL? = nil
   var phoneNumber: String = ""
   var votesCount: Int = 0
   var violationsCount: Int = 0
   var eventMemberships: [Membership] = []
+
+  var fullName: String {
+    return firstName + " " + lastName
+  }
 
   init() { }
 
@@ -26,9 +30,8 @@ class User: Mappable {
     id <- map["id"]
     firstName <- map["first_name"]
     lastName <- map["last_name"]
-    avatar <- map["avatar"]
     phoneNumber <- map["phone_number"]
-    guard map.mappingType == .fromJSON else { return }
+    avatarUrl <- (map["avatar_url"], URLTransform())
     votesCount <- map["votes_count"]
     violationsCount <- map["violations_count"]
   }

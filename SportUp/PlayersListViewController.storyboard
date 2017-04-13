@@ -124,18 +124,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-24-vIH" customClass="AvatarImageView" customModule="AvatarImageView">
-                                            <rect key="frame" x="16" y="16" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="gIS-8y-DEv"/>
-                                                <constraint firstAttribute="width" constant="40" id="xWv-AN-vAb"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="20"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </imageView>
                                         <view contentMode="scaleToFill" horizontalHuggingPriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="swr-S1-Dhs">
                                             <rect key="frame" x="72" y="19" width="35.5" height="33"/>
                                             <subviews>
@@ -202,19 +190,27 @@
                                                 </button>
                                             </subviews>
                                         </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAm-B6-Jee">
+                                            <rect key="frame" x="16" y="16" width="40" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="MOe-um-Cja"/>
+                                                <constraint firstAttribute="height" constant="40" id="bYs-82-r2u"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="pq7-XT-uqa" firstAttribute="trailing" secondItem="jEv-pO-4c3" secondAttribute="trailingMargin" id="1f6-ma-bNn"/>
                                         <constraint firstItem="pq7-XT-uqa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="swr-S1-Dhs" secondAttribute="trailing" id="2yC-f6-Igd"/>
+                                        <constraint firstItem="tAm-B6-Jee" firstAttribute="centerY" secondItem="swr-S1-Dhs" secondAttribute="centerY" id="3EN-Qg-giq"/>
                                         <constraint firstItem="pq7-XT-uqa" firstAttribute="centerY" secondItem="jEv-pO-4c3" secondAttribute="centerY" id="9Ee-KO-k4r"/>
-                                        <constraint firstItem="swr-S1-Dhs" firstAttribute="leading" secondItem="FOr-24-vIH" secondAttribute="trailing" constant="16" id="Khv-1L-xSR"/>
-                                        <constraint firstItem="FOr-24-vIH" firstAttribute="leading" secondItem="jEv-pO-4c3" secondAttribute="leading" constant="16" id="deC-sv-Lil"/>
-                                        <constraint firstItem="FOr-24-vIH" firstAttribute="centerY" secondItem="jEv-pO-4c3" secondAttribute="centerY" id="h57-o2-AIe"/>
-                                        <constraint firstItem="swr-S1-Dhs" firstAttribute="centerY" secondItem="FOr-24-vIH" secondAttribute="centerY" id="udY-bA-Kux"/>
+                                        <constraint firstItem="tAm-B6-Jee" firstAttribute="centerY" secondItem="jEv-pO-4c3" secondAttribute="centerY" id="PE6-W1-jvg"/>
+                                        <constraint firstItem="swr-S1-Dhs" firstAttribute="leading" secondItem="tAm-B6-Jee" secondAttribute="trailing" constant="16" id="dtM-M9-hxx"/>
+                                        <constraint firstItem="tAm-B6-Jee" firstAttribute="leading" secondItem="jEv-pO-4c3" secondAttribute="leading" constant="16" id="vtr-qf-eBQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="avatarView" destination="FOr-24-vIH" id="ZpJ-mB-upp"/>
+                                    <outlet property="avatarOuterView" destination="tAm-B6-Jee" id="g9z-Ab-SKo"/>
                                     <outlet property="labelsStackView" destination="pq7-XT-uqa" id="cqE-Vu-uVK"/>
                                     <outlet property="leaveButton" destination="Kmv-LN-ajt" id="ERB-Sc-edc"/>
                                     <outlet property="nameLabel" destination="tti-Ln-wMv" id="eqe-XM-qpt"/>
@@ -243,7 +239,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3F-IH-JKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="-123"/>
+            <point key="canvasLocation" x="892" y="-123.68815592203899"/>
         </scene>
     </scenes>
     <resources>

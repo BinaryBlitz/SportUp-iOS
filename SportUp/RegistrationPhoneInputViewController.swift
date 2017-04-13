@@ -20,10 +20,10 @@ class RegistrationPhoneInputViewController: UIViewController, DefaultBarStyleVie
   @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
   @IBOutlet weak var licenseAgreementLabel: UILabel!
 
-  var observers: [NSObjectProtocol] = []
+  var observers: [Any] = []
 
   override func viewDidLoad() {
-    hideOnTapOutside()
+    hideKeyboardOnTapOutside()
     configureLicenseAgreementLabel()
 
     phoneInputField.inputAccessoryView = UIView()
@@ -56,37 +56,12 @@ class RegistrationPhoneInputViewController: UIViewController, DefaultBarStyleVie
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     phoneInputField.becomeFirstResponder()
-    addObserverUpdateWithKeyboard()
+    self.observers = bottomLayoutConstraint.addObserversUpdateWithKeyboard()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
     observers.forEach { NotificationCenter.default.removeObserver($0) }
     observers = []
-  }
-
-  func addObserverUpdateWithKeyboard() {
-    let currentConstant = bottomLayoutConstraint.constant
-
-    let didShowObserver = NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil, using: { [weak self] notification in
-      if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-        let keyboardHeight = keyboardSize.height
-        UIView.animate(withDuration: 0.4, animations: {
-          self?.bottomLayoutConstraint.constant = currentConstant + keyboardHeight
-          self?.view.layoutIfNeeded()
-        })
-      }
-    })
-
-    observers.append(didShowObserver)
-
-    let willHideObserver = NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil, using: { [weak self] notification in
-      UIView.animate(withDuration: 0.4, animations: {
-        self?.bottomLayoutConstraint.constant = currentConstant
-        self?.view.layoutIfNeeded()
-      })
-    })
-
-    observers.append(willHideObserver)
   }
 
   @IBAction func licenseAgreementDidTap(_ sender: Any) {

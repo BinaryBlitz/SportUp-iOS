@@ -11,7 +11,7 @@ import UIKit
 
 extension NSLayoutConstraint {
 
-  func addObserverUpdateWithKeyboard() {
+  func addObserversUpdateWithKeyboard() -> [Any] {
     let currentConstant = self.constant
 
     var observers: [Any] = []
@@ -34,5 +34,7 @@ extension NSLayoutConstraint {
     })
 
     observers.append(willHideObserver)
+
+    return observers
   }
 }

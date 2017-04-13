@@ -24,7 +24,7 @@ class PasswordAlertViewController: UIViewController {
 
   override func viewDidLoad() {
     view.backgroundColor = UIColor(white: 0, alpha: 0.5)
-    hideOnTapOutside()
+    hideKeyboardOnTapOutside()
     passwordField.delegate = self
   }
 

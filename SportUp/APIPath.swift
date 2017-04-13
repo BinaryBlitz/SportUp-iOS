@@ -32,6 +32,7 @@ enum APIPath {
   case createUser
   case updateUser
   case getUser
+  case addPromoCode
 
   var rawPath: String {
     switch self {
@@ -75,6 +76,8 @@ enum APIPath {
       return "verification_tokens/\(verificationToken)"
     case .updateUser, .createUser, .getUser:
       return "user"
+    case .addPromoCode:
+      return "promo_codes"
     }
   }
 
@@ -83,7 +86,7 @@ enum APIPath {
     case .deleteMembership(_), .deleteInvite(_):
       return .delete
     case .createMembership(_), .vote(_), .createReport(_),
-         .createEvent, .createVerificationToken, .createUser, .joinTeam(_):
+         .createEvent, .createVerificationToken, .createUser, .joinTeam(_), .addPromoCode:
       return .post
     case .acceptInvite(_), .editEvent(_), .verifyToken(_), .updateUser, .leaveTeam(_):
       return .put

@@ -23,28 +23,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-Iy-hpx">
                                 <rect key="frame" x="158" y="80" width="60" height="60"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconUserWhite" translatesAutoresizingMaskIntoConstraints="NO" id="kba-Qn-bDZ">
-                                        <rect key="frame" x="18" y="18" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="EdF-E4-CGe"/>
-                                            <constraint firstAttribute="height" constant="24" id="eTi-Vi-Scc"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" red="0.78662341830000004" green="0.81176470588235294" blue="0.87229257819999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="F0D-Od-sdg"/>
-                                    <constraint firstItem="kba-Qn-bDZ" firstAttribute="centerY" secondItem="Xhz-Iy-hpx" secondAttribute="centerY" id="Lsj-JK-gpS"/>
-                                    <constraint firstItem="kba-Qn-bDZ" firstAttribute="centerX" secondItem="Xhz-Iy-hpx" secondAttribute="centerX" id="QKa-4o-K4Q"/>
                                     <constraint firstAttribute="height" constant="60" id="cFK-oe-dXV"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Iza-fk-lIs" appends="YES" id="LVY-Ez-zL8"/>
                                 </connections>
@@ -101,6 +85,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avatarOuterView" destination="Xhz-Iy-hpx" id="YI3-ea-b04"/>
                         <outlet property="firstNameField" destination="1rB-9Y-ols" id="Qjw-ds-lTa"/>
                         <outlet property="lastNameField" destination="1PO-dk-xL6" id="cXI-aL-IyO"/>
                     </connections>
@@ -115,7 +100,4 @@
             <point key="canvasLocation" x="268" y="507.79610194902551"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="iconUserWhite" width="24" height="24"/>
-    </resources>
 </document>

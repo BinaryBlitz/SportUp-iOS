@@ -19,6 +19,7 @@ target 'SportUp' do
   pod 'AvatarImageView', '~> 2.0'
   pod 'Chatto', '~> 3.0'
   pod 'ChattoAdditions', '~> 3.0'
+  pod 'RSKImageCropper'
 
   pod 'Fabric'
   pod 'Crashlytics'

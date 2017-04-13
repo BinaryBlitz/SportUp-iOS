@@ -1,5 +1,5 @@
 //
-//  UIViewController+hideOnTapOutside.swift
+//  UIViewController+hideKeyboardOnTapOutside.swift
 //  SportUp
 //
 //  Created by Алексей on 30.03.17.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-  func hideOnTapOutside() {
+  func hideKeyboardOnTapOutside() {
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
     view.addGestureRecognizer(tap)
   }

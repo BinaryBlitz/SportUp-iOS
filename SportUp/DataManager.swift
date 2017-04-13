@@ -171,6 +171,19 @@ class DataManager {
     return NetworkManager.doRequest(.updateUser, ["user": profile.toJSON()]).asVoid()
   }
 
+  func updateAvatar(imageString: String, profile: User) -> Promise<Void> {
+    var userJSON = profile.toJSON()
+    userJSON["avatar"] = imageString as Any
+    return NetworkManager.doRequest(.updateUser, ["user": userJSON]).asVoid()
+  }
+
+  func addPromoCode(_ code: String) -> Promise<Void> {
+    return NetworkManager.doRequest(.addPromoCode, ["code": code as Any]).then { result in
+
+      return Promise(value: ())
+    }
+  }
+
   func createUser(profile: User) -> Promise<Void> {
     return NetworkManager.doRequest(.createUser, ["user": profile.toJSON()]).asVoid()
   }

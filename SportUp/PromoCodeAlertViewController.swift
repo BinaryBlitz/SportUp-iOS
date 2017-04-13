@@ -15,13 +15,10 @@ class PromoCodeAlertViewController: UIViewController, DefaultBarStyleViewControl
   @IBOutlet weak var contentView: UIView!
   @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
 
-  @IBAction func sendButtonDidTap(_ sender: Any) {
-  }
-
-  var observers: [NSObjectProtocol] = []
+  var observers: [Any] = []
 
   override func viewDidLoad() {
-    hideOnTapOutside()
+    hideKeyboardOnTapOutside()
 
     navigationItem.backBarButtonItem = UIBarButtonItem(
       title: "",
@@ -34,6 +31,7 @@ class PromoCodeAlertViewController: UIViewController, DefaultBarStyleViewControl
       style: .plain,
       target: self, action: #selector(self.leftNavigationButtonDidTap)
     )
+    navigationController?.navigationBar.tintColor = .black
   }
 
   func leftNavigationButtonDidTap() {
@@ -43,11 +41,15 @@ class PromoCodeAlertViewController: UIViewController, DefaultBarStyleViewControl
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     promoCodeField.becomeFirstResponder()
-    bottomLayoutConstraint.addObserverUpdateWithKeyboard()
+    self.observers = bottomLayoutConstraint.addObserversUpdateWithKeyboard()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
     observers.forEach { NotificationCenter.default.removeObserver($0) }
     observers = []
+  }
+
+  @IBAction func sendButtonDidTap(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
   }
 }

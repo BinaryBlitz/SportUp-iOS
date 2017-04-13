@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import AvatarImageView
+import Kingfisher
 
 private let balanceCellIdentifier = "ProfileBalanceTableViewCell"
 private let buyTicketsCellIdentifier = "ProfileBuyTicketsTableViewCell"
@@ -57,11 +57,13 @@ enum TestActions: Int {
 }
 
 class UserProfileViewController: UIViewController, DefaultBarStyleViewController {
-  @IBOutlet weak var avatarView: AvatarImageView!
+  @IBOutlet weak var avatarOuterView: UIView!
   @IBOutlet weak var bestPlayerCountLabel: UILabel!
   @IBOutlet weak var gamesPlayedCountLabel: UILabel!
   @IBOutlet weak var yellowCardsCountLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
+
+  let avatarView = AvatarView.nibInstance()!
 
   enum Sections: Int {
     case balance = 0
@@ -88,25 +90,31 @@ class UserProfileViewController: UIViewController, DefaultBarStyleViewController
     testProducts.append((ticketsCount: 2, price: 30))
     testProducts.append((ticketsCount: 5, price: 100))
     testProducts.append((ticketsCount: 10, price: 150))
+    reloadData()
   }
 
   override func viewDidLoad() {
     configureTestProducts()
-    avatarView.dataSource = self
-    avatarView.configuration = self
-    navigationItem.title = name
+    avatarOuterView.addSubview(avatarView)
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "edit"), style: .plain, target: self, action: #selector(UserProfileViewController.rightBarButtonDidTap))
     let nib = UINib(nibName: headerReuseIdentifier, bundle: nil)
     tableView.register(nib, forHeaderFooterViewReuseIdentifier: headerReuseIdentifier)
 
-    _ = DataManager.instance.fetchUser().always {
-      
+    _ = DataManager.instance.fetchUser().always { [weak self] in
+      self?.reloadData()
     }
+  }
+
+  func reloadData() {
+    guard let profile = ProfileManager.instance.currentProfile else { return }
+    navigationItem.title = profile.fullName
+    avatarView.configure(user: profile)
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    reloadData()
     guard !ProfileManager.instance.isAuthorized else { return }
     let registrationNavigationViewController = SportUpNavigationController(rootViewController: RegistrationPhoneInputViewController.storyboardInstance()!)
     present(registrationNavigationViewController, animated: true, completion: { [weak self] _ in
@@ -121,6 +129,11 @@ class UserProfileViewController: UIViewController, DefaultBarStyleViewController
 
   @IBAction func signOutButtonDidTap(_ sender: Any) {
     ProfileManager.instance.signOut()
+  }
+
+  @IBAction func promoCodeButtonDidTap(_ sender: UIButton) {
+    let viewController = UINavigationController(rootViewController: PromoCodeAlertViewController.storyboardInstance()!)
+    present(viewController, animated: true, completion: nil)
   }
 
 }
@@ -184,21 +197,5 @@ extension UserProfileViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return indexPath.section == Sections.balance.rawValue ? 72 : 60
-  }
-}
-
-extension UserProfileViewController: AvatarImageViewDataSource {
-  var name: String {
-    return ProfileManager.instance.currentProfile?.firstName ?? ""
-  }
-
-  var bgColor: UIColor? {
-    return nil
-  }
-}
-
-extension UserProfileViewController: AvatarImageViewConfiguration {
-  var shape: Shape {
-    return .circle
   }
 }

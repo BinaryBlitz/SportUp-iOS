@@ -40,6 +40,11 @@ class ProfileManager {
     }
   }
 
+  func updateAvatar(_ image: UIImage) -> Promise<Void> {
+    guard let profile = currentProfile else { return Promise.init(error: DataError.unknown) }
+    return DataManager.instance.updateAvatar(imageString: image.base64String ?? "", profile: profile).asVoid()
+  }
+
   func signOut() {
     try? StorageHelper.save(nil, forKey: .apiToken)
     currentProfile = nil

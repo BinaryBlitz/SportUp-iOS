@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Камера используется для обновления изображения профиля</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Галерея используется для обновления изображения профиля</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

@@ -26,7 +26,7 @@ class RegistrationCodeInputViewController: UIViewController, DefaultBarStyleView
   var observers: [NSObjectProtocol] = []
 
   override func viewDidLoad() {
-    hideOnTapOutside()
+    hideKeyboardOnTapOutside()
     configureLicenseAgreementLabel()
     codeField.inputAccessoryView = UIView()
     codeField.tintColor = UIColor.sportUpAquaMarine

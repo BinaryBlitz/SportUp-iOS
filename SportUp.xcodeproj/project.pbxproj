@@ -26,6 +26,9 @@
 		8830B53A1E9BAD50009B63D2 /* PromoCodeAlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8830B5391E9BAD50009B63D2 /* PromoCodeAlertViewController.storyboard */; };
 		8830B53C1E9BB09F009B63D2 /* PromoCodeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8830B53B1E9BB09F009B63D2 /* PromoCodeAlertViewController.swift */; };
 		8830B53E1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8830B53D1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift */; };
+		8833DBF11E9E754000CACA85 /* BonusRegistrationAlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8833DBF01E9E754000CACA85 /* BonusRegistrationAlertViewController.storyboard */; };
+		884908751E9EAD99009E72B3 /* UIImage+base64encodedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884908741E9EAD99009E72B3 /* UIImage+base64encodedString.swift */; };
+		884908771E9EAF5D009E72B3 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884908761E9EAF5D009E72B3 /* AvatarView.swift */; };
 		8853D6991E880D8E00C4759C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D6981E880D8E00C4759C /* Event.swift */; };
 		8853D69B1E88119600C4759C /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69A1E88119600C4759C /* DateTransform.swift */; };
 		8853D69F1E881B5100C4759C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8853D69E1E881B5100C4759C /* EventTableViewCell.swift */; };
@@ -86,6 +89,7 @@
 		889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D11E86C04A0027D852 /* ProfileManager.swift */; };
 		889F89D41E86CB400027D852 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889F89D31E86CB400027D852 /* MainTabBarController.storyboard */; };
 		889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */; };
+		88A645F61E9E789600C7219A /* BonusRegistrationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A645F51E9E789600C7219A /* BonusRegistrationAlertViewController.swift */; };
 		88CB68451E99404600DE758C /* SelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88CB68441E99404600DE758C /* SelectTableViewCell.xib */; };
 		88CB68471E9940BB00DE758C /* SelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB68461E9940BB00DE758C /* SelectTableViewCell.swift */; };
 		88CB68491E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB68481E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift */; };
@@ -104,6 +108,8 @@
 		88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */; };
 		88D32FCC1E86E6EB006EEE43 /* GamesFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FCB1E86E6EB006EEE43 /* GamesFeedViewController.swift */; };
 		88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FD01E86FF7F006EEE43 /* CalendarHeaderView.swift */; };
+		88D988FE1E9FC3F900AF03C3 /* Character+asciiValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D988FD1E9FC3F900AF03C3 /* Character+asciiValue.swift */; };
+		88D989001E9FDD8500AF03C3 /* AvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D988FF1E9FDD8500AF03C3 /* AvatarView.xib */; };
 		88DA46471E841F450061E816 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46461E841F450061E816 /* DataManager.swift */; };
 		88DA46491E841F510061E816 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46481E841F510061E816 /* APIPath.swift */; };
 		88DA464B1E84233E0061E816 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA464A1E84233E0061E816 /* City.swift */; };
@@ -155,6 +161,9 @@
 		8830B5391E9BAD50009B63D2 /* PromoCodeAlertViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PromoCodeAlertViewController.storyboard; sourceTree = "<group>"; };
 		8830B53B1E9BB09F009B63D2 /* PromoCodeAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoCodeAlertViewController.swift; sourceTree = "<group>"; };
 		8830B53D1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addUpdateConstraintWithKeyboard.swift"; sourceTree = "<group>"; };
+		8833DBF01E9E754000CACA85 /* BonusRegistrationAlertViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BonusRegistrationAlertViewController.storyboard; sourceTree = "<group>"; };
+		884908741E9EAD99009E72B3 /* UIImage+base64encodedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+base64encodedString.swift"; sourceTree = "<group>"; };
+		884908761E9EAF5D009E72B3 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		8853D6981E880D8E00C4759C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8853D69A1E88119600C4759C /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
 		8853D69E1E881B5100C4759C /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -215,6 +224,7 @@
 		889F89D11E86C04A0027D852 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		889F89D31E86CB400027D852 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		889F89D61E86CFE30027D852 /* SportTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportTypeTableViewCell.swift; sourceTree = "<group>"; };
+		88A645F51E9E789600C7219A /* BonusRegistrationAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonusRegistrationAlertViewController.swift; sourceTree = "<group>"; };
 		88CB68441E99404600DE758C /* SelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTableViewCell.xib; sourceTree = "<group>"; };
 		88CB68461E9940BB00DE758C /* SelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewCell.swift; sourceTree = "<group>"; };
 		88CB68481E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+autoKeyboardContentInsets.swift"; sourceTree = "<group>"; };
@@ -233,6 +243,8 @@
 		88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamesFeedViewController.storyboard; sourceTree = "<group>"; };
 		88D32FCB1E86E6EB006EEE43 /* GamesFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesFeedViewController.swift; sourceTree = "<group>"; };
 		88D32FD01E86FF7F006EEE43 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		88D988FD1E9FC3F900AF03C3 /* Character+asciiValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+asciiValue.swift"; sourceTree = "<group>"; };
+		88D988FF1E9FDD8500AF03C3 /* AvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarView.xib; sourceTree = "<group>"; };
 		88DA46461E841F450061E816 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		88DA46481E841F510061E816 /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		88DA464A1E84233E0061E816 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -314,6 +326,15 @@
 				8830B53B1E9BB09F009B63D2 /* PromoCodeAlertViewController.swift */,
 			);
 			name = PromoCode;
+			sourceTree = "<group>";
+		};
+		8833DBEF1E9E752500CACA85 /* BonusRegistrationAlert */ = {
+			isa = PBXGroup;
+			children = (
+				8833DBF01E9E754000CACA85 /* BonusRegistrationAlertViewController.storyboard */,
+				88A645F51E9E789600C7219A /* BonusRegistrationAlertViewController.swift */,
+			);
+			name = BonusRegistrationAlert;
 			sourceTree = "<group>";
 		};
 		8853D69C1E881B3600C4759C /* Common */ = {
@@ -646,6 +667,8 @@
 			children = (
 				88294EBC1E8A7D8B00133A3E /* GradientView.swift */,
 				88DA46511E8425960061E816 /* GoButton.swift */,
+				884908761E9EAF5D009E72B3 /* AvatarView.swift */,
+				88D988FF1E9FDD8500AF03C3 /* AvatarView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -696,6 +719,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8833DBEF1E9E752500CACA85 /* BonusRegistrationAlert */,
 				8830B5381E9BAD3E009B63D2 /* PromoCode */,
 				88D3109C1E8FE46300046BA4 /* Messages */,
 				88FACE911E8FC0A100F540B7 /* UserProfile */,
@@ -741,6 +765,8 @@
 				887826951E8DD93C00F9438F /* UIViewController+presentAlert.swift */,
 				88CB68481E9A629900DE758C /* UITableView+autoKeyboardContentInsets.swift */,
 				8830B53D1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift */,
+				884908741E9EAD99009E72B3 /* UIImage+base64encodedString.swift */,
+				88D988FD1E9FC3F900AF03C3 /* Character+asciiValue.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -875,6 +901,7 @@
 				8853D6A41E88318F00C4759C /* GamesMapViewController.storyboard in Resources */,
 				889CFB321E8BEB800027CAAA /* BestPlayersPollViewController.storyboard in Resources */,
 				889CFB421E8C48540027CAAA /* ReportsHeaderVIew.xib in Resources */,
+				8833DBF11E9E754000CACA85 /* BonusRegistrationAlertViewController.storyboard in Resources */,
 				889CFB541E8C83E30027CAAA /* ReportAlertViewController.storyboard in Resources */,
 				8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */,
 				88294EB91E89DECA00133A3E /* EventInfoViewController.storyboard in Resources */,
@@ -884,6 +911,7 @@
 				88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */,
 				88CB68451E99404600DE758C /* SelectTableViewCell.xib in Resources */,
 				889CFB2F1E8BD35D0027CAAA /* ProfileEditViewController.storyboard in Resources */,
+				88D989001E9FDD8500AF03C3 /* AvatarView.xib in Resources */,
 				8830B53A1E9BAD50009B63D2 /* PromoCodeAlertViewController.storyboard in Resources */,
 				887826821E8D704800F9438F /* EventManageViewController.storyboard in Resources */,
 				88DE3EB51E83FD58007FCD76 /* RootViewController.storyboard in Resources */,
@@ -971,6 +999,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884908751E9EAD99009E72B3 /* UIImage+base64encodedString.swift in Sources */,
 				8859F1661E8992730009F85C /* EventMarkerView.swift in Sources */,
 				88FACE961E8FC9B600F540B7 /* UserProfileViewController.swift in Sources */,
 				88294EBF1E8AAFCC00133A3E /* TimeInterval+toString.swift in Sources */,
@@ -1005,10 +1034,12 @@
 				889EA61D1E8D301A00B3CEDE /* Invite.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
 				887AC8041E8EC733003C79D6 /* RegistrationCodeInputViewController.swift in Sources */,
+				884908771E9EAF5D009E72B3 /* AvatarView.swift in Sources */,
 				88294EBB1E89DF5C00133A3E /* EventInfoTableViewController.swift in Sources */,
 				88D3109E1E8FE47500046BA4 /* MessagesViewController.swift in Sources */,
 				880FFBC51E890F3C00E3173E /* CalendarDayView.swift in Sources */,
 				88DA46641E8445550061E816 /* CitySelectViewController.swift in Sources */,
+				88A645F61E9E789600C7219A /* BonusRegistrationAlertViewController.swift in Sources */,
 				889CFB241E8AF2A10027CAAA /* Membership.swift in Sources */,
 				88DA46491E841F510061E816 /* APIPath.swift in Sources */,
 				8853D69B1E88119600C4759C /* DateTransform.swift in Sources */,
@@ -1056,6 +1087,7 @@
 				889F89D01E86BAE20027D852 /* ProfileEditViewController.swift in Sources */,
 				8812B9611E8ECA140069F62B /* MaskedInput.swift in Sources */,
 				889CFB341E8C04730027CAAA /* BestPlayersPollViewController.swift in Sources */,
+				88D988FE1E9FC3F900AF03C3 /* Character+asciiValue.swift in Sources */,
 				88DE3EAE1E83FD58007FCD76 /* AppDelegate.swift in Sources */,
 				88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */,
 				88DA46661E851D440061E816 /* UISearchBar+serTextColor.swift in Sources */,

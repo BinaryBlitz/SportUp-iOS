@@ -8,19 +8,25 @@
 
 import Foundation
 import UIKit
-import AvatarImageView
 
 class PlayerTableViewCell: UITableViewCell {
   var player: User!
   @IBOutlet var yellowCardIconView: UIImageView!
   @IBOutlet var yellowCardCountLabel: UILabel!
   @IBOutlet var leaveButton: UIButton!
-  @IBOutlet var avatarView: AvatarImageView!
+  @IBOutlet var avatarOuterView: UIView!
   @IBOutlet var nameLabel: UILabel!
   @IBOutlet var playerTypeLabel: UILabel!
   @IBOutlet var labelsStackView: UIStackView!
+
+  let avatarView = AvatarView.nibInstance()!
   
   var leaveButtonDidTapHandler: (() -> Void)? = nil
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    avatarOuterView.addSubview(avatarView)
+  }
 
   func configure(player: User, isFreePlayersSection: Bool = false) {
     for view in labelsStackView.arrangedSubviews {
@@ -30,7 +36,7 @@ class PlayerTableViewCell: UITableViewCell {
     leaveButton.isEnabled = true
     self.player = player
     nameLabel.text = "\(player.firstName) \(player.lastName)"
-    avatarView.dataSource = self
+    avatarView.configure(user: player)
     if player.violationsCount > 0 {
       labelsStackView.addArrangedSubview(yellowCardIconView)
       yellowCardCountLabel.text = "\(player.violationsCount)"
@@ -50,10 +56,4 @@ class PlayerTableViewCell: UITableViewCell {
 
   }
 
-}
-
-extension PlayerTableViewCell: AvatarImageViewDataSource {
-  var name: String {
-    return player.firstName
-  }
 }
