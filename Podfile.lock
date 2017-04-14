@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (4.4.0)
   - AvatarImageView (2.0.3)
+  - Chatto (3.0.1)
+  - ChattoAdditions (3.0.1):
+    - Chatto
   - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
@@ -38,6 +41,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AvatarImageView (~> 2.0)
+  - Chatto (from `https://github.com/badoo/Chatto.git`, branch `master`)
+  - ChattoAdditions (from `https://github.com/badoo/Chatto.git`, branch `master`)
   - Crashlytics
   - Fabric
   - GoogleMaps (~> 2.2)
@@ -51,9 +56,27 @@ DEPENDENCIES:
   - SwiftDate (~> 4.0)
   - SwiftyJSON (~> 3.1)
 
+EXTERNAL SOURCES:
+  Chatto:
+    :branch: master
+    :git: https://github.com/badoo/Chatto.git
+  ChattoAdditions:
+    :branch: master
+    :git: https://github.com/badoo/Chatto.git
+
+CHECKOUT OPTIONS:
+  Chatto:
+    :commit: 46361a9a52eba9d0f9b9f8e261cf6a14a5d011d8
+    :git: https://github.com/badoo/Chatto.git
+  ChattoAdditions:
+    :commit: 46361a9a52eba9d0f9b9f8e261cf6a14a5d011d8
+    :git: https://github.com/badoo/Chatto.git
+
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AvatarImageView: 25541e2051124e730c7a1b97f5e5b9345fbc1cfc
+  Chatto: 760a1577da85ce75821fc5a4ecdd89c17fab2cd7
+  ChattoAdditions: e44d3aaf236af16735c58c711d289250d4bc85f7
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
@@ -67,6 +90,6 @@ SPEC CHECKSUMS:
   SwiftDate: ae615078806a322183e5f64e02e80ca8d939bf48
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 56f68789301f957ee0d6e61cdb1baa1c8a453af7
+PODFILE CHECKSUM: c5d724b3d99714c7adf6bb87927993fa5f5b90dc
 
 COCOAPODS: 1.2.1

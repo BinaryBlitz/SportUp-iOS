@@ -19,6 +19,9 @@ target 'SportUp' do
   pod 'AvatarImageView', '~> 2.0'
   pod 'RSKImageCropper'
 
+  pod 'Chatto', :git => 'https://github.com/badoo/Chatto.git', :branch => 'master'
+  pod 'ChattoAdditions', :git => 'https://github.com/badoo/Chatto.git', :branch => 'master'
+
   pod 'Fabric'
   pod 'Crashlytics'
 end
