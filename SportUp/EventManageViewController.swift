@@ -232,6 +232,11 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       alertMessage += "\nВермя начала игры не может быть позже времени окончания"
     }
     event.isPublic = isPublic
+    if let password = password, !event.isPublic {
+      event.password = password
+    } else {
+      alertMessage += "\n Укажите пароль приватной игры"
+    }
     if let sportType = sportType {
       event.sportType = sportType
     } else {

@@ -45,7 +45,6 @@ class Event: Mappable {
     id <- map["id"]
     startsAt <- (map["starts_at"], DateTransform())
     description <- map["description"]
-    endsAt <- (map["ends_at"], DateTransform())
     address <- map["address"]
     userLimit <- map["user_limit"]
     teamLimit <- map["team_limit"]
@@ -57,7 +56,13 @@ class Event: Mappable {
     password <- map["password"]
     sportType?.id >>> map["sport_type_id"]
     ProfileManager.instance.currentCity?.id >>> map["city_id"]
+    if map.mappingType == .toJSON {
+      let endsAtComponents = Calendar.current.dateComponents(in: TimeZone.current, from: endsAt)
+      let date = startsAt.atTime(hour: endsAtComponents.hour ?? 0, minute: endsAtComponents.minute ?? 0, second: 0)
+      date >>> (map["ends_at"], DateTransform())
+    }
     guard map.mappingType == .fromJSON else { return }
+    endsAt <- (map["ends_at"], DateTransform())
     userCount <- map["user_count"]
     membership <- map["membership"]
     membership?.event = self
