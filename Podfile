@@ -16,7 +16,6 @@ target 'SportUp' do
   pod 'GooglePlaces', '~> 2.2'
   pod 'SwiftDate', '~> 4.0'
   pod 'KeychainAccess', '~> 3.0'
-  pod 'AvatarImageView', '~> 2.0'
   pod 'RSKImageCropper'
 
   pod 'Chatto', :git => 'https://github.com/badoo/Chatto.git', :branch => 'master'

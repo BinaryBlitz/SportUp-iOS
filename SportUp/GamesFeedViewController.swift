@@ -54,6 +54,7 @@ class GamesFeedViewController: UIViewController {
 
   func configureCalendar() {
     headerView.backgroundColor = sportType.color
+    calendarHeaderView.selectedDayTextColor = sportType.color
     calendarHeaderView.selectDateHandler = { [weak self] date in
       self?.currentDate = date
     }

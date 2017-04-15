@@ -12,6 +12,7 @@ import UIKit
 protocol CalendarDayDelegate: class {
   func dayViewSelected(_ dayView: CalendarDayView)
   func selectedDate() -> Date
+  func selectedTextColor() -> UIColor?
 }
 
 class CalendarDayView: UIView {
@@ -42,6 +43,10 @@ class CalendarDayView: UIView {
 
   var textColor: UIColor = .white
 
+  var selectedTextColor: UIColor? {
+    return delegate?.selectedTextColor() ?? UIColor.sportUpAquaMarine
+  }
+
   var selectedBackgroundColor: UIColor? = UIColor.white
 
   var date: Date? = nil {
@@ -66,7 +71,6 @@ class CalendarDayView: UIView {
 }
 
 // MARK: - Tap Gesture Recognizer
-
 extension CalendarDayView {
 
   func addTapGestureRecognizer() {
@@ -76,7 +80,6 @@ extension CalendarDayView {
 }
 
 // MARK: - Button
-
 extension CalendarDayView {
 
   fileprivate func addButton() {
@@ -84,14 +87,22 @@ extension CalendarDayView {
     button.layer.cornerRadius = buttonDimension / 2
     button.translatesAutoresizingMaskIntoConstraints = false
     button.addTarget(self, action: #selector(highlight), for: .touchUpInside)
-    button.setTitleColor(textColor, for: .normal)
     addSubview(button)
   }
 
   func formatButton() {
 
     button.setTitle(title, for: .normal)
+    button.setTitleColor(UIColor.white, for: .normal)
     button.titleLabel!.font = font
+
+    if Calendar.current.isDate(Date(), inSameDayAs: date!) {
+      button.borderWidth = 1
+      button.borderColor = UIColor.white
+    } else {
+      button.borderWidth = 0
+      button.borderColor = UIColor.clear
+    }
 
     guard let delegate = delegate else { return }
 
@@ -105,7 +116,6 @@ extension CalendarDayView {
 }
 
 // MARK: - Constraints
-
 fileprivate extension CalendarDayView {
 
   fileprivate func addConstraints() {
@@ -118,27 +128,26 @@ fileprivate extension CalendarDayView {
 }
 
 // MARK: - Selection
-
 extension CalendarDayView {
 
   func highlight() {
     isUserInteractionEnabled = false
-    button.borderWidth = 1
-    button.borderColor = UIColor.white
+    button.backgroundColor = selectedBackgroundColor
+    button.setTitleColor(selectedTextColor, for: .normal)
     delegate?.dayViewSelected(self)
     animateSelection()
   }
 
   internal func unhighlight() {
+    button.backgroundColor = nil
     button.titleLabel!.font = font
-    button.borderColor = UIColor.clear
-    button.borderWidth = 0
+    button.setTitleColor(textColor, for: .normal)
+
     isUserInteractionEnabled = true
   }
 }
 
 // MARK: - Animations
-
 fileprivate extension CalendarDayView {
   fileprivate func animateSelection() {
     self.animate(toScale: 0.9) { [weak self] finished in
@@ -156,6 +165,6 @@ fileprivate extension CalendarDayView {
 
     UIView.animate(withDuration: 0.1, animations: { [weak self] in
       self?.button.transform = CGAffineTransform(scaleX: scale, y: scale)
-    }, completion: completion)
+      }, completion: completion)
   }
 }
