@@ -111,7 +111,7 @@ extension GamesFeedViewController: UITableViewDelegate {
     let viewController = EventInfoViewController.storyboardInstance()!
     viewController.event = event
     viewController.sportType = sportType
-    if event.isPublic && event.creator?.id != ProfileManager.instance.currentProfile?.id {
+    if event.isPublic || event.membership != nil {
       navigationController?.pushViewController(viewController, animated: true)
     } else {
       tableView.deselectRow(at: indexPath, animated: true)

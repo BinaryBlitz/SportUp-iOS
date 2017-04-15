@@ -136,9 +136,12 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       if isPublic { password = "" }
     }
   }
-  var password: String? = nil {
-    didSet {
-      passwordField.text = password
+  var password: String? {
+    set {
+      passwordField.text = newValue
+    }
+    get {
+      return passwordField.text
     }
   }
 
@@ -232,11 +235,14 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       alertMessage += "\nВермя начала игры не может быть позже времени окончания"
     }
     event.isPublic = isPublic
-    if let password = password, !event.isPublic {
-      event.password = password
-    } else {
-      alertMessage += "\n Укажите пароль приватной игры"
+    if !event.isPublic {
+      if let password = password {
+        event.password = password
+      } else {
+        alertMessage += "\n Укажите пароль приватной игры"
+      }
     }
+    
     if let sportType = sportType {
       event.sportType = sportType
     } else {
@@ -306,7 +312,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   }
 
   @IBAction func privacySwitchDidChange(_ sender: UISwitch) {
-    isPublic = sender.isOn
+    isPublic = !sender.isOn
   }
 
   @IBAction func cancelButtonDidTap(_ sender: GoButton) {

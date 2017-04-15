@@ -93,12 +93,12 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     tabBarController?.tabBar.isHidden = false
+    reloadData()
     guard !ProfileManager.instance.isAuthorized else { return }
     let registrationNavigationViewController = SportUpNavigationController(rootViewController: RegistrationPhoneInputViewController.storyboardInstance()!)
     present(registrationNavigationViewController, animated: true, completion: { [weak self] _ in
       self?.tabBarController?.selectedIndex = 0
     })
-    reloadData()
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {

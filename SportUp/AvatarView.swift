@@ -65,6 +65,7 @@ class AvatarView: UIView {
 
   override func didMoveToSuperview() {
     guard let superview = superview else { return }
+    frame = superview.bounds
     topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
     leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
     rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
