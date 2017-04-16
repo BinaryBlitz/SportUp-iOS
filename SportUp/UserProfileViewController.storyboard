@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Qe-B8-2jt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Qe-B8-2jt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -186,7 +186,7 @@
                                 <color key="backgroundColor" red="0.96830016370000005" green="0.97648984189999999" blue="0.98052781820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="dba-8q-OHg">
-                                    <rect key="frame" x="0.0" y="265" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="264.5" width="375" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rr8-En-a8f">
@@ -246,10 +246,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileBalanceTableViewCell" rowHeight="72" id="nxe-cu-0rZ" customClass="ProfileBalanceTableViewCell" customModule="SportUp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="72"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="nxe-cu-0rZ" id="zx3-Zx-yKr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconWalletGray" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-0A-fy7">
@@ -289,10 +289,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileBuyTicketsTableViewCell" rowHeight="60" id="4O2-it-v2q" customClass="ProfileBuyTicketsTableViewCell" customModule="SportUp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="127.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="4O2-it-v2q" id="Hhn-NO-WBW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticketSmoll" translatesAutoresizingMaskIntoConstraints="NO" id="ndB-0Y-A1w">
@@ -341,10 +341,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileEarnTicketsTableViewCell" rowHeight="60" id="AaU-VD-ZjV" customClass="ProfileEarnTicketsTableViewCell" customModule="SportUp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="AaU-VD-ZjV" id="mj4-Uo-cIH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticketSmoll" translatesAutoresizingMaskIntoConstraints="NO" id="aFD-GP-aic">

@@ -19,39 +19,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96830016370000005" green="0.97648984189999999" blue="0.98052781820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="HRr-S6-sQx">
-                            <rect key="frame" x="0.0" y="1635" width="375" height="81"/>
+                            <rect key="frame" x="0.0" y="1635" width="375" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNY-c7-0oL" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
-                                    <rect key="frame" x="85" y="16" width="204" height="48"/>
-                                    <color key="backgroundColor" red="1" green="0.45955187079999998" blue="0.4131643176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="48" id="MwG-Ne-zkU"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="166" id="NlE-e1-cOh"/>
-                                        <constraint firstAttribute="width" priority="500" constant="204" id="izd-bi-eQV"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <state key="normal" title="Отменить игру">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="24"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
-                                            <color key="value" red="1" green="0.45955187079999998" blue="0.4131643176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="cancelButtonDidTap:" destination="TD6-Fc-ZN5" eventType="touchUpInside" id="n1x-No-btG"/>
-                                    </connections>
-                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CGE-Ad-Wid">
+                                    <rect key="frame" x="85" y="20" width="204" height="116"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRz-W2-6jn">
+                                            <rect key="frame" x="0.0" y="0.0" width="204" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" priority="500" constant="204" id="NGL-yZ-Jjl"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="166" id="lOV-PI-yaC"/>
+                                                <constraint firstAttribute="height" constant="48" id="vAG-ym-D4p"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Создать игру">
+                                                <color key="titleColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="24"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.78662341830000004" green="0.83886760469999999" blue="0.87229257819999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="cancelButtonDidTap:" destination="TD6-Fc-ZN5" eventType="touchUpInside" id="w3L-H7-hN6"/>
+                                                <action selector="saveButtonDidTap:" destination="TD6-Fc-ZN5" eventType="touchUpInside" id="ewp-Uo-BIR"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNY-c7-0oL" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="68" width="204" height="48"/>
+                                            <color key="backgroundColor" red="1" green="0.45955187079999998" blue="0.4131643176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="MwG-Ne-zkU"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="166" id="NlE-e1-cOh"/>
+                                                <constraint firstAttribute="width" priority="500" constant="204" id="izd-bi-eQV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Отменить игру">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="24"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
+                                                    <color key="value" red="1" green="0.45955187079999998" blue="0.4131643176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="cancelButtonDidTap:" destination="TD6-Fc-ZN5" eventType="touchUpInside" id="n1x-No-btG"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" red="0.96830016370000005" green="0.97648984189999999" blue="0.98052781820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="RNY-c7-0oL" firstAttribute="top" secondItem="HRr-S6-sQx" secondAttribute="top" constant="16" id="HEg-Sh-Ja6"/>
-                                <constraint firstItem="RNY-c7-0oL" firstAttribute="centerX" secondItem="HRr-S6-sQx" secondAttribute="centerX" id="YaV-ob-aPE"/>
-                                <constraint firstAttribute="bottom" secondItem="RNY-c7-0oL" secondAttribute="bottom" constant="17" id="rdg-Mk-L3g"/>
+                                <constraint firstItem="CGE-Ad-Wid" firstAttribute="centerX" secondItem="HRr-S6-sQx" secondAttribute="centerX" id="22V-9r-6Qo"/>
+                                <constraint firstItem="CGE-Ad-Wid" firstAttribute="top" secondItem="HRr-S6-sQx" secondAttribute="top" constant="20" id="shm-ys-h2D"/>
                             </constraints>
                         </view>
                         <sections>
@@ -539,7 +570,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kzU-Ri-Uta">
                                                     <rect key="frame" x="54" y="16" width="305" height="123"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip </string>
                                                     <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -578,6 +608,7 @@
                         <outlet property="privacyIconView" destination="pct-R0-JKO" id="ouw-yx-FAJ"/>
                         <outlet property="privacyLabel" destination="rnC-HO-Ttx" id="SbY-Ph-IkY"/>
                         <outlet property="privacySwitch" destination="f6p-HF-wAt" id="38S-02-Jqt"/>
+                        <outlet property="saveButton" destination="JRz-W2-6jn" id="lys-6W-Na7"/>
                         <outlet property="sportTypeLabel" destination="N7l-uI-g1L" id="7Oc-rl-jea"/>
                         <outlet property="startDatePicker" destination="JH9-gr-1u3" id="XfP-ou-zJt"/>
                         <outlet property="startDateTimeLabel" destination="1Lh-cW-8cf" id="abE-ku-ujW"/>

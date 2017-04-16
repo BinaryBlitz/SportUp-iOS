@@ -68,6 +68,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
 
   @IBOutlet weak var privacyIconView: UIImageView!
   @IBOutlet weak var privacyLabel: UILabel!
+  @IBOutlet weak var saveButton: UIButton!
 
   var sportTypes: [SportType] = DataManager.instance.sportTypes
 
@@ -161,7 +162,6 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     default:
       break
     }
-    navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCheckedWhite"), style: .plain, target: self, action: #selector(self.navSaveButtonDidTap))
   }
 
   func navCancelButtonDidTap() {
@@ -177,7 +177,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
 
   }
   
-  func navSaveButtonDidTap() {
+  @IBAction func saveButtonDidTap(_ sender: Any?) {
     view.endEditing(true)
     navigationItem.rightBarButtonItem?.isEnabled = false
     switch screenType {
@@ -270,7 +270,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
 
   func configureView() {
     nameField.delegate = self
-    addToolbar(textField: nameField)
+    nameField.delegate = self
     passwordField.delegate = self
     addToolbar(textView: descriptionTextView)
     addressField.isEnabled = false
@@ -281,11 +281,12 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     endDatePicker.isHidden = true
     switch screenType {
     case .create:
-      tableView.tableFooterView = nil
+      cancelButton.isHidden = true
       navigationItem.title = "Создание события"
       startsAt = Date()
       endsAt = Date()
     case .edit(let event):
+      cancelButton.isHidden = false
       address = event.address
       name = event.name
       startsAt = event.startsAt
