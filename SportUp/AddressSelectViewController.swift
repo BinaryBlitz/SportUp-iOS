@@ -38,11 +38,13 @@ class AddressSelectViewController: UIViewController {
       }
     }
   }
+
   var addressString: String = "" {
     didSet {
       searchController?.searchBar.text = addressString
     }
   }
+  
   let sportType: SportType? = nil
   var selectAddressHandler: ((String) -> ())? = nil
 
@@ -110,6 +112,17 @@ class AddressSelectViewController: UIViewController {
     _ = navigationController?.popViewController(animated: true)
   }
 
+  @IBAction func myLocationButtonDidTap(_ sender: UIButton) {
+    let status = CLLocationManager.authorizationStatus()
+    if status == .denied {
+      UIApplication.shared.open(URL(string: "prefs:root=LOCATION_SERVICES")!, options: [:], completionHandler: nil)
+    } else {
+      locationManager.requestWhenInUseAuthorization()
+      locationManager.startUpdatingLocation()
+      mapView.isMyLocationEnabled = true
+    }
+  }
+
 }
 
 extension AddressSelectViewController: GMSAutocompleteResultsViewControllerDelegate {
@@ -124,8 +137,9 @@ extension AddressSelectViewController: GMSAutocompleteResultsViewControllerDeleg
     let defaultAction = UIAlertAction(title: NSLocalizedString("OK", comment: "Error alert"), style: .default, handler: nil)
     alertController.addAction(defaultAction)
     self.present(alertController, animated: true, completion: nil)
-
   }
+
+
 }
 
 extension AddressSelectViewController: GMSMapViewDelegate {
@@ -138,13 +152,12 @@ extension AddressSelectViewController: GMSMapViewDelegate {
 extension AddressSelectViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let coordinate = locations.first?.coordinate else { return }
-    mapView.camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: markerZoom)
+    mapView.animate(to: GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: markerZoom))
     locationManager.stopUpdatingLocation()
   }
 
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-    if status == .authorizedWhenInUse || status == .authorizedAlways {
-      locationManager.startUpdatingLocation()
-    }
+    guard status == .authorizedWhenInUse || status == .authorizedAlways else { return }
+    locationManager.startUpdatingLocation()
   }
 }

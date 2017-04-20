@@ -13,7 +13,7 @@ import GoogleMaps
 private let markerZoom: Float = 18
 
 protocol EventInfoViewControllerDelegate: class  {
-  func membershipButtonDidTap()
+  func membershipButtonDidTap(_ button: UIButton)
   func pushPlayersListController()
 }
 
@@ -126,8 +126,7 @@ class EventInfoTableViewController: UITableViewController {
   }
 
   @IBAction func membershipButtonDidTap(_ sender: UIButton) {
-    sender.isEnabled = false
-    delegate?.membershipButtonDidTap()
+    delegate?.membershipButtonDidTap(sender)
   }
 
 }

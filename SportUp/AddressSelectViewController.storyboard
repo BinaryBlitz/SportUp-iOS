@@ -31,6 +31,24 @@
                                     <constraint firstAttribute="height" constant="44" id="YX2-cE-Oln"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDJ-2J-Hk7">
+                                <rect key="frame" x="297" y="586" width="52" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="DAu-kc-32l"/>
+                                    <constraint firstAttribute="width" constant="52" id="iJ1-uG-BkW"/>
+                                </constraints>
+                                <state key="normal" image="iconLocationpointBlack"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="myLocationButtonDidTap:" destination="JxU-6I-AMn" eventType="touchUpInside" id="0ve-m0-5SA"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKC-o0-0mV" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
                                 <rect key="frame" x="117" y="587" width="140" height="50"/>
                                 <color key="backgroundColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,9 +74,11 @@
                             <constraint firstItem="WNm-hu-BJU" firstAttribute="top" secondItem="3W8-78-dnF" secondAttribute="bottom" id="CLh-wV-dLn"/>
                             <constraint firstItem="bRu-mF-uVn" firstAttribute="top" secondItem="nou-A5-akx" secondAttribute="bottom" id="DgQ-8M-dQM"/>
                             <constraint firstItem="3W8-78-dnF" firstAttribute="top" secondItem="nou-A5-akx" secondAttribute="bottom" id="JcQ-Ru-wCo"/>
+                            <constraint firstItem="aDJ-2J-Hk7" firstAttribute="centerY" secondItem="PKC-o0-0mV" secondAttribute="centerY" id="Kim-IM-fba"/>
                             <constraint firstItem="bRu-mF-uVn" firstAttribute="leading" secondItem="AIR-dv-rcT" secondAttribute="leading" id="bkO-Y1-jQ1"/>
                             <constraint firstAttribute="trailing" secondItem="3W8-78-dnF" secondAttribute="trailing" id="fYi-Td-Ose"/>
                             <constraint firstAttribute="trailing" secondItem="bRu-mF-uVn" secondAttribute="trailing" id="feo-1S-VA5"/>
+                            <constraint firstItem="aDJ-2J-Hk7" firstAttribute="leading" secondItem="PKC-o0-0mV" secondAttribute="trailing" constant="40" id="lXr-Sm-gkP"/>
                             <constraint firstItem="3W8-78-dnF" firstAttribute="leading" secondItem="AIR-dv-rcT" secondAttribute="leading" id="o8A-1Z-8Cs"/>
                             <constraint firstItem="WNm-hu-BJU" firstAttribute="top" secondItem="PKC-o0-0mV" secondAttribute="bottom" constant="30" id="oY2-gu-8oB"/>
                             <constraint firstItem="PKC-o0-0mV" firstAttribute="centerX" secondItem="AIR-dv-rcT" secondAttribute="centerX" id="x9x-vJ-ccI"/>
@@ -74,4 +94,7 @@
             <point key="canvasLocation" x="-420" y="148.87556221889056"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconLocationpointBlack" width="24" height="24"/>
+    </resources>
 </document>

@@ -160,7 +160,7 @@ class DataManager {
     guard let verificationToken = self.verificationToken else { return Promise(error: DataError.unknown) }
     return NetworkManager.doRequest(.verifyToken(verificationToken: verificationToken), ["code": code as Any, "token": verificationToken as Any]).then { result in
       let json = JSON(result)
-      let token = "foobar" //json["api_token"].string ?? 
+      let token = "foobar"
 
       try? StorageHelper.save(token, forKey: .apiToken)
       return Promise(value: ())

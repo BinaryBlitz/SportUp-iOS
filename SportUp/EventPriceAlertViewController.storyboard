@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tQ4-dA-qHV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Event Price Alert View Controller-->
+        <scene sceneID="a0i-mb-wSH">
+            <objects>
+                <viewController storyboardIdentifier="BonusRegistrationAlertViewController" id="tQ4-dA-qHV" customClass="EventPriceAlertViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z1s-HQ-tzn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y0A-dW-qTn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="17f-ph-4EU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptB-OV-4H7">
+                                <rect key="frame" x="10" y="159" width="355" height="348"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-vI-JpK" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
+                                        <rect key="frame" x="97" y="258" width="160" height="50"/>
+                                        <color key="backgroundColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GsT-NB-t2W"/>
+                                            <constraint firstAttribute="width" constant="160" id="tFl-oH-FmU"/>
+                                        </constraints>
+                                        <state key="normal" title="Далее"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
+                                                <color key="value" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultDisabledColor">
+                                                <color key="value" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextButtonDidTap:" destination="tQ4-dA-qHV" eventType="touchUpInside" id="1vA-cy-hGn"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="За участие в игре с вас будет списан" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-Xc-47h">
+                                        <rect key="frame" x="20" y="30" width="315" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njA-8r-eYI">
+                                        <rect key="frame" x="152.5" y="96" width="51.5" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EO-Gn-HCs">
+                                                <rect key="frame" x="0.0" y="0.0" width="17.5" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                                <color key="textColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconTicketsmollAction" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-wB-6wd">
+                                                <rect key="frame" x="27.5" y="12" width="24" height="24"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="h6z-wB-6wd" secondAttribute="trailing" id="50o-1b-lTD"/>
+                                            <constraint firstItem="h6z-wB-6wd" firstAttribute="leading" secondItem="8EO-Gn-HCs" secondAttribute="trailing" constant="10" id="54e-Zz-E4z"/>
+                                            <constraint firstItem="h6z-wB-6wd" firstAttribute="centerY" secondItem="8EO-Gn-HCs" secondAttribute="centerY" id="GyK-c1-dmc"/>
+                                            <constraint firstAttribute="bottom" secondItem="8EO-Gn-HCs" secondAttribute="bottom" id="KaP-Ad-U8j"/>
+                                            <constraint firstItem="8EO-Gn-HCs" firstAttribute="top" secondItem="njA-8r-eYI" secondAttribute="top" id="P1c-EB-Dpl"/>
+                                            <constraint firstItem="8EO-Gn-HCs" firstAttribute="leading" secondItem="njA-8r-eYI" secondAttribute="leading" id="nZF-q2-Ra6"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если в течение месяца вы примите участие в 4 и более играх, потраченные билеты будут возвращены на ваш баланс." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-MW-WJE">
+                                        <rect key="frame" x="16" y="164" width="323" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.60572481160000002" green="0.6740470529" blue="0.71587586400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FvZ-MW-WJE" secondAttribute="trailing" constant="16" id="5fh-ZR-NV6"/>
+                                    <constraint firstItem="Yoy-Xc-47h" firstAttribute="leading" secondItem="ptB-OV-4H7" secondAttribute="leading" constant="20" id="7BY-lI-dhK"/>
+                                    <constraint firstItem="6fB-vI-JpK" firstAttribute="centerX" secondItem="ptB-OV-4H7" secondAttribute="centerX" id="BEB-no-igc"/>
+                                    <constraint firstItem="FvZ-MW-WJE" firstAttribute="leading" secondItem="ptB-OV-4H7" secondAttribute="leading" constant="16" id="Dd9-P0-Umc"/>
+                                    <constraint firstItem="FvZ-MW-WJE" firstAttribute="top" secondItem="njA-8r-eYI" secondAttribute="bottom" constant="20" id="W0S-oq-XPS"/>
+                                    <constraint firstItem="njA-8r-eYI" firstAttribute="centerX" secondItem="ptB-OV-4H7" secondAttribute="centerX" id="WUW-DN-blE"/>
+                                    <constraint firstItem="Yoy-Xc-47h" firstAttribute="top" secondItem="ptB-OV-4H7" secondAttribute="topMargin" id="k1b-qA-e4g"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="6fB-vI-JpK" secondAttribute="bottom" id="shn-uc-NpW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yoy-Xc-47h" secondAttribute="trailing" constant="20" id="to6-Nj-Ekt"/>
+                                    <constraint firstItem="njA-8r-eYI" firstAttribute="top" secondItem="Yoy-Xc-47h" secondAttribute="bottom" constant="18" id="vrR-gB-4AL"/>
+                                    <constraint firstItem="6fB-vI-JpK" firstAttribute="top" secondItem="FvZ-MW-WJE" secondAttribute="bottom" constant="40" id="wNN-DY-QzY"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="30" left="8" bottom="40" right="8"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ptB-OV-4H7" firstAttribute="leading" secondItem="17f-ph-4EU" secondAttribute="leading" constant="10" id="VX6-Qx-qjL"/>
+                            <constraint firstItem="ptB-OV-4H7" firstAttribute="centerY" secondItem="17f-ph-4EU" secondAttribute="centerY" id="bZS-6P-FDY"/>
+                            <constraint firstAttribute="trailing" secondItem="ptB-OV-4H7" secondAttribute="trailing" constant="10" id="u5D-xv-m5f"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sDV-1o-JrT" appends="YES" id="713-yf-vBk"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="ptB-OV-4H7" id="QUY-mZ-WKW"/>
+                        <outlet property="nextButton" destination="6fB-vI-JpK" id="xWn-bq-AZh"/>
+                        <outlet property="ticketsCountLabel" destination="8EO-Gn-HCs" id="EAF-NF-etp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQV-ok-8Ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7Tf-Bz-ZWK">
+                    <connections>
+                        <action selector="backgroundViewDidTap:" destination="tQ4-dA-qHV" id="rhj-yB-m4b"/>
+                        <outlet property="delegate" destination="tQ4-dA-qHV" id="DkB-SQ-qrD"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="sDV-1o-JrT">
+                    <connections>
+                        <action selector="backgroundViewDidTap:" destination="tQ4-dA-qHV" id="VNQ-uq-vdD"/>
+                        <outlet property="delegate" destination="tQ4-dA-qHV" id="2Z8-qx-r31"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="82.3088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconTicketsmollAction" width="24" height="24"/>
+    </resources>
+</document>

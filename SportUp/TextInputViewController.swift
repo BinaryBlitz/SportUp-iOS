@@ -50,13 +50,21 @@ class TextInputViewController: UITableViewController, DefaultBarStyleViewControl
     tableView.register(TextInputTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     navigationItem.title = titleText
 
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(TextInputViewController.saveButtonDidTap))
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavCheckedBlack"), style: .plain, target: self, action: #selector(TextInputViewController.saveButtonDidTap))
   }
 
   func saveButtonDidTap() {
     view.endEditing(true)
     didFinishEditingHandler?(value)
     navigationController?.popViewController(animated: true)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    textInputTableViewCell.textField.becomeFirstResponder()
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    view.endEditing(true)
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

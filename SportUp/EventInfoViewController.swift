@@ -89,16 +89,25 @@ class EventInfoViewController: UIViewController {
 }
 
 extension EventInfoViewController: EventInfoViewControllerDelegate {
-  func membershipButtonDidTap() {
+  func membershipButtonDidTap(_ button: UIButton) {
+    button.isEnabled = true
     if let membership = event.membership {
-      _ = DataManager.instance.deleteMembership(membershipId: membership.id).then { [weak self] _ in
+      _ = DataManager.instance.deleteMembership(membershipId: membership.id).then { [weak self] _ -> Void in
         self?.updateData()
+        button.isEnabled = false
       }
 
     } else {
-      _ = DataManager.instance.createMembership(eventId: event.id).then { [weak self] eventMember -> Void in
-        self?.updateData()
+      let priceController = EventPriceAlertViewController.storyboardInstance()!
+      priceController.modalPresentationStyle = .overCurrentContext
+      priceController.nextButtonDidTapHandler = { [weak self] in
+        guard let event = self?.event else { return }
+        _ = DataManager.instance.createMembership(eventId: event.id).then { [weak self] eventMember -> Void in
+          self?.updateData()
+        }
       }
+      tabBarController?.present(priceController, animated: false, completion: nil)
+      button.isEnabled = true
     }
 
   }

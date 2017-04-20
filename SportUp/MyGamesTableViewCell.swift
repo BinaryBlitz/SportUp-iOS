@@ -53,6 +53,8 @@ class MyGamesTableViewCell: UITableViewCell {
       case .finishedGame(let eventMembership):
         configure(event: eventMembership.event)
       }
+      updateConstraints()
+      layoutIfNeeded()
     }
   }
 

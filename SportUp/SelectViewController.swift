@@ -24,13 +24,6 @@ class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewC
     tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
 
     navigationItem.rightBarButtonItem?.isEnabled = false
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(SelectSportTypeViewController.saveButtonDidTap))
-  }
-
-  func saveButtonDidTap() {
-    guard let value = value else { return }
-    didFinishEditingHandler?(value)
-    _ = navigationController?.popViewController(animated: true)
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,9 +57,9 @@ class SelectSportTypeViewController: UITableViewController, DefaultBarStyleViewC
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    value = sportTypes[indexPath.row]
-    navigationItem.rightBarButtonItem?.isEnabled = true
     tableView.deselectRow(at: indexPath, animated: true)
+    didFinishEditingHandler?(sportTypes[indexPath.row])
+    _ = navigationController?.popViewController(animated: true)
     tableView.reloadData()
   }
 }

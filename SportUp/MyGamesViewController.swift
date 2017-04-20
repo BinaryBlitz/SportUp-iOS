@@ -65,7 +65,7 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
   override func viewDidLoad() {
     tabBarItem.title = "Мои игры"
     tabBarItem.image = #imageLiteral(resourceName: "iconTabMygames")
-    reloadData()
+    refresh()
 
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
@@ -78,7 +78,7 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
     present(navigationController, animated: true, completion: nil)
   }
 
-  func reloadData() {
+  func refresh() {
     _ = DataManager.instance.fetchMemberships().then { [weak self] memberships -> Void in
       self?.memberships = memberships.sorted { $0.event.startsAt > $1.event.startsAt }
       self?.tableView.reloadData()
@@ -93,7 +93,7 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     tabBarController?.tabBar.isHidden = false
-    reloadData()
+    refresh()
     guard !ProfileManager.instance.isAuthorized else { return }
     let registrationNavigationViewController = SportUpNavigationController(rootViewController: RegistrationPhoneInputViewController.storyboardInstance()!)
     present(registrationNavigationViewController, animated: true, completion: { [weak self] _ in
@@ -193,7 +193,7 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
 extension MyGamesViewController: MyGamesTableViewCellDelegate {
   func accept(invite: Invite) {
     _ = DataManager.instance.acceptInvite(inviteId: invite.id).then { [weak self] _ -> Void in
-      self?.reloadData()
+      self?.refresh()
     }
   }
 

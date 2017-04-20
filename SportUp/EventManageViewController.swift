@@ -115,7 +115,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   }
   var price: Int = 0 {
     didSet {
-      priceField.text = Double(price).currencyString
+      priceField.text = price == 0 ? "Бесплатно" : Double(price).currencyString
     }
   }
   var startsAt: Date = Date() {
@@ -270,7 +270,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
 
   func configureView() {
     nameField.delegate = self
-    nameField.delegate = self
+    descriptionTextView.delegate = self
     passwordField.delegate = self
     addToolbar(textView: descriptionTextView)
     addressField.isEnabled = false
@@ -378,6 +378,7 @@ extension EventManageViewController {
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    view.endEditing(true)
     switch indexPath.section {
     case Sections.dateTime.rawValue:
       return didSelectDateTimeCell(indexPath: indexPath)
@@ -393,7 +394,7 @@ extension EventManageViewController {
       navigationController?.pushViewController(viewController, animated: true)
     case Sections.price.rawValue:
       let viewController = TextInputViewController(title: "Цена")
-      viewController.value = "\(price)"
+      viewController.value = price > 0 ? "\(price)" : ""
       viewController.keyboardType = .numberPad
       viewController.didFinishEditingHandler =  { [weak self] in
         self?.price = Int($0) ?? 0
@@ -409,13 +410,21 @@ extension EventManageViewController {
     default:
       tableView.deselectRow(at: indexPath, animated: true)
     }
+    hidePickers()
+  }
+
+  func hidePickers() {
+    endDatePicker.isHidden = true
+    startDatePicker.isHidden = true
+    tableView.beginUpdates()
+    tableView.endUpdates()
   }
 
   func didSelectGameLimitsCell(indexPath: IndexPath) {
     switch indexPath.row {
     case GameLimitsSectionRows.playersCount.rawValue:
       let viewController = TextInputViewController(title: "Количество участников")
-      viewController.value = "\(playersCount)"
+      viewController.value = playersCount > 0 ? "\(playersCount)" : ""
       viewController.keyboardType = .numberPad
       viewController.didFinishEditingHandler =  { [weak self] in
         self?.playersCount = Int($0) ?? 0
@@ -423,7 +432,7 @@ extension EventManageViewController {
       navigationController?.pushViewController(viewController, animated: true)
     case GameLimitsSectionRows.teamsCount.rawValue:
       let viewController = TextInputViewController(title: "Количество команд")
-      viewController.value = "\(teamsCount)"
+      viewController.value = teamsCount > 0 ? "\(teamsCount)" : ""
       viewController.keyboardType = .numberPad
       viewController.didFinishEditingHandler =  { [weak self] in
         self?.teamsCount = Int($0) ?? 0
@@ -455,6 +464,14 @@ extension EventManageViewController {
 }
 
 extension EventManageViewController {
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    hidePickers()
+  }
+
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    hidePickers()
+  }
+
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.endEditing(true)
     return true

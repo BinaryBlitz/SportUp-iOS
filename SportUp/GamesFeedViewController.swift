@@ -27,7 +27,7 @@ class GamesFeedViewController: UIViewController {
   override func viewDidLoad() {
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconNavMapWhite"), style: .plain, target: self, action: #selector(self.mapButtonDidTap))
-    headerView.isHidden = true
+    calendarHeaderView.isHidden = true
     tableView.dataSource = self
     tableView.delegate = self
     updateData()
@@ -71,7 +71,7 @@ class GamesFeedViewController: UIViewController {
   }
 
   override func viewWillAppear(_ animated: Bool) {
-    headerView.isHidden = false
+    calendarHeaderView.isHidden = false
     super.viewWillAppear(animated)
     updateData()
     navigationController?.navigationBar.barTintColor = sportType.color
@@ -81,7 +81,7 @@ class GamesFeedViewController: UIViewController {
   }
 
   override func viewWillDisappear(_ animated: Bool) {
-    headerView.isHidden = true
+    calendarHeaderView.isHidden = true
     super.viewWillDisappear(animated)
   }
 }

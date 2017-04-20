@@ -108,7 +108,7 @@ class ProfileEditViewController: UIViewController, DefaultBarStyleViewController
           self.dismiss(animated: true, completion: nil)
         }
       case .profileTab:
-        self.presentAlertWithMessage("Профиль успешно обновлен")  
+        self.dismiss(animated: true, completion: nil)
       }
     }.catch { [weak self] _ in
       self?.presentAlertWithMessage("Ошибка при обновлении профиля")
@@ -131,6 +131,9 @@ extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigati
     picker.dismiss(animated: true, completion: nil)
 
     let imageCropViewController = RSKImageCropViewController(image: image)
+    imageCropViewController.cancelButton.setTitle("Отмена", for: .normal)
+    imageCropViewController.chooseButton.setTitle("Выбрать", for: .normal)
+    imageCropViewController.moveAndScaleLabel.text = "Область отображения"
     imageCropViewController.delegate = self
     present(imageCropViewController, animated: true, completion: nil)
   }
@@ -144,7 +147,7 @@ extension ProfileEditViewController: RSKImageCropViewControllerDelegate {
   func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
     controller.dismiss(animated: true, completion: nil)
     ProfileManager.instance.updateAvatar(croppedImage).then { [weak self] _ -> Void in
-      self?.presentAlertWithMessage("Профиль успешно обновлен")
+      self?.dismiss(animated: true, completion: nil)
       self?.refresh()
     }.catch { [weak self] _ -> Void in
       self?.presentAlertWithMessage("Ошибка")

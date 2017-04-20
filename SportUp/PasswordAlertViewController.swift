@@ -31,6 +31,14 @@ class PasswordAlertViewController: UIViewController {
   @IBAction func joinButtonDidTap(_ sender: UIButton) {
     passwordField.isEnabled = false
     joinButton.isEnabled = false
+    let priceController = EventPriceAlertViewController.storyboardInstance()!
+    priceController.modalPresentationStyle = .overCurrentContext
+    priceController.nextButtonDidTapHandler = { [weak self] in
+      self?.createMembership()
+    }
+  }
+
+  func createMembership() {
     _ = DataManager.instance.createMembership(eventId: event.id, password: passwordField.text).then { [weak self] _ -> Void in
       guard let `self` = self else { return }
       self.willDismissHandler?()
@@ -40,15 +48,14 @@ class PasswordAlertViewController: UIViewController {
         self.dismiss(animated: true, completion: self.didEnterPasswordHandler)
       })
     }.catch { [weak self] error in
-      self?.presentAlertWithMessage("Неверный пароль")
-      self?.passwordField.isEnabled = true
-      self?.joinButton.isEnabled = true
+        self?.presentAlertWithMessage("Неверный пароль")
+        self?.passwordField.isEnabled = true
+        self?.joinButton.isEnabled = true
     }
   }
 
   override func dismissKeyboard() {
     view.endEditing(true)
-    dismiss(animated: true, completion: nil)
   }
 
   override func viewWillAppear(_ animated: Bool) {
