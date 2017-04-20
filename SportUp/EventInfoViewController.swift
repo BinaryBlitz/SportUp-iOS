@@ -74,7 +74,8 @@ class EventInfoViewController: UIViewController {
   }
 
   func chatButtonDidTap() {
-
+    let viewController = MessagesViewController()
+    navigationController?.pushViewController(viewController, animated: true)
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

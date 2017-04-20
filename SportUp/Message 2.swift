@@ -8,9 +8,6 @@
 
 import Foundation
 import ObjectMapper
-
-import Foundation
-import ObjectMapper
 import Chatto
 import ChattoAdditions
 
@@ -32,7 +29,7 @@ extension MessageItem: MessageModelProtocol {
   }
 
   public var senderId: String {
-    return "\(sender?.id ?? 0)"
+    return "\(sender?.id)"
   }
 
   public var type: ChatItemType {
@@ -46,5 +43,5 @@ extension MessageItem: MessageModelProtocol {
   public var status: MessageStatus {
     return .success
   }
-  
+
 }

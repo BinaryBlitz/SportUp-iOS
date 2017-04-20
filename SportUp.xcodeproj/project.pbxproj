@@ -23,6 +23,15 @@
 		88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EC51E8AD2BA00133A3E /* PlayersListViewController.swift */; };
 		88294EC81E8AD38300133A3E /* PlayersListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88294EC71E8AD38300133A3E /* PlayersListViewController.storyboard */; };
 		88294ECA1E8AED2700133A3E /* PlayersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88294EC91E8AED2700133A3E /* PlayersListTableViewController.swift */; };
+		882A84CE1EA8D8AF00D0C7AD /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84C51EA8D8AF00D0C7AD /* MessagesDataSource.swift */; };
+		882A84CF1EA8D8AF00D0C7AD /* MessagesDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84C61EA8D8AF00D0C7AD /* MessagesDecorator.swift */; };
+		882A84D01EA8D8AF00D0C7AD /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84C71EA8D8AF00D0C7AD /* MessagesViewController.swift */; };
+		882A84D11EA8D8AF00D0C7AD /* SportUpChatInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84C81EA8D8AF00D0C7AD /* SportUpChatInputBar.swift */; };
+		882A84D21EA8D8AF00D0C7AD /* SportUpChatInputBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882A84C91EA8D8AF00D0C7AD /* SportUpChatInputBar.xib */; };
+		882A84D31EA8D8AF00D0C7AD /* TextMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84CA1EA8D8AF00D0C7AD /* TextMessageModel.swift */; };
+		882A84D41EA8D8AF00D0C7AD /* TextMessagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84CB1EA8D8AF00D0C7AD /* TextMessagesHandler.swift */; };
+		882A84D51EA8D8AF00D0C7AD /* TextMessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84CC1EA8D8AF00D0C7AD /* TextMessagesPresenter.swift */; };
+		882A84D61EA8D8AF00D0C7AD /* TextMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882A84CD1EA8D8AF00D0C7AD /* TextMessageViewModel.swift */; };
 		8830B53A1E9BAD50009B63D2 /* PromoCodeAlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8830B5391E9BAD50009B63D2 /* PromoCodeAlertViewController.storyboard */; };
 		8830B53C1E9BB09F009B63D2 /* PromoCodeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8830B53B1E9BB09F009B63D2 /* PromoCodeAlertViewController.swift */; };
 		8830B53E1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8830B53D1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift */; };
@@ -101,6 +110,7 @@
 		88D32FCA1E86DE3A006EEE43 /* GamesFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */; };
 		88D32FCC1E86E6EB006EEE43 /* GamesFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FCB1E86E6EB006EEE43 /* GamesFeedViewController.swift */; };
 		88D32FD11E86FF7F006EEE43 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D32FD01E86FF7F006EEE43 /* CalendarHeaderView.swift */; };
+		88D81D141EA959230013F772 /* MessagesInputBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D81D131EA959230013F772 /* MessagesInputBarPresenter.swift */; };
 		88D988FE1E9FC3F900AF03C3 /* Character+asciiValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D988FD1E9FC3F900AF03C3 /* Character+asciiValue.swift */; };
 		88D989001E9FDD8500AF03C3 /* AvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D988FF1E9FDD8500AF03C3 /* AvatarView.xib */; };
 		88DA46471E841F450061E816 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA46461E841F450061E816 /* DataManager.swift */; };
@@ -151,6 +161,15 @@
 		88294EC51E8AD2BA00133A3E /* PlayersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
 		88294EC71E8AD38300133A3E /* PlayersListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayersListViewController.storyboard; sourceTree = "<group>"; };
 		88294EC91E8AED2700133A3E /* PlayersListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersListTableViewController.swift; sourceTree = "<group>"; };
+		882A84C51EA8D8AF00D0C7AD /* MessagesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
+		882A84C61EA8D8AF00D0C7AD /* MessagesDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesDecorator.swift; sourceTree = "<group>"; };
+		882A84C71EA8D8AF00D0C7AD /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		882A84C81EA8D8AF00D0C7AD /* SportUpChatInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportUpChatInputBar.swift; sourceTree = "<group>"; };
+		882A84C91EA8D8AF00D0C7AD /* SportUpChatInputBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportUpChatInputBar.xib; sourceTree = "<group>"; };
+		882A84CA1EA8D8AF00D0C7AD /* TextMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessageModel.swift; sourceTree = "<group>"; };
+		882A84CB1EA8D8AF00D0C7AD /* TextMessagesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessagesHandler.swift; sourceTree = "<group>"; };
+		882A84CC1EA8D8AF00D0C7AD /* TextMessagesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessagesPresenter.swift; sourceTree = "<group>"; };
+		882A84CD1EA8D8AF00D0C7AD /* TextMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessageViewModel.swift; sourceTree = "<group>"; };
 		8830B5391E9BAD50009B63D2 /* PromoCodeAlertViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PromoCodeAlertViewController.storyboard; sourceTree = "<group>"; };
 		8830B53B1E9BB09F009B63D2 /* PromoCodeAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoCodeAlertViewController.swift; sourceTree = "<group>"; };
 		8830B53D1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addUpdateConstraintWithKeyboard.swift"; sourceTree = "<group>"; };
@@ -229,6 +248,7 @@
 		88D32FC91E86DE3A006EEE43 /* GamesFeedViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamesFeedViewController.storyboard; sourceTree = "<group>"; };
 		88D32FCB1E86E6EB006EEE43 /* GamesFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesFeedViewController.swift; sourceTree = "<group>"; };
 		88D32FD01E86FF7F006EEE43 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		88D81D131EA959230013F772 /* MessagesInputBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesInputBarPresenter.swift; sourceTree = "<group>"; };
 		88D988FD1E9FC3F900AF03C3 /* Character+asciiValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+asciiValue.swift"; sourceTree = "<group>"; };
 		88D988FF1E9FDD8500AF03C3 /* AvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarView.xib; sourceTree = "<group>"; };
 		88DA46461E841F450061E816 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -303,6 +323,31 @@
 				88294EC91E8AED2700133A3E /* PlayersListTableViewController.swift */,
 			);
 			name = PlayersList;
+			sourceTree = "<group>";
+		};
+		882A84AE1EA8D83F00D0C7AD /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				882A84D71EA8D90C00D0C7AD /* Text */,
+				882A84C51EA8D8AF00D0C7AD /* MessagesDataSource.swift */,
+				882A84C61EA8D8AF00D0C7AD /* MessagesDecorator.swift */,
+				882A84C71EA8D8AF00D0C7AD /* MessagesViewController.swift */,
+				882A84C81EA8D8AF00D0C7AD /* SportUpChatInputBar.swift */,
+				882A84C91EA8D8AF00D0C7AD /* SportUpChatInputBar.xib */,
+				88D81D131EA959230013F772 /* MessagesInputBarPresenter.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		882A84D71EA8D90C00D0C7AD /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				882A84CA1EA8D8AF00D0C7AD /* TextMessageModel.swift */,
+				882A84CB1EA8D8AF00D0C7AD /* TextMessagesHandler.swift */,
+				882A84CC1EA8D8AF00D0C7AD /* TextMessagesPresenter.swift */,
+				882A84CD1EA8D8AF00D0C7AD /* TextMessageViewModel.swift */,
+			);
+			name = Text;
 			sourceTree = "<group>";
 		};
 		8830B5381E9BAD3E009B63D2 /* PromoCode */ = {
@@ -682,6 +727,7 @@
 		88DE3EC11E83FDBB007FCD76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				882A84AE1EA8D83F00D0C7AD /* Messages */,
 				883776A21EA6266D00983B08 /* EventPriceAlert */,
 				8833DBEF1E9E752500CACA85 /* BonusRegistrationAlert */,
 				8830B5381E9BAD3E009B63D2 /* PromoCode */,
@@ -868,6 +914,7 @@
 				889CFB541E8C83E30027CAAA /* ReportAlertViewController.storyboard in Resources */,
 				8859F16A1E89AD120009F85C /* EventMarkerView.xib in Resources */,
 				88294EB91E89DECA00133A3E /* EventInfoViewController.storyboard in Resources */,
+				882A84D21EA8D8AF00D0C7AD /* SportUpChatInputBar.xib in Resources */,
 				88DE3EBA1E83FD58007FCD76 /* LaunchScreen.storyboard in Resources */,
 				887AC8001E8E98A7003C79D6 /* RegistrationPhoneInputViewController.storyboard in Resources */,
 				88DE3EB71E83FD58007FCD76 /* Assets.xcassets in Resources */,
@@ -972,11 +1019,14 @@
 				887826841E8D706800F9438F /* EventManageViewController.swift in Sources */,
 				88CB68471E9940BB00DE758C /* SelectTableViewCell.swift in Sources */,
 				889F89C11E86B1FE0027D852 /* User.swift in Sources */,
+				882A84D11EA8D8AF00D0C7AD /* SportUpChatInputBar.swift in Sources */,
+				882A84D61EA8D8AF00D0C7AD /* TextMessageViewModel.swift in Sources */,
 				8853D6A11E881EED00C4759C /* Double+currencyString.swift in Sources */,
 				880FFBC91E8917C400E3173E /* Date+toString.swift in Sources */,
 				88DE3EC51E83FF65007FCD76 /* SportUpNavigationController.swift in Sources */,
 				880FFBC31E890A4000E3173E /* CalendarWeekView.swift in Sources */,
 				889F89D71E86CFE30027D852 /* SportTypeTableViewCell.swift in Sources */,
+				882A84D01EA8D8AF00D0C7AD /* MessagesViewController.swift in Sources */,
 				88DA46541E8426230061E816 /* UIColor+SportUpColors.swift in Sources */,
 				88294EB51E89DE4100133A3E /* EventInfoViewController.swift in Sources */,
 				889F89D21E86C04A0027D852 /* ProfileManager.swift in Sources */,
@@ -990,6 +1040,7 @@
 				889CFB461E8C69190027CAAA /* BestPlayersResultsHeaderView.swift in Sources */,
 				88FACE9C1E8FC9FD00F540B7 /* ProfileEarnTicketsTableViewCell.swift in Sources */,
 				88294EBD1E8A7D8B00133A3E /* GradientView.swift in Sources */,
+				882A84D51EA8D8AF00D0C7AD /* TextMessagesPresenter.swift in Sources */,
 				88DE3ECC1E841729007FCD76 /* NetworkManager.swift in Sources */,
 				889EA61D1E8D301A00B3CEDE /* Invite.swift in Sources */,
 				88DA46521E8425960061E816 /* GoButton.swift in Sources */,
@@ -1011,11 +1062,14 @@
 				88294EC11E8AC8F800133A3E /* Int+russianEnumEnding.swift in Sources */,
 				889F89B41E86AB060027D852 /* MainTabBarController.swift in Sources */,
 				8830B53E1E9BBD6B009B63D2 /* UIView+addUpdateConstraintWithKeyboard.swift in Sources */,
+				882A84D31EA8D8AF00D0C7AD /* TextMessageModel.swift in Sources */,
 				887AC7FE1E8E9882003C79D6 /* RegistrationPhoneInputViewController.swift in Sources */,
 				8853D6A61E88339500C4759C /* GamesMapViewController.swift in Sources */,
+				882A84CF1EA8D8AF00D0C7AD /* MessagesDecorator.swift in Sources */,
 				889F89CA1E86B5090027D852 /* StorageHelper.swift in Sources */,
 				88294EC61E8AD2BA00133A3E /* PlayersListViewController.swift in Sources */,
 				8881288B1E8F1EB3008A402F /* PasswordAlertViewController.swift in Sources */,
+				882A84CE1EA8D8AF00D0C7AD /* MessagesDataSource.swift in Sources */,
 				887826961E8DD93C00F9438F /* UIViewController+presentAlert.swift in Sources */,
 				887826871E8DA95800F9438F /* TextInputViewController.swift in Sources */,
 				88D32FC71E86D31E006EEE43 /* URLTransform.swift in Sources */,
@@ -1025,6 +1079,7 @@
 				88DA465C1E84350B0061E816 /* UIView+IBDesignable.swift in Sources */,
 				889F89CE1E86BAD80027D852 /* SportTypesViewController.swift in Sources */,
 				889F89CC1E86BACD0027D852 /* MyGamesViewController.swift in Sources */,
+				88D81D141EA959230013F772 /* MessagesInputBarPresenter.swift in Sources */,
 				888128861E8F1B0B008A402F /* BestPlayerAlertViewController.swift in Sources */,
 				889EA61B1E8D27A500B3CEDE /* MyGamesTableViewCell.swift in Sources */,
 				887826941E8DCD3600F9438F /* UIViewController+addToolbar.swift in Sources */,
@@ -1040,6 +1095,7 @@
 				889CFB211E8AF14F0027CAAA /* PlayerTableViewCell.swift in Sources */,
 				887826801E8D672C00F9438F /* GeocodingManager.swift in Sources */,
 				889CFB441E8C5D310027CAAA /* UIViewController+hideOnTapOutside.swift in Sources */,
+				882A84D41EA8D8AF00D0C7AD /* TextMessagesHandler.swift in Sources */,
 				88DA464B1E84233E0061E816 /* City.swift in Sources */,
 				889F89D01E86BAE20027D852 /* ProfileEditViewController.swift in Sources */,
 				8812B9611E8ECA140069F62B /* MaskedInput.swift in Sources */,

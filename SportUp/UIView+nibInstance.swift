@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-  private class func getNibInstance<T:UIView>() -> T? {
+  internal class func getNibInstance<T:UIView>() -> T? {
     return UINib(nibName: String(describing: self), bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
 
   }
