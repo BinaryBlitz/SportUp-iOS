@@ -8,14 +8,13 @@
 
 import Foundation
 import UIKit
-import AvatarImageView
 
 protocol BestPlayersPollTableViewCellDelegate: class {
   func didTapViolationButton(user: User)
 }
 
 class BestPlayersPollTableViewCell: UITableViewCell {
-  @IBOutlet weak var avatarView: AvatarImageView!
+  @IBOutlet weak var avatarView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var checkmarkButton: UIButton!
   @IBOutlet weak var stackView: UIStackView!
@@ -70,10 +69,6 @@ class BestPlayersPollTableViewCell: UITableViewCell {
     delegate?.didTapViolationButton(user: user)
   }
 
-  override func awakeFromNib() {
-    avatarView.dataSource = self
-  }
-
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: true)
     checkmarkButton.isSelected = selected
@@ -87,10 +82,4 @@ class BestPlayersPollTableViewCell: UITableViewCell {
     }
   }
 
-}
-
-extension BestPlayersPollTableViewCell: AvatarImageViewDataSource {
-  var name: String {
-    return user?.firstName ?? ""
-  }
 }

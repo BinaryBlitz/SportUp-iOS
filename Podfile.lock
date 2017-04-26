@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.4.0)
-  - AvatarImageView (2.0.3)
   - Chatto (3.0.1)
   - ChattoAdditions (3.0.1):
     - Chatto
@@ -16,23 +15,23 @@ PODS:
     - GoogleMaps/Base (= 2.2.0)
   - KeychainAccess (3.0.2)
   - Kingfisher (3.6.2)
-  - ObjectMapper (2.2.5)
+  - ObjectMapper (2.2.6)
   - PhoneNumberKit (1.2.3):
     - PhoneNumberKit/PhoneNumberKitCore (= 1.2.3)
     - PhoneNumberKit/UIKit (= 1.2.3)
   - PhoneNumberKit/PhoneNumberKitCore (1.2.3)
   - PhoneNumberKit/UIKit (1.2.3):
     - PhoneNumberKit/PhoneNumberKitCore
-  - PromiseKit (4.1.7):
-    - PromiseKit/Foundation (= 4.1.7)
-    - PromiseKit/QuartzCore (= 4.1.7)
-    - PromiseKit/UIKit (= 4.1.7)
-  - PromiseKit/CorePromise (4.1.7)
-  - PromiseKit/Foundation (4.1.7):
+  - PromiseKit (4.2.0):
+    - PromiseKit/Foundation (= 4.2.0)
+    - PromiseKit/QuartzCore (= 4.2.0)
+    - PromiseKit/UIKit (= 4.2.0)
+  - PromiseKit/CorePromise (4.2.0)
+  - PromiseKit/Foundation (4.2.0):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.1.7):
+  - PromiseKit/QuartzCore (4.2.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.1.7):
+  - PromiseKit/UIKit (4.2.0):
     - PromiseKit/CorePromise
   - RSKImageCropper (1.6.1)
   - SwiftDate (4.1.1)
@@ -40,7 +39,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
-  - AvatarImageView (~> 2.0)
   - Chatto (from `https://github.com/badoo/Chatto.git`, branch `master`)
   - ChattoAdditions (from `https://github.com/badoo/Chatto.git`, branch `master`)
   - Crashlytics
@@ -74,7 +72,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  AvatarImageView: 25541e2051124e730c7a1b97f5e5b9345fbc1cfc
   Chatto: 760a1577da85ce75821fc5a4ecdd89c17fab2cd7
   ChattoAdditions: e44d3aaf236af16735c58c711d289250d4bc85f7
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
@@ -83,13 +80,13 @@ SPEC CHECKSUMS:
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
-  ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  ObjectMapper: '042708195cc46c20871cbcbec0453826398273fd'
   PhoneNumberKit: 1e5cca669113fc361a8c82ec1ee559c62b8cd0f7
-  PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  PromiseKit: '08dfb783c161ddcd95b7912421f14c5113fd8318'
   RSKImageCropper: 0df8c99e77a8ea7ca7a8b83ef468556f31584254
   SwiftDate: ae615078806a322183e5f64e02e80ca8d939bf48
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: c5d724b3d99714c7adf6bb87927993fa5f5b90dc
+PODFILE CHECKSUM: 6d59bcb35cc0719622905d1257a021af6e677b49
 
 COCOAPODS: 1.2.1

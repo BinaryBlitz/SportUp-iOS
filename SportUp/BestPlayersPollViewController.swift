@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import AvatarImageView
 
 private let reuseIdentifier = "BestPlayersPollTableViewCell"
 
