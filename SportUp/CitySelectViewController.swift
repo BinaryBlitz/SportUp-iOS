@@ -106,7 +106,6 @@ class CitySelectViewController: UIViewController, DefaultBarStyleViewController 
 
 extension CitySelectViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    ProfileManager.instance.currentCity = filteredCities[indexPath.row]
     RootViewController.instance?.prepareTabBarController()
   }
 }

@@ -38,7 +38,7 @@ class Event: Mappable {
   }
 
   var finished: Bool {
-    return startsAt < Date() && endsAt < Date()
+    return startsAt < Date() && startsAt < Date()
   }
 
   func mapping(map: Map) {
@@ -55,7 +55,6 @@ class Event: Mappable {
     longitude <- map["longitude"]
     password <- map["password"]
     sportType?.id >>> map["sport_type_id"]
-    ProfileManager.instance.currentCity?.id >>> map["city_id"]
     if map.mappingType == .toJSON {
       endsAt.time >>> map["ends_at"]
     } else {

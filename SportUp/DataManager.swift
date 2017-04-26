@@ -38,10 +38,15 @@ class DataManager {
   }
 
   func fetchEvents(sportType: SportType, date: Date) -> Promise<[Event]> {
-    guard let city = ProfileManager.instance.currentCity else { return Promise(error: DataError.unknown) }
+    guard let coordinate = ProfileManager.instance.currentCoordinate else { return Promise(error: DataError.unknown) }
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "dd-MM-YYYY"
-    return NetworkManager.doRequest(.getEvents(cityId: city.id, sportTypeId: sportType.id), ["date": dateFormatter.string(from: date)]).then { result in
+    let params: [String: Any] = [
+      "latitude": coordinate.latitude,
+      "longitude": coordinate.longitude,
+      "date": dateFormatter.string(from: date)
+    ]
+    return NetworkManager.doRequest(.getEvents(sportTypeId: sportType.id), params).then { result in
       guard let events = Mapper<Event>().mapArray(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }
@@ -59,8 +64,12 @@ class DataManager {
   }
 
   func fetchSportTypes() -> Promise<[SportType]> {
-    guard let city = ProfileManager.instance.currentCity else { return Promise(error: DataError.unknown) }
-    return NetworkManager.doRequest(.getSportTypes(cityId: city.id)).then { result in
+    guard let coordinate = ProfileManager.instance.currentCoordinate else { return Promise(error: DataError.unknown) }
+    let params: [String: Any] = [
+      "latitude": coordinate.latitude,
+      "longitude": coordinate.longitude,
+    ]
+    return NetworkManager.doRequest(.getSportTypes, params).then { result in
       guard let sportTypes = Mapper<SportType>().mapArray(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }

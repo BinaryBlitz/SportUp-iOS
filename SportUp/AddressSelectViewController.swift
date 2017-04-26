@@ -18,6 +18,8 @@ class AddressSelectViewController: UIViewController {
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var searchView: UIView!
 
+  var shouldMarkUserAddress: Bool = false
+
   let resultsViewController = GMSAutocompleteResultsViewController()
   let locationManager = CLLocationManager()
 
@@ -69,15 +71,14 @@ class AddressSelectViewController: UIViewController {
     locationManager.startUpdatingLocation()
     mapView.isMyLocationEnabled = true
 
-    guard let city = ProfileManager.instance.currentCity else { return }
-    mapView.camera = GMSCameraPosition.camera(withLatitude: city.latitude, longitude: city.longitude, zoom: cityZoom)
-
     let markerView = EventMarkerView.nibInstance()!
     markerView.configure(iconURL: sportType?.iconUrl, backgroundColor: sportType?.color ?? defaultColor)
     marker.iconView = markerView
     marker.isDraggable = true
     marker.map = mapView
 
+    guard let coordinate = ProfileManager.instance.currentCoordinate else { return }
+    mapView.camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: cityZoom)
   }
 
   func configureSearch() {
@@ -151,9 +152,11 @@ extension AddressSelectViewController: GMSMapViewDelegate {
 
 extension AddressSelectViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    locationManager.stopUpdatingLocation()
     guard let coordinate = locations.first?.coordinate else { return }
     mapView.animate(to: GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: markerZoom))
-    locationManager.stopUpdatingLocation()
+    guard shouldMarkUserAddress else { return }
+    self.coordinate = coordinate
   }
 
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

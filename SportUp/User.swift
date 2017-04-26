@@ -33,7 +33,6 @@ class User: Mappable {
     phoneNumber <- map["phone_number"]
     avatarUrl <- (map["avatar_url"], URLTransform())
     votesCount <- map["votes_count"]
-    violationsCount <- map["violations_count"]
   }
 
   required init(map: Map) { }

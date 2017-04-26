@@ -39,8 +39,8 @@ class GamesMapViewController: UIViewController {
   }
 
   func configureMap() {
-    let latitude = events.first?.latitude ?? ProfileManager.instance.currentCity?.latitude
-    let longitude = events.first?.longitude ?? ProfileManager.instance.currentCity?.longitude
+    let latitude = events.first?.latitude ?? ProfileManager.instance.currentCoordinate?.latitude
+    let longitude = events.first?.longitude ?? ProfileManager.instance.currentCoordinate?.longitude
     mapView.delegate = self
     mapView.camera = GMSCameraPosition.camera(withLatitude: latitude!, longitude: longitude!, zoom: markerZoom)
 

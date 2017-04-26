@@ -14,7 +14,14 @@ class OnboardingViewController: UIViewController, DefaultBarStyleViewController 
   let animationDuration = 0.3
 
   @IBAction func beginButtonDidTap(_ sender: Any) {
-    navigationController?.pushViewController(CitySelectViewController.storyboardInstance()!, animated: true)
+    let addressViewController = AddressSelectViewController.storyboardInstance()!
+    addressViewController.title = "Выбор адреса"
+    addressViewController.shouldMarkUserAddress = true
+    addressViewController.selectAddressHandler = { _ in
+      ProfileManager.instance.currentCoordinate = addressViewController.coordinate
+      RootViewController.instance?.prepareTabBarController()
+    }
+    navigationController?.pushViewController(addressViewController, animated: true)
   }
 
   override func viewDidLoad() {

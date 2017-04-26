@@ -32,7 +32,7 @@ class RootViewController: UIViewController {
   override func viewDidLoad() {
     onboardingNavigationController.viewControllers = [onboardingviewController]
 
-    if ProfileManager.instance.currentCity == nil {
+    if ProfileManager.instance.currentCoordinate == nil {
       prepareOnboarding()
     } else {
       prepareTabBarController()
