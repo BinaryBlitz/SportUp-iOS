@@ -9,9 +9,19 @@
 import Foundation
 import Alamofire
 
-enum DataError: Error {
+enum DataError: Error, CustomStringConvertible {
   case unknown
   case serverUnavaliable
   case unexpectedResponseFormat
   case unprocessableData
+  case validationFailed(message: String)
+
+  var description: String {
+    switch self {
+    case .validationFailed(let message):
+      return message
+    default:
+      return "Ошибка"
+    }
+  }
 }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Jq-OG-KYL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="8ko-SB-lK2">
+            <objects>
+                <tabBarController id="6Jq-OG-KYL" customClass="MainTabBarController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="xfy-0E-dEK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ciL-e5-1gG" kind="relationship" relationship="viewControllers" id="G9h-yA-z2t"/>
+                        <segue destination="UZc-jg-alx" kind="relationship" relationship="viewControllers" id="cog-at-cxk"/>
+                        <segue destination="lv1-aG-Lvx" kind="relationship" relationship="viewControllers" id="zT8-sI-WjQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLL-CT-d2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1217" y="234"/>
+        </scene>
+        <!--Профиль-->
+        <scene sceneID="s47-5s-XWn">
+            <objects>
+                <navigationController id="lv1-aG-Lvx" customClass="SportUpNavigationController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="2" title="Профиль" image="iconTabProfile" id="fw7-Lx-cXB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GkQ-tt-eFF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kt6-Zn-gMu" kind="relationship" relationship="rootViewController" id="nZ8-R5-OaP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOR-lP-tK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="833"/>
+        </scene>
+        <!--UserProfileViewController-->
+        <scene sceneID="z4Q-VU-FDy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserProfileViewController" id="kt6-Zn-gMu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZCj-QC-Md7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deS-BF-LEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="833"/>
+        </scene>
+        <!--Мои игры-->
+        <scene sceneID="mCU-Di-ZdT">
+            <objects>
+                <navigationController id="UZc-jg-alx" customClass="SportUpNavigationController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Мои игры" image="iconTabMygames" id="GrS-CU-7Xk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zbl-uC-PbN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iL6-fA-1ty" kind="relationship" relationship="rootViewController" id="dKv-HL-h5N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lh4-Mi-vQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="164"/>
+        </scene>
+        <!--MyGamesViewController-->
+        <scene sceneID="NgI-dV-gXR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyGamesViewController" id="iL6-fA-1ty" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5XS-R7-qm8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XZM-L7-UPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="163"/>
+        </scene>
+        <!--Поиск игр-->
+        <scene sceneID="gji-WJ-qCB">
+            <objects>
+                <navigationController id="ciL-e5-1gG" customClass="SportUpNavigationController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Поиск игр" image="iconTabSearchgames" id="wlo-48-Hui"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YTm-iC-71I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XkQ-57-40Z" kind="relationship" relationship="rootViewController" id="lB7-wb-yiE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qnc-Yl-k3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="-514"/>
+        </scene>
+        <!--SportTypesViewController-->
+        <scene sceneID="Vxn-oF-ry5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SportTypesViewController" id="XkQ-57-40Z" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f7g-FJ-MNU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIp-rX-73P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="-514"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconTabMygames" width="24" height="24"/>
+        <image name="iconTabProfile" width="24" height="24"/>
+        <image name="iconTabSearchgames" width="24" height="24"/>
+    </resources>
+</document>

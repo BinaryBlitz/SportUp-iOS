@@ -12,14 +12,20 @@ import CoreLocation
 
 private let reuseIdentifier = "CitySelectTableViewCell"
 
-class CitySelectViewController: UIViewController {
+class CitySelectViewController: UIViewController, DefaultBarStyleViewController {
   // Search
   var searchController = UISearchController(searchResultsController: nil)
 
   // Data
   var cities: [City] = []
   var filteredCities: [City] = []
-  var currentLocation: CLLocationCoordinate2D? = nil
+  var nearestCity: City? = nil
+  var currentLocation: CLLocationCoordinate2D? = nil {
+    didSet {
+      nearestCity = cities.sorted { $0.distanceTo(currentLocation) < $1.distanceTo(currentLocation) }.first
+      refresh()
+    }
+  }
 
   // UI
   @IBOutlet weak var tableView: UITableView!
@@ -66,7 +72,7 @@ class CitySelectViewController: UIViewController {
     searchController.dimsBackgroundDuringPresentation = false
     let searchBar = searchController.searchBar
 
-    searchBar.barTintColor = UIColor.sportupBlueyGrey
+    searchBar.barTintColor = UIColor.sportUpBlueyGrey
     searchBar.layer.borderWidth = 1
     searchBar.layer.borderColor = UIColor.white.cgColor
     searchBar.tintColor = UIColor.black
@@ -74,7 +80,7 @@ class CitySelectViewController: UIViewController {
     searchBar.backgroundImage = UIImage()
     searchBar.setSearchFieldBackgroundImage(#imageLiteral(resourceName: "searchBar"), for: .normal)
     searchBar.setImage(#imageLiteral(resourceName: "iconSearchsmollGray"), for: .search, state: .normal)
-    searchBar.setTextColor(color: UIColor.sportupBlueyGrey)
+    searchBar.setTextColor(color: UIColor.sportUpBlueyGrey)
     searchBar.searchTextPositionAdjustment = UIOffsetMake(5.0, 0.0)
   }
 
@@ -84,19 +90,24 @@ class CitySelectViewController: UIViewController {
       filteredCities = filteredCities
         .filter { $0.name.lowercased().range(of: searchString.lowercased()) != nil }
     }
-    filteredCities.sort { $0.distanceTo(currentLocation) < $1.distanceTo(currentLocation) }
+    filteredCities.sort { $0.name < $1.name }
+    filteredCities.sort { (city, _ ) in city.id == nearestCity?.id }
     self.filteredCities = filteredCities
     tableView.reloadData()
   }
 
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(false, animated: true)
+    guard let indexPath = tableView.indexPathForSelectedRow else { return }
+    tableView.deselectRow(at: indexPath, animated: true)
   }
 
 }
 
 extension CitySelectViewController: UITableViewDelegate {
-
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    RootViewController.instance?.prepareTabBarController()
+  }
 }
 
 extension CitySelectViewController: UITableViewDataSource {
@@ -110,11 +121,14 @@ extension CitySelectViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-    cell.textLabel?.text = filteredCities[indexPath.row].name
-    if currentLocation != nil && indexPath.row == 0 {
-      cell.accessoryType = .checkmark
+    let city = filteredCities[indexPath.row]
+    cell.textLabel?.text = city.name
+    if city.id == nearestCity?.id {
+      let accessoryView = UIImageView(image: #imageLiteral(resourceName: "iconLocationsmollGray").withRenderingMode(.alwaysTemplate))
+      accessoryView.tintColor = UIColor.sportUpAquaMarine
+      cell.accessoryView = accessoryView
     } else {
-      cell.accessoryType = .none
+      cell.accessoryView = nil
     }
     return cell
   }
@@ -124,7 +138,6 @@ extension CitySelectViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     currentLocation = locations.first?.coordinate
     locationManager.stopUpdatingLocation()
-    refresh()
   }
 
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

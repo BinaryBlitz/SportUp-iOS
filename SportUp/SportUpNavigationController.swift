@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+protocol DefaultBarStyleViewController { }
+protocol SelfControlledBarStyleViewController { }
 
 class SportUpNavigationController: UINavigationController, UINavigationControllerDelegate {
 
@@ -25,6 +27,40 @@ class SportUpNavigationController: UINavigationController, UINavigationControlle
     navigationBar.shadowImage = UIImage()
     navigationBar.backgroundColor = defaultBarTintColor
     navigationBar.barTintColor = defaultBarTintColor
+    navigationBar.titleTextAttributes =
+      [NSFontAttributeName: UIFont.systemFont(ofSize: 17)]
+  }
+
+  func navigationController(_ navigationController: UINavigationController,
+                            willShow viewController: UIViewController, animated: Bool) {
+    if viewController is SelfControlledBarStyleViewController { return }
+    var titleColor: UIColor
+    if viewController is DefaultBarStyleViewController {
+      navigationBar.barTintColor = defaultBarTintColor
+      navigationBar.tintColor = .black
+      navigationBar.isTranslucent = false
+      titleColor = .black
+    } else {
+      navigationBar.tintColor = defaultBarTintColor
+      titleColor = .white
+    }
+    navigationBar.titleTextAttributes =
+      [NSFontAttributeName: UIFont.systemFont(ofSize: 17), NSForegroundColorAttributeName: titleColor]
+    updateStatusbar()
+  }
+
+  func updateStatusbar() {
+    let statusbarStyle: UIStatusBarStyle
+    if let visibleViewController = self.visibleViewController {
+      if visibleViewController is DefaultBarStyleViewController {
+        statusbarStyle = .default
+      } else {
+        statusbarStyle = .lightContent
+      }
+    } else {
+      statusbarStyle = .default
+    }
+    UIApplication.shared.statusBarStyle = statusbarStyle
   }
   
 }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="klI-Sy-9sq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Редактировать профиль-->
+        <scene sceneID="ddU-7v-Fbf">
+            <objects>
+                <viewController title="Редактировать профиль" id="klI-Sy-9sq" customClass="ProfileEditViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lOo-lC-LLz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fgd-3p-sdQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SaS-Jo-g3N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-Iy-hpx">
+                                <rect key="frame" x="158" y="80" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.78662341830000004" green="0.81176470588235294" blue="0.87229257819999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="F0D-Od-sdg"/>
+                                    <constraint firstAttribute="height" constant="60" id="cFK-oe-dXV"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Iza-fk-lIs" appends="YES" id="LVY-Ez-zL8"/>
+                                </connections>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1rB-9Y-ols">
+                                <rect key="frame" x="16" y="200" width="343" height="18"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <action selector="firstNameEditingDidChange:" destination="klI-Sy-9sq" eventType="editingChanged" id="m5W-jS-BmU"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmJ-gC-IwD">
+                                <rect key="frame" x="16" y="233" width="343" height="1"/>
+                                <color key="backgroundColor" red="0.78662341830000004" green="0.83886760469999999" blue="0.87229257819999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="MYZ-2F-uQb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud3-iR-J2Y">
+                                <rect key="frame" x="16" y="296" width="343" height="1"/>
+                                <color key="backgroundColor" red="0.78662341830000004" green="0.83886760469999999" blue="0.87229257819999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="wvO-Yp-A0D"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PO-dk-xL6">
+                                <rect key="frame" x="16" y="264" width="343" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <action selector="lastNameEditingDidChange:" destination="klI-Sy-9sq" eventType="editingDidEnd" id="qeI-AV-Pdd"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ud3-iR-J2Y" firstAttribute="top" secondItem="1PO-dk-xL6" secondAttribute="bottom" constant="15" id="6Mc-Xf-z08"/>
+                            <constraint firstAttribute="trailing" secondItem="ud3-iR-J2Y" secondAttribute="trailing" constant="16" id="8pl-fQ-LWx"/>
+                            <constraint firstItem="1PO-dk-xL6" firstAttribute="leading" secondItem="SaS-Jo-g3N" secondAttribute="leading" constant="16" id="9rQ-yd-CYl"/>
+                            <constraint firstItem="cmJ-gC-IwD" firstAttribute="leading" secondItem="SaS-Jo-g3N" secondAttribute="leading" constant="16" id="A6D-mu-PpB"/>
+                            <constraint firstAttribute="trailing" secondItem="1PO-dk-xL6" secondAttribute="trailing" constant="16" id="FYC-gH-u56"/>
+                            <constraint firstItem="1PO-dk-xL6" firstAttribute="top" secondItem="cmJ-gC-IwD" secondAttribute="bottom" constant="30" id="Fz5-Ji-yOW"/>
+                            <constraint firstItem="Xhz-Iy-hpx" firstAttribute="centerX" secondItem="SaS-Jo-g3N" secondAttribute="centerX" id="MgJ-Uh-di6"/>
+                            <constraint firstItem="1rB-9Y-ols" firstAttribute="leading" secondItem="SaS-Jo-g3N" secondAttribute="leading" constant="16" id="Rsm-Lu-A8f"/>
+                            <constraint firstItem="1rB-9Y-ols" firstAttribute="top" secondItem="Xhz-Iy-hpx" secondAttribute="bottom" constant="60" id="Xrs-oG-tZ2"/>
+                            <constraint firstItem="Xhz-Iy-hpx" firstAttribute="top" secondItem="lOo-lC-LLz" secondAttribute="bottom" constant="60" id="cna-IB-aNo"/>
+                            <constraint firstItem="ud3-iR-J2Y" firstAttribute="leading" secondItem="SaS-Jo-g3N" secondAttribute="leading" constant="16" id="dfA-qu-JSs"/>
+                            <constraint firstItem="cmJ-gC-IwD" firstAttribute="top" secondItem="1rB-9Y-ols" secondAttribute="bottom" constant="15" id="fxj-T7-dze"/>
+                            <constraint firstAttribute="trailing" secondItem="cmJ-gC-IwD" secondAttribute="trailing" constant="16" id="nzB-cj-wmU"/>
+                            <constraint firstAttribute="trailing" secondItem="1rB-9Y-ols" secondAttribute="trailing" constant="16" id="tO7-lp-SsE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarOuterView" destination="Xhz-Iy-hpx" id="YI3-ea-b04"/>
+                        <outlet property="firstNameField" destination="1rB-9Y-ols" id="Qjw-ds-lTa"/>
+                        <outlet property="lastNameField" destination="1PO-dk-xL6" id="cXI-aL-IyO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uR-lj-8Pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Iza-fk-lIs">
+                    <connections>
+                        <action selector="avatarViewDidTap:" destination="klI-Sy-9sq" id="w0F-0f-TOL"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="268" y="507.79610194902551"/>
+        </scene>
+    </scenes>
+</document>

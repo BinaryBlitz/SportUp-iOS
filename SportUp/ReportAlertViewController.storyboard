@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t2p-TU-Xfy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Report Alert View Controller-->
+        <scene sceneID="Laf-eA-hiv">
+            <objects>
+                <viewController id="t2p-TU-Xfy" customClass="ReportAlertViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WmI-0i-CLx"/>
+                        <viewControllerLayoutGuide type="bottom" id="063-8g-Mpj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Siu-JY-f19">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uau-mu-RAr">
+                                <rect key="frame" x="31" y="172" width="313" height="322"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0O-eN-lcB">
+                                        <rect key="frame" x="10" y="30" width="293" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сообщите о некорректном поведении игрока или, наоборот, похвалите его" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCw-nz-b5R">
+                                        <rect key="frame" x="22" y="89" width="269" height="58"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Review" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sNN-dj-RKW">
+                                        <rect key="frame" x="25" y="182" width="263" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cox-nb-oes"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7v-Lh-Vqh">
+                                        <rect key="frame" x="0.0" y="272" width="313" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-Un-aG8" customClass="GoButton" customModule="SportUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
+                                                <color key="backgroundColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <state key="normal" title="Send">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultBackgroundColor">
+                                                        <color key="value" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="sendButtonDidTap:" destination="t2p-TU-Xfy" eventType="touchUpInside" id="9aO-EL-TFP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2392156869" green="0.70588237050000002" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fss-Un-aG8" secondAttribute="trailing" id="1a4-Ho-dYU"/>
+                                            <constraint firstItem="fss-Un-aG8" firstAttribute="leading" secondItem="x7v-Lh-Vqh" secondAttribute="leading" id="7T2-Fq-2dE"/>
+                                            <constraint firstAttribute="height" constant="50" id="Ye0-m6-Sjl"/>
+                                            <constraint firstItem="fss-Un-aG8" firstAttribute="top" secondItem="x7v-Lh-Vqh" secondAttribute="top" id="d8e-aI-P2y"/>
+                                            <constraint firstAttribute="bottom" secondItem="fss-Un-aG8" secondAttribute="bottom" id="gx2-3N-og7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="G0O-eN-lcB" firstAttribute="top" secondItem="Uau-mu-RAr" secondAttribute="top" constant="30" id="1fV-w3-ify"/>
+                                    <constraint firstAttribute="trailing" secondItem="sNN-dj-RKW" secondAttribute="trailing" constant="25" id="4cM-fs-lY7"/>
+                                    <constraint firstItem="x7v-Lh-Vqh" firstAttribute="leading" secondItem="Uau-mu-RAr" secondAttribute="leading" id="JOq-g6-D4s"/>
+                                    <constraint firstItem="G0O-eN-lcB" firstAttribute="centerX" secondItem="Uau-mu-RAr" secondAttribute="centerX" id="QRK-zl-fRv"/>
+                                    <constraint firstItem="x7v-Lh-Vqh" firstAttribute="top" secondItem="sNN-dj-RKW" secondAttribute="bottom" constant="30" id="SUc-Cx-Qw5"/>
+                                    <constraint firstAttribute="trailing" secondItem="x7v-Lh-Vqh" secondAttribute="trailing" id="Vue-4k-2nu"/>
+                                    <constraint firstItem="WCw-nz-b5R" firstAttribute="top" secondItem="G0O-eN-lcB" secondAttribute="bottom" constant="35" id="aBd-9P-TJy"/>
+                                    <constraint firstItem="WCw-nz-b5R" firstAttribute="leading" secondItem="Uau-mu-RAr" secondAttribute="leading" constant="22" id="bgt-4V-Xyu"/>
+                                    <constraint firstItem="sNN-dj-RKW" firstAttribute="top" secondItem="WCw-nz-b5R" secondAttribute="bottom" constant="35" id="dqT-Oh-pQ4"/>
+                                    <constraint firstItem="WCw-nz-b5R" firstAttribute="centerX" secondItem="Uau-mu-RAr" secondAttribute="centerX" id="gO4-3K-frM"/>
+                                    <constraint firstItem="sNN-dj-RKW" firstAttribute="leading" secondItem="Uau-mu-RAr" secondAttribute="leading" constant="25" id="gYO-85-DSX"/>
+                                    <constraint firstAttribute="bottom" secondItem="x7v-Lh-Vqh" secondAttribute="bottom" id="rLh-is-0e9"/>
+                                    <constraint firstItem="G0O-eN-lcB" firstAttribute="leading" secondItem="Uau-mu-RAr" secondAttribute="leading" constant="10" id="sPv-bj-KY5"/>
+                                    <constraint firstAttribute="trailing" secondItem="G0O-eN-lcB" secondAttribute="trailing" constant="10" id="tAN-TO-6Zd"/>
+                                    <constraint firstAttribute="trailing" secondItem="WCw-nz-b5R" secondAttribute="trailing" constant="22" id="tZi-In-LbE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Uau-mu-RAr" firstAttribute="centerY" secondItem="Siu-JY-f19" secondAttribute="centerY" id="O6h-2h-6yq"/>
+                            <constraint firstItem="Uau-mu-RAr" firstAttribute="leading" secondItem="Siu-JY-f19" secondAttribute="leadingMargin" constant="15" id="Xef-Oc-op0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uau-mu-RAr" secondAttribute="trailing" constant="15" id="gmO-CG-BcL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="G0O-eN-lcB" id="a3Z-hz-6VZ"/>
+                        <outlet property="ratingField" destination="sNN-dj-RKW" id="fpE-mf-U3f"/>
+                        <outlet property="sendButton" destination="fss-Un-aG8" id="69y-7c-bGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OkM-P6-sey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="194"/>
+        </scene>
+    </scenes>
+</document>

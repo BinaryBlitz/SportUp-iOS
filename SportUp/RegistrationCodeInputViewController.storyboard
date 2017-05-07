@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WEW-aa-JtI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration-->
+        <scene sceneID="gui-RS-KKX">
+            <objects>
+                <viewController title="Registration" id="WEW-aa-JtI" customClass="RegistrationCodeInputViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Pz-Gq-chU"/>
+                        <viewControllerLayoutGuide type="bottom" id="HDS-9b-tZa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cXO-U3-mDI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrY-HZ-7bA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwy-7c-AGY">
+                                        <rect key="frame" x="20" y="226.5" width="335" height="194"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите код" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFl-Y7-Woj">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="27"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <color key="textColor" red="0.1173869744" green="0.1253811121" blue="0.1337095499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2y6-Fg-gVP">
+                                                <rect key="frame" x="130" y="57" width="75" height="24"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="∙ ∙ ∙ ∙ ∙" adjustsFontSizeToFit="NO" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="JxL-wP-kQH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="24"/>
+                                                        <color key="textColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="JxL-wP-kQH" firstAttribute="top" secondItem="2y6-Fg-gVP" secondAttribute="top" id="Opw-C6-QBP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JxL-wP-kQH" secondAttribute="trailing" id="PPO-Ht-184"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JxL-wP-kQH" secondAttribute="bottom" id="kT9-bo-ufs"/>
+                                                    <constraint firstItem="JxL-wP-kQH" firstAttribute="centerX" secondItem="2y6-Fg-gVP" secondAttribute="centerX" id="uEw-Lx-Hh0"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A code was sent to your phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-Zm-JI1">
+                                                <rect key="frame" x="0.0" y="111" width="335" height="20"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <color key="textColor" red="0.3960784376" green="0.42352941630000002" blue="0.45098039509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIc-B7-0ga">
+                                                <rect key="frame" x="0.0" y="161" width="335" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Выслать повторно">
+                                                    <color key="titleColor" red="0.1946057081" green="0.8000642657" blue="0.87262988090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="nIc-B7-0ga" secondAttribute="bottom" id="4Uy-Hc-tgI"/>
+                                            <constraint firstAttribute="trailing" secondItem="nIc-B7-0ga" secondAttribute="trailing" id="GeQ-kV-XMa"/>
+                                            <constraint firstItem="nIc-B7-0ga" firstAttribute="top" secondItem="UJt-Zm-JI1" secondAttribute="bottom" constant="30" id="IMa-dh-4AS"/>
+                                            <constraint firstAttribute="trailing" secondItem="UJt-Zm-JI1" secondAttribute="trailing" id="JzH-4V-y9y"/>
+                                            <constraint firstItem="2y6-Fg-gVP" firstAttribute="centerX" secondItem="rwy-7c-AGY" secondAttribute="centerX" id="Tdx-gI-3Ps"/>
+                                            <constraint firstItem="UJt-Zm-JI1" firstAttribute="top" secondItem="2y6-Fg-gVP" secondAttribute="bottom" constant="30" id="Uo6-pq-M9N"/>
+                                            <constraint firstItem="UJt-Zm-JI1" firstAttribute="leading" secondItem="rwy-7c-AGY" secondAttribute="leading" id="YTz-d2-Xuw"/>
+                                            <constraint firstAttribute="trailing" secondItem="gFl-Y7-Woj" secondAttribute="trailing" id="bAb-nf-bm8"/>
+                                            <constraint firstItem="nIc-B7-0ga" firstAttribute="leading" secondItem="rwy-7c-AGY" secondAttribute="leading" id="ecT-hL-F5U"/>
+                                            <constraint firstItem="2y6-Fg-gVP" firstAttribute="top" secondItem="gFl-Y7-Woj" secondAttribute="bottom" constant="30" id="gMq-XO-1sA"/>
+                                            <constraint firstItem="gFl-Y7-Woj" firstAttribute="top" secondItem="rwy-7c-AGY" secondAttribute="top" id="pxu-5F-jVS"/>
+                                            <constraint firstItem="gFl-Y7-Woj" firstAttribute="leading" secondItem="rwy-7c-AGY" secondAttribute="leading" id="u2W-jF-QHN"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрируясь в приложении, вы принимаете условия Пользовательского соглашения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPx-Bd-83c">
+                                        <rect key="frame" x="15" y="603" width="345" height="14"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                        <color key="textColor" red="0.3960784376" green="0.42352941630000002" blue="0.45098039509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="peR-Y6-psH" appends="YES" id="JqP-V2-uRQ"/>
+                                        </connections>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YPx-Bd-83c" secondAttribute="bottom" priority="250" constant="30" id="BPN-lO-DEu"/>
+                                    <constraint firstAttribute="trailing" secondItem="rwy-7c-AGY" secondAttribute="trailing" constant="20" id="Dgm-oo-HQq"/>
+                                    <constraint firstItem="rwy-7c-AGY" firstAttribute="leading" secondItem="YrY-HZ-7bA" secondAttribute="leading" constant="20" id="RpT-1I-sPP"/>
+                                    <constraint firstItem="YPx-Bd-83c" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rwy-7c-AGY" secondAttribute="bottom" id="dgF-ub-HZD"/>
+                                    <constraint firstAttribute="trailing" secondItem="YPx-Bd-83c" secondAttribute="trailing" constant="15" id="egJ-ss-9LA"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YPx-Bd-83c" secondAttribute="bottom" constant="5" id="hdI-cv-TUs"/>
+                                    <constraint firstItem="rwy-7c-AGY" firstAttribute="centerY" secondItem="YrY-HZ-7bA" secondAttribute="centerY" id="qpI-qR-TDL"/>
+                                    <constraint firstItem="YPx-Bd-83c" firstAttribute="leading" secondItem="YrY-HZ-7bA" secondAttribute="leading" constant="15" id="wO0-3W-umO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YrY-HZ-7bA" firstAttribute="top" secondItem="8Pz-Gq-chU" secondAttribute="bottom" id="bTf-Yd-RhZ"/>
+                            <constraint firstItem="HDS-9b-tZa" firstAttribute="top" secondItem="YrY-HZ-7bA" secondAttribute="bottom" id="rd5-7C-5eT"/>
+                            <constraint firstAttribute="trailing" secondItem="YrY-HZ-7bA" secondAttribute="trailing" id="u2k-9C-dRM"/>
+                            <constraint firstItem="YrY-HZ-7bA" firstAttribute="leading" secondItem="cXO-U3-mDI" secondAttribute="leading" id="wP0-MT-wOk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLayoutConstraint" destination="rd5-7C-5eT" id="YWc-5x-kYU"/>
+                        <outlet property="codeField" destination="JxL-wP-kQH" id="PXV-TT-AGx"/>
+                        <outlet property="licenseAgreementLabel" destination="YPx-Bd-83c" id="5Qg-7y-fuk"/>
+                        <outlet property="repeatButton" destination="nIc-B7-0ga" id="l0O-Eq-zHK"/>
+                        <outlet property="subTitleLabel" destination="UJt-Zm-JI1" id="j6T-Yx-0cx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNm-fb-wrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="peR-Y6-psH">
+                    <connections>
+                        <action selector="licenseAgreementDidTap:" destination="WEW-aa-JtI" id="Jpl-pO-KN7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="162.3688155922039"/>
+        </scene>
+    </scenes>
+</document>

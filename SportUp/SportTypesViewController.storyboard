@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="swf-HI-16n">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Выберите вид спорта-->
+        <scene sceneID="fq7-eU-NcU">
+            <objects>
+                <tableViewController title="Выберите вид спорта" id="swf-HI-16n" customClass="SportTypesViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ox-Hp-E5w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96830016374588013" green="0.9764898419380188" blue="0.98052781820297241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SportTypeTableViewCell" id="emn-pg-ACW" customClass="SportTypeTableViewCell" customModule="SportUp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="emn-pg-ACW" id="Iue-Bi-wkN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-OF-s1v">
+                                            <rect key="frame" x="22" y="20" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="Eux-jP-1Z4"/>
+                                                <constraint firstAttribute="width" constant="32" id="rJ9-uR-ZYg"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0A-WV-QVC">
+                                            <rect key="frame" x="76" y="15" width="289" height="41"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вид спорта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI2-w8-mfR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="289" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 игр  -  0 площадок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-zz-MX0">
+                                                    <rect key="frame" x="0.0" y="26" width="289" height="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" red="0.56231915950775146" green="0.63869673013687134" blue="0.68471544981002808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="sQX-zz-MX0" firstAttribute="leading" secondItem="B0A-WV-QVC" secondAttribute="leading" id="EU6-qn-3Wz"/>
+                                                <constraint firstAttribute="bottom" secondItem="sQX-zz-MX0" secondAttribute="bottom" id="FSv-7z-fxY"/>
+                                                <constraint firstAttribute="trailing" secondItem="sQX-zz-MX0" secondAttribute="trailing" id="PC3-fP-ciy"/>
+                                                <constraint firstItem="iI2-w8-mfR" firstAttribute="leading" secondItem="B0A-WV-QVC" secondAttribute="leading" id="fIp-qS-jc2"/>
+                                                <constraint firstItem="sQX-zz-MX0" firstAttribute="top" secondItem="iI2-w8-mfR" secondAttribute="bottom" constant="5" id="mry-Gx-Z22"/>
+                                                <constraint firstItem="iI2-w8-mfR" firstAttribute="top" secondItem="B0A-WV-QVC" secondAttribute="top" id="qjH-5D-6mV"/>
+                                                <constraint firstAttribute="trailing" secondItem="iI2-w8-mfR" secondAttribute="trailing" id="y7p-dw-LHC"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Xkh-OF-s1v" firstAttribute="leading" secondItem="Iue-Bi-wkN" secondAttribute="leading" constant="22" id="N0q-0L-3eU"/>
+                                        <constraint firstItem="B0A-WV-QVC" firstAttribute="centerY" secondItem="Iue-Bi-wkN" secondAttribute="centerY" id="WWt-Ef-1m1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="B0A-WV-QVC" secondAttribute="trailing" id="bsh-by-QFp"/>
+                                        <constraint firstItem="B0A-WV-QVC" firstAttribute="leading" secondItem="Xkh-OF-s1v" secondAttribute="trailing" constant="22" id="gNw-B1-zZY"/>
+                                        <constraint firstItem="Xkh-OF-s1v" firstAttribute="centerY" secondItem="Iue-Bi-wkN" secondAttribute="centerY" id="sHI-YE-FnV"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="10"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="categoryIconView" destination="Xkh-OF-s1v" id="gmQ-nH-gFF"/>
+                                    <outlet property="descriptionLabel" destination="sQX-zz-MX0" id="ofq-a2-vfJ"/>
+                                    <outlet property="titleLabel" destination="iI2-w8-mfR" id="7PC-ct-BGn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="swf-HI-16n" id="CEh-uD-MqT"/>
+                            <outlet property="delegate" destination="swf-HI-16n" id="Vl7-E7-Rau"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VmU-95-8mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48.799999999999997" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+</document>

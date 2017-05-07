@@ -12,7 +12,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="eUb-qI-7HB">
             <objects>
-                <viewController id="U1Q-ve-Y5x" customClass="OnboardingViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="U1Q-ve-Y5x" customClass="OnboardingViewController" customModule="SportUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pXS-Ms-M9Y"/>
                         <viewControllerLayoutGuide type="bottom" id="jgO-su-f4P"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Uk6-MD-wkR">
-                                <rect key="frame" x="-0.5" y="145.5" width="375" height="375"/>
+                                <rect key="frame" x="-1" y="146" width="376" height="375"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,6 +54,7 @@
                             <constraint firstItem="Uk6-MD-wkR" firstAttribute="centerY" secondItem="a75-JQ-Y48" secondAttribute="centerY" id="rmD-gU-Vh0"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="beginButton" destination="GEF-oF-z8J" id="UeG-Kh-zCq"/>
                     </connections>

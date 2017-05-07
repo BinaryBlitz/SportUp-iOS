@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EventMarkerView" customModule="SportUp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="84" height="92"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="markerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4OR-04-bca">
+                    <rect key="frame" x="0.0" y="0.0" width="84" height="92"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconGameFootball" translatesAutoresizingMaskIntoConstraints="NO" id="ygj-I4-FqV">
+                    <rect key="frame" x="32" y="31" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="qbj-D9-QZR"/>
+                        <constraint firstAttribute="width" constant="20" id="twV-UF-Ypl"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="4OR-04-bca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="E1S-S9-62n"/>
+                <constraint firstAttribute="bottom" secondItem="4OR-04-bca" secondAttribute="bottom" id="Fmn-IR-7KN"/>
+                <constraint firstAttribute="trailing" secondItem="4OR-04-bca" secondAttribute="trailing" id="Ix0-gF-ioQ"/>
+                <constraint firstItem="ygj-I4-FqV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ol3-Z5-ixx"/>
+                <constraint firstItem="ygj-I4-FqV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-5" id="Sfg-lx-tBI"/>
+                <constraint firstItem="4OR-04-bca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sgJ-3j-PIu"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="4OR-04-bca" id="kcY-Ko-2aD"/>
+                <outlet property="gameIconView" destination="ygj-I4-FqV" id="lDO-ZE-Jio"/>
+            </connections>
+            <point key="canvasLocation" x="-47" y="341"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconGameFootball" width="24" height="24"/>
+        <image name="markerIcon" width="36" height="42"/>
+    </resources>
+</document>
