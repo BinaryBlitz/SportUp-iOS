@@ -14,7 +14,9 @@ import CoreLocation
 class GamesMapViewController: UIViewController {
   let animationDuration = 0.3
   var panGestureStartLocation: CGFloat = 0
-  let markerZoom: Float = 15
+  var markerZoom: Float {
+    return Float(calculateZoomLevel())
+  }
   var events: [Event] = []
   var date: Date = Date()
   var sportType: SportType!
@@ -39,8 +41,8 @@ class GamesMapViewController: UIViewController {
   }
 
   func configureMap() {
-    let latitude = events.first?.latitude ?? ProfileManager.instance.currentCoordinate?.latitude
-    let longitude = events.first?.longitude ?? ProfileManager.instance.currentCoordinate?.longitude
+    let latitude = ProfileManager.instance.currentCoordinate?.latitude
+    let longitude = ProfileManager.instance.currentCoordinate?.longitude
     mapView.delegate = self
     mapView.camera = GMSCameraPosition.camera(withLatitude: latitude!, longitude: longitude!, zoom: markerZoom)
 
@@ -56,6 +58,18 @@ class GamesMapViewController: UIViewController {
       marker.userData = index
     }
     
+  }
+
+  func calculateZoomLevel() -> Int {
+    let equatorLength = 40075004
+    let widthInPixels = mapView.frame.width
+    var metersPerPixel = equatorLength / 256
+    var zoomLevel = 1
+    while (Float(metersPerPixel) * Float(widthInPixels) > 2000) {
+      metersPerPixel /= 2
+      zoomLevel += 1
+    }
+    return zoomLevel
   }
 
   func prepareCardView(event: Event) {
