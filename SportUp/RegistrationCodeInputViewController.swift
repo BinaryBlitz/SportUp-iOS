@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SafariServices
+import PhoneNumberKit
 
 private let termsOfServiceUrl = URL(string: "")
 
@@ -55,11 +56,13 @@ class RegistrationCodeInputViewController: UIViewController, DefaultBarStyleView
   }
 
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     codeField.becomeFirstResponder()
     addObserverUpdateWithKeyboard()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
     observers.forEach { NotificationCenter.default.removeObserver($0) }
     observers = []
   }
@@ -94,6 +97,15 @@ class RegistrationCodeInputViewController: UIViewController, DefaultBarStyleView
     let safariViewController = SFSafariViewController(url: url)
     present(safariViewController, animated: true, completion: nil)
     
+  }
+
+
+  @IBAction func repeatButtonDidTap(_ sender: Any) {
+    let phoneNumberKit = PhoneNumberKit()
+    guard let phoneNumber = try? phoneNumberKit.parse(phoneNumberString) else { return presentAlertWithMessage("Неправильный формат номера телефона") }
+    _ = DataManager.instance
+      .createVerificationToken(phoneNumber: phoneNumberKit.format(phoneNumber, toType: .e164)).then { [weak self] _ -> Void in
+    }
   }
 
 }
