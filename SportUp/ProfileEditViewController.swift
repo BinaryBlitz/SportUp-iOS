@@ -57,7 +57,7 @@ class ProfileEditViewController: UIViewController, DefaultBarStyleViewController
       }.catch { [weak self] _ in
         let viewController = BonusRegistrationAlertViewController.storyboardInstance()!
         viewController.modalPresentationStyle = .overCurrentContext
-        self?.navigationController?.pushViewController(viewController, animated: false)
+        self?.present(viewController, animated: false, completion: nil )
 
       }.always { [weak self] _ -> Void in
         self?.firstNameField.isEnabled = true

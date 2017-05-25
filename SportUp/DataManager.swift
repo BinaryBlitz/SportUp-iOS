@@ -15,6 +15,7 @@ import ObjectMapper
 class DataManager {
   static let instance = DataManager()
   var verificationToken: String? = nil
+  var phoneNumber: String? = ProfileManager.instance.currentProfile?.phoneNumber
 
   var sportTypes: [SportType] = [] {
     didSet {
@@ -175,6 +176,7 @@ class DataManager {
     return NetworkManager.doRequest(.createVerificationToken, ["phone_number": phoneNumber]).then { result in
       let json = JSON(result)
       self.verificationToken = json["token"].string
+      self.phoneNumber = phoneNumber
       return Promise(value: ())
     }
   }
@@ -183,7 +185,7 @@ class DataManager {
     guard let verificationToken = self.verificationToken else { return Promise(error: DataError.unknown) }
     return NetworkManager.doRequest(.verifyToken(verificationToken: verificationToken), ["code": code as Any, "token": verificationToken as Any]).then { result in
       let json = JSON(result)
-      try? StorageHelper.save("foobar", forKey: .apiToken)
+      try? StorageHelper.save(json["api_token"].string, forKey: .apiToken)
       return Promise(value: ())
     }
   }
@@ -206,10 +208,16 @@ class DataManager {
   }
 
   func createUser(profile: User) -> Promise<Void> {
-    return NetworkManager.doRequest(.createUser, ["user": profile.toJSON()]).asVoid()
+    profile.phoneNumber = phoneNumber ?? ""
+    return NetworkManager.doRequest(.createUser, ["user": profile.toJSON()]).then { result in
+      guard let token = JSON(result)["api_token"].string else { return Promise(error: DataError.unknown) }
+      try? StorageHelper.save(token, forKey: .apiToken)
+      return Promise(value: ())
+    }
   }
 
   func fetchUser() -> Promise<User> {
+    guard let apiToken: String = StorageHelper.loadObjectForKey(.apiToken) else { return Promise(error: DataError.unknown) }
     return NetworkManager.doRequest(.getUser).then { result in
       guard let user = Mapper<User>().map(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
