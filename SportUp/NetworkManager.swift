@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import PromiseKit
+import SwiftyJSON
 
 class NetworkManager {
   static let baseUrl = "https://sportup-staging.herokuapp.com"
