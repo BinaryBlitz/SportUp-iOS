@@ -404,6 +404,9 @@ extension EventManageViewController {
         self?.sportType = $0
       }
       navigationController?.pushViewController(viewController, animated: true)
+    case Sections.description.rawValue:
+      tableView.deselectRow(at: indexPath, animated: true)
+      descriptionTextView.becomeFirstResponder()
     default:
       tableView.deselectRow(at: indexPath, animated: true)
     }
