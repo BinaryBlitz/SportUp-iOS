@@ -26,6 +26,7 @@ class StorageHelper {
     case currentLatitude
     case currentLongitude
     case apiToken
+    case myEvents
 
     var storageType: StorageType {
       switch self {

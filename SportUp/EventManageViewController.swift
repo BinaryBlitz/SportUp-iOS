@@ -88,9 +88,10 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     }
   }
   var coordinate: CLLocationCoordinate2D?
+
   var descriptionText: String? {
     set {
-      descriptionTextView.text = descriptionText
+      descriptionTextView.text = descriptionText ?? ""
     }
     get {
       return descriptionTextView.text
@@ -224,11 +225,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     event.name = name
     let address = self.address ?? ""
     event.address = address
-    let descriptionText = self.descriptionText ?? ""
-    if descriptionText.trimmingCharacters(in: .whitespaces).isEmpty {
-      alertMessage += "\nДобавьте описание игры"
-    }
-    event.description = descriptionText
+    event.description = self.descriptionText ?? ""
     event.endsAt = endsAt
     event.startsAt = startsAt
     if startsAt.time > endsAt.time {
@@ -263,7 +260,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     } else {
       alertMessage += "\nВыберите адрес"
     }
-    if alertMessage.characters.count > 0 {
+    if !alertMessage.isEmpty {
       throw DataError.validationFailed(message: alertMessage)
     }
   }
@@ -297,9 +294,9 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       price = Int(event.price)
       teamsCount = event.teamLimit
       sportType = event.sportType
-      descriptionText = event.description
+      descriptionTextView.text = event.description
       coordinate = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
-
+      saveButton.setTitle("Сохранить изменения", for: .normal)
       navigationItem.title = "Редактирование события"
     }
   }
@@ -340,11 +337,11 @@ extension EventManageViewController {
 
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     guard section != Sections.mainInfo.rawValue else { return 0 }
-    return 16
+    return 8
   }
 
   override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    return 0
+    return 8
   }
 
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

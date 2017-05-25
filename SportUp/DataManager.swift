@@ -22,9 +22,18 @@ class DataManager {
     }
   }
 
+  var myEvents: [Event] = [] {
+    didSet {
+      try? StorageHelper.save(myEvents.toJSONString(), forKey: .myEvents)
+    }
+  }
+
   private init() {
     if let sportTypesJSON: String = StorageHelper.loadObjectForKey(.sportTypes) {
       sportTypes = Mapper<SportType>().mapArray(JSONString: sportTypesJSON) ?? []
+    }
+    if let eventsJSON: String = StorageHelper.loadObjectForKey(.myEvents) {
+      myEvents = Mapper<Event>().mapArray(JSONString: eventsJSON) ?? []
     }
   }
 
@@ -131,12 +140,13 @@ class DataManager {
     }
   }
 
-  func fetchMemberships() -> Promise<[EventMembership]> {
+  func fetchMemberships() -> Promise<[Event]> {
     return NetworkManager.doRequest(.getMemberships).then { result in
       guard let eventMemberships = Mapper<EventMembership>().mapArray(JSONObject: result) else {
         return Promise(error: DataError.unprocessableData)
       }
-      return Promise(value: eventMemberships)
+      self.myEvents = eventMemberships.map { $0.event }.sorted { $0.startsAt > $1.startsAt }
+      return Promise(value: self.myEvents)
     }
   }
 
@@ -150,7 +160,11 @@ class DataManager {
   }
 
   func createEvent(event: Event) -> Promise<Void> {
-    return NetworkManager.doRequest(.createEvent, ["event": event.toJSON()]).asVoid()
+    return NetworkManager.doRequest(.createEvent, ["event": event.toJSON()]).then { result in
+      guard let event = Mapper<Event>().map(JSONObject: result) else { return Promise(error: DataError.unexpectedResponseFormat) }
+      self.myEvents.insert(event, at: 0)
+      return Promise(value: ())
+    }
   }
 
   func editEvent(event: Event) -> Promise<Void> {
@@ -169,9 +183,7 @@ class DataManager {
     guard let verificationToken = self.verificationToken else { return Promise(error: DataError.unknown) }
     return NetworkManager.doRequest(.verifyToken(verificationToken: verificationToken), ["code": code as Any, "token": verificationToken as Any]).then { result in
       let json = JSON(result)
-      let token = "foobar"
-
-      try? StorageHelper.save(token, forKey: .apiToken)
+      try? StorageHelper.save("foobar", forKey: .apiToken)
       return Promise(value: ())
     }
   }

@@ -12,7 +12,11 @@ import UIKit
 private let reuseIdentifier = "MyGamesTableViewCell"
 
 class MyGamesViewController: UITableViewController, DefaultBarStyleViewController {
-  var memberships: [EventMembership] = []
+  var myEvents: [Event] = DataManager.instance.myEvents {
+    didSet {
+      tableView.reloadData()
+    }
+  }
   var invites: [InviteResponse] = []
 
   enum Sections: Int {
@@ -44,21 +48,21 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
     }
   }
 
-  var createdGames: [EventMembership] {
-    return memberships.filter { eventMembership in
-      return eventMembership.event.isMine && !eventMembership.event.finished
+  var createdGames: [Event] {
+    return myEvents.filter { event in
+      return event.isMine && !event.finished
     }
   }
 
-  var currentMemberships: [EventMembership] {
-    return memberships.filter { eventMembership in
-      return !eventMembership.event.isMine && !eventMembership.event.finished
+  var currentEvents: [Event] {
+    return myEvents.filter { event in
+      return !event.isMine && !event.finished
     }
   }
 
-  var finishedMemberships: [EventMembership] {
-    return memberships.filter { eventMembership in
-      return eventMembership.event.finished
+  var finishedEvents: [Event] {
+    return myEvents.filter { event in
+      return event.finished
     }
   }
 
@@ -79,9 +83,9 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
   }
 
   func refresh() {
-    _ = DataManager.instance.fetchMemberships().then { [weak self] memberships -> Void in
-      self?.memberships = memberships.sorted { $0.event.startsAt > $1.event.startsAt }
-      self?.tableView.reloadData()
+    myEvents = DataManager.instance.myEvents
+    _ = DataManager.instance.fetchMemberships().then { [weak self] events -> Void in
+      self?.myEvents = events
     }
 
     _ = DataManager.instance.fetchInvites().then { [weak self] invites -> Void in
@@ -112,9 +116,9 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
     case Sections.createdGames.rawValue:
       return createdGames.count
     case Sections.currentGames.rawValue:
-      return currentMemberships.count
+      return currentEvents.count
     case Sections.finishedGames.rawValue:
-      return finishedMemberships.count
+      return finishedEvents.count
     default:
       return 0
     }
@@ -126,9 +130,9 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
       break
     case Sections.createdGames.rawValue where !createdGames.isEmpty:
       break
-    case Sections.currentGames.rawValue where !currentMemberships.isEmpty:
+    case Sections.currentGames.rawValue where !currentEvents.isEmpty:
       break
-    case Sections.finishedGames.rawValue where !finishedMemberships.isEmpty:
+    case Sections.finishedGames.rawValue where !finishedEvents.isEmpty:
       break
     default:
       return 0
@@ -153,9 +157,9 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
     case Sections.createdGames.rawValue:
       cell.cellType = .myGame(createdGames[indexPath.row])
     case Sections.currentGames.rawValue:
-      cell.cellType = .currentGame(currentMemberships[indexPath.row])
+      cell.cellType = .currentGame(currentEvents[indexPath.row])
     case Sections.finishedGames.rawValue:
-      cell.cellType = .finishedGame(finishedMemberships[indexPath.row])
+      cell.cellType = .finishedGame(finishedEvents[indexPath.row])
     default:
       break
     }
@@ -170,15 +174,15 @@ class MyGamesViewController: UITableViewController, DefaultBarStyleViewControlle
       guard let currentEvent = currentInvites[indexPath.row].event else { return }
       event = currentEvent
     case Sections.createdGames.rawValue:
-      event = createdGames[indexPath.row].event
+      event = createdGames[indexPath.row]
       let viewController = EventManageViewController.storyboardInstance()!
       viewController.screenType = .edit(event: event)
       navigationController?.pushViewController(viewController, animated: true)
       return
     case Sections.currentGames.rawValue:
-      event = currentMemberships[indexPath.row].event
+      event = currentEvents[indexPath.row]
     case Sections.finishedGames.rawValue:
-      event = finishedMemberships[indexPath.row].event
+      event = finishedEvents[indexPath.row]
     default:
       return
     }
@@ -207,8 +211,8 @@ extension MyGamesViewController: MyGamesTableViewCellDelegate {
 
   func leave(membership: Membership) {
     _ = DataManager.instance.deleteMembership(membershipId: membership.id).then { [weak self] _ -> Void in
-      guard let index = self?.memberships.index(where: { $0.membership?.id == membership.id }) else { return }
-      self?.memberships.remove(at: index)
+      guard let index = self?.myEvents.index(where: { $0.membership?.id == membership.id }) else { return }
+      self?.myEvents.remove(at: index)
       self?.tableView.reloadSections(IndexSet(integer: Sections.currentGames.rawValue), with: .automatic)
     }
   }

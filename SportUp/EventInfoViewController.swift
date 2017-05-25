@@ -47,7 +47,7 @@ class EventInfoViewController: UIViewController {
     priceLabel.text = event.price == 0 ? "Бесплатно" : event.price.currencyString
     backgroundHeaderView.backgroundColor = sportType.color
 
-    let label = NavigationSubtitleLabel(height: navigationController?.navigationBar.frame.size.height, title: sportType.name, subtitle: "# \(event.id)")
+    let label = NavigationSubtitleLabel(height: navigationController?.navigationBar.frame.size.height, title: event.name, subtitle: "# \(event.id)")
     navigationItem.titleView = label
 
     tableViewController.event = event

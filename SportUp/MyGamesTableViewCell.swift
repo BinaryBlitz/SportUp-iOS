@@ -30,9 +30,9 @@ class MyGamesTableViewCell: UITableViewCell {
 
   enum CellType {
     case invite(InviteResponse)
-    case myGame(EventMembership)
-    case currentGame(EventMembership)
-    case finishedGame(EventMembership)
+    case myGame(Event)
+    case currentGame(Event)
+    case finishedGame(Event)
   }
 
   var cellType: CellType? = nil {
@@ -44,14 +44,14 @@ class MyGamesTableViewCell: UITableViewCell {
         configure(event: event)
         stackView.addArrangedSubview(acceptButton)
         stackView.addArrangedSubview(declineButton)
-      case .myGame(let eventMembership):
-        configure(event: eventMembership.event)
+      case .myGame(let event):
+        configure(event: event)
         stackView.addArrangedSubview(nextIconView)
-      case .currentGame(let eventMembership):
-        configure(event: eventMembership.event)
+      case .currentGame(let event):
+        configure(event: event)
         stackView.addArrangedSubview(declineButton)
-      case .finishedGame(let eventMembership):
-        configure(event: eventMembership.event)
+      case .finishedGame(let event):
+        configure(event: event)
       }
       updateConstraints()
       layoutIfNeeded()
@@ -108,8 +108,9 @@ class MyGamesTableViewCell: UITableViewCell {
     case .invite(let inviteResponse):
       guard let invite = inviteResponse.invite else { return }
       delegate?.decline(invite: invite)
-    case .currentGame(let eventMembership):
-      delegate?.leave(membership: eventMembership.membership)
+    case .currentGame(let event):
+      guard let membership = event.membership else { return }
+      delegate?.leave(membership: membership)
     default:
       break
     }
