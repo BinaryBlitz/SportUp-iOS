@@ -56,12 +56,39 @@ class RegistrationPhoneInputViewController: UIViewController, DefaultBarStyleVie
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     phoneInputField.becomeFirstResponder()
-    self.observers = bottomLayoutConstraint.addObserversUpdateWithKeyboard()
+    addObserverUpdateWithKeyboard()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
     observers.forEach { NotificationCenter.default.removeObserver($0) }
     observers = []
+  }
+
+  func addObserverUpdateWithKeyboard() {
+
+    let didShowObserver = NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil, using: { [weak self] notification in
+      if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        let keyboardHeight = keyboardSize.height
+        UIView.animate(withDuration: 0.4, animations: {
+          self?.bottomLayoutConstraint.constant = keyboardHeight
+          self?.view.layoutIfNeeded()
+        })
+      }
+    })
+
+    observers.append(didShowObserver)
+
+    let willHideObserver = NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil, using: { [weak self] notification in
+      UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
+          self?.bottomLayoutConstraint.constant = 0
+          self?.view.layoutIfNeeded()
+        })
+      })
+    })
+
+    observers.append(willHideObserver)
   }
 
   @IBAction func licenseAgreementDidTap(_ sender: Any) {

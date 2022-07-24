@@ -15,6 +15,10 @@ class BonusRegistrationAlertViewController: UIViewController {
   @IBOutlet weak var ticketsCountLabel: UILabel!
   @IBOutlet weak var nextButton: GoButton!
 
+  override func viewDidLoad() {
+    view.backgroundColor = UIColor(white: 0, alpha: 0.5)
+  }
+
   override func viewWillAppear(_ animated: Bool) {
     UIView.animate(withDuration: animationDuration) { [weak self] in
       self?.view.alpha = 0

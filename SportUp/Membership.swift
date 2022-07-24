@@ -18,6 +18,7 @@ struct EventMembership: Mappable {
   mutating func mapping(map: Map) {
     event <- map["event"]
     membership <- map["membership"]
+    event.membership = membership
   }
 }
 

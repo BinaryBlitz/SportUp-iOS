@@ -36,8 +36,10 @@ private enum DateTimeSectionRows: Int {
 }
 
 private enum GameLimitsSectionRows: Int {
-  case playersCount = 0
-  case teamsCount
+  case playersCountLabel = 0
+  case playersCountPicker
+  case teamsCountLabel
+  case teamsCountPicker
 }
 
 private enum PrivacyRows: Int {
@@ -46,7 +48,7 @@ private enum PrivacyRows: Int {
 }
 
 
-private let datePickerCellHeight: CGFloat = 220
+private let pickerCellHeight: CGFloat = 220
 private let passwordPickerCellHeight: CGFloat = 81
 
 class EventManageViewController: UITableViewController, SelfControlledBarStyleViewController {
@@ -65,6 +67,8 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var cancelButton: GoButton!
   @IBOutlet weak var descriptionTextView: UITextView!
+  @IBOutlet weak var playersCountPicker: UIPickerView!
+  @IBOutlet weak var teamsCountPicker: UIPickerView!
 
   @IBOutlet weak var privacyIconView: UIImageView!
   @IBOutlet weak var privacyLabel: UILabel!
@@ -88,9 +92,10 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     }
   }
   var coordinate: CLLocationCoordinate2D?
+
   var descriptionText: String? {
     set {
-      descriptionTextView.text = descriptionText
+      descriptionTextView.text = descriptionText ?? ""
     }
     get {
       return descriptionTextView.text
@@ -103,14 +108,24 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       tableView.reloadData()
     }
   }
-  var playersCount: Int = 0 {
-    didSet {
-      playersCountField.text = "\(playersCount)"
+  var playersCount: Int {
+    get {
+      return playersCountPicker.selectedRow(inComponent: 0) + 1
+    }
+    set {
+      guard newValue > 0 else { return }
+      playersCountPicker.selectRow(newValue - 1, inComponent: 0, animated: false)
+      playersCountField.text = "\(newValue)"
     }
   }
-  var teamsCount: Int = 0 {
-    didSet {
-      teamsCountField.text = "\(teamsCount)"
+  var teamsCount: Int {
+    get {
+      return teamsCountPicker.selectedRow(inComponent: 0) + 1
+    }
+    set {
+      guard newValue > 0 else { return }
+      teamsCountPicker.selectRow(newValue - 1, inComponent: 0, animated: false)
+      teamsCountField.text = "\(newValue)"
     }
   }
   var price: Int = 0 {
@@ -224,11 +239,7 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     event.name = name
     let address = self.address ?? ""
     event.address = address
-    let descriptionText = self.descriptionText ?? ""
-    if descriptionText.trimmingCharacters(in: .whitespaces).isEmpty {
-      alertMessage += "\nДобавьте описание игры"
-    }
-    event.description = descriptionText
+    event.description = self.descriptionText ?? ""
     event.endsAt = endsAt
     event.startsAt = startsAt
     if startsAt.time > endsAt.time {
@@ -263,12 +274,13 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     } else {
       alertMessage += "\nВыберите адрес"
     }
-    if alertMessage.characters.count > 0 {
+    if !alertMessage.isEmpty {
       throw DataError.validationFailed(message: alertMessage)
     }
   }
 
   func configureView() {
+    configurePickers()
     nameField.delegate = self
     descriptionTextView.delegate = self
     passwordField.delegate = self
@@ -277,8 +289,6 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
     playersCountField.isEnabled = false
     teamsCountField.isEnabled = false
     priceField.isEnabled = false
-    startDatePicker.isHidden = true
-    endDatePicker.isHidden = true
     switch screenType {
     case .create:
       cancelButton.isHidden = true
@@ -297,11 +307,23 @@ class EventManageViewController: UITableViewController, SelfControlledBarStyleVi
       price = Int(event.price)
       teamsCount = event.teamLimit
       sportType = event.sportType
-      descriptionText = event.description
+      descriptionTextView.text = event.description
       coordinate = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
-
+      saveButton.setTitle("Сохранить изменения", for: .normal)
       navigationItem.title = "Редактирование события"
     }
+  }
+
+  func configurePickers() {
+    startDatePicker.isHidden = true
+    endDatePicker.isHidden = true
+    playersCountPicker.isHidden = true
+    teamsCountPicker.isHidden = true
+
+    playersCountPicker.dataSource = self
+    teamsCountPicker.dataSource = self
+    playersCountPicker.delegate = self
+    teamsCountPicker.delegate = self
   }
 
   @IBAction func startDatePickerDidChange(_ sender: UIDatePicker) {
@@ -340,11 +362,11 @@ extension EventManageViewController {
 
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     guard section != Sections.mainInfo.rawValue else { return 0 }
-    return 16
+    return 8
   }
 
   override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    return 0
+    return 8
   }
 
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -369,7 +391,16 @@ extension EventManageViewController {
       default:
         return super.tableView(tableView, heightForRowAt: indexPath)
       }
-      return datePicker.isHidden ? 0 : datePickerCellHeight
+      return datePicker.isHidden ? 0 : pickerCellHeight
+    case Sections.playersCount.rawValue:
+      switch indexPath.row {
+      case GameLimitsSectionRows.playersCountPicker.rawValue:
+        return playersCountPicker.isHidden ? 0 : pickerCellHeight
+      case GameLimitsSectionRows.teamsCountPicker.rawValue:
+        return teamsCountPicker.isHidden ? 0 : pickerCellHeight
+      default:
+        return super.tableView(tableView, heightForRowAt: indexPath)
+      }
     case Sections.privacy.rawValue where indexPath.row == PrivacyRows.password.rawValue:
       return isPublic ? 0 : passwordPickerCellHeight
     default:
@@ -407,6 +438,10 @@ extension EventManageViewController {
         self?.sportType = $0
       }
       navigationController?.pushViewController(viewController, animated: true)
+    case Sections.description.rawValue:
+      tableView.deselectRow(at: indexPath, animated: true)
+      descriptionTextView.becomeFirstResponder()
+
     default:
       tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -416,32 +451,30 @@ extension EventManageViewController {
   func hidePickers() {
     endDatePicker.isHidden = true
     startDatePicker.isHidden = true
+    teamsCountPicker.isHidden = true
+    playersCountPicker.isHidden = true
     tableView.beginUpdates()
     tableView.endUpdates()
   }
 
   func didSelectGameLimitsCell(indexPath: IndexPath) {
+    endDatePicker.isHidden = true
+    startDatePicker.isHidden = true
+    let picker: UIPickerView
     switch indexPath.row {
-    case GameLimitsSectionRows.playersCount.rawValue:
-      let viewController = TextInputViewController(title: "Количество участников")
-      viewController.value = playersCount > 0 ? "\(playersCount)" : ""
-      viewController.keyboardType = .numberPad
-      viewController.didFinishEditingHandler =  { [weak self] in
-        self?.playersCount = Int($0) ?? 0
-      }
-      navigationController?.pushViewController(viewController, animated: true)
-    case GameLimitsSectionRows.teamsCount.rawValue:
-      let viewController = TextInputViewController(title: "Количество команд")
-      viewController.value = teamsCount > 0 ? "\(teamsCount)" : ""
-      viewController.keyboardType = .numberPad
-      viewController.didFinishEditingHandler =  { [weak self] in
-        self?.teamsCount = Int($0) ?? 0
-      }
-      navigationController?.pushViewController(viewController, animated: true)
+    case GameLimitsSectionRows.playersCountLabel.rawValue:
+      picker = playersCountPicker
+      teamsCountPicker.isHidden = true
+    case GameLimitsSectionRows.teamsCountLabel.rawValue:
+      playersCountPicker.isHidden = true
+      picker = teamsCountPicker
     default:
       return tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    picker.isHidden = !picker.isHidden
+    tableView.beginUpdates()
+    tableView.deselectRow(at: indexPath, animated: true)
+    tableView.endUpdates()
   }
 
   func didSelectDateTimeCell(indexPath: IndexPath) {
@@ -475,5 +508,29 @@ extension EventManageViewController {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.endEditing(true)
     return true
+  }
+}
+
+extension EventManageViewController: UIPickerViewDataSource {
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return 100
+  }
+
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  }
+}
+
+extension EventManageViewController: UIPickerViewDelegate {
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return "\(row + 1)"
+  }
+
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    if pickerView == playersCountPicker {
+      playersCount = row + 1
+    } else if pickerView == teamsCountPicker {
+      teamsCount = row + 1
+    }
   }
 }

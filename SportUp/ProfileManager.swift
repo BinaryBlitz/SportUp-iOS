@@ -34,10 +34,17 @@ class ProfileManager {
   }
 
   func updateProfile(_ closure: (User) -> Void) -> Promise<Void> {
-    let profile = currentProfile ?? User()
-    closure(profile)
-    return DataManager.instance.updateUser(profile: profile).then {
-      try? StorageHelper.save(profile.toJSONString(), forKey: .currentProfile)
+    if let profile = currentProfile {
+      closure(profile)
+      return DataManager.instance.updateUser(profile: profile).then {
+        try? StorageHelper.save(profile.toJSONString(), forKey: .currentProfile)
+      }
+    } else {
+      let profile = User()
+      closure(profile)
+      return DataManager.instance.createUser(profile: profile).then {
+        try? StorageHelper.save(profile.toJSONString(), forKey: .currentProfile)
+      }
     }
   }
 
